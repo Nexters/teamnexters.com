@@ -1,6 +1,6 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <HelloWorld msg="NEXTERS 10 YEARS ANNIVERSARY"/>
+  <p> 2021.11 COMING SOON 🎉</p>
 </template>
 
 <script lang="ts">
