@@ -5,6 +5,7 @@
     "moduleResolution": "Node",
     "lib": ["ESNext", "ESNext.AsyncIterable", "DOM"],
     "esModuleInterop": true,
+    "experimentalDecorators": true,
     "allowJs": true,
     "sourceMap": true,
     "strict": true,
@@ -14,6 +15,6 @@
       "~/*": ["./*"],
       "@/*": ["./*"]
     },
-    "types": ["@nuxt/types"]
+    "types": ["@nuxt/types", "@nuxt/content"]
   }
 }

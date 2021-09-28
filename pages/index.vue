@@ -1,12 +1,8 @@
 <template>
   <div class="container">
-    <button @click="increment">
-      Increment
-    </button>
+    <button @click="increment">Increment</button>
     <p>Counter : {{ counter }}</p>
-    <button @click="decrement">
-      Decrement
-    </button>
+    <button @click="decrement">Decrement</button>
   </div>
 </template>
 
@@ -35,6 +31,6 @@ export default defineComponent({
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 73px;
 }
 </style>
