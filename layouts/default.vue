@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header></Header>
+    <Header :headers="headers"></Header>
     <nuxt />
     <Footer></Footer>
   </div>
@@ -14,12 +14,14 @@ import Header from "~/components/header.vue";
   name: "default-layout",
   components: { Header },
   fetchOnServer: false,
+  data() {
+    return { headers: [] };
+  },
   async fetch() {
-    let headers = await this.$content("headers").fetch();
-    let about = await this.$content("about").only(["title"]).fetch();
-    console.log(this);
-    console.log(headers);
-    console.log(about);
+    const { categories } = await this.$content("headers")
+      .only(["categories"])
+      .fetch();
+    this.headers = categories;
   },
 })
 class DefaultLayout extends Vue {

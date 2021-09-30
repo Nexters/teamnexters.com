@@ -1,10 +1,10 @@
 {
   "title": "navbar",
   "categories": [
-    { "slug": "main" },
-    { "slug": "about" },
-    { "slug": "project" },
-    { "slug": "recruitment" },
-    { "slug": "contact" }
+    { "name": "main" },
+    { "name": "about" },
+    { "name": "project" },
+    { "name": "recruitment" },
+    { "name": "contact" }
   ]
 }
