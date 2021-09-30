@@ -1,0 +1,9 @@
+{
+  "title": "footer",
+  "items": [
+    { "name": "facebook", "href": "https://www.facebook.com/Nexterspage/" },
+    { "name": "github", "href": "https://github.com/Nexters" },
+    { "name": "instagram", "href": "https://www.instagram.com/team_nexters/" }
+  ],
+  "copyrights": "Copyright © NEXTERS 2021"
+}

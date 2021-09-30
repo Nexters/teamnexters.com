@@ -1,12 +1,14 @@
 <template>
   <nav>
     <ul>
-      <nuxt-link to="/" class="logo"><img alt="NEXTERS_LOGO" /></nuxt-link>
+      <nuxt-link to="/" class="logo">
+        <img src="~/assets/img/nexters_gnb_white.png" alt="NEXTERS_LOGO" />
+      </nuxt-link>
       <nuxt-link
         v-for="header in headers"
-        :key="header"
-        :to="header.name"
-        class="header-item"
+        :key="header.name"
+        :to="header.href"
+        :class="{ 'header-item': true, 'white-font': isWhite }"
       >
         {{ header.name }}
       </nuxt-link>
@@ -24,6 +26,11 @@ export default defineComponent({
       type: Array,
       required: true,
     },
+    isWhite: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   setup() {
     return {};
@@ -37,10 +44,21 @@ nav {
   display: flex;
   align-items: center;
   .logo {
+    margin: 0 auto;
     padding: 0 48.5px 0 24px;
   }
   .header-item {
     padding: 0 48.5px 0 0;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 36px;
+    letter-spacing: -0.02em;
+    color: #000000;
+    text-decoration: none;
+  }
+  .white-font {
+    color: #ffffff;
   }
 }
 </style>
