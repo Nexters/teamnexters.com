@@ -111,10 +111,7 @@ footer {
     padding-left: 64px;
     width: 1200px;
     margin: auto auto 32px auto;
-    .copyrights {
-      margin-left: auto;
-      margin-right: 64px;
-    }
+
     .sns {
       display: flex;
       img {
@@ -125,6 +122,17 @@ footer {
         flex-direction: column;
         margin-right: 32px;
       }
+    }
+    .copyrights {
+      margin-left: auto;
+      padding-right: 64px;
+
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+      letter-spacing: -0.02em;
     }
   }
 }

@@ -32,26 +32,7 @@ export default defineComponent({
   color: #ffffff;
   display: flex;
   margin: auto;
-  .quick-link {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    padding-top: 40px;
 
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.02em;
-
-    cursor: pointer;
-
-    img {
-      width: 16px;
-      height: 16px;
-      margin: auto 0 auto 8px;
-    }
-  }
   @include mobile {
     .slogan {
       width: 327px;
@@ -70,6 +51,26 @@ export default defineComponent({
         font-size: 16px;
         line-height: 24px;
         letter-spacing: -0.02em;
+      }
+      .quick-link {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        padding-top: 40px;
+
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.02em;
+
+        cursor: pointer;
+
+        img {
+          width: 16px;
+          height: 16px;
+          margin: auto 0 auto 8px;
+        }
       }
     }
   }
@@ -92,6 +93,26 @@ export default defineComponent({
         line-height: 24px;
         letter-spacing: -0.02em;
       }
+      .quick-link {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        padding-top: 40px;
+
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.02em;
+
+        cursor: pointer;
+
+        img {
+          width: 16px;
+          height: 16px;
+          margin: auto 0 auto 8px;
+        }
+      }
     }
   }
   @include desktop {
@@ -113,6 +134,26 @@ export default defineComponent({
         font-size: 24px;
         line-height: 36px;
         letter-spacing: -0.02em;
+      }
+      .quick-link {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        padding-top: 86px;
+
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 24px;
+        letter-spacing: -0.02em;
+
+        cursor: pointer;
+
+        img {
+          width: 24px;
+          height: 24px;
+          margin: auto 0 auto 8px;
+        }
       }
     }
   }
