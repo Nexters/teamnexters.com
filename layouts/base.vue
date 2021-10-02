@@ -12,7 +12,7 @@ import Header from "~/components/header.vue";
 import Footer from "~/components/footer.vue";
 
 @Component({
-  name: "default-layout",
+  name: "BaseLayout",
   components: { Header, Footer },
   fetchOnServer: false,
   data() {
@@ -30,9 +30,7 @@ import Footer from "~/components/footer.vue";
     this.copyrights = copyrights;
   },
 })
-class DefaultLayout extends Vue {
-  // headers?: string[]
-}
-export default DefaultLayout;
+class BaseLayout extends Vue {}
+export default BaseLayout;
 </script>
 <style lang="scss" scoped></style>

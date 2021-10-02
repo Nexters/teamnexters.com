@@ -12,7 +12,7 @@ import Header from "~/components/header.vue";
 import Footer from "~/components/footer.vue";
 
 @Component({
-  name: "default-layout",
+  name: "DefaultLayout",
   components: { Header, Footer },
   fetchOnServer: false,
   data() {
