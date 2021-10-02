@@ -259,7 +259,7 @@ export default defineComponent({
 
 @include m-c1 {
   .contents {
-    width: 327px;
+    padding: 0 24px 0 24px;
     margin: 0 auto 0 auto;
     .title {
       display: flex;
