@@ -1,5 +1,5 @@
 <template>
-  <div>hi</div>
+  <div class="container"></div>
 </template>
 
 <script lang="ts">
@@ -8,4 +8,6 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+@import "~/assets/css/_device.scss";
+</style>

@@ -2,7 +2,7 @@
   <div class="background">
     <Header :headers="headers" :is-white="true"></Header>
     <nuxt />
-    <Footer :items="items" :copyrights="copyrights"></Footer>
+    <Footer :items="items" :copyrights="copyrights" :is-white="true"></Footer>
   </div>
 </template>
 
