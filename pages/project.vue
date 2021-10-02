@@ -347,7 +347,7 @@ export default defineComponent({
       .total {
         font-style: normal;
         font-weight: normal;
-        font-size: 24px;
+        font-size: 16px;
         line-height: 36px;
         color: #000000;
         padding-left: 8px;
