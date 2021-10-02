@@ -6,7 +6,6 @@
     <div class="links">
       <a
         v-for="(link, platform) in project.link"
-        v-if="link"
         :key="platform"
         class="link-item"
         :href="link"

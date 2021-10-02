@@ -63,6 +63,17 @@ export default defineComponent({
 
       const members = _members.split(",").map((member) => member.trim());
       const thumbnail_url = `https://drive.google.com/uc?export=view&id=${thumbnail}`;
+      let link = {};
+      if (android_link.length > 0) {
+        link["android"] = android_link;
+      }
+      if (ios_link.length > 0) {
+        link["ios"] = ios_link;
+      }
+      if (web_link.length > 0) {
+        link["web"] = web_link;
+      }
+
       return {
         idx: idx,
         app_name: app_name,
@@ -73,11 +84,7 @@ export default defineComponent({
         members: members,
         description: description,
         ppt: ppt,
-        link: {
-          android: android_link,
-          ios: ios_link,
-          web: web_link,
-        },
+        link: link,
       };
     },
   },
