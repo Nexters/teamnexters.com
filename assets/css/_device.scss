@@ -2,14 +2,6 @@
 $breakpoint-mobile: 840px;
 $breakpoint-tablet: 1200px;
 
-// m: mobile  d: desktop  c: column
-$breakpoint-m-c1: 692px;
-$breakpoint-m-c2: 840px;
-$breakpoint-d-c1: 904px;
-$breakpoint-d-c2: 1317px;
-// d3는 그 이후
-
-
 // for global
 
 @mixin mobile {
@@ -30,6 +22,13 @@ $breakpoint-d-c2: 1317px;
   }
 }
 
+// m: mobile  d: desktop  c: column
+$breakpoint-m-c1: 692px;
+$breakpoint-m-c2: 840px;
+$breakpoint-d-c1: 904px;
+$breakpoint-d-c2: 1317px;
+// d3는 그 이후
+
 // for projects
 
 @mixin m-c1{
@@ -45,12 +44,17 @@ $breakpoint-d-c2: 1317px;
 }
 
 @mixin d-c1{
-  @media (min-width: #{$breakpoint-d-c1 + 1px}) and (max-width: #{$breakpoint-d-c2}){
+  @media (min-width: #{$breakpoint-m-c2 + 1px}) and (max-width: #{$breakpoint-d-c1}){
     @content;
   }
 }
 
 @mixin d-c2{
+  @media (min-width: #{$breakpoint-d-c1}) and (max-width: #{$breakpoint-d-c2}){
+    @content;
+  }
+}
+@mixin d-c3{
   @media (min-width: #{$breakpoint-d-c2 + 1px}){
     @content;
   }

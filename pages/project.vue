@@ -2,22 +2,18 @@
   <div class="container">
     <div class="contents">
       <div class="title">
-        <div>
-          <h1>Look Around</h1>
-        </div>
-        <div>
+        <h1>Look Around</h1>
+        <div class="has-sup">
           <h1>Our Projects</h1>
-        </div>
-        <div class="total">
-          <p>{{ projects.length }}</p>
+          <sup class="total">{{ projects.length }}</sup>
         </div>
       </div>
-      <div class="projects">
+      <div class="project-container">
         <div v-for="(project, idx) in projects" :key="idx" class="project">
-          <img :src="project.thumbnail" :alt="project.app_name" />
-          <p>{{ project.app_name }}</p>
-          <p>{{ project.th }} | {{ project.year }}</p>
-          <p></p>
+          <img class="thumbnail" :src="project.thumbnail" />
+          <p class="name">{{ project.app_name }}</p>
+          <p class="time">{{ project.th }} | {{ project.year }}</p>
+          <div class="link"></div>
           <br />
         </div>
       </div>
@@ -65,9 +61,10 @@ export default defineComponent({
       ] = columns;
 
       const members = _members.split(",").map((member) => member.trim());
+      const thumbnail_url = `https://drive.google.com/uc?export=view&id=${thumbnail}`;
       return {
         app_name: app_name,
-        thumbnail: thumbnail,
+        thumbnail: thumbnail_url,
         th: th + "th",
         year: year,
         team_name: team_name,
@@ -87,34 +84,302 @@ export default defineComponent({
 @import "~/assets/css/_device.scss";
 .container {
   width: 100%;
+}
+
+@include d-c3 {
   .contents {
+    padding-top: 64px;
     width: 1200px;
     margin: 0 auto 0 auto;
     .title {
       display: flex;
       flex-direction: row;
-      h1:first-child {
-        padding-right: 10px;
-      }
       h1 {
         font-style: normal;
         font-weight: bold;
         font-size: 60px;
         line-height: 90px;
-        /* identical to box height, or 150% */
-
         letter-spacing: -0.02em;
+      }
+      .has-sup {
+        display: flex;
+        padding-left: 16px;
       }
       .total {
         font-style: normal;
         font-weight: normal;
         font-size: 24px;
         line-height: 36px;
-        /* identical to box height, or 150% */
-
-        /* text/default */
-
         color: #000000;
+        padding-left: 16px;
+      }
+    }
+  }
+  .project-container {
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .project {
+      flex-basis: 30%;
+      .thumbnail {
+        width: 378px;
+        height: 207px;
+      }
+      .name {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: -0.02em;
+        color: #000000;
+      }
+      .time {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 21px;
+        color: #777777;
+      }
+    }
+  }
+}
+
+@include d-c2 {
+  .contents {
+    padding-top: 64px;
+    width: 777px;
+    margin: 0 auto 0 auto;
+    .title {
+      display: flex;
+      flex-direction: column;
+      h1 {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 60px;
+        line-height: 90px;
+        letter-spacing: -0.02em;
+      }
+      .has-sup {
+        display: flex;
+      }
+      .total {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 36px;
+        color: #000000;
+        padding-left: 16px;
+      }
+    }
+  }
+  .project-container {
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .project {
+      flex-basis: 49%;
+      .thumbnail {
+        width: 364.5px;
+        height: 205px;
+      }
+      .name {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: -0.02em;
+        color: #000000;
+      }
+      .time {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 21px;
+        color: #777777;
+      }
+    }
+  }
+}
+
+@include d-c1 {
+  .contents {
+    padding-top: 64px;
+    width: 777px;
+    margin: 0 auto 0 auto;
+    .title {
+      display: flex;
+      flex-direction: column;
+      h1 {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 60px;
+        line-height: 90px;
+        letter-spacing: -0.02em;
+      }
+      .has-sup {
+        display: flex;
+      }
+      .total {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 36px;
+        color: #000000;
+        padding-left: 16px;
+      }
+    }
+  }
+  .project-container {
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    flex-direction: column;
+    .project {
+      flex-grow: 1;
+      .thumbnail {
+        width: 100%;
+        height: 401px;
+      }
+      .name {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: -0.02em;
+        color: #000000;
+      }
+      .time {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 21px;
+        color: #777777;
+      }
+    }
+  }
+}
+
+@include m-c2 {
+  .contents {
+    padding-top: 24px;
+    width: 792px;
+    margin: 0 auto 0 auto;
+    .title {
+      display: flex;
+      h1 {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 48px;
+        letter-spacing: -0.02em;
+      }
+      .has-sup {
+        display: flex;
+        padding-left: 10px;
+      }
+      .total {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 36px;
+        color: #000000;
+        padding-left: 8px;
+      }
+    }
+  }
+  .project-container {
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .project {
+      flex-basis: 49%;
+      .thumbnail {
+        width: 100%;
+        height: 216px;
+      }
+      .name {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.02em;
+        color: #000000;
+      }
+      .time {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 18px;
+        color: #777777;
+      }
+    }
+  }
+}
+
+@include m-c1 {
+  .contents {
+    width: 327px;
+    margin: 0 auto 0 auto;
+    .title {
+      padding: 24px 24px 0 24px;
+      display: flex;
+      flex-direction: column;
+      h1 {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 48px;
+        letter-spacing: -0.02em;
+      }
+      .has-sup {
+        display: flex;
+      }
+      .total {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 36px;
+        color: #000000;
+        padding-left: 8px;
+      }
+    }
+  }
+  .project-container {
+    padding: 16px 24px 0 24px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    flex-direction: column;
+    .project {
+      flex-grow: 1;
+      .thumbnail {
+        width: 100%;
+        height: 216px;
+      }
+      .name {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.02em;
+        color: #000000;
+      }
+      .time {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 18px;
+        color: #777777;
       }
     }
   }
