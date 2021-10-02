@@ -331,7 +331,6 @@ export default defineComponent({
     width: 327px;
     margin: 0 auto 0 auto;
     .title {
-      padding: 24px 24px 0 24px;
       display: flex;
       flex-direction: column;
       h1 {
@@ -355,7 +354,6 @@ export default defineComponent({
     }
   }
   .project-container {
-    padding: 16px 24px 0 24px;
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
