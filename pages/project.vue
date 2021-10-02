@@ -13,7 +13,16 @@
           <img class="thumbnail" :src="project.thumbnail" />
           <p class="name">{{ project.app_name }}</p>
           <p class="time">{{ project.th }} | {{ project.year }}</p>
-          <div class="link"></div>
+          <div class="links">
+            <div
+              v-for="(link, platform) in project.link"
+              v-if="link"
+              :key="platform"
+              class="link-item"
+            >
+              {{ platform }}
+            </div>
+          </div>
           <br />
         </div>
       </div>
@@ -71,9 +80,11 @@ export default defineComponent({
         members: members,
         description: description,
         ppt: ppt,
-        android_link: android_link,
-        ios_link: ios_link,
-        web_link: web_link,
+        link: {
+          android: android_link,
+          ios: ios_link,
+          web: web_link,
+        },
       };
     },
   },
@@ -84,6 +95,31 @@ export default defineComponent({
 @import "~/assets/css/_device.scss";
 .container {
   width: 100%;
+}
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.link-item {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: -0.02em;
+
+  color: #000000;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+.link-item:last-child {
+  margin: 0;
 }
 
 @include d-c3 {
@@ -122,11 +158,13 @@ export default defineComponent({
     box-sizing: border-box;
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 48px;
     .project {
-      flex-basis: 30%;
+      flex-basis: 368px;
       .thumbnail {
-        width: 378px;
+        width: 100%;
         height: 207px;
+        border-radius: 16px;
       }
       .name {
         font-style: normal;
@@ -142,6 +180,9 @@ export default defineComponent({
         font-size: 14px;
         line-height: 21px;
         color: #777777;
+      }
+      .links {
+        padding-top: 24px;
       }
     }
   }
@@ -182,11 +223,13 @@ export default defineComponent({
     box-sizing: border-box;
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 48px;
     .project {
-      flex-basis: 49%;
+      flex-basis: 364.5px;
       .thumbnail {
-        width: 364.5px;
+        width: 100%;
         height: 205px;
+        border-radius: 16px;
       }
       .name {
         font-style: normal;
@@ -202,6 +245,9 @@ export default defineComponent({
         font-size: 14px;
         line-height: 21px;
         color: #777777;
+      }
+      .links {
+        padding-top: 24px;
       }
     }
   }
@@ -246,6 +292,7 @@ export default defineComponent({
       .thumbnail {
         width: 100%;
         height: 401px;
+        border-radius: 16px;
       }
       .name {
         font-style: normal;
@@ -261,6 +308,9 @@ export default defineComponent({
         font-size: 14px;
         line-height: 21px;
         color: #777777;
+      }
+      .links {
+        padding-top: 24px;
       }
     }
   }
@@ -301,13 +351,16 @@ export default defineComponent({
     box-sizing: border-box;
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 24px;
     .project {
-      flex-basis: 49%;
+      flex-basis: 384px;
       .thumbnail {
         width: 100%;
         height: 216px;
+        border-radius: 8px;
       }
       .name {
+        padding-top: 8px;
         font-style: normal;
         font-weight: bold;
         font-size: 16px;
@@ -316,11 +369,15 @@ export default defineComponent({
         color: #000000;
       }
       .time {
+        padding-top: 8px;
         font-style: normal;
         font-weight: normal;
         font-size: 12px;
         line-height: 18px;
         color: #777777;
+      }
+      .links {
+        padding-top: 16px;
       }
     }
   }
@@ -363,8 +420,10 @@ export default defineComponent({
       .thumbnail {
         width: 100%;
         height: 216px;
+        border-radius: 8px;
       }
       .name {
+        padding-top: 8px;
         font-style: normal;
         font-weight: bold;
         font-size: 16px;
@@ -373,11 +432,15 @@ export default defineComponent({
         color: #000000;
       }
       .time {
+        padding-top: 8px;
         font-style: normal;
         font-weight: normal;
         font-size: 12px;
         line-height: 18px;
         color: #777777;
+      }
+      .links {
+        padding-top: 16px;
       }
     }
   }
