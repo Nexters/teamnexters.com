@@ -6,7 +6,7 @@
         <img class="text-logo" :src="txt_logo" alt="NEXTERS_TEXT_LOGO" />
       </nuxt-link>
       <div class="menu" @click="menuClose = !menuClose">
-        <img src="~/assets/img/ic_menu.png" alt="ic_menu" />
+        <img :src="ic_menu" alt="ic_menu" />
       </div>
     </div>
     <div
@@ -49,6 +49,9 @@ export default defineComponent({
       txt_logo: props.isWhite
         ? require("~/assets/img/nexters_txt_logo.png")
         : require("~/assets/img/nexters_txt_logo_black.png"),
+      ic_menu: props.isWhite
+        ? require("~/assets/img/ic_menu.png")
+        : require("~/assets/img/ic_menu_black.png"),
     };
   },
   data() {
