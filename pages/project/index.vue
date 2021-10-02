@@ -9,23 +9,12 @@
         </div>
       </div>
       <div class="project-container">
-        <div v-for="(project, idx) in projects" :key="idx" class="project">
-          <img class="thumbnail" :src="project.thumbnail" />
-          <p class="name">{{ project.app_name }}</p>
-          <p class="time">{{ project.th }} | {{ project.year }}</p>
-          <div class="links">
-            <a
-              v-for="(link, platform) in project.link"
-              v-if="link"
-              :key="platform"
-              class="link-item"
-              :href="link"
-            >
-              {{ platform }}
-            </a>
-          </div>
-          <br />
-        </div>
+        <ProjectCard
+          v-for="project in projects"
+          :key="project.idx"
+          class="project"
+          :project="project"
+        />
       </div>
     </div>
   </div>
@@ -36,6 +25,7 @@ import { defineComponent } from "@vue/composition-api";
 
 export default defineComponent({
   name: "Project",
+  components: ["ProjectCard"],
   fetchOnServer: false,
   setup() {
     return {};
@@ -53,10 +43,11 @@ export default defineComponent({
   methods: {
     // Project object 생성자
     Project: function (columns) {
-      if (columns.length != 11) {
+      if (columns.length != 12) {
         console.error(`프로젝트의 컬럼 수를 확인하세요: ${columns}`);
       }
       const [
+        idx,
         app_name,
         thumbnail,
         th,
@@ -73,6 +64,7 @@ export default defineComponent({
       const members = _members.split(",").map((member) => member.trim());
       const thumbnail_url = `https://drive.google.com/uc?export=view&id=${thumbnail}`;
       return {
+        idx: idx,
         app_name: app_name,
         thumbnail: thumbnail_url,
         th: th + "th",
@@ -96,34 +88,6 @@ export default defineComponent({
 @import "~/assets/css/_device.scss";
 .container {
   width: 100%;
-}
-.links {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  a {
-    text-decoration: none;
-  }
-}
-.link-item {
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 24px;
-  text-align: center;
-  letter-spacing: -0.02em;
-
-  color: #000000;
-  width: 100%;
-  height: 45px;
-  line-height: 45px;
-  text-align: center;
-  border: 1px solid #dddddd;
-  border-radius: 8px;
-  margin-right: 8px;
-  cursor: pointer;
-}
-.link-item:last-child {
-  margin: 0;
 }
 
 @include d-c3 {
@@ -165,29 +129,6 @@ export default defineComponent({
     gap: 48px;
     .project {
       flex-basis: 368px;
-      .thumbnail {
-        width: 100%;
-        height: 207px;
-        border-radius: 16px;
-      }
-      .name {
-        font-style: normal;
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 36px;
-        letter-spacing: -0.02em;
-        color: #000000;
-      }
-      .time {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 21px;
-        color: #777777;
-      }
-      .links {
-        padding-top: 24px;
-      }
     }
   }
 }
@@ -230,29 +171,6 @@ export default defineComponent({
     gap: 48px;
     .project {
       flex-basis: 364.5px;
-      .thumbnail {
-        width: 100%;
-        height: 205px;
-        border-radius: 16px;
-      }
-      .name {
-        font-style: normal;
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 36px;
-        letter-spacing: -0.02em;
-        color: #000000;
-      }
-      .time {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 21px;
-        color: #777777;
-      }
-      .links {
-        padding-top: 24px;
-      }
     }
   }
 }
@@ -293,29 +211,6 @@ export default defineComponent({
     flex-direction: column;
     .project {
       flex-grow: 1;
-      .thumbnail {
-        width: 100%;
-        height: 401px;
-        border-radius: 16px;
-      }
-      .name {
-        font-style: normal;
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 36px;
-        letter-spacing: -0.02em;
-        color: #000000;
-      }
-      .time {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 21px;
-        color: #777777;
-      }
-      .links {
-        padding-top: 24px;
-      }
     }
   }
 }
@@ -358,31 +253,6 @@ export default defineComponent({
     gap: 24px;
     .project {
       flex-basis: 384px;
-      .thumbnail {
-        width: 100%;
-        height: 216px;
-        border-radius: 8px;
-      }
-      .name {
-        padding-top: 8px;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: -0.02em;
-        color: #000000;
-      }
-      .time {
-        padding-top: 8px;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 12px;
-        line-height: 18px;
-        color: #777777;
-      }
-      .links {
-        padding-top: 16px;
-      }
     }
   }
 }
@@ -419,33 +289,9 @@ export default defineComponent({
     justify-content: space-between;
     box-sizing: border-box;
     flex-direction: column;
+    gap: 24px;
     .project {
       flex-grow: 1;
-      .thumbnail {
-        width: 100%;
-        height: 216px;
-        border-radius: 8px;
-      }
-      .name {
-        padding-top: 8px;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: -0.02em;
-        color: #000000;
-      }
-      .time {
-        padding-top: 8px;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 12px;
-        line-height: 18px;
-        color: #777777;
-      }
-      .links {
-        padding-top: 16px;
-      }
     }
   }
 }
