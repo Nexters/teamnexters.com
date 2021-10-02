@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header :headers="headers" :is-white="false"></Header>
+    <Header :headers="headers"></Header>
     <nuxt />
     <Footer :items="items" :copyrights="copyrights"></Footer>
   </div>

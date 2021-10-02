@@ -1,10 +1,9 @@
 {
-  "title": "navbar",
-  "categories": [
-    { "slug": "main" },
-    { "slug": "about" },
-    { "slug": "project" },
-    { "slug": "recruitment" },
-    { "slug": "contact" }
+  "title": "header",
+  "headers": [
+    { "name": "About", "href": "about" },
+    { "name": "Project", "href": "project" },
+    { "name": "Recruitment", "href": "recruitment" },
+    { "name": "Contact", "href": "contact" }
   ]
 }

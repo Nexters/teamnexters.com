@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <Header :headers="headers" :is-white="false"></Header>
+  <div class="background">
+    <Header :headers="headers" :is-white="true"></Header>
     <nuxt />
     <Footer :items="items" :copyrights="copyrights"></Footer>
   </div>
@@ -35,4 +35,17 @@ class DefaultLayout extends Vue {
 }
 export default DefaultLayout;
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.background {
+  display: flex;
+  flex-direction: column;
+  background-image: url("~/assets/img/main_bg.png");
+  background-size: cover;
+  background-position: 100%;
+  width: 100%;
+  height: 100vh;
+}
+footer {
+  color: #ffffff;
+}
+</style>
