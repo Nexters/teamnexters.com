@@ -122,7 +122,6 @@ footer {
   @include desktop {
     display: flex;
     align-items: center;
-    padding-left: 64px;
     width: 1200px;
     margin: auto auto 32px auto;
 
