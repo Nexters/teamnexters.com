@@ -14,14 +14,15 @@
           <p class="name">{{ project.app_name }}</p>
           <p class="time">{{ project.th }} | {{ project.year }}</p>
           <div class="links">
-            <div
+            <a
               v-for="(link, platform) in project.link"
               v-if="link"
               :key="platform"
               class="link-item"
+              :href="link"
             >
               {{ platform }}
-            </div>
+            </a>
           </div>
           <br />
         </div>
@@ -100,6 +101,9 @@ export default defineComponent({
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  a {
+    text-decoration: none;
+  }
 }
 .link-item {
   font-weight: bold;
