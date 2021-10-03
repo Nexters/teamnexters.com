@@ -108,8 +108,10 @@ export default defineComponent({
 }
 .thumbnail {
   width: 100%;
+
   img {
     width: 100%;
+    max-height: 445px;
     border-radius: 8px;
   }
 }
