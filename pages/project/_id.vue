@@ -67,6 +67,10 @@ export default defineComponent({
   height: calc(100% - 56px);
   display: flex;
   flex-direction: column;
+  animation: fadein 3s;
+  -moz-animation: fadein 3s; /* Firefox */
+  -webkit-animation: fadein 3s; /* Safari and Chrome */
+  -o-animation: fadein 3s; /* Opera */
 }
 .contents {
   padding: 24px;

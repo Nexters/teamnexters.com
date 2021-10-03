@@ -106,8 +106,13 @@ export default defineComponent({
 * {
   font-family: Spoqa Han Sans Neo;
 }
+
 .container {
   width: 100%;
+  animation: fadein 3s;
+  -moz-animation: fadein 3s; /* Firefox */
+  -webkit-animation: fadein 3s; /* Safari and Chrome */
+  -o-animation: fadein 3s; /* Opera */
 }
 
 @include d-c3 {

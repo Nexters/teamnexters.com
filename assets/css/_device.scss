@@ -1,3 +1,39 @@
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadein {
+  /* Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  /* Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 // Breakpoints
 $breakpoint-mobile: 840px;
 $breakpoint-tablet: 1200px;
@@ -31,31 +67,31 @@ $breakpoint-d-c2: 1317px;
 
 // for projects
 
-@mixin m-c1{
-  @media (min-width: 0px) and (max-width: #{$breakpoint-m-c1}){
+@mixin m-c1 {
+  @media (min-width: 0px) and (max-width: #{$breakpoint-m-c1}) {
     @content;
   }
 }
 
-@mixin m-c2{
-  @media (min-width: #{$breakpoint-m-c1 + 1px}) and (max-width: #{$breakpoint-m-c2}){
+@mixin m-c2 {
+  @media (min-width: #{$breakpoint-m-c1 + 1px}) and (max-width: #{$breakpoint-m-c2}) {
     @content;
   }
 }
 
-@mixin d-c1{
-  @media (min-width: #{$breakpoint-m-c2 + 1px}) and (max-width: #{$breakpoint-d-c1}){
+@mixin d-c1 {
+  @media (min-width: #{$breakpoint-m-c2 + 1px}) and (max-width: #{$breakpoint-d-c1}) {
     @content;
   }
 }
 
-@mixin d-c2{
-  @media (min-width: #{$breakpoint-d-c1}) and (max-width: #{$breakpoint-d-c2}){
+@mixin d-c2 {
+  @media (min-width: #{$breakpoint-d-c1}) and (max-width: #{$breakpoint-d-c2}) {
     @content;
   }
 }
-@mixin d-c3{
-  @media (min-width: #{$breakpoint-d-c2 + 1px}){
+@mixin d-c3 {
+  @media (min-width: #{$breakpoint-d-c2 + 1px}) {
     @content;
   }
 }

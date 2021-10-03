@@ -35,6 +35,10 @@ export default defineComponent({
   color: #ffffff;
   display: flex;
   margin: auto;
+  animation: fadein 3s;
+  -moz-animation: fadein 3s; /* Firefox */
+  -webkit-animation: fadein 3s; /* Safari and Chrome */
+  -o-animation: fadein 3s; /* Opera */
 
   @include mobile {
     .slogan {
