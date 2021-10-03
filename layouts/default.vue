@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="background">
     <Header :headers="headers" :is-white="false"></Header>
     <nuxt />
     <Footer :items="items" :copyrights="copyrights"></Footer>
@@ -12,7 +12,7 @@ import Header from "~/components/header.vue";
 import Footer from "~/components/footer.vue";
 
 @Component({
-  name: "default-layout",
+  name: "DefaultLayout",
   components: { Header, Footer },
   fetchOnServer: false,
   data() {
@@ -35,4 +35,10 @@ class DefaultLayout extends Vue {
 }
 export default DefaultLayout;
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.background {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+</style>

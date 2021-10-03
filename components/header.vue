@@ -2,15 +2,11 @@
   <nav>
     <div :class="{ 'nav-header': true, overlay: !menuClose }">
       <nuxt-link to="/" class="logo">
-        <img src="~/assets/img/nexters_img_logo.png" alt="NEXTERS_IMAGE_LOGO" />
-        <img
-          class="text-logo"
-          src="~/assets/img/nexters_txt_logo.png"
-          alt="NEXTERS_TEXT_LOGO"
-        />
+        <img :src="img_logo" alt="NEXTERS_IMAGE_LOGO" />
+        <img class="text-logo" :src="txt_logo" alt="NEXTERS_TEXT_LOGO" />
       </nuxt-link>
       <div class="menu" @click="menuClose = !menuClose">
-        <img src="~/assets/img/ic_menu.png" alt="ic_menu" />
+        <img :src="ic_menu" alt="ic_menu" />
       </div>
     </div>
     <div
@@ -45,8 +41,18 @@ export default defineComponent({
       default: false,
     },
   },
-  setup() {
-    return {};
+  setup(props) {
+    return {
+      img_logo: props.isWhite
+        ? require("~/assets/img/nexters_img_logo.png")
+        : require("~/assets/img/nexters_img_logo_black.png"),
+      txt_logo: props.isWhite
+        ? require("~/assets/img/nexters_txt_logo.png")
+        : require("~/assets/img/nexters_txt_logo_black.png"),
+      ic_menu: props.isWhite
+        ? require("~/assets/img/ic_menu.png")
+        : require("~/assets/img/ic_menu_black.png"),
+    };
   },
   data() {
     return {
@@ -58,6 +64,9 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
+* {
+  font-family: Spoqa Han Sans Neo;
+}
 
 nav {
   display: flex;

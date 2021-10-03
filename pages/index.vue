@@ -26,12 +26,19 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
+* {
+  font-family: Spoqa Han Sans Neo;
+}
 
 .container {
   width: 100%;
   color: #ffffff;
   display: flex;
   margin: auto;
+  animation: fadein 3s;
+  -moz-animation: fadein 3s; /* Firefox */
+  -webkit-animation: fadein 3s; /* Safari and Chrome */
+  -o-animation: fadein 3s; /* Opera */
 
   @include mobile {
     .slogan {

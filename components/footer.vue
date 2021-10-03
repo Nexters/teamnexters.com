@@ -4,10 +4,7 @@
       <div class="sns">
         <ul v-for="item in items" :key="item.name">
           <a :href="item.href">
-            <img
-              :src="require(`~/assets/img/${item.name}.png`)"
-              :alt="item.name"
-            />
+            <img :src="sns_icon[item.name]" :alt="item.name" />
           </a>
         </ul>
       </div>
@@ -32,15 +29,36 @@ export default defineComponent({
       type: String,
       required: true,
     },
+    isWhite: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
-  setup() {
-    return {};
+  setup(props) {
+    return {
+      sns_icon: {
+        facebook: props.isWhite
+          ? require("~/assets/img/facebook.png")
+          : require("~/assets/img/facebook_black.png"),
+        github: props.isWhite
+          ? require("~/assets/img/github.png")
+          : require("~/assets/img/github_black.png"),
+        instagram: props.isWhite
+          ? require("~/assets/img/instagram.png")
+          : require("~/assets/img/instagram_black.png"),
+      },
+    };
   },
 });
 </script>
 
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
+
+* {
+  font-family: Spoqa Han Sans Neo;
+}
 
 footer {
   margin-top: auto;
@@ -108,7 +126,6 @@ footer {
   @include desktop {
     display: flex;
     align-items: center;
-    padding-left: 64px;
     width: 1200px;
     margin: auto auto 32px auto;
 
