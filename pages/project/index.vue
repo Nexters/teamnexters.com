@@ -106,6 +106,9 @@ export default defineComponent({
 * {
   font-family: Spoqa Han Sans Neo;
 }
+.project {
+  border-radius: 8px;
+}
 
 .container {
   width: 100%;
@@ -154,6 +157,7 @@ export default defineComponent({
     gap: 48px;
     .project {
       flex-basis: 368px;
+      border-radius: 8px;
     }
   }
 }

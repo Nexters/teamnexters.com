@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <nuxt-link :to="`project/${project.idx}`">
       <img class="thumbnail" :src="project.thumbnail" />
       <p class="name">{{ project.app_name }}</p>
@@ -37,6 +37,9 @@ export default defineComponent({
 * {
   font-family: Spoqa Han Sans Neo;
 }
+.container {
+  box-shadow: 0px 2px 32px rgba(0, 0, 0, 0.12);
+}
 .name {
   cursor: pointer;
 }
@@ -72,8 +75,17 @@ a {
   .thumbnail {
     width: 100%;
     height: 207px;
-    border-radius: 16px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
   }
+  .name,
+  .time {
+    margin-left: 16px;
+  }
+  .links {
+    margin: 0 16px 16px 16px;
+  }
+
   .name {
     font-style: normal;
     font-weight: bold;
@@ -100,8 +112,17 @@ a {
     .thumbnail {
       width: 100%;
       height: 205px;
-      border-radius: 16px;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
     }
+    .name,
+    .time {
+      margin-left: 16px;
+    }
+    .links {
+      margin: 0 16px 16px 16px;
+    }
+
     .name {
       font-style: normal;
       font-weight: bold;
@@ -127,7 +148,15 @@ a {
   .thumbnail {
     width: 100%;
     height: 401px;
-    border-radius: 16px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+  .name,
+  .time {
+    margin-left: 16px;
+  }
+  .links {
+    margin: 0 16px 16px 16px;
   }
   .name {
     font-style: normal;
@@ -153,7 +182,15 @@ a {
   .thumbnail {
     width: 100%;
     height: 216px;
-    border-radius: 8px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+  .name,
+  .time {
+    margin-left: 16px;
+  }
+  .links {
+    margin: 0 16px 16px 16px;
   }
   .name {
     padding-top: 8px;
@@ -181,7 +218,15 @@ a {
   .thumbnail {
     width: 100%;
     height: 216px;
-    border-radius: 8px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+  .name,
+  .time {
+    margin-left: 16px;
+  }
+  .links {
+    margin: 0 16px 16px 16px;
   }
   .name {
     padding-top: 8px;
