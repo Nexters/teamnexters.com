@@ -1,9 +1,10 @@
 import { Model } from "@vuex-orm/core";
 export default class Project extends Model {
   static entity = "projects";
+  static primaryKey = "idx";
   static fields() {
     return {
-      idx: this.uid(),
+      idx: this.attr(null),
       app_name: this.string(),
       thumbnail: this.string(),
       th: this.string(),

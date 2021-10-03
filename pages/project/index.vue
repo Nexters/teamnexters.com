@@ -22,10 +22,10 @@
 
 <script>
 import { defineComponent } from "@vue/composition-api";
+import Project from "~/models/project";
 
 export default defineComponent({
   name: "Project",
-  components: ["ProjectCard"],
   fetchOnServer: false,
   setup() {
     return {};
@@ -34,13 +34,21 @@ export default defineComponent({
     return { projects: [] };
   },
   async fetch() {
-    const { results } = await this.$content("projects").only("results").fetch();
-    const { rawData } = results[0].result;
-    console.log(rawData);
-    const [_, ...projects] = rawData;
-    this.projects = projects.map((project) => this.Project(project));
+    const _projects = await this.FetchAll();
+    Project.create({ data: _projects });
+    this.projects = _projects;
   },
   methods: {
+    FetchAll: async function () {
+      const { results } = await this.$content("projects")
+        .only("results")
+        .fetch();
+      const { rawData } = results[0].result;
+      const [_, ...projects] = rawData;
+      console.debug(_);
+      const _projects = projects.map((project) => this.Project(project));
+      return _projects;
+    },
     // Project object 생성자
     Project: function (columns) {
       if (columns.length != 12) {
@@ -93,6 +101,9 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
+* {
+  font-family: Spoqa Han Sans Neo;
+}
 .container {
   width: 100%;
 }

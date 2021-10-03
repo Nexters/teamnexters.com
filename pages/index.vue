@@ -26,6 +26,9 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
+* {
+  font-family: Spoqa Han Sans Neo;
+}
 
 .container {
   width: 100%;

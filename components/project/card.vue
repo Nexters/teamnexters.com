@@ -1,8 +1,10 @@
 <template>
   <div>
-    <img class="thumbnail" :src="project.thumbnail" />
-    <p class="name">{{ project.app_name }}</p>
-    <p class="time">{{ project.th }} | {{ project.year }}</p>
+    <nuxt-link :to="`project/${project.idx}`">
+      <img class="thumbnail" :src="project.thumbnail" />
+      <p class="name">{{ project.app_name }}</p>
+      <p class="time">{{ project.th }} | {{ project.year }}</p>
+    </nuxt-link>
     <div class="links">
       <a
         v-for="(link, platform) in project.link"
@@ -32,14 +34,19 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
-
+* {
+  font-family: Spoqa Han Sans Neo;
+}
+.name {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
 .links {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  a {
-    text-decoration: none;
-  }
 }
 .link-item {
   font-weight: bold;

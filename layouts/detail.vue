@@ -12,4 +12,8 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
+<style class="scss" scoped>
+.background {
+  height: 100vh;
+}
+</style>
