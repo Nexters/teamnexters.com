@@ -5,7 +5,9 @@
         <h1>Look Around</h1>
         <div class="has-sup">
           <h1>Our Projects</h1>
-          <sup class="total">{{ projects.length }}</sup>
+          <sup v-if="projects.length > 0" class="total">{{
+            projects.length
+          }}</sup>
         </div>
       </div>
       <div class="project-container">
