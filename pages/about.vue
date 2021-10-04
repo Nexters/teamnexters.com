@@ -319,22 +319,6 @@ export default defineComponent({
         }
       }
     }
-    // .information {
-    //   display: flex;
-    //   flex-direction: column;
-    //   gap: 48px;
-    //   .cards {
-    //     overflow-x: auto;
-    //     scrollbar-width: none;
-    //     -ms-overflow-style: none;
-    //     -webkit-overflow-scrolling: touch;
-    //     &::-webkit-scrollbar {
-    //       display: none;
-    //     }
-    //     display: flex;
-    //     flex-direction: row;
-    //   }
-    // }
     .activity-row {
       display: flex;
     }
