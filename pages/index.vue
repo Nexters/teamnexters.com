@@ -83,40 +83,41 @@ export default defineComponent({
   }
   @include tablet {
     .slogan {
-      width: 327px;
-      height: 208px;
-      padding: 24px;
+      width: 713px;
+      height: 438px;
+      margin: auto;
+      padding: 64px;
       .title {
         font-style: normal;
         font-weight: 900;
-        font-size: 40px;
-        line-height: 47.73px;
+        font-size: 100px;
+        line-height: 119px;
       }
       .description {
-        margin-top: 16px;
+        margin-top: 32px;
         font-style: normal;
         font-weight: normal;
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 24px;
+        line-height: 36px;
         letter-spacing: -0.02em;
       }
       .quick-link {
         display: flex;
         flex-direction: row;
         align-content: center;
-        padding-top: 40px;
+        padding-top: 86px;
 
         font-style: normal;
         font-weight: bold;
-        font-size: 16px;
+        font-size: 24px;
         line-height: 24px;
         letter-spacing: -0.02em;
 
         cursor: pointer;
 
         img {
-          width: 16px;
-          height: 16px;
+          width: 24px;
+          height: 24px;
           margin: auto 0 auto 8px;
         }
       }

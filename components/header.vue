@@ -69,6 +69,7 @@ export default defineComponent({
 }
 
 nav {
+  z-index: 999;
   display: flex;
   align-items: center;
   height: 73px;
