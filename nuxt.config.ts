@@ -23,7 +23,7 @@ const config: NuxtConfig = {
       }),
     },
   },
-  buildModules: ["@nuxt/typescript-build"],
+  buildModules: ["@nuxt/typescript-build", "@nuxtjs/svg"],
   plugins: ["~/plugins/composition-api"],
   css: [
     "~/assets/css/reset.css",
