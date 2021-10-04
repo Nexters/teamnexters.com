@@ -437,6 +437,7 @@ export default defineComponent({
       }
     }
     .activities {
+      margin-bottom: 64px;
       display: flex;
       flex-direction: column;
       width: 100%;
