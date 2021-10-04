@@ -3,8 +3,7 @@
     <div class="slogan">
       <h1 class="slogan-text">{{ slogan }}</h1>
     </div>
-    <div class="contents">
-      <!-- horizontal scroll -->
+    <div class="info-row">
       <div class="information">
         <h2 class="title">{{ info.title }}</h2>
         <div class="cards">
@@ -18,6 +17,9 @@
           />
         </div>
       </div>
+    </div>
+    <div class="contents">
+      <!-- horizontal scroll -->
       <div class="activities">
         <h2 class="title">{{ act.title }}</h2>
         <div class="cards">
@@ -165,13 +167,138 @@ export default defineComponent({
 
     color: #000000;
   }
+  .info-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 120px;
+  }
   .information {
+    width: 1200px;
     display: flex;
     flex-direction: column;
     gap: 48px;
     .cards {
       display: flex;
       justify-content: center;
+      gap: 48px;
+    }
+  }
+  .activities {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    .cards {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      box-sizing: border-box;
+      flex-wrap: wrap;
+      gap: 48px;
+    }
+  }
+  .reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    .cards {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      box-sizing: border-box;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .more {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 120px;
+      .lead-more {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 155px;
+        height: 68px;
+        cursor: pointer;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: -0.02em;
+        color: #777777;
+      }
+    }
+  }
+}
+@include tablet {
+  .contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+    width: 713px;
+    margin: 0 auto 0 auto;
+  }
+  .slogan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 64px;
+    width: 100%;
+    height: 809px;
+    background: #f6f6f6;
+    margin-bottom: 120px;
+    .slogan-text {
+      white-space: pre-wrap;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 36px;
+      /* or 150% */
+
+      text-align: center;
+      letter-spacing: -0.02em;
+
+      /* text/sub */
+
+      color: #777777;
+    }
+  }
+  .title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 90px;
+    letter-spacing: -0.02em;
+    white-space: pre-wrap;
+
+    color: #000000;
+  }
+  .info-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 120px;
+  }
+  .information {
+    display: flex;
+    width: 713px;
+    flex-direction: column;
+    gap: 48px;
+    .cards {
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      -webkit-overflow-scrolling: touch;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      display: flex;
+      flex-direction: row;
       gap: 48px;
     }
   }
