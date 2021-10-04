@@ -31,19 +31,13 @@
 
 <script>
 import { defineComponent } from "@vue/composition-api";
-// import Project from "~/models/project";
 export default defineComponent({
   name: "ProjectDetail",
   layout: "detail",
   async asyncData({ $content, params }) {
-    console.debug(params);
-    // console.log(extra);
-    // 곧장 바로 들어온 경우 불러오지 못하므로 content에서 불러오도록 처리가 필요하다.
-    // const project = Project.find(id);
-    const [project] = await $content("_projects")
+    const [project] = await $content("projects")
       .where({ idx: params.id })
       .fetch();
-    console.log(project);
     return {
       project: project,
     };

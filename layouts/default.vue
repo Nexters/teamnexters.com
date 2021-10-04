@@ -8,12 +8,9 @@
 
 <script>
 import { Component, Vue } from "nuxt-property-decorator";
-import Header from "~/components/header.vue";
-import Footer from "~/components/footer.vue";
 
 @Component({
   name: "DefaultLayout",
-  components: { Header, Footer },
   fetchOnServer: false,
   data() {
     return { headers: [], items: [], copyrights: "" };
