@@ -1,5 +1,5 @@
 <template>
-  <div class="container" :style="`background: ${thumbnail}`">
+  <div class="activity-container" :style="`background: ${thumbnail}`">
     <div class="contents">
       <p class="description">{{ description }}</p>
       <p class="title">{{ title }}</p>
@@ -27,18 +27,18 @@ export default ActivityCard;
 }
 
 @include desktop {
-  .container {
+  .activity-container {
     border-radius: 16px;
     width: 576px;
     height: 324px;
     background: black;
     .contents {
+      padding: 32px;
       display: flex;
       flex-direction: column;
-      height: 100%;
+      height: calc(100% - 64px);
       .description {
         white-space: pre-wrap;
-        padding: 32px;
         font-style: normal;
         font-weight: bold;
         font-size: 32px;
@@ -54,7 +54,6 @@ export default ActivityCard;
         font-size: 18px;
         line-height: 27px;
         letter-spacing: -0.02em;
-        padding: 32px;
 
         color: #ffffff;
       }
@@ -62,18 +61,18 @@ export default ActivityCard;
   }
 }
 @include tablet {
-  .container {
+  .activity-container {
     border-radius: 16px;
-    width: 332px;
+    width: calc(50% - 24px);
     height: 324px;
     background: black;
     .contents {
+      padding: 32px;
       display: flex;
       flex-direction: column;
-      height: 100%;
+      height: calc(100% - 64px);
       .description {
         white-space: pre-wrap;
-        padding: 32px;
         font-style: normal;
         font-weight: bold;
         font-size: 32px;
@@ -89,15 +88,13 @@ export default ActivityCard;
         font-size: 18px;
         line-height: 27px;
         letter-spacing: -0.02em;
-        padding: 32px;
-
         color: #ffffff;
       }
     }
   }
 }
 @include mobile {
-  .container {
+  .activity-container {
     border-radius: 8px;
   }
 }

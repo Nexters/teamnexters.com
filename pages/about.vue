@@ -1,55 +1,61 @@
 <template>
-  <div class="container">
+  <div class="about-container">
     <div class="slogan">
       <h1 class="slogan-text">{{ slogan }}</h1>
     </div>
-    <div class="info-row">
-      <div class="information">
+    <div class="info-table">
+      <div class="info-row">
         <h2 class="title">{{ info.title }}</h2>
-        <div class="cards">
-          <!-- <pre>{{ informations }}</pre> -->
-          <InfoCard
-            v-for="item in info.items"
-            :key="item.title"
-            :title="item.title"
-            :value="item.value"
-            :description="item.description"
-          />
+        <div class="information">
+          <div class="cards">
+            <!-- <pre>{{ informations }}</pre> -->
+            <InfoCard
+              v-for="item in info.items"
+              :key="item.title"
+              :title="item.title"
+              :value="item.value"
+              :description="item.description"
+            />
+          </div>
         </div>
       </div>
     </div>
     <div class="contents">
       <!-- horizontal scroll -->
-      <div class="activities">
-        <h2 class="title">{{ act.title }}</h2>
-        <div class="cards">
-          <ActivityCard
-            v-for="item in act.items"
-            :key="item.title"
-            :description="item.description"
-            :title="item.title"
-            :thumbnail="item.thumbnail"
-          />
+      <div class="activity-row">
+        <div class="activities">
+          <h2 class="title">{{ act.title }}</h2>
+          <div class="cards">
+            <ActivityCard
+              v-for="item in act.items"
+              :key="item.title"
+              :description="item.description"
+              :title="item.title"
+              :thumbnail="item.thumbnail"
+            />
+          </div>
         </div>
       </div>
-      <div class="reviews">
-        <h2 class="title">{{ review.title }}</h2>
-        <div class="cards">
-          <ReviewCard
-            v-for="item in review.items"
-            :key="item.title"
-            :th="item.th"
-            :th-background-color="item.thBackgroundColor"
-            :th-text-color="item.thTextColor"
-            :title="item.title"
-            :author="item.author"
-            :href="item.href"
-          />
-        </div>
-        <div class="more">
-          <div class="lead-more">
-            <p>Lead more</p>
-            <img src="~/assets/img/ic_down.png" />
+      <div class="review-row">
+        <div class="reviews">
+          <h2 class="title">{{ review.title }}</h2>
+          <div class="cards">
+            <ReviewCard
+              v-for="item in review.items"
+              :key="item.title"
+              :th="item.th"
+              :th-background-color="item.thBackgroundColor"
+              :th-text-color="item.thTextColor"
+              :title="item.title"
+              :author="item.author"
+              :href="item.href"
+            />
+          </div>
+          <div class="more">
+            <div class="lead-more">
+              <p>Lead more</p>
+              <img src="~/assets/img/ic_down.png" />
+            </div>
           </div>
         </div>
       </div>
@@ -115,236 +121,380 @@ export default defineComponent({
 * {
   font-family: Spoqa Han Sans Neo;
 }
-.container {
+.about-container {
   animation: fadein 3s;
   -moz-animation: fadein 3s; /* Firefox */
   -webkit-animation: fadein 3s; /* Safari and Chrome */
   -o-animation: fadein 3s; /* Opera */
-}
-@include desktop {
-  .contents {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 120px;
-    width: 1200px;
-    margin: 0 auto 0 auto;
-  }
-  .slogan {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 64px;
-    width: 100%;
-    height: 809px;
-    background: #f6f6f6;
-    margin-bottom: 120px;
-    h1 {
-      width: 1200px;
-      white-space: pre-wrap;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 24px;
-      line-height: 36px;
-      /* or 150% */
-
-      text-align: center;
-      letter-spacing: -0.02em;
-
-      /* text/sub */
-
-      color: #777777;
+  @include desktop {
+    .contents {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 120px;
+      width: 100%;
+      margin: 0 auto 0 auto;
     }
-  }
-  .title {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 60px;
-    line-height: 90px;
-    letter-spacing: -0.02em;
-    white-space: pre-wrap;
+    .slogan {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 64px;
+      width: 100%;
+      height: 809px;
+      background: #f6f6f6;
+      margin-bottom: 120px;
+      h1 {
+        width: 1200px;
+        white-space: pre-wrap;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 36px;
+        /* or 150% */
 
-    color: #000000;
-  }
-  .info-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 120px;
-  }
-  .information {
-    width: 1200px;
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-    .cards {
+        text-align: center;
+        letter-spacing: -0.02em;
+
+        /* text/sub */
+
+        color: #777777;
+      }
+    }
+    .title {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 60px;
+      line-height: 90px;
+      letter-spacing: -0.02em;
+      white-space: pre-wrap;
+
+      color: #000000;
+    }
+    .info-table {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 120px;
+      .info-row {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .information {
+        margin-top: 42px;
+        width: 1200px;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        .cards {
+          display: flex;
+          justify-content: center;
+          gap: 48px;
+        }
+      }
+    }
+    .activity-row {
       display: flex;
       justify-content: center;
-      gap: 48px;
     }
-  }
-  .activities {
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-    .cards {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      box-sizing: border-box;
-      flex-wrap: wrap;
-      gap: 48px;
-    }
-  }
-  .reviews {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    .cards {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      box-sizing: border-box;
-      flex-wrap: wrap;
-      gap: 24px;
-    }
-    .more {
+    .activities {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      margin-bottom: 120px;
-      .lead-more {
+      width: 1200px;
+      gap: 48px;
+      .cards {
         display: flex;
-        justify-content: space-between;
+        flex-direction: row;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+        gap: 48px;
+      }
+    }
+    .review-row {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 120px;
+    }
+    .reviews {
+      display: flex;
+      flex-direction: column;
+      width: 1200px;
+      gap: 24px;
+      .cards {
+        display: flex;
+        flex-direction: row;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+        gap: 24px;
+      }
+      .more {
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        width: 155px;
-        height: 68px;
-        cursor: pointer;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 36px;
-        letter-spacing: -0.02em;
-        color: #777777;
+        margin-bottom: 120px;
+        .lead-more {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 155px;
+          height: 68px;
+          cursor: pointer;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 36px;
+          letter-spacing: -0.02em;
+          color: #777777;
+        }
       }
     }
   }
-}
-@include tablet {
-  .contents {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 120px;
-    width: 713px;
-    margin: 0 auto 0 auto;
-  }
-  .slogan {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 64px;
-    width: 100%;
-    height: 809px;
-    background: #f6f6f6;
-    margin-bottom: 120px;
-    .slogan-text {
-      white-space: pre-wrap;
+  @include tablet {
+    .contents {
+      display: flex;
+      flex-direction: column;
+      width: calc(100% - 128px);
+      margin: 0 auto 0 auto;
+      padding: 0 64px 0 64px;
+    }
+    .slogan {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 64px;
+      width: 100%;
+      height: 809px;
+      background: #f6f6f6;
+      margin-bottom: 120px;
+      .slogan-text {
+        white-space: pre-wrap;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 36px;
+        /* or 150% */
+
+        text-align: center;
+        letter-spacing: -0.02em;
+
+        /* text/sub */
+
+        color: #777777;
+      }
+    }
+    .title {
       font-style: normal;
-      font-weight: normal;
-      font-size: 24px;
-      line-height: 36px;
-      /* or 150% */
-
-      text-align: center;
+      font-weight: bold;
+      font-size: 60px;
+      line-height: 90px;
       letter-spacing: -0.02em;
+      white-space: pre-wrap;
 
-      /* text/sub */
-
-      color: #777777;
+      color: #000000;
     }
-  }
-  .title {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 60px;
-    line-height: 90px;
-    letter-spacing: -0.02em;
-    white-space: pre-wrap;
-
-    color: #000000;
-  }
-  .info-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 120px;
-  }
-  .information {
-    display: flex;
-    width: 713px;
-    flex-direction: column;
-    gap: 48px;
-    .cards {
-      overflow-x: auto;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      -webkit-overflow-scrolling: touch;
-      &::-webkit-scrollbar {
-        display: none;
+    .info-table {
+      padding-left: 64px;
+      .info-row {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 120px;
+        .information {
+          margin-top: 48px;
+          overflow-x: auto;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+          -webkit-overflow-scrolling: touch;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+          display: flex;
+          flex-direction: column;
+          .cards {
+            gap: 48px;
+            display: flex;
+            flex: 0 0 auto;
+          }
+        }
       }
-      display: flex;
-      flex-direction: row;
-      gap: 48px;
     }
-  }
-  .activities {
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-    .cards {
+    // .information {
+    //   display: flex;
+    //   flex-direction: column;
+    //   gap: 48px;
+    //   .cards {
+    //     overflow-x: auto;
+    //     scrollbar-width: none;
+    //     -ms-overflow-style: none;
+    //     -webkit-overflow-scrolling: touch;
+    //     &::-webkit-scrollbar {
+    //       display: none;
+    //     }
+    //     display: flex;
+    //     flex-direction: row;
+    //   }
+    // }
+    .activity-row {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      box-sizing: border-box;
-      flex-wrap: wrap;
-      gap: 48px;
     }
-  }
-  .reviews {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    .cards {
+    .activities {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      box-sizing: border-box;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 48px;
+      .cards {
+        display: flex;
+        flex-direction: row;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+        gap: 48px;
+      }
+    }
+    .review-row {
+      display: flex;
+      justify-content: center;
+      margin-top: 120px;
+    }
+    .reviews {
+      display: flex;
+      flex-direction: column;
       gap: 24px;
+      .cards {
+        display: flex;
+        flex-direction: row;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+        gap: 24px;
+      }
+      .more {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 120px;
+        .lead-more {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 155px;
+          height: 68px;
+          cursor: pointer;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 36px;
+          letter-spacing: -0.02em;
+          color: #777777;
+        }
+      }
     }
-    .more {
+  }
+  @include mobile {
+    .contents {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 64px;
+      width: 792px;
+      margin: 0 auto 0 auto;
+    }
+    .slogan {
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding-top: 24px;
+      width: 100%;
+      height: 484px;
+      background: #f6f6f6;
       margin-bottom: 120px;
-      .lead-more {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 155px;
-        height: 68px;
-        cursor: pointer;
+      .slogan-text {
+        white-space: pre-wrap;
         font-style: normal;
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 36px;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
         letter-spacing: -0.02em;
+
         color: #777777;
+      }
+    }
+    .title {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 32px;
+      line-height: 48px;
+      letter-spacing: -0.02em;
+      white-space: pre-wrap;
+
+      color: #000000;
+    }
+    .info-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 64px;
+    }
+    .information {
+      display: flex;
+      width: 792px;
+      flex-direction: column;
+      gap: 48px;
+      .cards {
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        display: flex;
+        flex-direction: row;
+        gap: 48px;
+      }
+    }
+    .activities {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 48px;
+      .cards {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+      }
+    }
+    .reviews {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      .cards {
+        display: flex;
+        flex-direction: row;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .more {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 120px;
+        .lead-more {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 155px;
+          height: 68px;
+          cursor: pointer;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 36px;
+          letter-spacing: -0.02em;
+          color: #777777;
+        }
       }
     }
   }

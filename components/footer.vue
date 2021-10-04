@@ -97,7 +97,7 @@ footer {
   @include tablet {
     display: flex;
     align-items: center;
-    width: 713px;
+    width: calc(100% - 64px);
     margin: auto auto 32px auto;
     justify-content: center;
 

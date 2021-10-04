@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="info-container">
     <div class="contents">
       <p class="title">{{ title }}</p>
       <p class="value">{{ value }}</p>
@@ -27,7 +27,7 @@ export default InfoCard;
   font-family: Spoqa Han Sans Neo;
 }
 @include desktop {
-  .container {
+  .info-container {
     border-radius: 16px;
     width: 368px;
     height: 233px;
@@ -62,7 +62,7 @@ export default InfoCard;
   }
 }
 @include tablet {
-  .container {
+  .info-container {
     flex: 0 0 auto;
     border-radius: 16px;
     width: 368px;
@@ -98,7 +98,7 @@ export default InfoCard;
   }
 }
 @include mobile {
-  .container {
+  .info-container {
     border-radius: 8px;
     .contents {
       padding: 16px;

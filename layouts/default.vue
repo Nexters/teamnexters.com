@@ -35,6 +35,7 @@ export default DefaultLayout;
 <style lang="scss" scoped>
 .background {
   display: flex;
+  width: 100%;
   flex-direction: column;
   height: 100vh;
 }

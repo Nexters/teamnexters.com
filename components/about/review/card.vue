@@ -1,5 +1,5 @@
 <template>
-  <div class="container" @click="onClick">
+  <div class="review-container" @click="onClick">
     <div class="contents">
       <p
         class="th"
@@ -40,7 +40,7 @@ export default ReviewCard;
   font-family: Spoqa Han Sans Neo;
 }
 @include desktop {
-  .container {
+  .review-container {
     cursor: pointer;
     border-radius: 16px;
     width: 384px;
@@ -91,10 +91,10 @@ export default ReviewCard;
   }
 }
 @include tablet {
-  .container {
+  .review-container {
     cursor: pointer;
     border-radius: 16px;
-    width: 344.5px;
+    width: calc(50% - 12px);
     height: 192px;
     background: #f6f6f6;
     .contents {
@@ -144,6 +144,66 @@ export default ReviewCard;
         font-weight: normal;
         font-size: 18px;
         line-height: 27px;
+        letter-spacing: -0.02em;
+        color: #777777;
+      }
+    }
+  }
+}
+@include mobile {
+  .review-container {
+    cursor: pointer;
+    border-radius: 16px;
+    flex-basis: 388px;
+    width: 100%;
+    height: 149px;
+    background: #f6f6f6;
+    .contents {
+      padding: 24px;
+      height: calc(100% - 48px);
+      display: flex;
+      flex-direction: column;
+      .th {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 41px;
+        height: 24px;
+        border-radius: 4px;
+
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 18px;
+
+        letter-spacing: -0.02em;
+
+        color: #5236ff;
+      }
+      .title {
+        width: 340px;
+        height: 48px;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.02em;
+
+        color: #000000;
+      }
+      .author {
+        margin-top: auto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 21px;
         letter-spacing: -0.02em;
         color: #777777;
       }
