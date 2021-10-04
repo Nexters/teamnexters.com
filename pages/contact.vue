@@ -44,6 +44,9 @@ export default defineComponent({
     }));
   },
   methods: {
+    debug(e) {
+      console.log(e);
+    },
     FetchAll: async function () {
       const { results } = await this.$content("contact").fetch();
       const { rawData } = results[0].result;
