@@ -67,8 +67,8 @@ footer {
 .footer {
   @include mobile {
     display: flex;
+    margin-left: auto;
     flex-direction: column;
-    align-items: center;
     padding: 0 0 24px 24px;
     .sns {
       display: flex;
@@ -96,29 +96,29 @@ footer {
   }
   @include tablet {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 0 0 24px 24px;
+    width: 713px;
+    margin: auto auto 32px auto;
+    justify-content: center;
+
     .sns {
       display: flex;
-      margin-right: auto;
       img {
-        height: 24px;
-        width: 24px;
+        height: 32px;
+        width: 32px;
       }
       ul {
         flex-direction: column;
-        margin-right: 16px;
+        margin-right: 32px;
       }
     }
     .copyrights {
-      margin-right: auto;
-      padding-top: 16px;
+      margin-left: auto;
 
       font-style: normal;
       font-weight: normal;
-      font-size: 14px;
-      line-height: 21px;
+      font-size: 16px;
+      line-height: 24px;
       text-align: center;
       letter-spacing: -0.02em;
     }
