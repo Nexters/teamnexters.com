@@ -132,7 +132,7 @@ export default defineComponent({
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 120px;
+      gap: 64px;
       width: 100%;
       margin: 0 auto 0 auto;
     }
@@ -376,11 +376,9 @@ export default defineComponent({
     .contents {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 64px;
-      width: 792px;
+      width: calc(100% - 48px);
       margin: 0 auto 0 auto;
+      padding: 0 24px 0 24px;
     }
     .slogan {
       display: flex;
@@ -390,7 +388,7 @@ export default defineComponent({
       width: 100%;
       height: 484px;
       background: #f6f6f6;
-      margin-bottom: 120px;
+      margin-bottom: 64px;
       .slogan-text {
         white-space: pre-wrap;
         font-style: normal;
@@ -413,40 +411,40 @@ export default defineComponent({
 
       color: #000000;
     }
-    .info-row {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 64px;
-    }
-    .information {
-      display: flex;
-      width: 792px;
-      flex-direction: column;
-      gap: 48px;
-      .cards {
-        overflow-x: auto;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        -webkit-overflow-scrolling: touch;
-        &::-webkit-scrollbar {
-          display: none;
-        }
+    .info-table {
+      padding-left: 24px;
+      .info-row {
         display: flex;
-        flex-direction: row;
-        gap: 48px;
+        flex-direction: column;
+        margin-bottom: 64px;
+        .information {
+          margin-top: 24px;
+          overflow-x: auto;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+          -webkit-overflow-scrolling: touch;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+          display: flex;
+          flex-direction: column;
+          .cards {
+            gap: 48px;
+            display: flex;
+            flex: 0 0 auto;
+          }
+        }
       }
     }
     .activities {
       display: flex;
       flex-direction: column;
       width: 100%;
-      gap: 48px;
+      gap: 24px;
       .cards {
         display: flex;
         flex-direction: column;
-        gap: 48px;
+        gap: 24px;
       }
     }
     .reviews {
@@ -464,20 +462,24 @@ export default defineComponent({
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 120px;
+        margin-bottom: 72px;
         .lead-more {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          width: 155px;
-          height: 68px;
+          width: 106px;
+          height: 40px;
           cursor: pointer;
           font-style: normal;
           font-weight: bold;
-          font-size: 24px;
-          line-height: 36px;
+          font-size: 16px;
+          line-height: 24px;
           letter-spacing: -0.02em;
           color: #777777;
+          img {
+            width: 13.33px;
+            height: 7.33px;
+          }
         }
       }
     }

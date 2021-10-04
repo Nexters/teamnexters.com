@@ -99,13 +99,36 @@ export default InfoCard;
 }
 @include mobile {
   .info-container {
-    border-radius: 8px;
+    flex: 0 0 auto;
+    border-radius: 16px;
+    width: 240px;
+    height: 149px;
+    background: #f6f6f6;
     .contents {
-      padding: 16px;
+      padding: 24px;
       .title {
         font-size: 16px;
+        line-height: 24px;
         font-weight: bold;
-        margin-bottom: 8px;
+        margin-bottom: 4px;
+        letter-spacing: -0.02em;
+      }
+      .value {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 48px;
+        margin-bottom: 4px;
+        letter-spacing: -0.02em;
+      }
+      .description {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: -0.02em;
+
+        color: #777777;
       }
     }
   }

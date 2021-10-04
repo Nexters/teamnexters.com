@@ -153,8 +153,7 @@ export default ReviewCard;
 @include mobile {
   .review-container {
     cursor: pointer;
-    border-radius: 16px;
-    flex-basis: 388px;
+    border-radius: 8px;
     width: 100%;
     height: 149px;
     background: #f6f6f6;
@@ -181,7 +180,7 @@ export default ReviewCard;
         color: #5236ff;
       }
       .title {
-        width: 340px;
+        width: 100%;
         height: 48px;
 
         overflow: hidden;
