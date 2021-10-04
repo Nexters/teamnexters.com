@@ -2,7 +2,7 @@ import type { NuxtConfig } from "@nuxt/types";
 
 const config: NuxtConfig = {
   target: "static",
-  // ssr: false,
+  ssr: false,
   head: {
     meta: [
       { charset: "utf-8" },
@@ -10,7 +10,10 @@ const config: NuxtConfig = {
     ],
   },
   modules: ["@nuxt/content"],
-  components: true,
+  components: [
+    "~/components",
+    { path: "~/components/project", extensions: ["vue"] },
+  ],
   content: {
     nestedProperties: ["projects.idx"],
     extendParser: {
@@ -26,6 +29,7 @@ const config: NuxtConfig = {
     "~/assets/css/webfont.css",
     "~/assets/css/_device.scss",
   ],
+  loading: "~/components/loading-bar.vue",
 };
 
 export default config;

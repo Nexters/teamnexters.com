@@ -21,7 +21,7 @@
 <script>
 import { defineComponent } from "@vue/composition-api";
 
-export default defineComponent({
+const ProjectCard = defineComponent({
   name: "ProjectCard",
   props: {
     project: {
@@ -30,6 +30,8 @@ export default defineComponent({
     },
   },
 });
+
+export default ProjectCard;
 </script>
 
 <style lang="scss" scoped>
