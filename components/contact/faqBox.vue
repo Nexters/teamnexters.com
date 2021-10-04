@@ -1,0 +1,160 @@
+<template>
+  <article class="faqBox">
+    <section class="questionArea" @click="isOpen = !isOpen">
+      <p>{{ question }}</p>
+      <img class="icon" :src="imageResource" />
+    </section>
+    <section v-if="isOpen" class="answerArea">
+      <p>{{ answer }}</p>
+    </section>
+  </article>
+</template>
+
+<script>
+import { defineComponent } from "@vue/composition-api";
+
+export default defineComponent({
+  name: "FaqBox",
+  props: {
+    question: {
+      type: String,
+      require: true,
+    },
+    answer: {
+      type: String,
+      require: true,
+    },
+  },
+  data() {
+    return {
+      isOpen: false,
+    };
+  },
+  computed: {
+    imageResource: {
+      get() {
+        return this.isOpen
+          ? require("~/assets/img/arrow_up.svg")
+          : require("~/assets/img/arrow_down.svg");
+      },
+      set(value) {
+        this.isOpen = value;
+      },
+    },
+  },
+});
+</script>
+
+<style lang="scss" scoped>
+@import "~/assets/css/_device.scss";
+
+.faqBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f6f6;
+  box-sizing: border-box;
+  border-radius: 16px;
+
+  .questionArea {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .answerArea {
+    font-weight: 400;
+    white-space: pre-wrap;
+  }
+}
+
+@include d-c3 {
+  .faqBox {
+    padding: 32px;
+  }
+
+  .questionArea {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .answerArea {
+    font-size: 18px;
+    line-height: 27px;
+    margin-top: 16px;
+  }
+}
+
+@include d-c2 {
+  .faqBox {
+    padding: 32px;
+  }
+
+  .questionArea {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .answerArea {
+    font-size: 18px;
+    line-height: 27px;
+    margin-top: 16px;
+  }
+}
+
+@include d-c1 {
+  .faqBox {
+    padding: 32px;
+  }
+
+  .questionArea {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .answerArea {
+    font-size: 18px;
+    line-height: 27px;
+    margin-top: 16px;
+  }
+}
+
+@include m-c2 {
+  .faqBox {
+    padding: 24px;
+  }
+
+  .questionArea {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .answerArea {
+    font-size: 14px;
+    line-height: 21px;
+    margin-top: 8px;
+  }
+}
+
+@include m-c1 {
+  .faqBox {
+    padding: 24px;
+  }
+
+  .questionArea {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .answerArea {
+    font-size: 14px;
+    line-height: 21px;
+    margin-top: 8px;
+  }
+}
+</style>

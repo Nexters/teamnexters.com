@@ -1,8 +1,25 @@
 <template>
-  <div class="contactBody" @keydown="debug">
-    <ContactBox class="contactBox" :contactType="`kakao`" />
-    <ContactBox class="contactBox" :contactType="`gmail`" />
-    <ContactBox class="contactBox" :contactType="`facebook`" />
+  <div class="contactBody">
+    <div class="headerArea">
+      <h1 class="header">Contact Us</h1>
+    </div>
+    <article class="contactArea" @keydown="debug">
+      <ContactBox class="contactBox" :contactType="`kakao`" />
+      <ContactBox class="contactBox" :contactType="`gmail`" />
+      <ContactBox class="contactBox" :contactType="`facebook`" />
+    </article>
+    <div class="headerArea">
+      <h1 class="header">FAQ</h1>
+    </div>
+    <article class="faqArea">
+      <ContactFaqBox
+        v-for="faq in faqs"
+        :key="faq.idx"
+        class="faqBox"
+        :question="faq.question"
+        :answer="faq.answer"
+      />
+    </article>
   </div>
 </template>
 
@@ -14,12 +31,24 @@ export default defineComponent({
   fetchOnServer: false,
   setup() {},
   data() {
-    return {};
+    return {
+      faqs: [],
+    };
   },
-  async fetch() {},
+  async fetch() {
+    const [_, ...rawdata] = await this.FetchAll();
+    this.faqs = rawdata.map((faq, index) => ({
+      idx: index,
+      question: faq[0],
+      answer: faq[1],
+    }));
+  },
   methods: {
-    debug(e) {
-      console.log(e);
+    FetchAll: async function () {
+      const { results } = await this.$content("contact").fetch();
+      const { rawData } = results[0].result;
+
+      return rawData;
     },
   },
 });
@@ -37,15 +66,47 @@ export default defineComponent({
   justify-content: center;
   align-content: center;
   align-items: center;
+
+  .headerArea {
+    width: 100%;
+
+    .header {
+      font-weight: 700;
+    }
+  }
+
+  .contactArea,
+  .faqArea {
+    width: 100%;
+  }
 }
 
 @include d-c3 {
   .contactBody {
     padding: 64px;
 
-    .contactBox {
+    .headerArea {
       max-width: 1200px;
-      margin-bottom: 16px;
+      margin-bottom: 32px;
+      font-size: 60px;
+      line-height: 90px;
+    }
+
+    .contactArea {
+      max-width: 1200px;
+      margin-bottom: 120px;
+
+      .contactBox {
+        margin-bottom: 16px;
+      }
+    }
+
+    .faqArea {
+      max-width: 1200px;
+
+      .faqBox {
+        margin-bottom: 16px;
+      }
     }
   }
 }
@@ -54,9 +115,28 @@ export default defineComponent({
   .contactBody {
     padding: 64px;
 
-    .contactBox {
+    .headerArea {
       max-width: 1200px;
-      margin-bottom: 16px;
+      margin-bottom: 32px;
+      font-size: 60px;
+      line-height: 90px;
+    }
+
+    .contactArea {
+      max-width: 1200px;
+      margin-bottom: 120px;
+
+      .contactBox {
+        margin-bottom: 16px;
+      }
+    }
+
+    .faqArea {
+      max-width: 1200px;
+
+      .faqBox {
+        margin-bottom: 16px;
+      }
     }
   }
 }
@@ -65,9 +145,28 @@ export default defineComponent({
   .contactBody {
     padding: 64px;
 
-    .contactBox {
+    .headerArea {
       max-width: 1200px;
-      margin-bottom: 16px;
+      margin-bottom: 32px;
+      font-size: 60px;
+      line-height: 90px;
+    }
+
+    .contactArea {
+      max-width: 1200px;
+      margin-bottom: 120px;
+
+      .contactBox {
+        margin-bottom: 16px;
+      }
+    }
+
+    .faqArea {
+      max-width: 1200px;
+
+      .faqBox {
+        margin-bottom: 16px;
+      }
     }
   }
 }
@@ -76,9 +175,28 @@ export default defineComponent({
   .contactBody {
     padding: 32px;
 
-    .contactBox {
+    .headerArea {
       max-width: 713px;
-      margin-bottom: 8px;
+      margin-bottom: 16px;
+      font-size: 32px;
+      line-height: 48px;
+    }
+
+    .contactArea {
+      max-width: 713px;
+      margin-bottom: 64px;
+
+      .contactBox {
+        margin-bottom: 8px;
+      }
+    }
+
+    .faqArea {
+      max-width: 713px;
+
+      .faqBox {
+        margin-bottom: 8px;
+      }
     }
   }
 }
@@ -87,9 +205,28 @@ export default defineComponent({
   .contactBody {
     padding: 32px;
 
-    .contactBox {
+    .headerArea {
       max-width: 713px;
-      margin-bottom: 8px;
+      margin-bottom: 16px;
+      font-size: 32px;
+      line-height: 48px;
+    }
+
+    .contactArea {
+      max-width: 713px;
+      margin-bottom: 64px;
+
+      .contactBox {
+        margin-bottom: 8px;
+      }
+    }
+
+    .faqArea {
+      max-width: 713px;
+
+      .faqBox {
+        margin-bottom: 8px;
+      }
     }
   }
 }
