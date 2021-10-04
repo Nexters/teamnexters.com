@@ -18,18 +18,39 @@
           />
         </div>
       </div>
-
       <div class="activities">
-        <ActivityCard
-          v-for="item in act.items"
-          :key="item.title"
-          :title="item.title"
-          :value="item.value"
-          :description="item.description"
-        />
+        <h2 class="title">{{ act.title }}</h2>
+        <div class="cards">
+          <ActivityCard
+            v-for="item in act.items"
+            :key="item.title"
+            :description="item.description"
+            :title="item.title"
+            :thumbnail="item.thumbnail"
+          />
+        </div>
       </div>
-      <div class="reviews"></div>
-      <div>Lead more</div>
+      <div class="reviews">
+        <h2 class="title">{{ review.title }}</h2>
+        <div class="cards">
+          <ReviewCard
+            v-for="item in review.items"
+            :key="item.title"
+            :th="item.th"
+            :th-background-color="item.thBackgroundColor"
+            :th-text-color="item.thTextColor"
+            :title="item.title"
+            :author="item.author"
+            :href="item.href"
+          />
+        </div>
+        <div class="more">
+          <div class="lead-more">
+            <p>Lead more</p>
+            <img src="~/assets/img/ic_down.png" />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -44,7 +65,24 @@ export default defineComponent({
     const informations = await $content("about/informations")
       .only(["title", "value", "description"])
       .fetch();
-    return { info: { title: "10년째\n멈추지 않는 열정", items: informations } };
+    const activities = await $content("about/activities")
+      .only(["description", "title", "thumbnail"])
+      .fetch();
+    const reviews = await $content("about/reviews")
+      .only([
+        "th",
+        "thBackgroundColor",
+        "thTextColor",
+        "title",
+        "author",
+        "href",
+      ])
+      .fetch();
+    return {
+      info: { title: "10년째\n멈추지 않는 열정", items: informations },
+      act: { title: "함께하는\n다양한 활동", items: activities },
+      review: { title: "회원들의\n생생한 활동 후기", items: reviews },
+    };
   },
   data() {
     return {
@@ -61,6 +99,7 @@ export default defineComponent({
         items: [],
       },
       review: {
+        title: "회원들의\n생생한 활동 후기",
         items: [],
       },
     };
@@ -82,6 +121,11 @@ export default defineComponent({
 }
 @include desktop {
   .contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
     width: 1200px;
     margin: 0 auto 0 auto;
   }
@@ -129,6 +173,52 @@ export default defineComponent({
       display: flex;
       justify-content: center;
       gap: 48px;
+    }
+  }
+  .activities {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    .cards {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      box-sizing: border-box;
+      flex-wrap: wrap;
+      gap: 48px;
+    }
+  }
+  .reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    .cards {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      box-sizing: border-box;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .more {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 120px;
+      .lead-more {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 155px;
+        height: 68px;
+        cursor: pointer;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: -0.02em;
+        color: #777777;
+      }
     }
   }
 }

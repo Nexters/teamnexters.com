@@ -12,6 +12,7 @@ const config: NuxtConfig = {
   modules: ["@nuxt/content"],
   components: [
     "~/components",
+    { path: "~/components/about", extensions: ["vue"] },
     { path: "~/components/project", extensions: ["vue"] },
   ],
   content: {
