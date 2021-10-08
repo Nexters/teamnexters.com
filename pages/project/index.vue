@@ -11,13 +11,17 @@
             }}</sup>
           </div>
         </div>
-        <div class="project-card-container">
+        <div class="project-cards-container">
           <ProjectCard
             v-for="project in projects"
             :key="project.idx"
             class="project"
             :project="project"
           />
+          <div class="lead-more">
+            <p>Lead more</p>
+            <img src="~/assets/img/ic_down.png" alt="" />
+          </div>
         </div>
       </div>
     </div>
@@ -55,213 +59,315 @@ export default defineComponent({
 .project-leave-active {
   opacity: 0;
 }
-.project {
-  border-radius: 8px;
-}
+.project-container {
+  width: 100%;
+  margin: 0 auto 0 auto;
 
-@include d-c3 {
-  .contents {
-    padding-top: 64px;
-    width: 1200px;
-    margin: 0 auto 0 auto;
-    .title {
+  @include d-c3 {
+    .contents {
+      padding-top: 64px;
+      width: 1200px;
+      margin: 0 auto 0 auto;
+      .title {
+        display: flex;
+        flex-direction: row;
+        h1 {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 60px;
+          line-height: 90px;
+          letter-spacing: -0.02em;
+        }
+        .has-sup {
+          display: flex;
+          padding-left: 16px;
+        }
+        .total {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 24px;
+          line-height: 36px;
+          color: #000000;
+          padding-left: 16px;
+        }
+      }
+    }
+    .project-cards-container {
+      padding-top: 32px;
       display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
       flex-direction: row;
-      h1 {
-        font-style: normal;
-        font-weight: bold;
-        font-size: 60px;
-        line-height: 90px;
-        letter-spacing: -0.02em;
-      }
-      .has-sup {
-        display: flex;
-        padding-left: 16px;
-      }
-      .total {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 24px;
-        line-height: 36px;
-        color: #000000;
-        padding-left: 16px;
+      flex-wrap: wrap;
+      gap: 48px;
+      .project {
+        flex-basis: 360px;
+        border-radius: 16px;
       }
     }
-  }
-  .project-card-container {
-    padding-top: 32px;
-    display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 48px;
-    .project {
-      flex-basis: 368px;
-      border-radius: 8px;
-    }
-  }
-}
-
-@include d-c2 {
-  .contents {
-    padding-top: 64px;
-    width: 777px;
-    margin: 0 auto 0 auto;
-    .title {
+    .lead-more {
+      margin: 24px auto 64px auto;
+      cursor: pointer;
       display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 155px;
+      height: 68px;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: -0.02em;
+      color: #000000;
+      img {
+        margin-left: 9.33px;
+        width: 20px;
+        height: 11px;
+      }
+    }
+  }
+
+  @include d-c2 {
+    .contents {
+      padding: 64px 64px 0 64px;
+      width: 777px;
+      margin: 0 auto 0 auto;
+      .title {
+        display: flex;
+        flex-direction: column;
+        h1 {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 60px;
+          line-height: 90px;
+          letter-spacing: -0.02em;
+        }
+        .has-sup {
+          display: flex;
+        }
+        .total {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 24px;
+          line-height: 36px;
+          color: #000000;
+          padding-left: 16px;
+        }
+      }
+    }
+    .project-cards-container {
+      padding-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 48px;
+      .project {
+        flex-basis: 362px;
+        border-radius: 16px;
+      }
+    }
+    .lead-more {
+      margin: 24px auto 64px auto;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 155px;
+      height: 68px;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: -0.02em;
+      color: #000000;
+      img {
+        margin-left: 9.33px;
+        width: 20px;
+        height: 11px;
+      }
+    }
+  }
+
+  @include d-c1 {
+    .contents {
+      padding: 24px 64px 0 64px;
+      width: 777px;
+      margin: 0 auto 0 auto;
+      .title {
+        display: flex;
+        flex-direction: column;
+        h1 {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 60px;
+          line-height: 90px;
+          letter-spacing: -0.02em;
+        }
+        .has-sup {
+          display: flex;
+        }
+        .total {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 24px;
+          line-height: 36px;
+          color: #000000;
+          padding-left: 16px;
+        }
+      }
+    }
+    .project-cards-container {
+      padding-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
       flex-direction: column;
-      h1 {
-        font-style: normal;
-        font-weight: bold;
-        font-size: 60px;
-        line-height: 90px;
-        letter-spacing: -0.02em;
+      gap: 48px;
+      .project {
+        flex-grow: 1;
+        border-radius: 16px;
       }
-      .has-sup {
+    }
+    .lead-more {
+      margin: 24px auto 64px auto;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 155px;
+      height: 68px;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: -0.02em;
+      color: #000000;
+      img {
+        margin-left: 9.33px;
+        width: 20px;
+        height: 11px;
+      }
+    }
+  }
+
+  @include m-c2 {
+    .contents {
+      width: 100%;
+      .title {
         display: flex;
-      }
-      .total {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 24px;
-        line-height: 36px;
-        color: #000000;
         padding-left: 16px;
+        h1 {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 32px;
+          line-height: 48px;
+          letter-spacing: -0.02em;
+        }
+        .has-sup {
+          display: flex;
+          padding-left: 10px;
+        }
+        .total {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 24px;
+          line-height: 36px;
+          color: #000000;
+          padding-left: 8px;
+        }
+      }
+    }
+    .project-cards-container {
+      padding: 16px 24px 0 24px;
+      margin: 0 auto 0 auto;
+      display: flex;
+      width: 792px;
+      justify-content: space-between;
+      box-sizing: border-box;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 24px;
+      .project {
+        flex-basis: 358px;
+        border-radius: 8px;
+      }
+    }
+    .lead-more {
+      margin: 24px auto 64px auto;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 106px;
+      height: 40px;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.02em;
+      color: #000000;
+      img {
+        margin-left: 9.33px;
+        width: 13.33px;
+        height: 7.33px;
       }
     }
   }
-  .project-card-container {
-    padding-top: 32px;
-    display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 48px;
-    .project {
-      flex-basis: 364.5px;
-    }
-  }
-}
 
-@include d-c1 {
-  .contents {
-    padding-top: 64px;
-    width: 777px;
-    margin: 0 auto 0 auto;
-    .title {
+  @include m-c1 {
+    .contents {
+      padding: 0 24px 0 24px;
+      margin: 0 auto 0 auto;
+      .title {
+        display: flex;
+        flex-direction: column;
+        h1 {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 32px;
+          line-height: 48px;
+          letter-spacing: -0.02em;
+        }
+        .has-sup {
+          display: flex;
+        }
+        .total {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 36px;
+          color: #000000;
+          padding-left: 8px;
+        }
+      }
+    }
+    .project-cards-container {
       display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
       flex-direction: column;
-      h1 {
-        font-style: normal;
-        font-weight: bold;
-        font-size: 60px;
-        line-height: 90px;
-        letter-spacing: -0.02em;
-      }
-      .has-sup {
-        display: flex;
-      }
-      .total {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 24px;
-        line-height: 36px;
-        color: #000000;
-        padding-left: 16px;
+      gap: 24px;
+      .project {
+        flex-grow: 1;
+        border-radius: 8px;
       }
     }
-  }
-  .project-card-container {
-    padding-top: 32px;
-    display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-    flex-direction: column;
-    .project {
-      flex-grow: 1;
-    }
-  }
-}
-
-@include m-c2 {
-  .contents {
-    padding-top: 24px;
-    width: 792px;
-    margin: 0 auto 0 auto;
-    .title {
+    .lead-more {
+      margin: 24px auto 64px auto;
+      cursor: pointer;
       display: flex;
-      h1 {
-        font-style: normal;
-        font-weight: bold;
-        font-size: 32px;
-        line-height: 48px;
-        letter-spacing: -0.02em;
+      justify-content: center;
+      align-items: center;
+      width: 106px;
+      height: 40px;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.02em;
+      color: #000000;
+      img {
+        margin-left: 9.33px;
+        width: 13.33px;
+        height: 7.33px;
       }
-      .has-sup {
-        display: flex;
-        padding-left: 10px;
-      }
-      .total {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 24px;
-        line-height: 36px;
-        color: #000000;
-        padding-left: 8px;
-      }
-    }
-  }
-  .project-card-container {
-    padding-top: 16px;
-    display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 24px;
-    .project {
-      flex-basis: 384px;
-    }
-  }
-}
-
-@include m-c1 {
-  .contents {
-    padding: 0 24px 0 24px;
-    margin: 0 auto 0 auto;
-    .title {
-      display: flex;
-      flex-direction: column;
-      h1 {
-        font-style: normal;
-        font-weight: bold;
-        font-size: 32px;
-        line-height: 48px;
-        letter-spacing: -0.02em;
-      }
-      .has-sup {
-        display: flex;
-      }
-      .total {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 36px;
-        color: #000000;
-        padding-left: 8px;
-      }
-    }
-  }
-  .project-card-container {
-    display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-    flex-direction: column;
-    gap: 24px;
-    .project {
-      flex-grow: 1;
     }
   }
 }
