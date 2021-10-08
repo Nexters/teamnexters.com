@@ -76,8 +76,8 @@ export default defineComponent({
 * {
   font-family: Spoqa Han Sans Neo;
 }
-.nuxt-link-active {
-  color: red;
+a.nuxt-link-active {
+  color: #777777 !important;
 }
 nav {
   z-index: 999;
