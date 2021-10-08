@@ -1,23 +1,28 @@
 <template>
-  <div class="container">
-    <div class="slogan">
-      <p class="title">IT Community</p>
-      <p class="title">for Experts</p>
-      <p class="description">개발자와 디자이너를 위한 IT 커뮤니티입니다.</p>
-      <div class="quick-link">
-        <p>넥스터즈 알아보기</p>
-        <img src="~/assets/img/ic_forward.png" />
+  <div class="main-container">
+    <transition name="main">
+      <div class="slogan">
+        <p class="title">IT Community</p>
+        <p class="title">for Experts</p>
+        <p class="description">개발자와 디자이너를 위한 IT 커뮤니티입니다.</p>
+        <div class="quick-link">
+          <p>넥스터즈 알아보기</p>
+          <img src="~/assets/img/ic_forward.png" />
+        </div>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
+import { defineComponent } from "@nuxtjs/composition-api";
 
 export default defineComponent({
   name: "Main",
   layout: "main",
+  transition: {
+    name: "main",
+  },
   setup() {
     return {};
   },
@@ -30,15 +35,20 @@ export default defineComponent({
   font-family: Spoqa Han Sans Neo;
 }
 
-.container {
+.main-enter-active,
+.main-leave-active {
+  transition: opacity 1.5s;
+}
+.main-enter,
+.main-leave-active {
+  opacity: 0;
+}
+
+.main-container {
   width: 100%;
   color: #ffffff;
   display: flex;
   margin: auto;
-  animation: fadein 3s;
-  -moz-animation: fadein 3s; /* Firefox */
-  -webkit-animation: fadein 3s; /* Safari and Chrome */
-  -o-animation: fadein 3s; /* Opera */
 
   @include mobile {
     .slogan {

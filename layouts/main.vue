@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import { useStore, computed } from "@nuxtjs/composition-api";
 import { Component, Vue } from "nuxt-property-decorator";
 import Header from "~/components/header.vue";
 import Footer from "~/components/footer.vue";
@@ -17,6 +18,12 @@ import Footer from "~/components/footer.vue";
   fetchOnServer: false,
   data() {
     return { headers: [], items: [], copyrights: "" };
+  },
+  setup() {
+    const store = useStore();
+    return {
+      isMenuOpen: computed(() => store.state.isMenuOpen),
+    };
   },
   async fetch() {
     const { headers } = await this.$content("headers")

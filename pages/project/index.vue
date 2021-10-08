@@ -1,33 +1,38 @@
 <template>
-  <div class="container">
-    <div class="contents">
-      <div class="title">
-        <h1>Look Around</h1>
-        <div class="has-sup">
-          <h1>Our Projects</h1>
-          <sup v-if="projects.length > 0" class="total">{{
-            projects.length
-          }}</sup>
+  <transition name="project">
+    <div class="project-container">
+      <div class="contents">
+        <div class="title">
+          <h1>Look Around</h1>
+          <div class="has-sup">
+            <h1>Our Projects</h1>
+            <sup v-if="projects && projects.length > 0" class="total">{{
+              projects.length
+            }}</sup>
+          </div>
+        </div>
+        <div class="project-card-container">
+          <ProjectCard
+            v-for="project in projects"
+            :key="project.idx"
+            class="project"
+            :project="project"
+          />
         </div>
       </div>
-      <div class="project-container">
-        <ProjectCard
-          v-for="project in projects"
-          :key="project.idx"
-          class="project"
-          :project="project"
-        />
-      </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
-import { defineComponent } from "@vue/composition-api";
+import { defineComponent } from "@nuxtjs/composition-api";
 
 export default defineComponent({
   name: "Project",
-  fetchOnServer: false,
+  // fetchOnServer: false,
+  transition: {
+    name: "project",
+  },
   async asyncData({ $content }) {
     const projects = await $content("projects").sortBy("idx").fetch();
     return {
@@ -42,16 +47,16 @@ export default defineComponent({
 * {
   font-family: Spoqa Han Sans Neo;
 }
+.project-enter-active,
+.project-leave-active {
+  transition: opacity 1.5s;
+}
+.project-enter,
+.project-leave-active {
+  opacity: 0;
+}
 .project {
   border-radius: 8px;
-}
-
-.container {
-  width: 100%;
-  animation: fadein 3s;
-  -moz-animation: fadein 3s; /* Firefox */
-  -webkit-animation: fadein 3s; /* Safari and Chrome */
-  -o-animation: fadein 3s; /* Opera */
 }
 
 @include d-c3 {
@@ -83,7 +88,7 @@ export default defineComponent({
       }
     }
   }
-  .project-container {
+  .project-card-container {
     padding-top: 32px;
     display: flex;
     justify-content: space-between;
@@ -126,7 +131,7 @@ export default defineComponent({
       }
     }
   }
-  .project-container {
+  .project-card-container {
     padding-top: 32px;
     display: flex;
     justify-content: space-between;
@@ -168,7 +173,7 @@ export default defineComponent({
       }
     }
   }
-  .project-container {
+  .project-card-container {
     padding-top: 32px;
     display: flex;
     justify-content: space-between;
@@ -208,7 +213,7 @@ export default defineComponent({
       }
     }
   }
-  .project-container {
+  .project-card-container {
     padding-top: 16px;
     display: flex;
     justify-content: space-between;
@@ -249,7 +254,7 @@ export default defineComponent({
       }
     }
   }
-  .project-container {
+  .project-card-container {
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;

@@ -4,9 +4,9 @@
       <h1 class="header">Contact Us</h1>
     </div>
     <article class="contactArea" @keydown="debug">
-      <ContactBox class="contactBox" :contactType="`kakao`" />
-      <ContactBox class="contactBox" :contactType="`gmail`" />
-      <ContactBox class="contactBox" :contactType="`facebook`" />
+      <ContactBox class="contactBox" :contact-type="`kakao`" />
+      <ContactBox class="contactBox" :contact-type="`gmail`" />
+      <ContactBox class="contactBox" :contact-type="`facebook`" />
     </article>
     <div class="headerArea">
       <h1 class="header">FAQ</h1>
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { defineComponent } from "@vue/composition-api";
+import { defineComponent } from "@nuxtjs/composition-api";
 
 export default defineComponent({
   name: "Contact",

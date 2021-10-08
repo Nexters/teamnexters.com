@@ -1,12 +1,15 @@
 <template>
   <div class="background">
     <Header :headers="headers" :is-white="false"></Header>
-    <nuxt />
+    <main>
+      <nuxt v-if="!isMenuOpen || $mq !== 'mobile'" />
+    </main>
     <Footer :items="items" :copyrights="copyrights"></Footer>
   </div>
 </template>
 
 <script>
+import { useStore, computed } from "@nuxtjs/composition-api";
 import { Component, Vue } from "nuxt-property-decorator";
 
 @Component({
@@ -14,6 +17,12 @@ import { Component, Vue } from "nuxt-property-decorator";
   fetchOnServer: false,
   data() {
     return { headers: [], items: [], copyrights: "" };
+  },
+  setup() {
+    const store = useStore();
+    return {
+      isMenuOpen: computed(() => store.state.isMenuOpen),
+    };
   },
   async fetch() {
     const { headers } = await this.$content("headers")

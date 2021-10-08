@@ -1,17 +1,18 @@
 <template>
   <nav>
-    <div :class="{ 'nav-header': true, overlay: !menuClose }">
-      <nuxt-link to="/" class="logo">
+    <div :class="{ 'nav-header': true, overlay: isMenuOpen }">
+      <nuxt-link to="/" class="logo" prefetch>
         <img :src="img_logo" alt="NEXTERS_IMAGE_LOGO" />
         <img class="text-logo" :src="txt_logo" alt="NEXTERS_TEXT_LOGO" />
       </nuxt-link>
-      <div class="menu" @click="menuClose = !menuClose">
-        <img :src="ic_menu" alt="ic_menu" />
+      <div class="menu" @click="toggleMenu">
+        <img v-if="isMenuOpen" :src="ic_close" alt="ic_close" />
+        <img v-else :src="ic_menu" alt="ic_menu" />
       </div>
     </div>
     <div
       class="menu-items"
-      :class="{ 'menu-close': menuClose, overlay: !menuClose }"
+      :class="{ 'menu-close': !isMenuOpen, overlay: isMenuOpen }"
     >
       <nuxt-link
         v-for="header in headers"
@@ -25,11 +26,11 @@
   </nav>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "@vue/composition-api";
-
+<script>
+import { defineComponent, useStore, computed } from "@nuxtjs/composition-api";
 export default defineComponent({
   name: "Header",
+
   props: {
     headers: {
       type: Array,
@@ -42,7 +43,12 @@ export default defineComponent({
     },
   },
   setup(props) {
+    const store = useStore();
     return {
+      toggleMenu: () => {
+        store.dispatch("toggleMenu");
+      },
+      isMenuOpen: computed(() => store.state.isMenuOpen),
       img_logo: props.isWhite
         ? require("~/assets/img/nexters_img_logo.png")
         : require("~/assets/img/nexters_img_logo_black.png"),
@@ -52,6 +58,9 @@ export default defineComponent({
       ic_menu: props.isWhite
         ? require("~/assets/img/ic_menu.png")
         : require("~/assets/img/ic_menu_black.png"),
+      ic_close: props.isWhite
+        ? require("~/assets/img/ic_close.svg")
+        : require("~/assets/img/ic_close.svg"),
     };
   },
   data() {
@@ -67,7 +76,9 @@ export default defineComponent({
 * {
   font-family: Spoqa Han Sans Neo;
 }
-
+.nuxt-link-active {
+  color: red;
+}
 nav {
   z-index: 999;
   display: flex;
@@ -76,11 +87,29 @@ nav {
   @include mobile {
     flex-direction: column;
     .overlay {
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: white;
+      .white-font {
+        color: black;
+      }
+      .header-item {
+        padding-left: 24px;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 48px;
+        letter-spacing: -0.02em;
+      }
     }
     .menu-items {
       width: 100%;
+      position: absolute;
+      top: 73px;
+      padding-top: 32px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
     }
+
     .nav-header {
       height: 100%;
       width: 100%;
@@ -109,10 +138,27 @@ nav {
   @include tablet {
     flex-direction: column;
     .overlay {
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: white;
+      .white-font {
+        color: black;
+      }
+      .header-item {
+        padding-left: 24px;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 48px;
+        letter-spacing: -0.02em;
+      }
     }
     .menu-items {
       width: 100%;
+      position: absolute;
+      top: 73px;
+      padding-top: 32px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
     }
     .nav-header {
       width: 100%;

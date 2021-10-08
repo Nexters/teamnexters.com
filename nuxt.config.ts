@@ -9,7 +9,7 @@ const config: NuxtConfig = {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
     ],
   },
-  modules: ["@nuxt/content"],
+  modules: ["@nuxt/content", "@nuxtjs/composition-api/module"],
   components: [
     "~/components",
     { path: "~/components/about", extensions: ["vue"] },
@@ -24,13 +24,21 @@ const config: NuxtConfig = {
     },
   },
   buildModules: ["@nuxt/typescript-build", "@nuxtjs/svg"],
-  plugins: ["~/plugins/composition-api"],
+  plugins: ["~/plugins/vue-mq"],
   css: [
     "~/assets/css/reset.css",
     "~/assets/css/webfont.css",
     "~/assets/css/_device.scss",
   ],
   loading: "~/components/loading-bar.vue",
+  router: {
+    middleware: ["store"],
+    // linkActiveClass: "nuxt-link-active",
+  },
+  pageTransition: {
+    name: "my-page",
+    mode: "out-in",
+  },
 };
 
 export default config;

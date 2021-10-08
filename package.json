@@ -37,8 +37,7 @@
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",
-    "@vue/composition-api": "^1.1.4",
-    "@vuex-orm/core": "^0.36.4",
+    "@nuxtjs/composition-api": "^0.29.2",
     "nuxt": "^2.15.8",
     "nuxt-property-decorator": "^2.9.1",
     "vue-mq": "^1.0.1"

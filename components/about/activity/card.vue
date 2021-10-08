@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { defineComponent } from "@vue/composition-api";
+import { defineComponent } from "@nuxtjs/composition-api";
 const ActivityCard = defineComponent({
   name: "ActivityCard",
   props: {

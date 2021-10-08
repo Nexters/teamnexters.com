@@ -1,74 +1,78 @@
 <template>
-  <div class="about-container">
-    <div class="slogan">
-      <h1 class="slogan-text">{{ slogan }}</h1>
-    </div>
-    <div class="info-table">
-      <div class="info-row">
-        <h2 class="title">{{ info.title }}</h2>
-        <div class="information">
-          <div class="cards">
-            <!-- <pre>{{ informations }}</pre> -->
-            <InfoCard
-              v-for="item in info.items"
-              :key="item.title"
-              :title="item.title"
-              :value="item.value"
-              :description="item.description"
-            />
+  <transition name="about" mode="out-in">
+    <div class="about-container">
+      <div class="slogan">
+        <h1 class="slogan-text">{{ slogan }}</h1>
+      </div>
+      <div class="info-table">
+        <div class="info-row">
+          <h2 class="title">{{ info.title }}</h2>
+          <div class="information">
+            <div class="cards">
+              <!-- <pre>{{ informations }}</pre> -->
+              <InfoCard
+                v-for="item in info.items"
+                :key="item.title"
+                :title="item.title"
+                :value="item.value"
+                :description="item.description"
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="contents">
-      <!-- horizontal scroll -->
-      <div class="activity-row">
-        <div class="activities">
-          <h2 class="title">{{ act.title }}</h2>
-          <div class="cards">
-            <ActivityCard
-              v-for="item in act.items"
-              :key="item.title"
-              :description="item.description"
-              :title="item.title"
-              :thumbnail="item.thumbnail"
-            />
+      <div class="contents">
+        <!-- horizontal scroll -->
+        <div class="activity-row">
+          <div class="activities">
+            <h2 class="title">{{ act.title }}</h2>
+            <div class="cards">
+              <ActivityCard
+                v-for="item in act.items"
+                :key="item.title"
+                :description="item.description"
+                :title="item.title"
+                :thumbnail="item.thumbnail"
+              />
+            </div>
           </div>
         </div>
-      </div>
-      <div class="review-row">
-        <div class="reviews">
-          <h2 class="title">{{ review.title }}</h2>
-          <div class="cards">
-            <ReviewCard
-              v-for="item in review.items"
-              :key="item.title"
-              :th="item.th"
-              :th-background-color="item.thBackgroundColor"
-              :th-text-color="item.thTextColor"
-              :title="item.title"
-              :author="item.author"
-              :href="item.href"
-            />
-          </div>
-          <div class="more">
-            <div class="lead-more">
-              <p>Lead more</p>
-              <img src="~/assets/img/ic_down.png" />
+        <div class="review-row">
+          <div class="reviews">
+            <h2 class="title">{{ review.title }}</h2>
+            <div class="cards">
+              <ReviewCard
+                v-for="item in review.items"
+                :key="item.id"
+                :th="item.th"
+                :th-background-color="item.thBackgroundColor"
+                :th-text-color="item.thTextColor"
+                :title="item.title"
+                :author="item.author"
+                :href="item.href"
+              />
+            </div>
+            <div class="more">
+              <div class="lead-more">
+                <p>Lead more</p>
+                <img src="~/assets/img/ic_down.png" />
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
+import { defineComponent } from "@nuxtjs/composition-api";
 
 export default defineComponent({
   name: "AboutPage",
-  layout: "DefaultLayout",
+  transition: {
+    name: "about",
+  },
   async asyncData({ $content }) {
     const informations = await $content("about/informations")
       .only(["title", "value", "description"])
@@ -78,6 +82,7 @@ export default defineComponent({
       .fetch();
     const reviews = await $content("about/reviews")
       .only([
+        "id",
         "th",
         "thBackgroundColor",
         "thTextColor",
@@ -121,11 +126,16 @@ export default defineComponent({
 * {
   font-family: Spoqa Han Sans Neo;
 }
+.about-enter-active,
+.about-leave-active {
+  transition: opacity 1.5s;
+}
+.about-enter,
+.about-leave-active {
+  opacity: 0;
+}
+
 .about-container {
-  animation: fadein 3s;
-  -moz-animation: fadein 3s; /* Firefox */
-  -webkit-animation: fadein 3s; /* Safari and Chrome */
-  -o-animation: fadein 3s; /* Opera */
   @include desktop {
     .contents {
       display: flex;
