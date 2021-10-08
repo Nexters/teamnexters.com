@@ -55,7 +55,7 @@
             <div class="more">
               <div class="lead-more">
                 <p>Lead more</p>
-                <img src="~/assets/img/ic_down.png" />
+                <img src="~/assets/img/ic_down.png" alt="" />
               </div>
             </div>
           </div>
