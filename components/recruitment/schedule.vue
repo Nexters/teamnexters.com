@@ -54,6 +54,7 @@ export default defineComponent({
       display: block;
       overflow-x: auto;
       white-space: nowrap;
+      margin-top: 16px;
 
       .schedule {
         width: 200px;
@@ -75,6 +76,7 @@ export default defineComponent({
       display: block;
       overflow-x: auto;
       white-space: nowrap;
+      margin-top: 16px;
 
       .schedule {
         width: 200px;
@@ -95,6 +97,7 @@ export default defineComponent({
     .schedules {
       display: flex;
       flex-direction: column;
+      margin-top: 8px;
 
       .schedule {
         width: 100%;
