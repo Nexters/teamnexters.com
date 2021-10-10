@@ -1,0 +1,106 @@
+<template>
+  <div class="scheduleArea">
+    <h2 class="scheduleTitle">모집 일정</h2>
+    <article class="schedules">
+      <RecruitmentScheduleBox
+        class="schedule"
+        v-for="schedule in schedules"
+        :key="schedule.id"
+        :schedule-title="schedule.title"
+        :schedule-date="schedule.date"
+      />
+    </article>
+  </div>
+</template>
+
+<script>
+import { defineComponent } from "@vue/composition-api";
+
+export default defineComponent({
+  name: "Schedule",
+  props: {
+    schedules: {
+      type: Array,
+      require: false,
+    },
+  },
+});
+</script>
+
+<style lang="scss" scoped>
+@import "~/assets/css/_device.scss";
+* {
+  font-family: Spoqa Han Sans Neo;
+}
+
+.scheduleArea {
+  .scheduleTitle {
+    font-weight: 700;
+  }
+
+  .schedule {
+    box-sizing: border-box;
+  }
+}
+
+@include desktop {
+  .scheduleArea {
+    .scheduleTitle {
+      font-size: 32px;
+      line-height: 48px;
+    }
+
+    .schedules {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+
+      .schedule {
+        width: 200px;
+        display: inline-block;
+        margin-right: 16px;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .scheduleArea {
+    .scheduleTitle {
+      font-size: 32px;
+      line-height: 48px;
+    }
+
+    .schedules {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+
+      .schedule {
+        width: 200px;
+        display: inline-block;
+        margin-right: 16px;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .scheduleArea {
+    .scheduleTitle {
+      font-size: 24px;
+      line-height: 36px;
+    }
+
+    .schedules {
+      display: flex;
+      flex-direction: column;
+
+      .schedule {
+        width: 100%;
+        margin-top: 8px;
+      }
+    }
+  }
+}
+</style>
