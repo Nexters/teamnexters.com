@@ -14,7 +14,7 @@ export default defineComponent({
   name: "Qualification",
   props: {
     dotListTitle: {
-      type: Array,
+      type: String,
       require: true,
     },
     items: {
