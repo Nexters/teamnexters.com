@@ -57,8 +57,9 @@ export default defineComponent({
 .banner {
   width: 100%;
   height: 100%;
-  background-size: contain, cover;
+  background-size: cover;
   background-repeat: no-repeat;
+  box-sizing: border-box;
 
   .bannerTitle {
     color: #ffffff;
@@ -103,7 +104,6 @@ export default defineComponent({
       margin-top: 32px;
 
       .box {
-        width: 264px;
         height: 84px;
       }
     }
@@ -137,7 +137,6 @@ export default defineComponent({
       margin-top: 32px;
 
       .box {
-        width: 264px;
         height: 84px;
       }
     }
@@ -170,7 +169,6 @@ export default defineComponent({
       margin-top: 16px;
 
       .box {
-        width: 171px;
         height: 56px;
       }
     }
