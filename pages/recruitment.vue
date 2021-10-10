@@ -43,90 +43,82 @@ export default defineComponent({
   name: "Recruitment",
   data() {
     return {
-      bannerBoxes: [
-        {
-          id: 1,
-          name: "모집 알람 신청하기",
-          link: "www.naver.com",
-        },
-      ],
+      bannerBoxes: [],
       notice: {
-        boxTitle: "코로나 관련 사항을 꼭 참고해주세요!",
-        contents: [
-          {
-            id: 1,
-            text: "모집 및 활동은 코로나 19 전개 상황에 따라 중단 및 연기 될 수 있습니다.",
-          },
-          {
-            id: 2,
-            text: "사회적 거리두기, 방역수칙에 의거하여 활동합니다.",
-          },
-        ],
+        boxTitle: "",
+        contents: [],
       },
-      qualifications: [
-        {
-          id: 1,
-          text: "학생 / 직장인 소속에 상관없이, 개발자 / 디자이너로 팀 프로젝트 수행이 가능한 분",
-        },
-        {
-          id: 2,
-          text: "실무에 가까운 협업과 창작하는 즐거움을 경험하고 싶으신 분",
-        },
-        {
-          id: 3,
-          text: "다양한 사람들과 폭넓고 깊이 있는 네트워킹을 원하시는 분",
-        },
-        {
-          id: 4,
-          text: "매주 토요일 오후 2시 ~6시에 진행되는 정규 활동에 성실하게 참여할 수 있으신 분\n(정규 활동은 방학동안 진행되며, 2회의 정규 활동을 이수하시면 수료로 인정됩니다.)",
-        },
-      ],
-      schedules: [
-        {
-          id: 1,
-          title: "서류 접수",
-          date: "2021. 11. 26.",
-        },
-        {
-          id: 2,
-          title: "서류 합격 발표",
-          date: "2021. 12. 05.",
-        },
-        {
-          id: 3,
-          title: "면접",
-          date: "2021. 12. 09 ~ 10.",
-        },
-        {
-          id: 4,
-          title: "최종 합격 발표",
-          date: "2021. 12. 28.",
-        },
-        {
-          id: 5,
-          title: "정규 활동",
-          date: "2021. 12. ~ 2022.02",
-        },
-      ],
-      caution: [
-        {
-          id: 1,
-          text: "개발자 지원시, GitHub 계정을 필수로 제출해주셔야 합니다.",
-        },
-        {
-          id: 2,
-          text: "디자이너 지원시, 포트폴리오를 필수로 제출해주셔야 합니다.",
-        },
-        {
-          id: 3,
-          text: "지원서는 임시 저장이 불가합니다. 모든 문항을 채워주시고 제출해 주세요.",
-        },
-        {
-          id: 4,
-          text: "기재하신 개인정보는 NEXTERS 신입 회원 모집과 결과 전달을 위해 사용되며, 지원서 제출 시 개인정보 수집 및 이용에 동의한 것으로 간주합니다.\n다른 목적으로는 이용되지 않으며, 모집 기간 완료 즉시 폐기됩니다.",
-        },
-      ],
+      qualifications: [],
+      schedules: [],
+      caution: [],
     };
+  },
+  async fetch() {
+    const result = await this.FetchAll();
+    this.bannerBoxes = result.bannerButtons;
+    this.notice.boxTitle = result.banner[7];
+    this.notice.contents = result.notice;
+    this.qualifications = result.qualifications;
+    this.schedules = result.schedules;
+    this.caution = result.cautions;
+  },
+  methods: {
+    debug(e) {
+      console.log(e);
+    },
+    FetchAll: async function () {
+      const { results } = await this.$content("recruitment").fetch();
+
+      const { rawData: banner } = results[0].result;
+      const { rawData: buttons } = results[1].result;
+      const { rawData: qualifications } = results[2].result;
+      const { rawData: schedules } = results[3].result;
+      const { rawData: cautions } = results[4].result;
+      const { rawData: notices } = results[5].result;
+
+      const [_, ...recruitmentBanner] = banner;
+      const [__, ...recruitmentButtons] = buttons;
+      const [___, ...recruitmentQualifications] = qualifications;
+      const [____, ...recruitmentSchedules] = schedules;
+      const [_____, ...recruitmentCautions] = cautions;
+      const [______, ...recruitmentNotices] = notices;
+
+      const result = {
+        banner: recruitmentBanner[0],
+        bannerButtons: recruitmentButtons
+          .filter((it) => it[2] === "TRUE")
+          .map((it, idx) => ({
+            id: idx,
+            name: it[0],
+            link: it[1],
+          })),
+        qualifications: recruitmentQualifications
+          .filter((it) => it[1] === "TRUE")
+          .map((it, idx) => ({
+            id: idx,
+            text: it[0],
+          })),
+        schedules: recruitmentSchedules.map((it, idx) => ({
+          id: idx,
+          title: it[0],
+          date: it[1],
+        })),
+        cautions: recruitmentCautions
+          .filter((it) => it[1] === "TRUE")
+          .map((it, idx) => ({
+            id: idx,
+            text: it[0],
+          })),
+        notice: recruitmentNotices
+          .filter((it) => it[1] === "TRUE")
+          .map((it, idx) => ({
+            id: idx,
+            text: it[0],
+          })),
+      };
+
+      return result;
+    },
   },
 });
 </script>
