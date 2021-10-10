@@ -27,10 +27,8 @@ export default defineComponent({
 }
 
 .linkButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+  display: inline-block;
+  text-align: center;
   box-sizing: border-box;
   border-radius: 8px;
   background-color: #6b68f7;
@@ -40,6 +38,7 @@ export default defineComponent({
 
 @include desktop {
   .linkButton {
+    padding: 24px;
     font-size: 24px;
     line-height: 36px;
   }
@@ -47,6 +46,7 @@ export default defineComponent({
 
 @include tablet {
   .linkButton {
+    padding: 24px;
     font-size: 24px;
     line-height: 36px;
   }
@@ -54,6 +54,7 @@ export default defineComponent({
 
 @include mobile {
   .linkButton {
+    padding: 16px;
     font-size: 16px;
     line-height: 24px;
   }
