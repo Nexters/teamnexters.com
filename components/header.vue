@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav class="navigation">
     <div :class="{ 'nav-header': true, overlay: isMenuOpen }">
       <nuxt-link to="/" class="logo" prefetch>
         <img :src="img_logo" alt="NEXTERS_IMAGE_LOGO" />
@@ -50,14 +50,14 @@ export default defineComponent({
       },
       isMenuOpen: computed(() => store.state.isMenuOpen),
       img_logo: props.isWhite
-        ? require("~/assets/img/nexters_img_logo.png")
-        : require("~/assets/img/nexters_img_logo_black.png"),
+        ? require("~/assets/img/nexters_img_logo.svg")
+        : require("~/assets/img/nexters_img_logo_black.svg"),
       txt_logo: props.isWhite
-        ? require("~/assets/img/nexters_txt_logo.png")
-        : require("~/assets/img/nexters_txt_logo_black.png"),
+        ? require("~/assets/img/nexters_txt_logo.svg")
+        : require("~/assets/img/nexters_txt_logo_black.svg"),
       ic_menu: props.isWhite
-        ? require("~/assets/img/ic_menu.png")
-        : require("~/assets/img/ic_menu_black.png"),
+        ? require("~/assets/img/ic_menu.svg")
+        : require("~/assets/img/ic_menu_black.svg"),
       ic_close: props.isWhite
         ? require("~/assets/img/ic_close.svg")
         : require("~/assets/img/ic_close.svg"),
@@ -76,9 +76,13 @@ export default defineComponent({
 * {
   font-family: Spoqa Han Sans Neo;
 }
-a.nuxt-link-active {
-  color: #777777 !important;
+
+.navigation {
+  background: transparent;
+  position: absolute;
+  width: 100%;
 }
+
 nav {
   z-index: 999;
   display: flex;
@@ -104,7 +108,6 @@ nav {
       position: absolute;
       top: 73px;
       padding-top: 32px;
-      height: 100%;
       display: flex;
       flex-direction: column;
       gap: 32px;
@@ -136,52 +139,20 @@ nav {
     }
   }
   @include tablet {
-    flex-direction: column;
-    .overlay {
-      background-color: white;
-      .white-font {
-        color: black;
-      }
-      .header-item {
-        padding-left: 24px;
-        font-weight: bold;
-        font-size: 32px;
-        line-height: 48px;
-        letter-spacing: -0.02em;
-      }
-    }
-    .menu-items {
-      width: 100%;
-      position: absolute;
-      top: 73px;
-      padding-top: 32px;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-    }
     .nav-header {
-      width: 100%;
+      height: 73px;
+    }
+    .menu {
+      display: none;
+    }
+    .logo {
+      height: 73px;
+      padding: 0 48.5px 0 24px;
       display: flex;
-      .logo {
-        display: flex;
-        align-items: center;
-        height: 73px;
-        margin: auto auto auto 16px;
+      align-items: center;
+      img {
+        padding-right: 7px;
       }
-      .menu {
-        width: 24px;
-        height: 24px;
-        margin: auto 16px auto auto;
-        display: block;
-        cursor: pointer;
-      }
-    }
-    .text-logo {
-      display: none;
-    }
-    .menu-close {
-      display: none;
     }
   }
   @include desktop {
@@ -214,6 +185,27 @@ nav {
   }
   .white-font {
     color: #ffffff;
+  }
+}
+
+@include desktop {
+  a.nuxt-link-active {
+    text-decoration: underline;
+    text-underline-position: under;
+  }
+}
+
+@include tablet {
+  a.nuxt-link-active {
+    text-decoration: underline;
+    text-underline-position: under;
+  }
+}
+
+@include mobile {
+  a.nuxt-link-active {
+    text-decoration: none;
+    color: #777777 !important;
   }
 }
 </style>

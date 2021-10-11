@@ -83,6 +83,7 @@ export default defineComponent({
   justify-content: center;
   align-content: center;
   align-items: center;
+  margin-top: 73px;
 
   .headerArea {
     width: 100%;

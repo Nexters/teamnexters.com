@@ -135,6 +135,17 @@ export default defineComponent({
   opacity: 0;
 }
 
+.slogan {
+  box-sizing: border-box;
+  h1 {
+    &::before {
+      display: block;
+      content: "";
+      height: 73px;
+    }
+  }
+}
+
 .about-container {
   @include desktop {
     .contents {

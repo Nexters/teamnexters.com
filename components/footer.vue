@@ -39,14 +39,14 @@ export default defineComponent({
     return {
       sns_icon: {
         facebook: props.isWhite
-          ? require("~/assets/img/facebook.png")
-          : require("~/assets/img/facebook_black.png"),
+          ? require("~/assets/img/facebook.svg")
+          : require("~/assets/img/facebook_black.svg"),
         github: props.isWhite
-          ? require("~/assets/img/github.png")
-          : require("~/assets/img/github_black.png"),
+          ? require("~/assets/img/github.svg")
+          : require("~/assets/img/github_black.svg"),
         instagram: props.isWhite
-          ? require("~/assets/img/instagram.png")
-          : require("~/assets/img/instagram_black.png"),
+          ? require("~/assets/img/instagram.svg")
+          : require("~/assets/img/instagram_black.svg"),
       },
     };
   },

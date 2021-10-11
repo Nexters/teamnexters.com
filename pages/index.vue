@@ -7,7 +7,7 @@
         <p class="description">개발자와 디자이너를 위한 IT 커뮤니티입니다.</p>
         <div class="quick-link">
           <p>넥스터즈 알아보기</p>
-          <img src="~/assets/img/ic_forward.png" />
+          <img src="~/assets/img/ic_forward.svg" />
         </div>
       </div>
     </transition>

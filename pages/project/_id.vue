@@ -13,7 +13,7 @@
       <div class="description">{{ project.description }}</div>
       <div class="ppt">
         <p>최종 발표 자료</p>
-        <img src="~/assets/img/ic_forward_black.png" alt="arrow" />
+        <img src="~/assets/img/ic_forward_black.svg" alt="arrow" />
       </div>
     </div>
     <div class="links">

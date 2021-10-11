@@ -2,6 +2,7 @@
   <transition name="recruitment" mode="out-in">
     <div>
       <RecruitmentBanner
+        class="banner"
         :background-image-url="`https://drive.google.com/uc?export=view&id=1XyPcA3KsEO04sZ5pbdWVep3D6MmASEf7`"
         :header-title="`NEXTERS 20th\nRecruitment`"
         :sub-title="`곧 넥스터즈 20기 모집이 시작됩니다.`"
@@ -135,6 +136,14 @@ export default defineComponent({
   font-family: Spoqa Han Sans Neo;
 }
 
+.banner {
+  &::before {
+    content: "";
+    display: block;
+    height: 73px;
+  }
+}
+
 .recruitment-enter-active,
 .recruitment-leave-active {
   transition: opacity 1.5s;
@@ -142,6 +151,10 @@ export default defineComponent({
 .recruitment-enter,
 .recruitment-leave-active {
   opacity: 0;
+}
+
+.main {
+  margin: auto;
 }
 
 .footer {

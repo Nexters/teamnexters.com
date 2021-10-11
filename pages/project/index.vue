@@ -61,13 +61,13 @@ export default defineComponent({
 }
 .project-container {
   width: 100%;
-  margin: 0 auto 0 auto;
+  margin: 73px auto 0 auto;
 
   @include d-c3 {
     .contents {
       padding-top: 64px;
       width: 1200px;
-      margin: 0 auto 0 auto;
+      margin: 73px auto 0 auto;
       .title {
         display: flex;
         flex-direction: row;
