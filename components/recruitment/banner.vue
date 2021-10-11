@@ -64,16 +64,24 @@ export default defineComponent({
   .bannerTitle {
     color: #ffffff;
     font-weight: 900;
+    white-space: pre-wrap;
   }
 
   .bannerSubTitle {
     font-weight: 400;
     color: #ffffff;
+    white-space: pre-wrap;
   }
 
   .bannerPeriod {
     font-weight: 700;
     color: #ffffff;
+  }
+
+  .boxArea {
+    .box {
+      margin-right: 10px;
+    }
   }
 }
 
@@ -85,7 +93,6 @@ export default defineComponent({
     .bannerTitle {
       font-size: 60px;
       line-height: 72px;
-      white-space: pre-wrap;
     }
 
     .bannerSubTitle {
@@ -118,7 +125,6 @@ export default defineComponent({
     .bannerTitle {
       font-size: 60px;
       line-height: 72px;
-      white-space: pre-wrap;
     }
 
     .bannerSubTitle {
@@ -145,7 +151,7 @@ export default defineComponent({
 
 @include mobile {
   .banner {
-    height: 320px;
+    height: 376px;
     padding: 24px;
 
     .bannerTitle {

@@ -3,14 +3,15 @@
     <div>
       <RecruitmentBanner
         class="banner"
-        :background-image-url="`https://drive.google.com/uc?export=view&id=1XyPcA3KsEO04sZ5pbdWVep3D6MmASEf7`"
-        :header-title="`NEXTERS 20th\nRecruitment`"
-        :sub-title="`곧 넥스터즈 20기 모집이 시작됩니다.`"
-        :period="`2021. 5. 10(mon) ~6. 22(tue)`"
+        :background-image-url="`https://drive.google.com/uc?export=view&id=${banner.bannerImage}`"
+        :header-title="banner.bannerTitle"
+        :sub-title="banner.bannerSubtitle"
+        :period="banner.bannerPeriod"
         :box-list="bannerBoxes"
       />
       <main class="main">
         <RecruitmentNoticeBox
+          v-if="notice.isVisible"
           :box-title="notice.boxTitle"
           :contents="notice.contents"
         />
@@ -49,8 +50,16 @@ export default defineComponent({
   },
   data() {
     return {
+      banner: {
+        bannerTitle: "",
+        bannerSubtitle: "",
+        bannerImage: "",
+        bannerPeriod: "",
+        isVisible: false,
+      },
       bannerBoxes: [],
       notice: {
+        isVisible: false,
         boxTitle: "",
         contents: [],
       },
@@ -61,7 +70,16 @@ export default defineComponent({
   },
   async fetch() {
     const result = await this.FetchAll();
+    this.banner.bannerImage = result.banner[0];
+    this.banner.bannerTitle = `NEXTERS ${result.banner[1]}th\nRecruitment`;
+    this.banner.bannerSubtitle = result.banner[4];
+    this.banner.bannerPeriod =
+      result.banner[5] === "TRUE"
+        ? `${result.banner[2]} ~ ${result.banner[3]}`
+        : "";
+    this.banner.isVisible = result.banner[5] === "TRUE";
     this.bannerBoxes = result.bannerButtons;
+    this.notice.isVisible = result.banner[6] === "TRUE";
     this.notice.boxTitle = result.banner[7];
     this.notice.contents = result.notice;
     this.qualifications = result.qualifications;
@@ -176,7 +194,7 @@ export default defineComponent({
 
 @include desktop {
   .main {
-    margin: 64px;
+    padding: 64px;
     max-width: 1200px;
 
     .area {
@@ -187,6 +205,7 @@ export default defineComponent({
   .footer {
     height: 323px;
     margin-top: 120px;
+    margin-bottom: 64px;
 
     .footerTitle {
       font-size: 24px;
@@ -207,7 +226,7 @@ export default defineComponent({
 
 @include tablet {
   .main {
-    margin: 64px;
+    padding: 64px;
     max-width: 1200px;
 
     .area {
@@ -218,6 +237,7 @@ export default defineComponent({
   .footer {
     height: 323px;
     margin-top: 120px;
+    margin-bottom: 64px;
 
     .footerTitle {
       font-size: 24px;
@@ -238,7 +258,7 @@ export default defineComponent({
 
 @include mobile {
   .main {
-    margin: 24px;
+    padding: 24px;
     max-width: 713px;
 
     .area {
@@ -249,6 +269,7 @@ export default defineComponent({
   .footer {
     height: 189px;
     margin-top: 64px;
+    margin-bottom: 24px;
 
     .footerTitle {
       font-size: 16px;
