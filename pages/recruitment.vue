@@ -1,39 +1,41 @@
 <template>
-  <Fragment>
-    <RecruitmentBanner
-      :background-image-url="`https://drive.google.com/uc?export=view&id=1XyPcA3KsEO04sZ5pbdWVep3D6MmASEf7`"
-      :header-title="`NEXTERS 20th\nRecruitment`"
-      :sub-title="`곧 넥스터즈 20기 모집이 시작됩니다.`"
-      :period="`2021. 5. 10(mon) ~6. 22(tue)`"
-      :box-list="bannerBoxes"
-    />
-    <main class="main">
-      <RecruitmentNoticeBox
-        :box-title="notice.boxTitle"
-        :contents="notice.contents"
+  <transition name="recruitment" mode="out-in">
+    <div>
+      <RecruitmentBanner
+        :background-image-url="`https://drive.google.com/uc?export=view&id=1XyPcA3KsEO04sZ5pbdWVep3D6MmASEf7`"
+        :header-title="`NEXTERS 20th\nRecruitment`"
+        :sub-title="`곧 넥스터즈 20기 모집이 시작됩니다.`"
+        :period="`2021. 5. 10(mon) ~6. 22(tue)`"
+        :box-list="bannerBoxes"
       />
-      <RecruitmentDotList
-        class="area"
-        :dot-list-title="`지원 자격`"
-        :items="qualifications"
-      />
-      <RecruitmentSchedule class="area" :schedules="schedules" />
-      <RecruitmentDotList
-        class="area"
-        :dot-list-title="`유의사항`"
-        :items="caution"
-      />
-    </main>
-    <div class="footer">
-      <h2 class="footerTitle">궁금한 점이 있으신가요?</h2>
-      <h3 class="footerSubTitle">자주 묻는 질문을 확인해보세요.</h3>
-      <RecruitmentLinkButton
-        class="faqBox"
-        :buttonName="`FAQ 바로가기`"
-        :link="`/contact`"
-      />
+      <main class="main">
+        <RecruitmentNoticeBox
+          :box-title="notice.boxTitle"
+          :contents="notice.contents"
+        />
+        <RecruitmentDotList
+          class="area"
+          :dot-list-title="`지원 자격`"
+          :items="qualifications"
+        />
+        <RecruitmentSchedule class="area" :schedules="schedules" />
+        <RecruitmentDotList
+          class="area"
+          :dot-list-title="`유의사항`"
+          :items="caution"
+        />
+      </main>
+      <div class="footer">
+        <h2 class="footerTitle">궁금한 점이 있으신가요?</h2>
+        <h3 class="footerSubTitle">자주 묻는 질문을 확인해보세요.</h3>
+        <RecruitmentLinkButton
+          class="faqBox"
+          :button-name="`FAQ 바로가기`"
+          :link="`/contact`"
+        />
+      </div>
     </div>
-  </Fragment>
+  </transition>
 </template>
 
 <script>
@@ -41,6 +43,9 @@ import { defineComponent } from "@vue/composition-api";
 
 export default defineComponent({
   name: "Recruitment",
+  transition: {
+    name: "recruitment",
+  },
   data() {
     return {
       bannerBoxes: [],
@@ -62,6 +67,7 @@ export default defineComponent({
     this.schedules = result.schedules;
     this.caution = result.cautions;
   },
+  fetchOnServer: false,
   methods: {
     debug(e) {
       console.log(e);
@@ -127,6 +133,15 @@ export default defineComponent({
 @import "~/assets/css/_device.scss";
 * {
   font-family: Spoqa Han Sans Neo;
+}
+
+.recruitment-enter-active,
+.recruitment-leave-active {
+  transition: opacity 1.5s;
+}
+.recruitment-enter,
+.recruitment-leave-active {
+  opacity: 0;
 }
 
 .footer {

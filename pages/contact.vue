@@ -1,26 +1,28 @@
 <template>
-  <div class="contactBody">
-    <div class="headerArea">
-      <h1 class="header">Contact Us</h1>
+  <transition name="contact" mode="out-in">
+    <div class="contactBody">
+      <div class="headerArea">
+        <h1 class="header">Contact Us</h1>
+      </div>
+      <article class="contactArea" @keydown="debug">
+        <ContactBox class="contactBox" :contact-type="`kakao`" />
+        <ContactBox class="contactBox" :contact-type="`gmail`" />
+        <ContactBox class="contactBox" :contact-type="`facebook`" />
+      </article>
+      <div class="headerArea">
+        <h1 class="header">FAQ</h1>
+      </div>
+      <article class="faqArea">
+        <ContactFaqBox
+          v-for="faq in faqs"
+          :key="faq.idx"
+          class="faqBox"
+          :question="faq.question"
+          :answer="faq.answer"
+        />
+      </article>
     </div>
-    <article class="contactArea" @keydown="debug">
-      <ContactBox class="contactBox" :contact-type="`kakao`" />
-      <ContactBox class="contactBox" :contact-type="`gmail`" />
-      <ContactBox class="contactBox" :contact-type="`facebook`" />
-    </article>
-    <div class="headerArea">
-      <h1 class="header">FAQ</h1>
-    </div>
-    <article class="faqArea">
-      <ContactFaqBox
-        v-for="faq in faqs"
-        :key="faq.idx"
-        class="faqBox"
-        :question="faq.question"
-        :answer="faq.answer"
-      />
-    </article>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -28,6 +30,9 @@ import { defineComponent } from "@nuxtjs/composition-api";
 
 export default defineComponent({
   name: "Contact",
+  transition: {
+    name: "contact",
+  },
   fetchOnServer: false,
   setup() {},
   data() {
@@ -61,6 +66,15 @@ export default defineComponent({
 @import "~/assets/css/_device.scss";
 * {
   font-family: Spoqa Han Sans Neo;
+}
+
+.contact-enter-active,
+.contact-leave-active {
+  transition: opacity 1.5s;
+}
+.contact-enter,
+.contact-leave-active {
+  opacity: 0;
 }
 
 .contactBody {
