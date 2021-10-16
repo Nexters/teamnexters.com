@@ -73,6 +73,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
+@import "~/assets/css/setting.scss";
+
 * {
   font-family: Spoqa Han Sans Neo;
 }
@@ -180,11 +182,11 @@ nav {
     font-weight: bold;
     line-height: 36px;
     letter-spacing: -0.02em;
-    color: #000000;
+    color: $black;
     text-decoration: none;
   }
   .white-font {
-    color: #ffffff;
+    color: $white;
   }
 }
 
@@ -205,7 +207,7 @@ nav {
 @include mobile {
   a.nuxt-link-active {
     text-decoration: none;
-    color: #777777 !important;
+    color: $grey03 !important;
   }
 }
 </style>

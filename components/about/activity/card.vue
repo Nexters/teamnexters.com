@@ -81,7 +81,7 @@ export default ActivityCard;
         line-height: 48px;
         letter-spacing: -0.02em;
 
-        color: #ffffff;
+        color: $white;
       }
       .title {
         margin-top: auto;
@@ -90,7 +90,7 @@ export default ActivityCard;
         font-size: 18px;
         line-height: 27px;
         letter-spacing: -0.02em;
-        color: #ffffff;
+        color: $white;
       }
     }
   }
@@ -114,7 +114,7 @@ export default ActivityCard;
         line-height: 36px;
         letter-spacing: -0.02em;
 
-        color: #ffffff;
+        color: $white;
       }
       .title {
         margin-top: auto;
@@ -123,7 +123,7 @@ export default ActivityCard;
         font-size: 14px;
         line-height: 21px;
         letter-spacing: -0.02em;
-        color: #ffffff;
+        color: $white;
       }
     }
   }

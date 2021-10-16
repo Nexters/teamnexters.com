@@ -36,6 +36,8 @@ export default ReviewCard;
 
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
+@import "~/assets/css/setting.scss";
+
 * {
   font-family: Spoqa Han Sans Neo;
 }
@@ -45,7 +47,7 @@ export default ReviewCard;
     border-radius: 16px;
     width: 384px;
     height: 192px;
-    background: #f6f6f6;
+    background: $grey01;
     .contents {
       padding: 24px;
       height: calc(100% - 48px);
@@ -67,7 +69,7 @@ export default ReviewCard;
 
         letter-spacing: -0.02em;
 
-        color: #5236ff;
+        color: $primary;
       }
       .title {
         font-style: normal;
@@ -76,7 +78,7 @@ export default ReviewCard;
         line-height: 36px;
         letter-spacing: -0.02em;
 
-        color: #000000;
+        color: $black;
       }
       .author {
         margin-top: auto;
@@ -85,7 +87,7 @@ export default ReviewCard;
         font-size: 18px;
         line-height: 27px;
         letter-spacing: -0.02em;
-        color: #777777;
+        color: $grey03;
       }
     }
   }
@@ -96,7 +98,7 @@ export default ReviewCard;
     border-radius: 16px;
     width: calc(50% - 12px);
     height: 192px;
-    background: #f6f6f6;
+    background: $grey01;
     .contents {
       padding: 24px;
       height: calc(100% - 48px);
@@ -118,7 +120,7 @@ export default ReviewCard;
 
         letter-spacing: -0.02em;
 
-        color: #5236ff;
+        color: $primary;
       }
       .title {
         width: 296.5px;
@@ -136,7 +138,7 @@ export default ReviewCard;
         line-height: 36px;
         letter-spacing: -0.02em;
 
-        color: #000000;
+        color: $black;
       }
       .author {
         margin-top: auto;
@@ -145,7 +147,7 @@ export default ReviewCard;
         font-size: 18px;
         line-height: 27px;
         letter-spacing: -0.02em;
-        color: #777777;
+        color: $grey03;
       }
     }
   }
@@ -156,7 +158,7 @@ export default ReviewCard;
     border-radius: 8px;
     width: 100%;
     height: 149px;
-    background: #f6f6f6;
+    background: $grey01;
     .contents {
       padding: 24px;
       height: calc(100% - 48px);
@@ -177,7 +179,7 @@ export default ReviewCard;
 
         letter-spacing: -0.02em;
 
-        color: #5236ff;
+        color: $primary;
       }
       .title {
         width: 100%;
@@ -195,7 +197,7 @@ export default ReviewCard;
         line-height: 24px;
         letter-spacing: -0.02em;
 
-        color: #000000;
+        color: $black;
       }
       .author {
         margin-top: auto;
@@ -204,7 +206,7 @@ export default ReviewCard;
         font-size: 14px;
         line-height: 21px;
         letter-spacing: -0.02em;
-        color: #777777;
+        color: $grey03;
       }
     }
   }

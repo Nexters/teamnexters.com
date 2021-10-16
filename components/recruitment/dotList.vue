@@ -27,6 +27,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
+@import "~/assets/css/setting.scss";
+
 * {
   font-family: Spoqa Han Sans Neo;
 }
@@ -47,7 +49,7 @@ export default defineComponent({
       vertical-align: top;
       height: 4px;
       width: 4px;
-      background-color: #000000;
+      background-color: $black;
       border-radius: 2px;
       margin-right: 5px;
       flex: none;

@@ -27,13 +27,15 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
+@import "~/assets/css/setting.scss";
+
 * {
   font-family: Spoqa Han Sans Neo;
 }
 
 .noticeBox {
-  background-color: #f6f6f6;
-  border: 1px solid #dddddd;
+  background-color: $grey01;
+  border: 1px solid $grey02;
   border-radius: 16px;
 
   .contentTitle {

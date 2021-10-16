@@ -23,6 +23,8 @@ export default InfoCard;
 
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
+@import "~/assets/css/setting.scss";
+
 * {
   font-family: Spoqa Han Sans Neo;
 }
@@ -31,7 +33,7 @@ export default InfoCard;
     border-radius: 16px;
     width: 368px;
     height: 233px;
-    background: #f6f6f6;
+    background: $grey01;
     .contents {
       padding: 32px;
       .title {
@@ -56,7 +58,7 @@ export default InfoCard;
         line-height: 27px;
         letter-spacing: -0.02em;
 
-        color: #777777;
+        color: $grey03;
       }
     }
   }
@@ -67,7 +69,7 @@ export default InfoCard;
     border-radius: 16px;
     width: 368px;
     height: 233px;
-    background: #f6f6f6;
+    background: $grey01;
     .contents {
       padding: 32px;
       .title {
@@ -92,7 +94,7 @@ export default InfoCard;
         line-height: 27px;
         letter-spacing: -0.02em;
 
-        color: #777777;
+        color: $grey03;
       }
     }
   }
@@ -103,7 +105,7 @@ export default InfoCard;
     border-radius: 16px;
     width: 240px;
     height: 149px;
-    background: #f6f6f6;
+    background: $grey01;
     .contents {
       padding: 24px;
       .title {
@@ -128,7 +130,7 @@ export default InfoCard;
         line-height: 21px;
         letter-spacing: -0.02em;
 
-        color: #777777;
+        color: $grey03;
       }
     }
   }

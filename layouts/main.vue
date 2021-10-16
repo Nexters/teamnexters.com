@@ -43,6 +43,8 @@ class MainLayout extends Vue {
 export default MainLayout;
 </script>
 <style lang="scss" scoped>
+@import "~/assets/css/setting.scss";
+
 .background {
   display: flex;
   flex-direction: column;
@@ -53,6 +55,6 @@ export default MainLayout;
   height: 100vh;
 }
 footer {
-  color: #ffffff;
+  color: $white;
 }
 </style>

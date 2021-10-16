@@ -47,12 +47,13 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
+@import "~/assets/css/setting.scss";
 
 .faqBox {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #f6f6f6;
+  background-color: $grey01;
   box-sizing: border-box;
   border-radius: 16px;
 

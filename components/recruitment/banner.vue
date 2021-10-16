@@ -8,10 +8,10 @@
     <p class="bannerPeriod">{{ period }}</p>
     <article class="boxArea">
       <RecruitmentLinkButton
-        class="box"
         v-for="box in boxList"
         :key="box.id"
-        :buttonName="box.name"
+        class="box"
+        :button-name="box.name"
         :link="box.link"
       />
     </article>
@@ -50,6 +50,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
+@import "~/assets/css/setting.scss";
+
 * {
   font-family: Spoqa Han Sans Neo;
 }
@@ -62,20 +64,20 @@ export default defineComponent({
   box-sizing: border-box;
 
   .bannerTitle {
-    color: #ffffff;
+    color: $white;
     font-weight: 900;
     white-space: pre-wrap;
   }
 
   .bannerSubTitle {
     font-weight: 400;
-    color: #ffffff;
+    color: $white;
     white-space: pre-wrap;
   }
 
   .bannerPeriod {
     font-weight: 700;
-    color: #ffffff;
+    color: $white;
   }
 
   .boxArea {

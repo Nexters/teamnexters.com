@@ -123,6 +123,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
+@import "~/assets/css/setting.scss";
+
 * {
   font-family: Spoqa Han Sans Neo;
 }
@@ -164,7 +166,7 @@ export default defineComponent({
       padding-top: 64px;
       width: 100%;
       height: 809px;
-      background: #f6f6f6;
+      background: $grey01;
       margin-bottom: 120px;
       h1 {
         width: 1200px;
@@ -180,7 +182,7 @@ export default defineComponent({
 
         /* text/sub */
 
-        color: #777777;
+        color: $grey03;
       }
     }
     .title {
@@ -191,7 +193,7 @@ export default defineComponent({
       letter-spacing: -0.02em;
       white-space: pre-wrap;
 
-      color: #000000;
+      color: $black;
     }
     .info-table {
       display: flex;
@@ -267,7 +269,7 @@ export default defineComponent({
           font-size: 24px;
           line-height: 36px;
           letter-spacing: -0.02em;
-          color: #777777;
+          color: $grey03;
         }
       }
     }
@@ -287,7 +289,7 @@ export default defineComponent({
       padding-top: 64px;
       width: 100%;
       height: 809px;
-      background: #f6f6f6;
+      background: $grey01;
       margin-bottom: 120px;
       .slogan-text {
         white-space: pre-wrap;
@@ -302,7 +304,7 @@ export default defineComponent({
 
         /* text/sub */
 
-        color: #777777;
+        color: $grey03;
       }
     }
     .title {
@@ -313,7 +315,7 @@ export default defineComponent({
       letter-spacing: -0.02em;
       white-space: pre-wrap;
 
-      color: #000000;
+      color: $black;
     }
     .info-table {
       padding-left: 64px;
@@ -388,7 +390,7 @@ export default defineComponent({
           font-size: 24px;
           line-height: 36px;
           letter-spacing: -0.02em;
-          color: #777777;
+          color: $grey03;
         }
       }
     }
@@ -408,7 +410,7 @@ export default defineComponent({
       padding-top: 24px;
       width: 100%;
       height: 484px;
-      background: #f6f6f6;
+      background: $grey01;
       margin-bottom: 64px;
       .slogan-text {
         white-space: pre-wrap;
@@ -419,7 +421,7 @@ export default defineComponent({
         text-align: center;
         letter-spacing: -0.02em;
 
-        color: #777777;
+        color: $grey03;
       }
     }
     .title {
@@ -430,7 +432,7 @@ export default defineComponent({
       letter-spacing: -0.02em;
       white-space: pre-wrap;
 
-      color: #000000;
+      color: $black;
     }
     .info-table {
       padding-left: 24px;
@@ -497,7 +499,7 @@ export default defineComponent({
           font-size: 16px;
           line-height: 24px;
           letter-spacing: -0.02em;
-          color: #777777;
+          color: $grey03;
           img {
             width: 13.33px;
             height: 7.33px;

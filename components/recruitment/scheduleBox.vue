@@ -25,6 +25,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
+@import "~/assets/css/setting.scss";
+
 * {
   font-family: Spoqa Han Sans Neo;
 }
@@ -32,7 +34,7 @@ export default defineComponent({
 .scheduleBox {
   display: flex;
   justify-content: center;
-  background: #f6f6f6;
+  background: $grey01;
   border-radius: 16px;
 
   .scheduleTitle {

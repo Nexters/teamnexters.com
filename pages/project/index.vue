@@ -48,6 +48,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
+@import "~/assets/css/setting.scss";
+
 * {
   font-family: Spoqa Han Sans Neo;
 }
@@ -87,7 +89,7 @@ export default defineComponent({
           font-weight: normal;
           font-size: 24px;
           line-height: 36px;
-          color: #000000;
+          color: $black;
           padding-left: 16px;
         }
       }
@@ -117,7 +119,7 @@ export default defineComponent({
       font-size: 24px;
       line-height: 36px;
       letter-spacing: -0.02em;
-      color: #000000;
+      color: $black;
       img {
         margin-left: 9.33px;
         width: 20px;
@@ -149,7 +151,7 @@ export default defineComponent({
           font-weight: normal;
           font-size: 24px;
           line-height: 36px;
-          color: #000000;
+          color: $black;
           padding-left: 16px;
         }
       }
@@ -179,7 +181,7 @@ export default defineComponent({
       font-size: 24px;
       line-height: 36px;
       letter-spacing: -0.02em;
-      color: #000000;
+      color: $black;
       img {
         margin-left: 9.33px;
         width: 20px;
@@ -211,7 +213,7 @@ export default defineComponent({
           font-weight: normal;
           font-size: 24px;
           line-height: 36px;
-          color: #000000;
+          color: $black;
           padding-left: 16px;
         }
       }
@@ -240,7 +242,7 @@ export default defineComponent({
       font-size: 24px;
       line-height: 36px;
       letter-spacing: -0.02em;
-      color: #000000;
+      color: $black;
       img {
         margin-left: 9.33px;
         width: 20px;
@@ -271,7 +273,7 @@ export default defineComponent({
           font-weight: normal;
           font-size: 24px;
           line-height: 36px;
-          color: #000000;
+          color: $black;
           padding-left: 8px;
         }
       }
@@ -303,7 +305,7 @@ export default defineComponent({
       font-size: 16px;
       line-height: 24px;
       letter-spacing: -0.02em;
-      color: #000000;
+      color: $black;
       img {
         margin-left: 9.33px;
         width: 13.33px;
@@ -334,7 +336,7 @@ export default defineComponent({
           font-weight: normal;
           font-size: 16px;
           line-height: 36px;
-          color: #000000;
+          color: $black;
           padding-left: 8px;
         }
       }
@@ -362,7 +364,7 @@ export default defineComponent({
       font-size: 16px;
       line-height: 24px;
       letter-spacing: -0.02em;
-      color: #000000;
+      color: $black;
       img {
         margin-left: 9.33px;
         width: 13.33px;

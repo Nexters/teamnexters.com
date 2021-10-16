@@ -36,11 +36,13 @@ export default ProjectCard;
 
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
+@import "~/assets/css/setting.scss";
+
 * {
   font-family: Spoqa Han Sans Neo;
 }
 .project-card-component-container {
-  border: solid 1px #dddddd;
+  border: solid 1px $grey02;
 }
 
 .name {
@@ -61,12 +63,12 @@ a {
   text-align: center;
   letter-spacing: -0.02em;
 
-  color: #000000;
+  color: $black;
   width: 100%;
   height: 45px;
   line-height: 45px;
   text-align: center;
-  border: 1px solid #dddddd;
+  border: 1px solid $grey02;
   border-radius: 8px;
   margin-right: 8px;
   cursor: pointer;
@@ -95,14 +97,14 @@ a {
     font-size: 24px;
     line-height: 36px;
     letter-spacing: -0.02em;
-    color: #000000;
+    color: $black;
   }
   .time {
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 21px;
-    color: #777777;
+    color: $grey03;
   }
   .links {
     padding-top: 24px;
@@ -132,14 +134,14 @@ a {
       font-size: 24px;
       line-height: 36px;
       letter-spacing: -0.02em;
-      color: #000000;
+      color: $black;
     }
     .time {
       font-style: normal;
       font-weight: normal;
       font-size: 14px;
       line-height: 21px;
-      color: #777777;
+      color: $grey03;
     }
     .links {
       padding-top: 24px;
@@ -167,14 +169,14 @@ a {
     font-size: 24px;
     line-height: 36px;
     letter-spacing: -0.02em;
-    color: #000000;
+    color: $black;
   }
   .time {
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 21px;
-    color: #777777;
+    color: $grey03;
   }
   .links {
     padding-top: 24px;
@@ -202,7 +204,7 @@ a {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.02em;
-    color: #000000;
+    color: $black;
   }
   .time {
     padding-top: 8px;
@@ -210,7 +212,7 @@ a {
     font-weight: normal;
     font-size: 12px;
     line-height: 18px;
-    color: #777777;
+    color: $grey03;
   }
   .links {
     padding-top: 16px;
@@ -238,7 +240,7 @@ a {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.02em;
-    color: #000000;
+    color: $black;
   }
   .time {
     padding-top: 8px;
@@ -246,7 +248,7 @@ a {
     font-weight: normal;
     font-size: 12px;
     line-height: 18px;
-    color: #777777;
+    color: $grey03;
   }
   .links {
     padding-top: 16px;
