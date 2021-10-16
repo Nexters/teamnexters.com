@@ -2,19 +2,23 @@
   <div class="main-container">
     <transition name="main">
       <div class="slogan">
-        <p class="title">IT Community</p>
-        <p class="title">for Experts</p>
-        <p class="description">개발자와 디자이너를 위한 IT 커뮤니티입니다.</p>
+        <p class="title">{{ slogan }}</p>
+        <div class="description">
+          <p>{{ description }}</p>
+          <Badge v-if="badge_text" :text="badge_text" />
+        </div>
         <div class="quick-link">
-          <p>넥스터즈 알아보기</p>
-          <img src="~/assets/img/ic_forward.svg" />
+          <nuxt-link :to="link_href">
+            <p>{{ link_text }}</p>
+            <img src="~/assets/img/ic_forward.svg" />
+          </nuxt-link>
         </div>
       </div>
     </transition>
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from "@nuxtjs/composition-api";
 
 export default defineComponent({
@@ -25,6 +29,103 @@ export default defineComponent({
   },
   setup() {
     return {};
+  },
+  async asyncData({ $content }) {
+    const main = await $content("main")
+      .only([
+        "slogan",
+        "default_desc",
+        "default_a",
+        "default_href",
+        "th",
+        "recruitment_start",
+        "recruitment_deadline",
+        "recruitment_notice_a",
+        "recruitment_notice_desc",
+        "recruitment_in_progress_a",
+        "recruitment_in_progress_desc",
+        "recruitment_href",
+      ])
+      .fetch();
+    const {
+      slogan,
+      default_desc,
+      default_a,
+      default_href,
+      th,
+      recruitment_start,
+      recruitment_deadline,
+      recruitment_notice_a,
+      recruitment_notice_desc,
+      recruitment_in_progress_a,
+      recruitment_in_progress_desc,
+      recruitment_href,
+    } = main;
+    return {
+      slogan: slogan,
+      default_desc: default_desc,
+      default_a: default_a,
+      default_href: default_href,
+      th: th,
+      recruitment_start: recruitment_start,
+      recruitment_deadline: recruitment_deadline,
+      recruitment_notice_a: recruitment_notice_a,
+      recruitment_notice_desc: recruitment_notice_desc,
+      recruitment_in_progress_a: recruitment_in_progress_a,
+      recruitment_in_progress_desc: recruitment_in_progress_desc,
+      recruitment_href: recruitment_href,
+    };
+  },
+  computed: {
+    link_text() {
+      let result = this.default_a;
+      if (this.before_recruitment) {
+        result = `${this.th}기 ${this.recruitment_notice_a}`;
+      } else if (this.is_recruiting) {
+        result = `${this.th}기 ${this.recruitment_in_progress_a}`;
+      }
+
+      return result;
+    },
+    link_href() {
+      let result = this.default_href;
+      if (this.before_recruitment) {
+        result = this.recruitment_href;
+      } else if (this.is_recruiting) {
+        result = this.recruitment_href;
+      }
+      return result;
+    },
+    description() {
+      let desc = this.default_desc;
+      if (this.before_recruitment) {
+        let date = new Date(this.recruitment_start);
+        desc =
+          `${date.getMonth() + 1}월 ${date.getDate()}일` +
+          ` 넥스터즈 ${this.th}기 ${this.recruitment_notice_desc}`;
+      } else if (this.is_recruiting) {
+        desc = `현재 넥스터즈 ${this.th}기 ${this.recruitment_in_progress_desc}`;
+      }
+      console.log(desc);
+      return desc;
+    },
+    badge_text() {
+      return this.d_day > 0 ? `마감 D-${this.d_day}` : "";
+    },
+    s_day() {
+      const result = new Date(this.recruitment_start) - new Date();
+      return Math.floor(result / 86_400_000);
+    },
+    d_day() {
+      const result = new Date(this.recruitment_deadline) - new Date();
+      return this.s_day < 0 ? Math.floor(result / 86_400_000) : 0;
+    },
+    before_recruitment() {
+      return this.s_day > 0;
+    },
+    is_recruiting() {
+      return this.s_day < 0 && this.d_day > 0;
+    },
   },
 });
 </script>
@@ -45,6 +146,10 @@ export default defineComponent({
 .main-leave-active {
   opacity: 0;
 }
+a {
+  text-decoration: none;
+  color: white;
+}
 
 .main-container {
   width: 100%;
@@ -64,26 +169,34 @@ export default defineComponent({
         line-height: 47.73px;
       }
       .description {
+        display: flex;
+        align-items: center;
         margin-top: 16px;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: -0.02em;
+
+        p {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: -0.02em;
+          margin-right: 8px;
+        }
       }
       .quick-link {
         display: flex;
         flex-direction: row;
+        align-items: center;
         align-content: center;
         padding-top: 40px;
 
-        font-style: normal;
-        font-weight: bold;
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: -0.02em;
-
-        cursor: pointer;
+        a {
+          display: flex;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: -0.02em;
+        }
 
         img {
           width: 16px;
@@ -106,26 +219,31 @@ export default defineComponent({
         line-height: 119px;
       }
       .description {
+        display: flex;
+        align-items: center;
         margin-top: 32px;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 24px;
-        line-height: 36px;
-        letter-spacing: -0.02em;
+        p {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 24px;
+          line-height: 36px;
+          letter-spacing: -0.02em;
+          margin-right: 20px;
+        }
       }
       .quick-link {
         display: flex;
         flex-direction: row;
         align-content: center;
         padding-top: 86px;
-
-        font-style: normal;
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 24px;
-        letter-spacing: -0.02em;
-
-        cursor: pointer;
+        a {
+          display: flex;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 24px;
+          letter-spacing: -0.02em;
+        }
 
         img {
           width: 24px;
@@ -148,26 +266,31 @@ export default defineComponent({
         line-height: 119px;
       }
       .description {
+        display: flex;
+        align-items: center;
         margin-top: 32px;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 24px;
-        line-height: 36px;
-        letter-spacing: -0.02em;
+        p {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 24px;
+          line-height: 36px;
+          letter-spacing: -0.02em;
+          margin-right: 20px;
+        }
       }
       .quick-link {
         display: flex;
         flex-direction: row;
         align-content: center;
         padding-top: 86px;
-
-        font-style: normal;
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 24px;
-        letter-spacing: -0.02em;
-
-        cursor: pointer;
+        a {
+          display: flex;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 24px;
+          letter-spacing: -0.02em;
+        }
 
         img {
           width: 24px;
