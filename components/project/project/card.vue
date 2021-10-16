@@ -1,7 +1,7 @@
 <template>
-  <div class="project-card-component-container">
-    <nuxt-link :to="`project/${project.idx}`">
-      <img class="thumbnail" :src="project.thumbnail" />
+  <div class="project-card-component-container" @click="showDetail(project)">
+    <nuxt-link :to="`project#${project.idx}`">
+      <img class="thumbnail" :src="thumbnail" />
       <p class="name">{{ project.app_name }}</p>
       <p class="time">{{ project.th }} | {{ project.year }}</p>
     </nuxt-link>
@@ -20,7 +20,7 @@
 
 <script>
 import { defineComponent } from "@nuxtjs/composition-api";
-
+import { mapActions } from "vuex";
 const ProjectCard = defineComponent({
   name: "ProjectCard",
   props: {
@@ -28,6 +28,14 @@ const ProjectCard = defineComponent({
       type: Object,
       required: true,
     },
+  },
+  computed: {
+    thumbnail() {
+      return this.project.thumbnail || require("~/assets/img/no-image.png");
+    },
+  },
+  methods: {
+    ...mapActions({ showDetail: "project/showDetail" }),
   },
 });
 
