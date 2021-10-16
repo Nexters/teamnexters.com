@@ -3,18 +3,20 @@
     class="banner"
     :style="{ 'background-image': 'url(' + backgroundImageUrl + ')' }"
   >
-    <h1 class="bannerTitle">{{ headerTitle }}</h1>
-    <h2 class="bannerSubTitle">{{ subTitle }}</h2>
-    <p class="bannerPeriod">{{ period }}</p>
-    <article class="boxArea">
-      <RecruitmentLinkButton
-        v-for="box in boxList"
-        :key="box.id"
-        class="box"
-        :button-name="box.name"
-        :link="box.link"
-      />
-    </article>
+    <div class="bannerMetaWrap">
+      <h1 class="bannerTitle">{{ headerTitle }}</h1>
+      <h2 class="bannerSubTitle">{{ subTitle }}</h2>
+      <p class="bannerPeriod">{{ period }}</p>
+      <article class="boxArea">
+        <RecruitmentLinkButton
+          v-for="box in boxList"
+          :key="box.id"
+          class="box"
+          :button-name="box.name"
+          :link="box.link"
+        />
+      </article>
+    </div>
   </div>
 </template>
 
@@ -62,22 +64,23 @@ export default defineComponent({
   background-size: cover;
   background-repeat: no-repeat;
   box-sizing: border-box;
+  letter-spacing: -0.02em;
 
   .bannerTitle {
-    color: $white;
+    color: $black;
     font-weight: 900;
     white-space: pre-wrap;
   }
 
   .bannerSubTitle {
     font-weight: 400;
-    color: $white;
+    color: $black;
     white-space: pre-wrap;
   }
 
   .bannerPeriod {
     font-weight: 700;
-    color: $white;
+    color: $black;
   }
 
   .boxArea {
@@ -91,6 +94,11 @@ export default defineComponent({
   .banner {
     height: 624px;
     padding: 64px;
+
+    .bannerMetaWrap {
+      max-width: 1200px;
+      margin: auto;
+    }
 
     .bannerTitle {
       font-size: 60px;
@@ -124,6 +132,11 @@ export default defineComponent({
     height: 624px;
     padding: 64px;
 
+    .bannerMetaWrap {
+      max-width: 1200px;
+      margin: auto;
+    }
+
     .bannerTitle {
       font-size: 60px;
       line-height: 72px;
@@ -155,6 +168,11 @@ export default defineComponent({
   .banner {
     height: 376px;
     padding: 24px;
+
+    .bannerMetaWrap {
+      max-width: 713px;
+      margin: auto;
+    }
 
     .bannerTitle {
       font-size: 32px;
