@@ -26,6 +26,8 @@ export default ActivityCard;
   font-family: Spoqa Han Sans Neo;
 }
 
+@import "~/assets/css/setting.scss";
+
 @include desktop {
   .activity-container {
     border-radius: 16px;
@@ -45,7 +47,7 @@ export default ActivityCard;
         line-height: 48px;
         letter-spacing: -0.02em;
 
-        color: #ffffff;
+        color: $white;
       }
       .title {
         margin-top: auto;
@@ -55,7 +57,7 @@ export default ActivityCard;
         line-height: 27px;
         letter-spacing: -0.02em;
 
-        color: #ffffff;
+        color: $white;
       }
     }
   }
