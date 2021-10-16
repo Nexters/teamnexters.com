@@ -1,27 +1,26 @@
 <template>
   <transition name="project">
     <div class="project-container">
+      <ProjectDetail :project="project" />
       <div class="contents">
         <div class="title">
           <h1>Look Around</h1>
           <div class="has-sup">
             <h1>Our Projects</h1>
-            <sup v-if="projects && projects.length > 0" class="total">{{
-              projects.length
-            }}</sup>
+            <sup v-if="total > 0" class="total">{{ total }}</sup>
           </div>
         </div>
         <div class="project-cards-container">
           <ProjectCard
-            v-for="project in projects"
-            :key="project.idx"
+            v-for="_project in projects"
+            :key="_project.idx"
             class="project"
-            :project="project"
+            :project="_project"
           />
-          <div class="lead-more">
-            <p>Lead more</p>
-            <img src="~/assets/img/ic_down.png" alt="" />
-          </div>
+        </div>
+        <div class="lead-more" @click="onClickMore">
+          <p>Lead more</p>
+          <img src="~/assets/img/ic_down.png" alt="" />
         </div>
       </div>
     </div>
@@ -30,18 +29,46 @@
 
 <script>
 import { defineComponent } from "@nuxtjs/composition-api";
+import { mapActions, mapGetters } from "vuex";
 
 export default defineComponent({
   name: "Project",
-  // fetchOnServer: false,
   transition: {
     name: "project",
   },
   async asyncData({ $content }) {
-    const projects = await $content("projects").sortBy("idx").fetch();
+    const projects = await $content("projects")
+      .sortBy("idx")
+      .limit(3)
+      .fetch()
+      .catch((err) => {
+        console.log(err);
+      });
+    const { length } = await $content("projects").fetch();
+
     return {
       projects: projects,
+      total: length,
     };
+  },
+  fetchOnServer: false,
+  data() {
+    return { total: 0, projects: [] };
+  },
+  computed: {
+    ...mapGetters({
+      project: "project/project",
+      showDetail: "project/showDetail",
+    }),
+  },
+  methods: {
+    ...mapActions({
+      showDetail: "project/showDetail",
+    }),
+    async onClickMore() {
+      const projects = await this.$content("projects").sortBy("idx").fetch();
+      this.projects = projects;
+    },
   },
 });
 </script>
@@ -60,6 +87,9 @@ export default defineComponent({
 .project-enter,
 .project-leave-active {
   opacity: 0;
+}
+body.scroll-hidden {
+  overflow-y: hidden;
 }
 .project-container {
   width: 100%;
