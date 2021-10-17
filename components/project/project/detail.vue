@@ -72,7 +72,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
 * {
   font-family: Spoqa Han Sans Neo;

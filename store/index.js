@@ -8,10 +8,23 @@ export const getters = {
 
 export const mutations = {
   toggleMenu(state) {
+    if (state.isMenuOpen) {
+      document.documentElement.style.getPropertyValue("--scroll-y");
+      const { body } = document;
+      body.style.overflowY = "";
+    } else {
+      document.documentElement.style.getPropertyValue("--scroll-y");
+      const { body } = document;
+      body.style.height = "100vh";
+      body.style.overflowY = "hidden";
+    }
     state.isMenuOpen = !state.isMenuOpen;
   },
   init(state) {
     state.isMenuOpen = false;
+    document.documentElement.style.getPropertyValue("--scroll-y");
+    const { body } = document;
+    body.style.overflowY = "";
   },
 };
 

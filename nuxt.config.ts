@@ -29,6 +29,8 @@ const config: NuxtConfig = {
     "~/assets/css/reset.css",
     "~/assets/css/webfont.css",
     "~/assets/css/_device.scss",
+    "~/assets/css/color.scss",
+    "~/assets/css/typography.scss",
   ],
   loading: "~/components/loading-bar.vue",
   router: {

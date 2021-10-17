@@ -107,8 +107,11 @@ nav {
     }
     .menu-items {
       width: 100%;
-      position: absolute;
+      position: fixed;
       top: 73px;
+      left: 0;
+      right: 0;
+      bottom: 0;
       padding-top: 32px;
       display: flex;
       flex-direction: column;
