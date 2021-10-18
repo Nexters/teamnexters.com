@@ -13,7 +13,7 @@
         <h1 class="header">FAQ</h1>
       </div>
       <article class="faqArea">
-        <ContactFaqBox
+        <FaqBox
           v-for="faq in faqs"
           :key="faq.idx"
           class="faqBox"

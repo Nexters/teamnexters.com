@@ -1,5 +1,5 @@
 <template>
-  <a class="linkButton" :href="link">{{ buttonName }}</a>
+  <div class="linkButton" @click="onClick">{{ buttonName }}</div>
 </template>
 
 <script>
@@ -12,9 +12,14 @@ export default defineComponent({
       type: String,
       require: true,
     },
-    link: {
+    href: {
       type: String,
       require: false,
+    },
+  },
+  methods: {
+    onClick: function () {
+      location.href = this.href;
     },
   },
 });
@@ -36,6 +41,9 @@ export default defineComponent({
   background-color: $primary;
   color: white;
   text-decoration: none;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 @include desktop {

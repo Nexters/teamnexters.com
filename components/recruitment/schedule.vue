@@ -2,10 +2,10 @@
   <div class="scheduleArea">
     <h2 class="scheduleTitle">모집 일정</h2>
     <article class="schedules">
-      <RecruitmentScheduleBox
-        class="schedule"
+      <ScheduleBox
         v-for="schedule in schedules"
         :key="schedule.id"
+        class="schedule"
         :schedule-title="schedule.title"
         :schedule-date="schedule.date"
       />

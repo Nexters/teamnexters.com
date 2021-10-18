@@ -1,7 +1,7 @@
 <template>
   <transition name="recruitment" mode="out-in">
     <div>
-      <RecruitmentBanner
+      <Banner
         class="banner"
         :background-image-url="`https://drive.google.com/uc?export=view&id=${banner.bannerImage}`"
         :header-title="banner.bannerTitle"
@@ -10,30 +10,26 @@
         :box-list="bannerBoxes"
       />
       <main class="main">
-        <RecruitmentNoticeBox
+        <NoticeBox
           v-if="notice.isVisible"
           :box-title="notice.boxTitle"
           :contents="notice.contents"
         />
-        <RecruitmentDotList
+        <DotList
           class="area"
           :dot-list-title="`지원 자격`"
           :items="qualifications"
         />
-        <RecruitmentSchedule class="area" :schedules="schedules" />
-        <RecruitmentDotList
-          class="area"
-          :dot-list-title="`유의사항`"
-          :items="caution"
-        />
+        <Schedule class="area" :schedules="schedules" />
+        <DotList class="area" :dot-list-title="`유의사항`" :items="caution" />
       </main>
       <div class="footer">
         <h2 class="footerTitle">궁금한 점이 있으신가요?</h2>
         <h3 class="footerSubTitle">자주 묻는 질문을 확인해보세요.</h3>
-        <RecruitmentLinkButton
+        <LinkButton
           class="faqBox"
           :button-name="`FAQ 바로가기`"
-          :link="`/contact`"
+          :href="`/contact`"
         />
       </div>
     </div>

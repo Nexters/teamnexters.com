@@ -14,6 +14,8 @@ const config: NuxtConfig = {
     "~/components",
     { path: "~/components/about", extensions: ["vue"] },
     { path: "~/components/project", extensions: ["vue"] },
+    { path: "~/components/contact", extensions: ["vue"] },
+    { path: "~/components/recruitment", extensions: ["vue"] },
   ],
   content: {
     nestedProperties: ["projects.idx"],
@@ -29,6 +31,7 @@ const config: NuxtConfig = {
     "~/assets/css/reset.css",
     "~/assets/css/webfont.css",
     "~/assets/css/_device.scss",
+    "~/assets/css/setting.scss",
     "~/assets/css/color.scss",
     "~/assets/css/typography.scss",
   ],

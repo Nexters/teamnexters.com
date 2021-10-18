@@ -79,19 +79,19 @@
       "result": {
         "rawData": [
           ["버튼명", "클릭 링크", "노출 유무"],
-          ["모집 알림 신청하기", "www.naver.com", "TRUE"],
-          ["디자이너 지원하기", "www.daum.net", "TRUE"],
-          ["개발자 지원하기", "www.google.com", "FALSE"]
+          ["모집 알림 신청하기", "https://www.naver.com", "TRUE"],
+          ["디자이너 지원하기", "https://www.daum.net", "TRUE"],
+          ["개발자 지원하기", "https://www.google.com", "FALSE"]
         ],
         "formatted": [
           { "(A)": "버튼명", "(B)": "클릭 링크", "(C)": "노출 유무" },
           {
             "(A)": "모집 알림 신청하기",
-            "(B)": "www.naver.com",
+            "(B)": "https://www.naver.com",
             "(C)": "TRUE"
           },
-          { "(A)": "디자이너 지원하기", "(B)": "www.daum.net", "(C)": "TRUE" },
-          { "(A)": "개발자 지원하기", "(B)": "www.google.com", "(C)": "FALSE" }
+          { "(A)": "디자이너 지원하기", "(B)": "https://www.daum.net", "(C)": "TRUE" },
+          { "(A)": "개발자 지원하기", "(B)": "https://www.google.com", "(C)": "FALSE" }
         ],
         "header": ["(A)", "(B)", "(C)"],
         "range": "'recruitment-banner-button'!A1:Z1000"

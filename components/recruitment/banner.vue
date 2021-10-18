@@ -8,12 +8,12 @@
       <h2 class="bannerSubTitle">{{ subTitle }}</h2>
       <p class="bannerPeriod">{{ period }}</p>
       <article class="boxArea">
-        <RecruitmentLinkButton
+        <LinkButton
           v-for="box in boxList"
           :key="box.id"
           class="box"
           :button-name="box.name"
-          :link="box.link"
+          :href="`https://${box.link}`"
         />
       </article>
     </div>
