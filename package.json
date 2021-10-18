@@ -4,10 +4,10 @@
   "description": "",
   "main": "nuxt.config.js",
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
+    "dev": "yarn run setting && nuxt",
+    "build": "yarn run setting && nuxt build",
+    "start": "yarn run setting && nuxt start",
+    "generate": "yarn run setting && nuxt generate",
     "post-update": "yarn upgrade --latest",
     "setting": "yarn run json-to-scss ./content/setting.json ./assets/css/setting.scss --fk"
   },
