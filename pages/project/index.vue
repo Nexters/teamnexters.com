@@ -18,9 +18,15 @@
             :project="_project"
           />
         </div>
-        <div class="lead-more" @click="onClickMore">
-          <p>Lead more</p>
-          <img src="~/assets/img/ic_down.png" alt="" />
+        <div class="more">
+          <div
+            class="lead-more"
+            :style="`display: ${more ? 'flex' : 'none'}`"
+            @click="onClickMore"
+          >
+            <p>Lead more</p>
+            <img src="~/assets/img/ic_down.png" alt="" />
+          </div>
         </div>
       </div>
     </div>
@@ -48,12 +54,13 @@ export default defineComponent({
 
     return {
       projects: projects,
+      more: true,
       total: length,
     };
   },
   fetchOnServer: false,
   data() {
-    return { total: 0, projects: [] };
+    return { total: 0, projects: [], more: true };
   },
   computed: {
     ...mapGetters({
@@ -68,6 +75,7 @@ export default defineComponent({
     async onClickMore() {
       const projects = await this.$content("projects").sortBy("idx").fetch();
       this.projects = projects;
+      this.more = false;
     },
   },
 });
@@ -137,23 +145,26 @@ body.scroll-hidden {
         border-radius: 16px;
       }
     }
-    .lead-more {
-      margin: 24px auto 64px auto;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 155px;
-      height: 68px;
-      font-weight: bold;
-      font-size: 24px;
-      line-height: 36px;
-      letter-spacing: -0.02em;
-      color: $black;
-      img {
-        margin-left: 9.33px;
-        width: 20px;
-        height: 11px;
+    .more {
+      height: 120px;
+      .lead-more {
+        margin: 24px auto 64px auto;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 155px;
+        height: 68px;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: -0.02em;
+        color: $black;
+        img {
+          margin-left: 9.33px;
+          width: 20px;
+          height: 11px;
+        }
       }
     }
   }
@@ -199,23 +210,26 @@ body.scroll-hidden {
         border-radius: 16px;
       }
     }
-    .lead-more {
-      margin: 24px auto 64px auto;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 155px;
-      height: 68px;
-      font-weight: bold;
-      font-size: 24px;
-      line-height: 36px;
-      letter-spacing: -0.02em;
-      color: $black;
-      img {
-        margin-left: 9.33px;
-        width: 20px;
-        height: 11px;
+    .more {
+      height: 120px;
+      .lead-more {
+        margin: 24px auto 64px auto;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 155px;
+        height: 68px;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: -0.02em;
+        color: $black;
+        img {
+          margin-left: 9.33px;
+          width: 20px;
+          height: 11px;
+        }
       }
     }
   }
@@ -260,23 +274,26 @@ body.scroll-hidden {
         border-radius: 16px;
       }
     }
-    .lead-more {
-      margin: 24px auto 64px auto;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 155px;
-      height: 68px;
-      font-weight: bold;
-      font-size: 24px;
-      line-height: 36px;
-      letter-spacing: -0.02em;
-      color: $black;
-      img {
-        margin-left: 9.33px;
-        width: 20px;
-        height: 11px;
+    .more {
+      height: 120px;
+      .lead-more {
+        margin: 24px auto 64px auto;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 155px;
+        height: 68px;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: -0.02em;
+        color: $black;
+        img {
+          margin-left: 9.33px;
+          width: 20px;
+          height: 11px;
+        }
       }
     }
   }
@@ -323,23 +340,26 @@ body.scroll-hidden {
         border-radius: 8px;
       }
     }
-    .lead-more {
-      margin: 24px auto 64px auto;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 106px;
-      height: 40px;
-      font-weight: bold;
-      font-size: 16px;
-      line-height: 24px;
-      letter-spacing: -0.02em;
-      color: $black;
-      img {
-        margin-left: 9.33px;
-        width: 13.33px;
-        height: 7.33px;
+    .more {
+      height: 64px;
+      .lead-more {
+        margin: 24px auto 64px auto;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 106px;
+        height: 40px;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.02em;
+        color: $black;
+        img {
+          margin-left: 9.33px;
+          width: 13.33px;
+          height: 7.33px;
+        }
       }
     }
   }
@@ -382,23 +402,26 @@ body.scroll-hidden {
         border-radius: 8px;
       }
     }
-    .lead-more {
-      margin: 24px auto 64px auto;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 106px;
-      height: 40px;
-      font-weight: bold;
-      font-size: 16px;
-      line-height: 24px;
-      letter-spacing: -0.02em;
-      color: $black;
-      img {
-        margin-left: 9.33px;
-        width: 13.33px;
-        height: 7.33px;
+    .more {
+      height: 64px;
+      .lead-more {
+        margin: 24px auto 64px auto;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 106px;
+        height: 40px;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.02em;
+        color: $black;
+        img {
+          margin-left: 9.33px;
+          width: 13.33px;
+          height: 7.33px;
+        }
       }
     }
   }

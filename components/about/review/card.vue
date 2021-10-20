@@ -1,14 +1,8 @@
 <template>
   <div class="review-container" @click="onClick">
     <div class="contents">
-      <p
-        class="th"
-        :style="`background: ${thBackgroundColor}; color:${thTextColor}`"
-      >
-        {{ th }}
-      </p>
       <p class="title">{{ title }}</p>
-      <p class="author">{{ author }}</p>
+      <p class="author">{{ th }} | {{ author }}</p>
     </div>
   </div>
 </template>
@@ -36,7 +30,7 @@ export default ReviewCard;
 
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
-@import "~/assets/css/setting.scss";
+@import "~/assets/css/color.scss";
 
 * {
   font-family: Spoqa Han Sans Neo;
@@ -45,32 +39,13 @@ export default ReviewCard;
   .review-container {
     cursor: pointer;
     border-radius: 16px;
-    width: 384px;
-    height: 192px;
+    width: 378.67px;
+    height: 163px;
     background: $grey01;
     .contents {
       padding: 24px;
-      height: calc(100% - 48px);
       display: flex;
       flex-direction: column;
-      .th {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 49px;
-        height: 29px;
-        border-radius: 4px;
-
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 21px;
-        /* identical to box height, or 150% */
-
-        letter-spacing: -0.02em;
-
-        color: $primary;
-      }
       .title {
         font-style: normal;
         font-weight: bold;
@@ -87,7 +62,7 @@ export default ReviewCard;
         font-size: 18px;
         line-height: 27px;
         letter-spacing: -0.02em;
-        color: $grey03;
+        color: $text-default;
       }
     }
   }
@@ -96,32 +71,14 @@ export default ReviewCard;
   .review-container {
     cursor: pointer;
     border-radius: 16px;
-    width: calc(50% - 12px);
-    height: 192px;
+    width: calc(50% - 16px);
+    height: 163px;
     background: $grey01;
     .contents {
       padding: 24px;
       height: calc(100% - 48px);
       display: flex;
       flex-direction: column;
-      .th {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 49px;
-        height: 29px;
-        border-radius: 4px;
-
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 21px;
-        /* identical to box height, or 150% */
-
-        letter-spacing: -0.02em;
-
-        color: $primary;
-      }
       .title {
         width: 296.5px;
         height: 72px;
@@ -147,7 +104,7 @@ export default ReviewCard;
         font-size: 18px;
         line-height: 27px;
         letter-spacing: -0.02em;
-        color: $grey03;
+        color: $text-default;
       }
     }
   }
@@ -157,33 +114,13 @@ export default ReviewCard;
     cursor: pointer;
     border-radius: 8px;
     width: 100%;
-    height: 149px;
     background: $grey01;
     .contents {
       padding: 24px;
-      height: calc(100% - 48px);
       display: flex;
       flex-direction: column;
-      .th {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 41px;
-        height: 24px;
-        border-radius: 4px;
-
-        font-style: normal;
-        font-weight: normal;
-        font-size: 12px;
-        line-height: 18px;
-
-        letter-spacing: -0.02em;
-
-        color: $primary;
-      }
       .title {
         width: 100%;
-        height: 48px;
 
         overflow: hidden;
         text-overflow: ellipsis;
@@ -206,7 +143,7 @@ export default ReviewCard;
         font-size: 14px;
         line-height: 21px;
         letter-spacing: -0.02em;
-        color: $grey03;
+        color: $text-default;
       }
     }
   }

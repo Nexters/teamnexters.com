@@ -26,6 +26,7 @@
         <div class="activity-row">
           <div class="activities">
             <h2 class="title">{{ act.title }}</h2>
+            <h3 class="desc">{{ act.desc }}</h3>
             <div class="cards">
               <ActivityCard
                 v-for="item in act.items"
@@ -53,7 +54,11 @@
               />
             </div>
             <div class="more">
-              <div class="lead-more">
+              <div
+                class="lead-more"
+                :style="`display: ${review.more ? 'flex' : 'none'}`"
+                @click="onClickMore"
+              >
                 <p>Lead more</p>
                 <img src="~/assets/img/ic_down.png" alt="" />
               </div>
@@ -65,7 +70,7 @@
   </transition>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from "@nuxtjs/composition-api";
 
 export default defineComponent({
@@ -90,11 +95,29 @@ export default defineComponent({
         "author",
         "href",
       ])
-      .fetch();
+      .sortBy("id")
+      .limit(3)
+      .fetch()
+      .catch((err) => {
+        console.log(err);
+      });
     return {
-      info: { title: "10년째\n멈추지 않는 열정", items: informations },
-      act: { title: "함께하는\n다양한 활동", items: activities },
-      review: { title: "회원들의\n생생한 활동 후기", items: reviews },
+      info: {
+        title: "10년째\n멈추지 않는 열정",
+        desc: "",
+        items: informations,
+      },
+      act: {
+        title: "함께하는\n다양한 활동",
+        desc: "정규 활동은 방학 시즌 매주  토요일에 진행되며,\n비활동 기간에는 프로젝트·공모전·스터디를 자율적으로 진행합니다.",
+        items: activities,
+      },
+      review: {
+        title: "회원들의\n생생한 활동 후기",
+        desc: "",
+        items: reviews,
+        more: true,
+      },
     };
   },
   data() {
@@ -114,8 +137,21 @@ export default defineComponent({
       review: {
         title: "회원들의\n생생한 활동 후기",
         items: [],
+        more: true,
       },
     };
+  },
+  methods: {
+    async onClickMore() {
+      const reviews = await this.$content("about/reviews")
+        .sortBy("id")
+        .fetch()
+        .catch((err) => {
+          console.log(err);
+        });
+      this.review.items = reviews;
+      this.review.more = false;
+    },
   },
   fetchOnServer: false,
 });
@@ -123,7 +159,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
-@import "~/assets/css/setting.scss";
+@import "~/assets/css/color.scss";
 
 * {
   font-family: Spoqa Han Sans Neo;
@@ -210,11 +246,11 @@ export default defineComponent({
         width: 1200px;
         display: flex;
         flex-direction: column;
-        gap: 48px;
+        gap: 32px;
         .cards {
           display: flex;
           justify-content: center;
-          gap: 48px;
+          gap: 32px;
         }
       }
     }
@@ -226,13 +262,22 @@ export default defineComponent({
       display: flex;
       flex-direction: column;
       width: 1200px;
-      gap: 48px;
+      gap: 32px;
+      .desc {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: -0.02em;
+        white-space: pre-wrap;
+        color: $text-default;
+      }
       .cards {
         display: flex;
         flex-direction: row;
         box-sizing: border-box;
         flex-wrap: wrap;
-        gap: 48px;
+        gap: 32px;
       }
     }
     .review-row {
@@ -244,13 +289,13 @@ export default defineComponent({
       display: flex;
       flex-direction: column;
       width: 1200px;
-      gap: 24px;
+      gap: 32px;
       .cards {
         display: flex;
         flex-direction: row;
         box-sizing: border-box;
         flex-wrap: wrap;
-        gap: 24px;
+        gap: 32px;
       }
       .more {
         display: flex;
@@ -335,7 +380,7 @@ export default defineComponent({
           display: flex;
           flex-direction: column;
           .cards {
-            gap: 48px;
+            gap: 32px;
             display: flex;
             flex: 0 0 auto;
           }
@@ -348,13 +393,22 @@ export default defineComponent({
     .activities {
       display: flex;
       flex-direction: column;
-      gap: 48px;
+      gap: 32px;
+      .desc {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.02em;
+        white-space: pre-wrap;
+        color: $text-default;
+      }
       .cards {
         display: flex;
         flex-direction: row;
         box-sizing: border-box;
         flex-wrap: wrap;
-        gap: 48px;
+        gap: 32px;
       }
     }
     .review-row {
@@ -365,13 +419,13 @@ export default defineComponent({
     .reviews {
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 32px;
       .cards {
         display: flex;
         flex-direction: row;
         box-sizing: border-box;
         flex-wrap: wrap;
-        gap: 24px;
+        gap: 32px;
       }
       .more {
         display: flex;
@@ -435,11 +489,13 @@ export default defineComponent({
       color: $black;
     }
     .info-table {
-      padding-left: 24px;
       .info-row {
         display: flex;
         flex-direction: column;
         margin-bottom: 64px;
+        .title {
+          padding-left: 24px;
+        }
         .information {
           margin-top: 24px;
           overflow-x: auto;
@@ -452,9 +508,11 @@ export default defineComponent({
           display: flex;
           flex-direction: column;
           .cards {
-            gap: 48px;
-            display: flex;
+            min-width: 752px;
+            gap: 16px;
+            display: inline-flex;
             flex: 0 0 auto;
+            padding: 0 24px 0 24px;
           }
         }
       }
@@ -464,17 +522,26 @@ export default defineComponent({
       display: flex;
       flex-direction: column;
       width: 100%;
-      gap: 24px;
+      gap: 16px;
+      .desc {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.02em;
+        white-space: pre-wrap;
+        color: $text-default;
+      }
       .cards {
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: 16px;
       }
     }
     .reviews {
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 16px;
       .cards {
         display: flex;
         flex-direction: row;
@@ -499,7 +566,7 @@ export default defineComponent({
           font-size: 16px;
           line-height: 24px;
           letter-spacing: -0.02em;
-          color: $grey03;
+          color: $text-default;
           img {
             width: 13.33px;
             height: 7.33px;

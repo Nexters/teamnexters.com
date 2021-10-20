@@ -76,6 +76,7 @@ footer {
       img {
         height: 24px;
         width: 24px;
+        opacity: 0.6;
       }
       ul {
         flex-direction: column;
@@ -92,20 +93,23 @@ footer {
       line-height: 21px;
       text-align: center;
       letter-spacing: -0.02em;
+      opacity: 0.6;
     }
   }
   @include tablet {
     display: flex;
     align-items: center;
-    width: calc(100% - 64px);
-    margin: auto auto 32px auto;
+    margin: auto;
     justify-content: center;
+    padding: 0 64px 32px 64px;
+    width: 713px;
 
     .sns {
       display: flex;
       img {
         height: 32px;
         width: 32px;
+        opacity: 0.6;
       }
       ul {
         flex-direction: column;
@@ -121,6 +125,7 @@ footer {
       line-height: 24px;
       text-align: center;
       letter-spacing: -0.02em;
+      opacity: 0.6;
     }
   }
   @include desktop {
@@ -128,12 +133,14 @@ footer {
     align-items: center;
     width: 1200px;
     margin: auto auto 32px auto;
+    padding: 0 64px 0 64px;
 
     .sns {
       display: flex;
       img {
         height: 32px;
         width: 32px;
+        opacity: 0.6;
       }
       ul {
         flex-direction: column;
@@ -150,6 +157,7 @@ footer {
       line-height: 24px;
       text-align: center;
       letter-spacing: -0.02em;
+      opacity: 0.6;
     }
   }
 }
