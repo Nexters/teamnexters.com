@@ -60,7 +60,7 @@
                 @click="onClickMore"
               >
                 <p>Lead more</p>
-                <img src="~/assets/img/ic_down.png" alt="" />
+                <img src="~/assets/img/ic_down.svg" alt="" />
               </div>
             </div>
           </div>
@@ -314,7 +314,7 @@ export default defineComponent({
           font-size: 24px;
           line-height: 36px;
           letter-spacing: -0.02em;
-          color: $grey03;
+          color: $text-default;
         }
       }
     }
@@ -444,7 +444,7 @@ export default defineComponent({
           font-size: 24px;
           line-height: 36px;
           letter-spacing: -0.02em;
-          color: $grey03;
+          color: $text-default;
         }
       }
     }

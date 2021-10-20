@@ -25,7 +25,7 @@
             @click="onClickMore"
           >
             <p>Lead more</p>
-            <img src="~/assets/img/ic_down.png" alt="" />
+            <img src="~/assets/img/ic_down.svg" alt="" />
           </div>
         </div>
       </div>
