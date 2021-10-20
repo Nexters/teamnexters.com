@@ -102,7 +102,7 @@ export default InfoCard;
 @include mobile {
   .info-container {
     flex: 0 0 auto;
-    border-radius: 16px;
+    border-radius: 8px;
     width: 240px;
     height: 149px;
     background: $grey01;

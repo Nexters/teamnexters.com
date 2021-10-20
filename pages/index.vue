@@ -153,16 +153,20 @@ a {
 
 .main-container {
   width: 100%;
+  height: 100vh;
   color: $white;
   display: flex;
   margin: auto;
+
+  align-items: center;
 
   @include mobile {
     .slogan {
       width: 327px;
       height: 208px;
-      padding: 24px;
+      padding: 148.5px 24px 148.5px 24px;
       .title {
+        white-space: pre-wrap;
         font-style: normal;
         font-weight: 900;
         font-size: 40px;
@@ -213,6 +217,7 @@ a {
       margin: auto;
       padding: 64px;
       .title {
+        white-space: pre-wrap;
         font-style: normal;
         font-weight: 900;
         font-size: 100px;
@@ -260,6 +265,7 @@ a {
       margin: auto;
       padding: 64px;
       .title {
+        white-space: pre-wrap;
         font-style: normal;
         font-weight: 900;
         font-size: 100px;
