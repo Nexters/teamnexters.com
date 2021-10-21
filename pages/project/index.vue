@@ -45,7 +45,7 @@ export default defineComponent({
   async asyncData({ $content }) {
     const projects = await $content("projects")
       .sortBy("idx")
-      .limit(3)
+      .limit(6)
       .fetch()
       .catch((err) => {
         console.log(err);

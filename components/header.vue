@@ -194,13 +194,6 @@ nav {
   }
   .header-item:last-child {
     padding: 0;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: bold;
-    line-height: 36px;
-    letter-spacing: -0.02em;
-    color: $black;
-    text-decoration: none;
   }
   .white-font {
     color: $white;
