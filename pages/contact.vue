@@ -2,7 +2,7 @@
   <transition name="contact" mode="out-in">
     <div class="contactBody">
       <div class="headerArea">
-        <h1 class="header">Contact Us</h1>
+        <h2 class="header">Contact Us</h2>
       </div>
       <article class="contactArea" @keydown="debug">
         <ContactBox class="contactBox" :contact-type="`kakao`" />
@@ -10,7 +10,7 @@
         <ContactBox class="contactBox" :contact-type="`facebook`" />
       </article>
       <div id="faq" class="headerArea">
-        <h1 class="header">FAQ</h1>
+        <h2 class="header">FAQ</h2>
       </div>
       <article class="faqArea">
         <FaqBox

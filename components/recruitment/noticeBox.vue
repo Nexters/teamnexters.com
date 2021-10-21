@@ -1,8 +1,8 @@
 <template>
   <div class="noticeBox">
-    <h1 class="contentTitle">
+    <h2 class="contentTitle">
       <img class="noticeIcon" src="~/assets/img/ic_caution.svg" />{{ boxTitle }}
-    </h1>
+    </h2>
     <p v-for="content in contents" :key="content.id" class="content">
       <span class="dot" />{{ content.text }}
     </p>
