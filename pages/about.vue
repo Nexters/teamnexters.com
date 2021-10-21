@@ -96,7 +96,7 @@ export default defineComponent({
         "href",
       ])
       .sortBy("id")
-      .limit(3)
+      .limit(6)
       .fetch()
       .catch((err) => {
         console.log(err);
