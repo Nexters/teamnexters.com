@@ -133,6 +133,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
 @import "~/assets/css/setting.scss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
 
 * {
   font-family: Spoqa Han Sans Neo;
@@ -166,9 +167,10 @@ a {
       height: 208px;
       padding: 148.5px 24px 148.5px 24px;
       .title {
+        font-family: "Montserrat", sans-serif;
         white-space: pre-wrap;
         font-style: normal;
-        font-weight: 900;
+        font-weight: 800;
         font-size: 40px;
         line-height: 47.73px;
       }
@@ -217,6 +219,7 @@ a {
       margin: auto;
       padding: 64px;
       .title {
+        font-family: "Montserrat", sans-serif;
         white-space: pre-wrap;
         font-style: normal;
         font-weight: 900;
@@ -265,6 +268,7 @@ a {
       margin: auto;
       padding: 64px;
       .title {
+        font-family: "Montserrat", sans-serif;
         white-space: pre-wrap;
         font-style: normal;
         font-weight: 900;

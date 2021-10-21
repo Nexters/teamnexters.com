@@ -2,7 +2,11 @@
   <nav class="navigation">
     <div :class="{ 'nav-header': true, overlay: isMenuOpen }">
       <nuxt-link to="/" class="logo" prefetch>
-        <img :src="img_logo" alt="NEXTERS_IMAGE_LOGO" />
+        <img
+          :style="`display: ${isMenuOpen ? 'none' : 'block'}`"
+          :src="img_logo"
+          alt="NEXTERS_IMAGE_LOGO"
+        />
         <img class="text-logo" :src="txt_logo" alt="NEXTERS_TEXT_LOGO" />
       </nuxt-link>
       <div class="menu" @click="toggleMenu">

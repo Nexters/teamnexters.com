@@ -4,9 +4,9 @@
       <ProjectDetail :project="project" />
       <div class="contents">
         <div class="title">
-          <h1>Look Around</h1>
+          <h2>Look Around</h2>
           <div class="has-sup">
-            <h1>Our Projects</h1>
+            <h2>Our Projects</h2>
             <sup v-if="total > 0" class="total">{{ total }}</sup>
           </div>
         </div>
@@ -111,11 +111,11 @@ body.scroll-hidden {
       .title {
         display: flex;
         flex-direction: row;
-        h1 {
+        h2 {
           font-style: normal;
           font-weight: bold;
-          font-size: 60px;
-          line-height: 90px;
+          font-size: 48px;
+          line-height: 64px;
           letter-spacing: -0.02em;
         }
         .has-sup {
@@ -177,11 +177,11 @@ body.scroll-hidden {
       .title {
         display: flex;
         flex-direction: column;
-        h1 {
+        h2 {
           font-style: normal;
           font-weight: bold;
-          font-size: 60px;
-          line-height: 90px;
+          font-size: 48px;
+          line-height: 64px;
           letter-spacing: -0.02em;
         }
         .has-sup {
@@ -242,11 +242,11 @@ body.scroll-hidden {
       .title {
         display: flex;
         flex-direction: column;
-        h1 {
+        h2 {
           font-style: normal;
           font-weight: bold;
-          font-size: 60px;
-          line-height: 90px;
+          font-size: 48px;
+          line-height: 64px;
           letter-spacing: -0.02em;
         }
         .has-sup {
@@ -304,7 +304,7 @@ body.scroll-hidden {
       .title {
         display: flex;
         padding-left: 16px;
-        h1 {
+        h2 {
           font-style: normal;
           font-weight: bold;
           font-size: 32px;
@@ -371,7 +371,7 @@ body.scroll-hidden {
       .title {
         display: flex;
         flex-direction: column;
-        h1 {
+        h2 {
           font-style: normal;
           font-weight: bold;
           font-size: 32px;

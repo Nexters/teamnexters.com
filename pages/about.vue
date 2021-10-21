@@ -224,8 +224,8 @@ export default defineComponent({
     .title {
       font-style: normal;
       font-weight: bold;
-      font-size: 60px;
-      line-height: 90px;
+      font-size: 48px;
+      line-height: 64px;
       letter-spacing: -0.02em;
       white-space: pre-wrap;
 
@@ -355,8 +355,8 @@ export default defineComponent({
     .title {
       font-style: normal;
       font-weight: bold;
-      font-size: 60px;
-      line-height: 90px;
+      font-size: 48px;
+      line-height: 64px;
       letter-spacing: -0.02em;
       white-space: pre-wrap;
 

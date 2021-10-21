@@ -65,7 +65,7 @@ export default ActivityCard;
 @include tablet {
   .activity-container {
     border-radius: 16px;
-    width: calc(50% - 24px);
+    width: calc(50% - 16px);
     height: 324px;
     background: rgba(0, 0, 0, 0.5);
     .contents {
