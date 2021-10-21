@@ -1,5 +1,5 @@
 <template>
-  <div class="contactBox">
+  <div class="contactBox" @click="onClick">
     <div class="leftArea">
       <img class="iconImage" :src="contact[contactType].icon" alt="imageName" />
       <p class="iconText">{{ contact[contactType].iconText }}</p>
@@ -16,6 +16,10 @@ export default defineComponent({
   props: {
     contactType: {
       type: String,
+      require: false,
+    },
+    onClick: {
+      type: Function,
       require: false,
     },
   },
@@ -81,6 +85,10 @@ export default defineComponent({
 
     .iconText {
       margin-left: 16px;
+    }
+
+    &:hover {
+      cursor: pointer;
     }
   }
 }

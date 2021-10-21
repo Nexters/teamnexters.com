@@ -5,9 +5,21 @@
         <h2 class="header">Contact Us</h2>
       </div>
       <article class="contactArea" @keydown="debug">
-        <ContactBox class="contactBox" :contact-type="`kakao`" />
-        <ContactBox class="contactBox" :contact-type="`gmail`" />
-        <ContactBox class="contactBox" :contact-type="`facebook`" />
+        <ContactBox
+          class="contactBox"
+          :contact-type="`kakao`"
+          :on-click="handleClick('kakao')"
+        />
+        <ContactBox
+          class="contactBox"
+          :contact-type="`gmail`"
+          :on-click="handleClick('gmail')"
+        />
+        <ContactBox
+          class="contactBox"
+          :contact-type="`facebook`"
+          :on-click="handleClick('facebook')"
+        />
       </article>
       <div id="faq" class="headerArea">
         <h2 class="header">FAQ</h2>
@@ -67,6 +79,30 @@ export default defineComponent({
       const { rawData } = results[0].result;
 
       return rawData;
+    },
+    handleClick: (action) => () => {
+      console.log("ac", action);
+      switch (action) {
+        case "kakao": {
+          console.log("kakao");
+          break;
+        }
+        case "facebook": {
+          window.location.href = "https://www.facebook.com/Nexterspage";
+          break;
+        }
+        case "gmail": {
+          const textarea = document.createElement("textarea");
+          document.body.appendChild(textarea);
+          textarea.value = "teamnexters@gmail.com";
+          textarea.select();
+          document.execCommand("copy");
+          document.body.removeChild(textarea);
+          alert("URL이 복사되었습니다.");
+          break;
+        }
+      }
+      return;
     },
   },
 });
