@@ -133,8 +133,6 @@ footer {
     align-items: center;
     width: 1200px;
     margin: auto auto 32px auto;
-    padding: 0 64px 0 64px;
-
     .sns {
       display: flex;
       img {
@@ -149,7 +147,6 @@ footer {
     }
     .copyrights {
       margin-left: auto;
-      padding-right: 64px;
 
       font-style: normal;
       font-weight: normal;

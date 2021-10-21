@@ -31,7 +31,7 @@ export default ActivityCard;
 @include desktop {
   .activity-container {
     border-radius: 16px;
-    width: 576px;
+    width: calc(50% - 16px);
     height: 324px;
     background: rgba(0, 0, 0, 0.5);
     .contents {
