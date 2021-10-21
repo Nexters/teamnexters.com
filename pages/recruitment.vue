@@ -29,7 +29,7 @@
         <LinkButton
           class="faqBox"
           :button-name="`FAQ 바로가기`"
-          :href="`/contact`"
+          :href="`/contact#faq`"
         />
       </div>
     </div>

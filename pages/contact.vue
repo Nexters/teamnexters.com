@@ -9,7 +9,7 @@
         <ContactBox class="contactBox" :contact-type="`gmail`" />
         <ContactBox class="contactBox" :contact-type="`facebook`" />
       </article>
-      <div class="headerArea">
+      <div id="faq" class="headerArea">
         <h1 class="header">FAQ</h1>
       </div>
       <article class="faqArea">
@@ -47,6 +47,16 @@ export default defineComponent({
       question: faq[0],
       answer: faq[1],
     }));
+  },
+  mounted() {
+    const faq = this.$route.hash || null;
+
+    if (faq === "#faq") {
+      setTimeout(() => {
+        const scroll = document.getElementById("faq");
+        window.scrollTo({ top: scroll.offsetTop, left: 0, behavior: "smooth" });
+      }, 300);
+    }
   },
   methods: {
     debug(e) {
