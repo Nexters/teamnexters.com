@@ -94,6 +94,16 @@ nav {
   display: flex;
   align-items: center;
   height: 73px;
+  .header-item {
+    padding: 0 48.5px 0 0;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 36px;
+    letter-spacing: -0.02em;
+    color: $black;
+    text-decoration: none;
+  }
   @include mobile {
     flex-direction: column;
     .overlay {
@@ -163,6 +173,9 @@ nav {
         padding-right: 7px;
       }
     }
+    .header-item:last-child {
+      padding: 0;
+    }
   }
   @include desktop {
     .nav-header {
@@ -180,21 +193,11 @@ nav {
         padding-right: 7px;
       }
     }
+    .header-item:last-child {
+      padding: 0;
+    }
   }
 
-  .header-item {
-    padding: 0 48.5px 0 0;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: bold;
-    line-height: 36px;
-    letter-spacing: -0.02em;
-    color: $black;
-    text-decoration: none;
-  }
-  .header-item:last-child {
-    padding: 0;
-  }
   .white-font {
     color: $white;
   }
