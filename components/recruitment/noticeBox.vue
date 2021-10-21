@@ -1,8 +1,10 @@
 <template>
   <div class="noticeBox">
-    <h1 class="contentTitle">{{ boxTitle }}</h1>
+    <h1 class="contentTitle">
+      <img class="noticeIcon" src="~/assets/img/ic_caution.svg" />{{ boxTitle }}
+    </h1>
     <p v-for="content in contents" :key="content.id" class="content">
-      - {{ content.text }}
+      <span class="dot" />{{ content.text }}
     </p>
   </div>
 </template>
@@ -39,7 +41,24 @@ export default defineComponent({
   border-radius: 16px;
 
   .contentTitle {
-    font-style: bold;
+    font-weight: 700;
+
+    .noticeIcon {
+      vertical-align: top;
+      margin-top: 5px;
+      margin-right: 5px;
+    }
+  }
+
+  .dot {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+    margin-right: 5px;
+    background-color: #000000;
+    vertical-align: top;
+    margin-top: 10px;
   }
 }
 
