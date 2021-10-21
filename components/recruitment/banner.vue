@@ -70,6 +70,7 @@ export default defineComponent({
     color: $black;
     font-weight: 900;
     white-space: pre-wrap;
+    font-family: "Montserrat", sans-serif;
   }
 
   .bannerSubTitle {
@@ -103,6 +104,7 @@ export default defineComponent({
     .bannerTitle {
       font-size: 60px;
       line-height: 72px;
+      font-family: "Montserrat", sans-serif;
     }
 
     .bannerSubTitle {
@@ -140,6 +142,7 @@ export default defineComponent({
     .bannerTitle {
       font-size: 60px;
       line-height: 72px;
+      font-family: "Montserrat", sans-serif;
     }
 
     .bannerSubTitle {
@@ -177,6 +180,7 @@ export default defineComponent({
     .bannerTitle {
       font-size: 32px;
       line-height: 38px;
+      font-family: "Montserrat", sans-serif;
     }
 
     .bannerSubTitle {

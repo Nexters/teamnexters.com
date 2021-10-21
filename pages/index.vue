@@ -133,7 +133,6 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
 @import "~/assets/css/setting.scss";
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
 
 * {
   font-family: Spoqa Han Sans Neo;
