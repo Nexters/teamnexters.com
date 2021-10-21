@@ -172,7 +172,7 @@ a {
         font-style: normal;
         font-weight: 800;
         font-size: 40px;
-        line-height: 47.73px;
+        line-height: 48.76px;
       }
       .description {
         display: flex;
@@ -223,8 +223,8 @@ a {
         white-space: pre-wrap;
         font-style: normal;
         font-weight: 900;
-        font-size: 100px;
-        line-height: 119px;
+        font-size: 90px;
+        line-height: 110px;
       }
       .description {
         display: flex;
@@ -272,8 +272,8 @@ a {
         white-space: pre-wrap;
         font-style: normal;
         font-weight: 900;
-        font-size: 100px;
-        line-height: 119px;
+        font-size: 90px;
+        line-height: 110px;
       }
       .description {
         display: flex;
