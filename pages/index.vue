@@ -157,6 +157,7 @@ a {
   color: $white;
   display: flex;
   margin: auto;
+  padding-top: 73px;
 
   align-items: center;
 
