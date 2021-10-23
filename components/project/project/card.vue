@@ -76,8 +76,8 @@ a {
   height: 45px;
   line-height: 45px;
   text-align: center;
-  border: 1px solid $grey02;
   border-radius: 8px;
+  border: 1px solid $grey02;
   margin-right: 8px;
   cursor: pointer;
 }

@@ -245,6 +245,7 @@ export default defineComponent({
       line-height: 45px;
       text-align: center;
       border: 1px solid #dddddd;
+      border-radius: 8px;
       margin-right: 8px;
       cursor: pointer;
     }
@@ -376,6 +377,7 @@ export default defineComponent({
       line-height: 45px;
       text-align: center;
       border: 1px solid #dddddd;
+      border-radius: 4px;
       margin-right: 8px;
       cursor: pointer;
     }
@@ -505,6 +507,7 @@ export default defineComponent({
       line-height: 45px;
       text-align: center;
       border: 1px solid #dddddd;
+      border-radius: 8px;
       margin-right: 8px;
       cursor: pointer;
     }
