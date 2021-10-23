@@ -44,8 +44,6 @@ export default defineComponent({
 
     .noticeIcon {
       vertical-align: top;
-      margin-top: 5px;
-      margin-right: 5px;
     }
   }
 
@@ -70,6 +68,13 @@ export default defineComponent({
       font-size: 24px;
       line-height: 36px;
       margin-bottom: 16px;
+
+      .noticeIcon {
+        width: 20px;
+        height: 20px;
+        margin-top: 5px;
+        margin-right: 5px;
+      }
     }
 
     .content {
@@ -88,6 +93,13 @@ export default defineComponent({
       font-size: 24px;
       line-height: 36px;
       margin-bottom: 16px;
+
+      .noticeIcon {
+        width: 20px;
+        height: 20px;
+        margin-top: 5px;
+        margin-right: 5px;
+      }
     }
 
     .content {
@@ -106,6 +118,13 @@ export default defineComponent({
       font-size: 16px;
       line-height: 24px;
       margin-bottom: 8px;
+
+      .noticeIcon {
+        width: 16px;
+        height: 16px;
+        margin-right: 3px;
+        margin-top: 3px;
+      }
     }
 
     .content {
