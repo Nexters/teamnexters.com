@@ -16,5 +16,7 @@
   ],
   "description": "지각방지 타이머 앱.\n\n일찍 일어나도 일찍 준비를 해도 지각하는 자!\n도대체 언제 일어나서 몇시부터 준비를 시작해야하는지\n그리고 무엇부터 준비를 해야하는지 모르겠다.\n째깍째깍이 여러분의 준비패턴에 맞게 준비시작을 알려드립니다!\n그냥 준비만하세요 지금 이시간에 무엇을 준비해야하는지 알려드릴께요.\n다음 지각자는 당신이 아닐꺼에요.",
   "ppt": "",
-  "link": "https://play.google.com/store/apps/details?id=com.nexters.ticktock"
+  "link": {
+    "android": "https://play.google.com/store/apps/details?id=com.nexters.ticktock"
+  }
 }

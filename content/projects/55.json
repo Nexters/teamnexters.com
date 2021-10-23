@@ -17,6 +17,7 @@
   ],
   "description": "url 단축 시키기.\n\n넥스터즈 홍보때 url줄이고 싶은 것을 https://www.nexters.me로 들어와서\nurl을 단축시키고 nexters.me/(줄여준 url)을 붙여주면 리다이렉트 되서 기존 url로 들어간다.\n\n넥스터즈 홍보 효과를 낼 수 있고 통계에 웹에서 들어왔는지,모바일로 들어왔는지 확인 할 수 있고 가장 많이 유입된 사이트를 볼 수 있어서 광고 효과도 같이 낼 수 있는 서비스이다.",
   "ppt": "",
-  "link": {},
-  "web_link": "https://www.nexters.me/"
+  "link": {
+    "web": "https://www.nexters.me/"
+  }
 }

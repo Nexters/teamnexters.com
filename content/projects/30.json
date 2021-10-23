@@ -14,5 +14,7 @@
   ],
   "description": "gola는 빠른 선택을 돕는 애플리케이션입니다.\n필요한 기능만 담아 깔끔하고 담백하게 구현하였습니다 :D\n\n- 어떤 음식을 먹을지 고민 될 때는 gola !\n· 여럿이서 메뉴를 정하기 어려울 때, 일일이 찾아보기 귀찮을 때 사용해보세요!\n\n- 가장 먹고 싶은 음식을 gola !\n· 16강 토너먼트로 음식을 고를 수 있습니다.\n· 2가지 음식 중 먹고 싶은 음식을 고르기만 하면 됩니다.\n\n- 다 땡길 땐, 아무 음식이나 gola !\n· 보유하고 있는 다양한 음식들 중, 무작위로 1개를 골라드립니다!\n\n불편사항이나 개선에 대한 의견이 있다면 teamnexters@gmail.com로\n알려주시면 감사하겠습니다 :D\n\n일부 태블릿 지원됩니다.\n\n메뉴 / 음식 / 뭐 먹지 / 식당 / 맛집 / 점심 / 저녁 / 간식 골라~",
   "ppt": "",
-  "link": "https://play.google.com/store/apps/details?id=com.nexters.amuguna.gola"
+  "link": {
+    "android": "https://play.google.com/store/apps/details?id=com.nexters.amuguna.gola"
+  }
 }

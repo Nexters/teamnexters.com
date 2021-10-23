@@ -10,5 +10,7 @@
   ],
   "description": "친구와 함께 해서 2048배 더 재밌어진 2048 with!\n\n친구와 함께 더 새롭고 더 재밌어진 2048을 즐겨보세요!\n\n■게임 특징\n-최대 4명까지! 친구, 가족, 연인과 함께 플레이!\n-다음엔 어떤 모양일까? 기대되는 숫자판!\n-아기자기한 컬렉션!\n\n친숙한 2048을 더 새롭고 즐겁게 즐기고 싶으신가요? 2048 with와 함께하세요. 더할 수록 새로워지는 숫자가 눈을 떼지 못하게 합니다.\n솔로 플레이부터 멀티 플레이까지 다양하게 지원합니다. 여럿이 함께할 수록 더 많은 코인이 팡팡! 아기자기한 컬렉션을 모아 일러스트를 완성해 보세요.\n\n새로워진 2048을 지금 당장 만나보세요",
   "ppt": "",
-  "link": "https://play.google.com/store/apps/details?id=com.nexters.puzzle2048with"
+  "link": {
+    "android": "https://play.google.com/store/apps/details?id=com.nexters.puzzle2048with"
+  }
 }

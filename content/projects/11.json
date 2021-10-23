@@ -10,5 +10,7 @@
   ],
   "description": "내가 지금 있는 곳이자 당신이 다녀간 이곳,\n당신은 여기서 무엇을 했고 어떤 생각을 하고 있었나요?\n그리고 나는 여기서 지금 어떤 생각을 하고 있을까요?\n지금 이 장소에 추억, 감정, 생각을 자신의 목소리로 남겨보세요.\n같은 공간에 있던 다른 사람들의 생각과 감정을 공유하고\n같은 공간에 남겨둔 나의 생각과 감정을 추억할 수 있는 vobble\n이 장소에 남겨져 있는 여러분의 기억을 들려드립니다.\n'Hear your memory' - vobble\n\n* Listen to the vobbles\n어떤 장소를 방문 하셨나요?\n지금 당신이 있는 그 곳을 먼저 다녀갔던 사람들의 vobble을 들어봅시다.\n어떤 다른 이야기들이 있을까요?\n\n* Create your vobble\n\n1.목소리 녹음하기\n당신도 당신의 목소리로 vobble을 만들어 그 곳에 남겨 놓아 봅니다.\n앞으로 이 곳을 방문할 사람들에게 하고싶은 이야기도 해보아요!\n\n2.사진 추가\n특별한 사람과 함께 있었나요? 잊지 못할 풍경을 보았나요?\n당신의 사진과 함께 좀 더 특별한 vobble을 만들 수 있어요!\n\n* Find your vobble\n\nvobble을 남겼던 장소를 다시 방문했나요?\n타임 캡슐 처럼 찾아 들어봅니다! 그전과 또 다른 느낌을 받을거에요",
   "ppt": "",
-  "link": "https://play.google.com/store/apps/details?id=com.nexters.vobble"
+  "link": {
+    "android": "https://play.google.com/store/apps/details?id=com.nexters.vobble"
+  }
 }

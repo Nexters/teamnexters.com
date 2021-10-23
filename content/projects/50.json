@@ -17,5 +17,7 @@
   ],
   "description": "대학생 익명 커뮤니티 서비스 모자이크\n\n[대학생 익명 커뮤니티]\n- 기존에 대학별로 분산되어 있던 커뮤니티 서비스를 통합, 익명으로 국내 대학생들의  진솔한 이야기를 들을 수 있습니다.\n- 모자이크를 통해 대학생들은 시시콜콜한 이야기부터 고민, 걱정 등을 솔직하게 나눌 수 있습니다.\n\n[재미있게 즐겨 VIEW]\n- 짧은 시간에 다양한 콘텐츠를 소비하고 싶은 대학생들의 니즈를 토대로, 직관적인 카드 인터페이스와 흥미로운 스와이프 인터랙션을 볼 수 있습니다.\n\n[간단한 학교인증]\n- 간편한 대학교 인증을 통해서 번거로운 절차 없이 가입 및 로그인이 가능합니다.",
   "ppt": "",
-  "link": "https://play.google.com/store/apps/details?id=com.teamnexters.mosaic"
+  "link": {
+    "android": "https://play.google.com/store/apps/details?id=com.teamnexters.mosaic"
+  }
 }

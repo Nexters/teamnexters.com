@@ -16,5 +16,7 @@
   ],
   "description": "주변에 있는 생활도구들로 쉽게 계량하기\n\n아무거나로 계량가능! 아무계\n\nAmoogye 아무계는 우리 주변의 도구들로 계량할 수 있도록 도와주는 서비스입니다.\n\n- 밥숟가락, 종이컵으로 쉽게 계량해보세요.\n- 내가 요리하는 인원기준에 맞춰 계량해보세요.\n- 간편 타이머로 더욱 간편한 요리.\n- 나만의 계량도구를 추가해보세요.\n\n*변환된 계량은 정확하지 않을 수 있습니다.",
   "ppt": "https://drive.google.com/file/d/1BiFOi3e7ubnNiSF9b8i9JIYfNyoTWTNr/view",
-  "link": "https://play.google.com/store/apps/details?id=cookcook.nexters.com.amoogye"
+  "link": {
+    "android": "https://play.google.com/store/apps/details?id=cookcook.nexters.com.amoogye"
+  }
 }
