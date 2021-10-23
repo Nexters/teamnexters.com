@@ -6,15 +6,15 @@
       <p class="time">{{ project.th }}th | {{ project.year }}</p>
     </nuxt-link>
     <div class="links">
-      <a
+      <div
         v-for="(link, platform) in project.link"
         :key="platform"
         class="link-item"
-        :href="link"
-        @click.stop=""
       >
-        {{ platform }}
-      </a>
+        <a :href="link" @click.stop="">
+          {{ platform }}
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -60,31 +60,7 @@ export default ProjectCard;
 a {
   text-decoration: none;
 }
-.links {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.link-item {
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 24px;
-  text-align: center;
-  letter-spacing: -0.02em;
 
-  color: $black;
-  width: 100%;
-  height: 45px;
-  line-height: 45px;
-  text-align: center;
-  border-radius: 8px;
-  border: 1px solid $grey02;
-  margin-right: 8px;
-  cursor: pointer;
-}
-.link-item:last-child {
-  margin: 0;
-}
 @include d-c3 {
   .thumbnail {
     width: 100%;
@@ -92,15 +68,9 @@ a {
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
   }
-  .name,
-  .time {
-    margin-left: 16px;
-  }
-  .links {
-    margin: 0 16px 16px 16px;
-  }
 
   .name {
+    margin: 24px 0 0 24px;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -109,14 +79,41 @@ a {
     color: $black;
   }
   .time {
+    margin: 8px 0 0 24px;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 21px;
+    font-size: 18px;
+    line-height: 27px;
     color: $grey03;
   }
+
   .links {
-    padding-top: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 24px;
+    gap: 8px;
+    .link-item {
+      a {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 27px;
+        text-align: center;
+        letter-spacing: -0.02em;
+        color: $black;
+      }
+      padding: 16px 24px;
+      width: 100%;
+      text-align: center;
+      border-radius: 8px;
+      border: 1px solid $grey02;
+      cursor: pointer;
+    }
+    .link-item:last-child {
+      a {
+        margin: 0;
+      }
+    }
   }
 }
 
@@ -129,15 +126,9 @@ a {
       border-top-left-radius: 16px;
       border-top-right-radius: 16px;
     }
-    .name,
-    .time {
-      margin-left: 16px;
-    }
-    .links {
-      margin: 0 16px 16px 16px;
-    }
 
     .name {
+      margin: 24px 0 0 24px;
       font-style: normal;
       font-weight: bold;
       font-size: 24px;
@@ -146,14 +137,40 @@ a {
       color: $black;
     }
     .time {
+      margin: 8px 0 0 24px;
       font-style: normal;
       font-weight: normal;
-      font-size: 14px;
-      line-height: 21px;
+      font-size: 18px;
+      line-height: 27px;
       color: $grey03;
     }
     .links {
-      padding-top: 24px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 24px;
+      gap: 8px;
+      .link-item {
+        a {
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 27px;
+          text-align: center;
+          letter-spacing: -0.02em;
+          color: $black;
+        }
+        padding: 16px 24px;
+        width: 100%;
+        text-align: center;
+        border-radius: 8px;
+        border: 1px solid $grey02;
+        cursor: pointer;
+      }
+      .link-item:last-child {
+        a {
+          margin: 0;
+        }
+      }
     }
   }
 }
@@ -165,14 +182,8 @@ a {
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
   }
-  .name,
-  .time {
-    margin-left: 16px;
-  }
-  .links {
-    margin: 0 16px 16px 16px;
-  }
   .name {
+    margin: 24px 0 0 24px;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -181,14 +192,40 @@ a {
     color: $black;
   }
   .time {
+    margin: 8px 0 0 24px;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 21px;
+    font-size: 18px;
+    line-height: 27px;
     color: $grey03;
   }
   .links {
-    padding-top: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 24px;
+    gap: 8px;
+    .link-item {
+      a {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 27px;
+        text-align: center;
+        letter-spacing: -0.02em;
+        color: $black;
+      }
+      padding: 16px 24px;
+      width: 100%;
+      text-align: center;
+      border-radius: 8px;
+      border: 1px solid $grey02;
+      cursor: pointer;
+    }
+    .link-item:last-child {
+      a {
+        margin: 0;
+      }
+    }
   }
 }
 
@@ -199,15 +236,8 @@ a {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
   }
-  .name,
-  .time {
-    margin-left: 16px;
-  }
-  .links {
-    margin: 0 16px 16px 16px;
-  }
   .name {
-    padding-top: 8px;
+    margin: 16px 0 0 16px;
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -216,15 +246,40 @@ a {
     color: $black;
   }
   .time {
-    padding-top: 8px;
+    margin: 8px 0 0 16px;
     font-style: normal;
     font-weight: normal;
-    font-size: 12px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 21px;
     color: $grey03;
   }
   .links {
-    padding-top: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 24px;
+    gap: 8px;
+    .link-item {
+      a {
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 21px;
+        text-align: center;
+        letter-spacing: -0.02em;
+        color: $black;
+      }
+      padding: 12px 0 12px 0;
+      width: 100%;
+      text-align: center;
+      border-radius: 8px;
+      border: 1px solid $grey02;
+      cursor: pointer;
+    }
+    .link-item:last-child {
+      a {
+        margin: 0;
+      }
+    }
   }
 }
 
@@ -235,15 +290,8 @@ a {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
   }
-  .name,
-  .time {
-    margin-left: 16px;
-  }
-  .links {
-    margin: 0 16px 16px 16px;
-  }
   .name {
-    padding-top: 8px;
+    margin: 16px 0 0 16px;
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -252,15 +300,40 @@ a {
     color: $black;
   }
   .time {
-    padding-top: 8px;
+    margin: 8px 0 0 16px;
     font-style: normal;
     font-weight: normal;
-    font-size: 12px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 21px;
     color: $grey03;
   }
   .links {
-    padding-top: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 24px;
+    gap: 8px;
+    .link-item {
+      a {
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 21px;
+        text-align: center;
+        letter-spacing: -0.02em;
+        color: $black;
+      }
+      padding: 12px 0 12px 0;
+      width: 100%;
+      text-align: center;
+      border-radius: 8px;
+      border: 1px solid $grey02;
+      cursor: pointer;
+    }
+    .link-item:last-child {
+      a {
+        margin: 0;
+      }
+    }
   }
 }
 </style>
