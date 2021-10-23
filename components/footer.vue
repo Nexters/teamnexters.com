@@ -97,6 +97,9 @@ footer {
 }
 
 .footer {
+  .leftArea {
+    align-self: flex-start;
+  }
   .sponsor {
     position: relative;
     > p {
@@ -128,7 +131,7 @@ footer {
       .sponsorList {
         .sponsorItem {
           font-weight: 400;
-          letter-spacing: -0.2;
+          letter-spacing: -0.02em;
           color: $grey03;
         }
       }
@@ -175,7 +178,7 @@ footer {
       line-height: 21px;
     }
     .sponsorBox {
-      right: -60px;
+      right: -120px;
 
       .sponsorItem {
         font-size: 12px;

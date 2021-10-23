@@ -35,7 +35,6 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   background: $grey01;
-  border-radius: 16px;
 
   .scheduleTitle {
     font-weight: bold;
@@ -51,6 +50,7 @@ export default defineComponent({
     width: 200px;
     flex-direction: column;
     padding: 24px;
+    border-radius: 16px;
 
     .scheduleTitle {
       font-size: 24px;
@@ -69,6 +69,7 @@ export default defineComponent({
     width: 200px;
     flex-direction: column;
     padding: 24px;
+    border-radius: 16px;
 
     .scheduleTitle {
       font-size: 24px;
@@ -87,6 +88,7 @@ export default defineComponent({
     width: 100%;
     justify-content: space-between;
     padding: 16px;
+    border-radius: 8px;
 
     .scheduleTitle {
       font-size: 16px;

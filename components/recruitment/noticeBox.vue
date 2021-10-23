@@ -38,7 +38,6 @@ export default defineComponent({
 .noticeBox {
   background-color: $grey01;
   border: 1px solid $grey02;
-  border-radius: 16px;
 
   .contentTitle {
     font-weight: 700;
@@ -65,6 +64,7 @@ export default defineComponent({
 @include desktop {
   .noticeBox {
     padding: 24px;
+    border-radius: 16px;
 
     .contentTitle {
       font-size: 24px;
@@ -82,6 +82,7 @@ export default defineComponent({
 @include tablet {
   .noticeBox {
     padding: 24px;
+    border-radius: 16px;
 
     .contentTitle {
       font-size: 24px;
@@ -99,6 +100,7 @@ export default defineComponent({
 @include mobile {
   .noticeBox {
     padding: 16px;
+    border-radius: 8px;
 
     .contentTitle {
       font-size: 16px;

@@ -74,6 +74,9 @@ export default defineComponent({
 
   .text {
     color: $grey03;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    align-self: center;
   }
 }
 
@@ -87,6 +90,11 @@ export default defineComponent({
       margin-left: 16px;
     }
 
+    .text {
+      font-size: 18px;
+      line-height: 27px;
+    }
+
     &:hover {
       cursor: pointer;
     }
@@ -98,6 +106,11 @@ export default defineComponent({
     font-size: 24px;
     line-height: 36px;
     padding: 32px;
+
+    .text {
+      font-size: 18px;
+      line-height: 27px;
+    }
 
     .iconText {
       margin-left: 16px;
@@ -114,6 +127,11 @@ export default defineComponent({
     .iconText {
       margin-left: 16px;
     }
+
+    .text {
+      font-size: 18px;
+      line-height: 27px;
+    }
   }
 }
 
@@ -126,6 +144,11 @@ export default defineComponent({
     .iconText {
       margin-left: 8px;
     }
+
+    .text {
+      font-size: 14px;
+      line-height: 21px;
+    }
   }
 }
 
@@ -137,6 +160,11 @@ export default defineComponent({
 
     .iconText {
       margin-left: 8px;
+    }
+
+    .text {
+      font-size: 14px;
+      line-height: 21px;
     }
   }
 }
