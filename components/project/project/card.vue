@@ -3,7 +3,7 @@
     <nuxt-link :to="`project#${project.idx}`">
       <img class="thumbnail" :src="thumbnail" />
       <p class="name">{{ project.app_name }}</p>
-      <p class="time">{{ project.th }} | {{ project.year }}</p>
+      <p class="time">{{ project.th }}th | {{ project.year }}</p>
     </nuxt-link>
     <div class="links">
       <a

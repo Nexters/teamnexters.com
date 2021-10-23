@@ -16,7 +16,7 @@ for idx, row in enumerate(rows[1:]):
         if f"https://drive.google.com/uc?export=view&id={_thumbnail}" 
         else ""
     )
-    projects.append({
+    project = {
         "idx": idx,
         "app_name": app_name,
         "thumbnail": thumbnail,
@@ -26,12 +26,15 @@ for idx, row in enumerate(rows[1:]):
         "members": [member.strip() for member in _members.split(",")],
         "description": description,
         "ppt": ppt,
-        "link":{
-            "android":android_link,
-            "ios":ios_link,
-            "web":web_link
-        }
-    })
+        "link":{}
+    }
+    if android_link:
+        project["link"] = android_link
+    if ios_link:
+        project["ios_link"] = ios_link
+    if web_link:
+        project["web_link"] = web_link
+    projects.append(project)
 
 for idx, project in enumerate(projects):
     with open(f"./content/projects/{idx}.json", mode="w", encoding="utf-8") as f:
