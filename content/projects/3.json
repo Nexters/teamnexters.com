@@ -10,7 +10,9 @@
   ],
   "description": "진실이 아니면 소주를 달라! 질문을 하나 둘 하다보면 분위기가 후끈후끈!\n수십개의 재치 있고 가끔은 짓궂기도한 질문들이 준비되어 있습니다.\n술자리 진실게임은 이제 술자리 진실게임 앱으로 쉽고 재밌게 즐기세요!\n\n술자리를 즐기는 가장 재밌는 방법!\n어색하고 심심한 술자리가 지겨우세요?\n술자리에서 어떤 게임을 해야하는지 고민이 되세요?\n진실게임에서 무슨 질문을 할지 고민이 되세요?\n그렇다면 술자리 진실게임 앱이 술자리를 한 차원 업그레이드 해드립니다.\n\n아무리 재미가 없는 술자리라도 술자리 진실게임 앱만 있다면 큰 웃음 빵빵! 분위기는 훈훈해 집니다.\n술자리 진실 게임 앱은 랜덤으로 질문을 고를 수 있고, 그 질문에 대답하지 못하면 정해진 만큼 소주를 마셔야 합니다. 한번 대답한 질문은 다시 나오지 않습니다.\n\n질문을 하나 둘 하다보면 분위기는 어느새 최고조로! 즐거운 술자리는 술자리 진실게임 앱과 함께!",
   "ppt": "",
-  "android_link": "https://play.google.com/store/apps/details?id=nexters.dev2.truthgame2&feature=search_result",
-  "ios_link": "",
-  "web_link": ""
+  "link": {
+    "android": "https://play.google.com/store/apps/details?id=nexters.dev2.truthgame2&feature=search_result",
+    "ios": "",
+    "web": ""
+  }
 }

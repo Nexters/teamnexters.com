@@ -10,7 +10,9 @@
   ],
   "description": "관심있던 사람과의 카톡이 뜸해진거 같으세요?\n사랑하는 사람과의 카톡이 단답이 된 거 같으세요?\n\n아침에 보낸 카톡이 저녁이 되서야 돌아오고..\n두줄, 세줄 화면 가득이던 카톡에 어느새 ‘ㅇㅇ’두 글자만 찍히는 그 순간!\n\n‘이 인간 변한거 같은데, 기분 탓일까…’하는 생각은 이제 그만!\n\n정확한 분석으로 직접 확인하세요! 한번쯤은 알고 싶었던 상대와의 카톡 횟수, 길이, 시간!\n이제 카카오톡 다알랴줌이 알려줄게요!\n\n* 공유버튼을 통해 상대와의 공유도 가능하니 따끔한 메세지나, 사랑의 메세지도 보내보세요!\n\n연관검색어 : 카카오톡, 대화분석, 카톡분석\n",
   "ppt": "",
-  "android_link": "https://play.google.com/store/apps/details?id=dhke.nexters.chattinganalysor",
-  "ios_link": "",
-  "web_link": ""
+  "link": {
+    "android": "https://play.google.com/store/apps/details?id=dhke.nexters.chattinganalysor",
+    "ios": "",
+    "web": ""
+  }
 }

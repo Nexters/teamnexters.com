@@ -10,7 +10,9 @@
   ],
   "description": "새벽시간 가끔 센치해지고 싶은 당신\n손발이 오그라든다는 댓글이 두려우시다면 이팅으로!\n\nSNS에 쓰지 못하는 나의 솔직한 이야기,\n내 일기장에만 있는 소중한 추억,\n이불 뻥뻥 차면서 부끄러웠던 기억,\n지금 하고있는 고민,\n털어 놓고싶은 친구와의 비밀,\n설레이는 첫사랑 이야기..\n\n당신의 이야기를 eting해 보세요\n대나무숲에 당신의 이야기를 털어놓듯\n누군가 한명에게만 이야기를 풀어보세여\neting은 이야기를 쓰고 랜덤으로 누군가에게 보낼 수 있는 어플입니다.\n\n#주요 기능 및 특징\n\n나의 이야기를 작성해 eting합니다.\n내가 쓴 eting은 랜덤으로 누군가에게 보내집니다.\n나도 랜덤으로 누군가의 eting을 받습니다. main 화면의 우주선을 눌러 확인할 수 있습니다.\n다른 사람에게서 받은 eting에는 짧은 멘트과 반응을 담아 보낼 수 있습니다.\n다른 사람의 eting은 반응을 보내는 즉시 사라지게 됩니다.\n나의 eting은 내 목록에 저장됩니다.\n\n#참고\n\n비밀번호를 설정 할 수 있습니다.\n내가 쓴 eting들은 메일로 보낼 수 있습니다.\neting을 특정사람과 주고받을수는 없습니다.\n시간에 따라 eting의 배경화면 색이 바뀝니다. 확인해보세요!\nProject Details Date\n2013.11.02 CategoriesAndroid Custom",
   "ppt": "",
-  "android_link": "https://play.google.com/store/apps/details?id=com.gif.eting",
-  "ios_link": "",
-  "web_link": ""
+  "link": {
+    "android": "https://play.google.com/store/apps/details?id=com.gif.eting",
+    "ios": "",
+    "web": ""
+  }
 }

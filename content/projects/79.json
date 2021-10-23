@@ -16,7 +16,9 @@
   ],
   "description": "물, 커피, 알콜, 쥬스, 우유, 탄산, 이온 차 다 좋으니.... 수분 제대로 섭취하자!\n\n1. 매력적인 캐릭터를 통한 수분 섭취 응원\n- 음료를 섭취할 때 마다 메인의 캐릭터 모션이 변화 합니다.\n- 시간 대별로 오늘 마신 음료를 확인할 수 있습니다.\n\n2. 통계를 통한 수분 섭취 관리\n- 월별, 주별, 일별 통계를 제공합니다.\n\n3. 설정, 위젯을 통해 수분 섭취 관리\n- 알람을 통해 수분 섭취할 일정을 관리할 수 있습니다.\n- 위젯을 제공하여 앱에 들어가지 않더라도 현재 섭취한 총 수분 섭취량을 알 수 있습니다.",
   "ppt": "",
-  "android_link": "https://play.google.com/store/apps/details?id=appvian.water.buddy&hl=ko",
-  "ios_link": "",
-  "web_link": ""
+  "link": {
+    "android": "https://play.google.com/store/apps/details?id=appvian.water.buddy&hl=ko",
+    "ios": "",
+    "web": ""
+  }
 }

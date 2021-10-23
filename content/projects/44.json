@@ -17,7 +17,9 @@
   ],
   "description": "더 편리하고 똑똑하게,\n여행 계획부터 여행 기록까지 한꺼번에 도와 주는 여행 필수 다이어리!\n\n중구난방으로 찍었던 여행 사진들을 이제는 위치별, 일정별로 예쁘게 담아보세요.\n편리함과 감성을 동시에 잡은 여행 사진 어플!\n\n\n1. 트래플에서 여행 계획을 짜세요.\n\n2. 계획 된 대로 사진을 찍으며 미션을 수행하세요.\n\n3. 모든 미션을 수행하면 당신만의 여행 기록이 완성됩니다.\n\n지금 바로 시작해보세요!",
   "ppt": "",
-  "android_link": "https://play.google.com/store/apps/details?id=gamsung.traveller",
-  "ios_link": "",
-  "web_link": ""
+  "link": {
+    "android": "https://play.google.com/store/apps/details?id=gamsung.traveller",
+    "ios": "",
+    "web": ""
+  }
 }

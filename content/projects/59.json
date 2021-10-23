@@ -16,7 +16,9 @@
   ],
   "description": "선을 그리며 퍼즐을 풀어 나가는 게임. 여러 나라를 여행하며 귀여운 괴도 동물들을 수집하고 퍼즐을 풀게된다.\n\n귀여운 괴도들과 함께 선을 그리며 도시를 점령해보세요!\n\n각 나라를 여행하며 보물 모으기 대작전! 귀여운 괴도들의 여행을 선을 그리며 도와주세요.\n자신만의 독특한 방법으로 게임을 진행할 수 있습니다.\n\n\n- 귀엽고 매력 넘치는 동물 캐릭터 -\n귀여운 래서 판다, 다람쥐, 토끼, 물개, 악어들을 게임과 함께 만나 보세요.\n동물 괴도들과 함께 여러 나라 여행을 할 수 있어요.\n\n- 세계 각국을 여행\n여러 나라를 돌아다니며 세계의 건물들을 탐험해보세요!\n각 테마별로 다양한 난이도의 스테이지가 준비되어 있어요.",
   "ppt": "",
-  "android_link": "https://play.google.com/store/apps/details?id=com.Nexters.LinePuzzle",
-  "ios_link": "",
-  "web_link": ""
+  "link": {
+    "android": "https://play.google.com/store/apps/details?id=com.Nexters.LinePuzzle",
+    "ios": "",
+    "web": ""
+  }
 }

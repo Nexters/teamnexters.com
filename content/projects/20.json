@@ -10,7 +10,9 @@
   ],
   "description": "어색한 스터디 첫 모임,\n\n모이기로 한 장소가 너무 멀다고 불평할 수 없는 현실,\n\n그럴 땐 인터섹션으로 합리적인 중간지점을 제시하세요~\n\n인터섹션 기능 및 특징\n\n? 검색창에서 원하는 지역 검색 후 꾸욱~눌러 핀 지정. 참 쉽죠~\n? 자주 쓰이는 내 위치는 간편하게 고정해두세요.\n? 강이나 산이 중간지점으로 찍힐 염려는 마세요.\n지하철 역으로 알려주니까 주변 장소 검색도 훨씬 수월해요.\n? 중간지점을 찾은 후 SNS로 친구들과 공유하면 끝!\n? 합리적이었다고 생각되는 장소는 발바닥 모양을 눌러 좋아요 표시를 해주세요.\n발바닥 숫자가 늘어나면 다른 사용자들에게도 도움을 줄 수 있다는 점~",
   "ppt": "",
-  "android_link": "https://play.google.com/store/apps/details?id=com.nexters.intersection.intersectionapp",
-  "ios_link": "",
-  "web_link": ""
+  "link": {
+    "android": "https://play.google.com/store/apps/details?id=com.nexters.intersection.intersectionapp",
+    "ios": "",
+    "web": ""
+  }
 }

@@ -10,7 +10,9 @@
   ],
   "description": "프로젝트 팀빌딩, 공모전 팀빌딩\n여기로와서 팀원을 잡아가세요!\n공모전을 나가고 싶지만 팀원을 구하기 쉽지 않은 분들,\n학교에서 혼자서 활동하셨던 분들,\n공모전에 관심은 있지만 어떻게하는지 몰라 도움이 필요한 분들.\n\n이러한 분들을 위해 와서잡아 팀빌딩 어플리케이션이 나왔습니다!\n\n간단한 자기소개와 분야/공모전만 선택하고\n주간 공모전 목록을 제공해주어\n팀빌딩을 쉽게 하도록 도와줍니다.\n\n다양한 분야의 사람들을 만날수 있는 와잡으로 오셔서 팀원을 잡아가세요!\n\n와잡.",
   "ppt": "",
-  "android_link": "https://play.google.com/store/apps/details?id=com.ourincheon.wazap",
-  "ios_link": "",
-  "web_link": ""
+  "link": {
+    "android": "https://play.google.com/store/apps/details?id=com.ourincheon.wazap",
+    "ios": "",
+    "web": ""
+  }
 }

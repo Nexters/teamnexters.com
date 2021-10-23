@@ -10,7 +10,9 @@
   ],
   "description": "it-chain은 모든 비지니스 도메인에 적용 할 수있도록 누구나 쉽게 customizing 할 수 있는 블록 체인 엔진입니다.  \n\nCustomizing 쉽도록 it-chain을 몇 개의 독립적인 컴포넌트로 나누고 이들 간의 종속성을 최소화했습니다.",
   "ppt": "",
-  "android_link": "",
-  "ios_link": "",
-  "web_link": "https://it-chain-homepage.firebaseapp.com/"
+  "link": {
+    "android": "",
+    "ios": "",
+    "web": "https://it-chain-homepage.firebaseapp.com/"
+  }
 }

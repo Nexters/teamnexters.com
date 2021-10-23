@@ -10,7 +10,9 @@
   ],
   "description": "수많은 주름 인파 속에서 아리따운 주르미 여인을 발견한 주르미군..\n\n그녀를 찾아 나서다!!!\n\n역경을 딛고 과연 주르미는 여친을 찾아낼 수 있을 것인가!!\n주르미의 품격은 미로탈출 게임입니다.\n\n장애물이 있는 미로를 빠져나가 여친을 찾아주세요.\n불에 주르미가 닿게 되면 별이 줄어듭니다.\n\n별이 모두 줄어들지 않게 조심해서 미로를 빠져 나가세요!\n핸드폰을 좌,우,상,하로 기울여서 주르미를 움직일 수 있습니다.",
   "ppt": "",
-  "android_link": "https://play.google.com/store/apps/details?id=nexters.dev2.mazegame",
-  "ios_link": "",
-  "web_link": ""
+  "link": {
+    "android": "https://play.google.com/store/apps/details?id=nexters.dev2.mazegame",
+    "ios": "",
+    "web": ""
+  }
 }
