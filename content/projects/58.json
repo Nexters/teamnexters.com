@@ -15,7 +15,7 @@
   "description": "30일간 하나의 습관 만들기.\n\n무리한 일정에 많은 가짓수의 목표, 매번 실패하진 않았나요?\n작심삼일은 안녕, 조금씩 다짐해서 30일을 완성해요.\n나만의 30일 프로젝트 하나만 제대로 달성해봐요.\n작심삽십일은 30일간 단 하나의 목표만을 꾸준히 달성해 습관을 만들어나가는 서비스입니다.",
   "ppt": "",
   "link": {
-    "android": "https://play.google.com/store/apps/details?id=com.nexters.goal",
-    "ios": "https://itunes.apple.com/kr/app/30-days/id1448200702?mt=8"
+    "Google Play": "https://play.google.com/store/apps/details?id=com.nexters.goal",
+    "App Store": "https://itunes.apple.com/kr/app/30-days/id1448200702?mt=8"
   }
 }
