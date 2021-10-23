@@ -20,8 +20,12 @@
           :dot-list-title="`지원 자격`"
           :items="qualifications"
         />
-        <Schedule class="area" :schedules="schedules" />
-        <DotList class="area" :dot-list-title="`유의사항`" :items="caution" />
+      </main>
+      <main class="sub">
+        <Schedule class="area schedule" :schedules="schedules" />
+      </main>
+      <main class="main third">
+        <DotList :dot-list-title="`유의사항`" :items="caution" />
       </main>
       <div class="footer">
         <h2 class="footerTitle">궁금한 점이 있으신가요?</h2>
@@ -173,6 +177,10 @@ export default defineComponent({
   margin: auto;
 }
 
+.sub {
+  margin: auto;
+}
+
 .footer {
   width: 100%;
   display: flex;
@@ -192,12 +200,22 @@ export default defineComponent({
 
 @include desktop {
   .main {
-    padding: 64px;
+    padding: 64px 64px 0;
     max-width: 1200px;
 
     .area {
       margin-top: 120px;
     }
+
+    &.third {
+      padding-top: 120px;
+    }
+  }
+
+  .sub {
+    padding: 64px;
+    max-width: 1200px;
+    margin-top: 120px;
   }
 
   .footer {
@@ -224,12 +242,22 @@ export default defineComponent({
 
 @include tablet {
   .main {
-    padding: 64px;
+    padding: 64px 64px 0;
     max-width: 1200px;
 
     .area {
       margin-top: 120px;
     }
+
+    &.third {
+      padding-top: 120px;
+    }
+  }
+
+  .sub {
+    padding-left: 64px;
+    max-width: 1200px;
+    margin-top: 120px;
   }
 
   .footer {
@@ -256,12 +284,22 @@ export default defineComponent({
 
 @include mobile {
   .main {
-    padding: 24px;
+    padding: 24px 24px 0;
     max-width: 713px;
 
     .area {
       margin-top: 64px;
     }
+
+    &.third {
+      padding-top: 64px;
+    }
+  }
+
+  .sub {
+    padding: 24px 24px 0;
+    max-width: 713px;
+    margin-top: 64px;
   }
 
   .footer {
