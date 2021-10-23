@@ -363,11 +363,13 @@ export default defineComponent({
       color: $black;
     }
     .info-table {
-      padding-left: 64px;
       .info-row {
         display: flex;
         flex-direction: column;
         margin-bottom: 120px;
+        .title {
+          padding-left: 64px;
+        }
         .information {
           margin-top: 48px;
           overflow-x: auto;
@@ -380,9 +382,11 @@ export default defineComponent({
           display: flex;
           flex-direction: column;
           .cards {
+            min-width: 1200px;
             gap: 32px;
-            display: flex;
+            display: inline-flex;
             flex: 0 0 auto;
+            padding: 0 64px 0 64px;
           }
         }
       }
