@@ -26,9 +26,11 @@ for idx, row in enumerate(rows[1:]):
         "members": [member.strip() for member in _members.split(",")],
         "description": description,
         "ppt": ppt,
-        "android_link": android_link,
-        "ios_link": ios_link,
-        "web_link": web_link
+        "link":{
+            "android":android_link,
+            "ios":ios_link,
+            "web":web_link
+        }
     })
 
 for idx, project in enumerate(projects):
