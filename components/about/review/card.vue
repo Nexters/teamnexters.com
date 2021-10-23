@@ -43,7 +43,7 @@ export default ReviewCard;
     height: 163px;
     background: $grey01;
     .contents {
-      padding: 24px;
+      padding: 32px;
       display: flex;
       flex-direction: column;
       .title {
@@ -75,7 +75,7 @@ export default ReviewCard;
     height: 163px;
     background: $grey01;
     .contents {
-      padding: 24px;
+      padding: 32px;
       height: calc(100% - 48px);
       display: flex;
       flex-direction: column;
