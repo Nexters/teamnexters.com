@@ -96,10 +96,10 @@ nav {
   height: 73px;
   .header-item {
     padding: 0 48.5px 0 0;
-    font-size: 24px;
+    font-size: 18px;
+    line-height: 27px;
     font-style: normal;
     font-weight: bold;
-    line-height: 36px;
     letter-spacing: -0.02em;
     color: $black;
     text-decoration: none;
