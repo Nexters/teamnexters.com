@@ -328,16 +328,14 @@ body.scroll-hidden {
     }
     .project-cards-container {
       padding: 16px 24px 0 24px;
-      margin: 0 auto 0 auto;
       display: flex;
-      width: 792px;
-      justify-content: space-between;
+      justify-content: center;
       box-sizing: border-box;
       flex-direction: row;
       flex-wrap: wrap;
       gap: 24px;
       .project {
-        flex-basis: 358px;
+        flex-basis: calc(50% - 14px);
         border-radius: 8px;
       }
     }
