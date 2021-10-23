@@ -16,9 +16,5 @@
   ],
   "description": "나만의 핫플 리스트 기록 앱\n\n나의 취향이 가득 담긴 공간을 찾아다니는 힙스터들을 위한 힙플 맵 서비스\n\n나만의 힙플을 찾아 붙이고, 모으고, 한눈에 보자!\n\n- 가보고 싶은 힙플들을 발견했다면,\n까먹지 않도록 Spotter에 저장해보자!\n\n- 인생 힙플을 발견했다면,\n그 순간의 느낌을 생생하게 스티커로 재밌게 기록해보자!\n\n- 지금 가볼 힙플을 찾는다면,\n내가 기록해둔 힙플들을 지도로 한눈에\n보고 골라보자!",
   "ppt": "",
-  "link": {
-    "android": "https://play.google.com/store/apps/details?id=com.spotter.hotspot",
-    "ios": "",
-    "web": ""
-  }
+  "link": "https://play.google.com/store/apps/details?id=com.spotter.hotspot"
 }

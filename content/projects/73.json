@@ -17,9 +17,5 @@
   ],
   "description": "한글의 특징을 살린 B급(레트로) 감성의 개그, 출퇴근 시간에 조금이나마 엉뚱한 생각을 할 수 있게 도와주는 그런 서비스.\n\n바쁘다 바뻐 현대사회! 속에서 소소한 재미를 느끼게 해줄 AZ(아재트)!\n\n가볍게 웃고 지나갈 수 있는 말 한마디 한마디를 모아 사람들과 공유해보세요.\n\n게시판 형태의 커뮤니티로, 아재 개그를 쉽게 올리고 공유하며, 회원들과 댓글로 소통할 수 있는 어플리케이션 입니다.",
   "ppt": "",
-  "link": {
-    "android": "https://play.google.com/store/apps/details?id=com.az.youtugo",
-    "ios": "",
-    "web": ""
-  }
+  "link": "https://play.google.com/store/apps/details?id=com.az.youtugo"
 }

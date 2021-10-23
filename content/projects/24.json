@@ -10,9 +10,5 @@
   ],
   "description": "굿바이 북마크, 헬로 스크래픽!\ngoodbye bookmark, hello scrapick!\n다시 보고 싶은 글, 간단히 픽(pick)하세요.\n스크랩을 쉽게 관리하고, 친구와 공유하세요.\n일상의 의미있는 이야기가 가치가 됩니다.\n\n\n#주요기능\n\n1. 손쉬운 스크랩\n- 클립보드 “복사하기” 한 번이면, 스크랩 완료!\n- “구름버튼” 한 번이면, 스크랩 완료!\n\n2. 나만의 스크랩\n- 기본폴더(파랑) :\n- 마이폴더(초록) : 나의 관심사를 모으는 폴더\n\n3. 우리의 스크랩\n- 공유폴더(주황) : 내 관심사를 친구에게 공유\n- 그룹폴더(빨강) : 우리의 관심사를 함께 공유",
   "ppt": "",
-  "link": {
-    "android": "https://play.google.com/store/apps/details?id=com.softpick.scrapickandroid",
-    "ios": "",
-    "web": ""
-  }
+  "link": "https://play.google.com/store/apps/details?id=com.softpick.scrapickandroid"
 }

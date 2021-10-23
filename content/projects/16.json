@@ -10,9 +10,5 @@
   ],
   "description": "다 똑같은 핸드폰 화면이 지겨우신가요?\nFloating으로 스마트폰 배경화면을 더 특별하게 꾸며보세요.\nFloating은 핸드폰 화면 위에 벚꽃 내리기, 눈 내리기, 별 반짝이기, 겨울왕국, 치킨떠다니기, 구름 떠다니기 등의\n\n효과를 줄 수 있는 어플입니다. 사진을 이용해 직접 효과를 만들 수도 있습니다.",
   "ppt": "",
-  "link": {
-    "android": "https://play.google.com/store/apps/details?id=kr.nexters.eightweeks",
-    "ios": "",
-    "web": ""
-  }
+  "link": "https://play.google.com/store/apps/details?id=kr.nexters.eightweeks"
 }

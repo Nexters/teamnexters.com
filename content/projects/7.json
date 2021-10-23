@@ -10,9 +10,5 @@
   ],
   "description": "간식 내기, 벌칙 받기, 술값 내기, 어느 곳에나 사용할 수 있는 복불복 게임들을 모았습니다!\n쩍 벌어져 있는 입의 치아를 하나하나 누르다 보면… 으악!\n맥주 소주를 마구 먹이다 보면… 으악!\n고도의 긴장감과 약간의 스릴를 맛볼 수 있는 ‘다함께 복불복’입니다.",
   "ppt": "",
-  "link": {
-    "android": "https://play.google.com/store/apps/details?id=com.nexters.minigame&",
-    "ios": "",
-    "web": ""
-  }
+  "link": "https://play.google.com/store/apps/details?id=com.nexters.minigame&"
 }

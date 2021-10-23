@@ -10,9 +10,5 @@
   ],
   "description": "가장 편하고 간단한 메신저 노챗이 출시 되었습니다.\n\n친구에게 매번 하는말\n버튼 하나로 한번에 보내세요!\n단 한번의 클릭으로 친구와 대화 할수 있습니다.\n\n이제 이런 대화는 노챗으로 하세요.\n\n-밥먹ㄱㄱ ?\n-술먹ㄱㄱ ?\n-커피ㄱㄱ ?\n-롤ㄱㄱ ?\n-담배ㄱㄱ ?\n\n*대답으로는 “좋아요”와 “싫어요”를 지원합니다.\n*지금 바로 설치하세요\n\n*사용자끼리의 전화번호가 등록되어 있어야 친구목록에 나타납니다",
   "ppt": "",
-  "link": {
-    "android": "https://play.google.com/store/apps/details?id=com.nexters.nochatteam",
-    "ios": "",
-    "web": ""
-  }
+  "link": "https://play.google.com/store/apps/details?id=com.nexters.nochatteam"
 }
