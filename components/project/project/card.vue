@@ -11,6 +11,7 @@
         :key="platform"
         class="link-item"
         :href="link"
+        @click.stop=""
       >
         {{ platform }}
       </a>
