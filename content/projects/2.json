@@ -1,14 +1,16 @@
 {
-  "idx": "2",
-  "app_name": "두번째 앱 이름",
+  "idx": 2,
+  "app_name": "인모비 애드 리포트",
   "thumbnail": "",
-  "th": "20th",
-  "year": "2021",
-  "team_name": "뭐 있겄지",
-  "members": ["아무개", "아무개"],
-  "description": "좋은 습관은 나와의 약속을 하나씩 지켜갈 때 만들어져요. 거창한 목표가 아니더라도 작은 것부터 하나씩 시작해나가면 어느새 좋은 습관이 형성되어 있을 거예요.\n\n3일을 목표로 생활 속 습관을 하나씩 만들어보세요. 3일 연속으로 습관 완료 시 누군가의 달콤한 응원과 함께 조각 케익이 도착합니다. 같은 종류의 케익을 8조각 모으면 홀케익을 완성할 수 있어요.\n\n습관을 함께하는 다른 사람들과 서로 응원을 주고받으며 즐겁게 습관을 실천하세요!",
-  "ppt": "https://www.naver.com",
-  "link": {
-    "ios": "https://www.naver.com"
-  }
+  "th": "3",
+  "year": "2013",
+  "team_name": "",
+  "members": [
+    ""
+  ],
+  "description": "개발자이신가요? 혹시 인모비의 퍼블리셔 이신가요?\n그렇다면, 이제 스마트폰을 통해서도 광고 상황을 체크하실 수 있습니다.\n\nInMobi Ad report는 웹에서만 가능했던 InMobi ad Tracker의 모바일 어플리케이션 입니다.\nInMobi Ad reports는 InMobi Ad Tracker의 가장 핵심적인 기능들만을 추려내 구현했습니다.\nInMobi Ad reports는 클릭수, 노출률, CPC 등과 같은 핵심적인 정보들을 제공합니다.\n\nBe more productive with Inmobi Ad report!\n*Access ID 와 Secret key를 얻으시려면, helpdesk@inmobi.com로 연락해주세요.\n\n1. Summary\nYou can easily check your application or mobile webs’ Clicks, CPC, CTR, Earnings, eCPM, Fill rate, Impressions, and Requests at a glance. Also, you can set time period (yesterday, 7d, 30d) of summary.\n\n2. Reports\nThis function is advanced search. Once you select date range, platform, and filter, you can find reports you exactly need.\n\n3. Trends\nThis function provides you comparing graph for the past 7 days. Using this function, you can effectively identify trends of earnings, CTR, and fill rate.\n\n4. Account info\nYou can see your Access ID and Secret key.\n\nBe more productive with Inmobi Ad report!",
+  "ppt": "www.naver.com",
+  "android_link": "https://play.google.com/store/apps/details?id=nexters.third.project&feature=search_result",
+  "ios_link": "www.naver.com",
+  "web_link": ""
 }

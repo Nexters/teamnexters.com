@@ -8,7 +8,7 @@ jobs:
       matrix:
         python-version: [3.9]
     steps:
-      - id: 'env'
+      - id: "env"
         uses: jroehl/gsheet.action@v1.0.0 # you can specify '@release' to always have the latest changes
         with:
           spreadsheetId: ${{ secrets.SPREADSHEET_ID }}
@@ -20,7 +20,17 @@ jobs:
         env:
           GSHEET_CLIENT_EMAIL: ${{ secrets.GSHEET_CLIENT_EMAIL }}
           GSHEET_PRIVATE_KEY: ${{ secrets.GSHEET_PRIVATE_KEY }}.replace(/\\n/g, "\n")
-      - id: 'main'
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PAT }}
+      - name: make env.json
+        env:
+          _env: ${{ steps.env.outputs.results }}
+        run: |
+          echo "$PWD"
+          echo "$_env" > ./_content/env.json
+      - id: "main"
         uses: jroehl/gsheet.action@v1.0.0 # you can specify '@release' to always have the latest changes
         with:
           spreadsheetId: ${{ secrets.SPREADSHEET_ID }}
@@ -31,7 +41,13 @@ jobs:
         env:
           GSHEET_CLIENT_EMAIL: ${{ secrets.GSHEET_CLIENT_EMAIL }}
           GSHEET_PRIVATE_KEY: ${{ secrets.GSHEET_PRIVATE_KEY }}.replace(/\\n/g, "\n")
-      - id: 'project'
+      - name: make main.json
+        env:
+          main: ${{ steps.main.outputs.results }}
+        run: |
+          echo "$PWD"
+          echo "$main" > ./_content/main.json
+      - id: "project"
         uses: jroehl/gsheet.action@v1.0.0 # you can specify '@release' to always have the latest changes
         with:
           spreadsheetId: ${{ secrets.SPREADSHEET_ID }}
@@ -42,7 +58,10 @@ jobs:
         env:
           GSHEET_CLIENT_EMAIL: ${{ secrets.GSHEET_CLIENT_EMAIL }}
           GSHEET_PRIVATE_KEY: ${{ secrets.GSHEET_PRIVATE_KEY }}.replace(/\\n/g, "\n")
-      - id: 'about'
+      - name: make project.json
+        run: |
+          echo ${{ toJson(steps.project.outputs.results) }} > ./content/project.json
+      - id: "about"
         uses: jroehl/gsheet.action@v1.0.0 # you can specify '@release' to always have the latest changes
         with:
           spreadsheetId: ${{ secrets.SPREADSHEET_ID }}
@@ -54,7 +73,13 @@ jobs:
         env:
           GSHEET_CLIENT_EMAIL: ${{ secrets.GSHEET_CLIENT_EMAIL }}
           GSHEET_PRIVATE_KEY: ${{ secrets.GSHEET_PRIVATE_KEY }}.replace(/\\n/g, "\n")
-      - id: 'contact'
+      - name: make about.json
+        env:
+          about: ${{ steps.about.outputs.results }}
+        run: |
+          echo "$PWD"
+          echo "$about" > ./_content/about.json
+      - id: "contact"
         uses: jroehl/gsheet.action@v1.0.0 # you can specify '@release' to always have the latest changes
         with:
           spreadsheetId: ${{ secrets.SPREADSHEET_ID }}
@@ -65,7 +90,13 @@ jobs:
         env:
           GSHEET_CLIENT_EMAIL: ${{ secrets.GSHEET_CLIENT_EMAIL }}
           GSHEET_PRIVATE_KEY: ${{ secrets.GSHEET_PRIVATE_KEY }}.replace(/\\n/g, "\n")
-      - id: 'recruitment'
+      - name: make contact.json
+        env:
+          contact: ${{ steps.contact.outputs.results }}
+        run: |
+          echo "$PWD"
+          echo "$contact" > ./_content/contact.json
+      - id: "recruitment"
         uses: jroehl/gsheet.action@v1.0.0 # you can specify '@release' to always have the latest changes
         with:
           spreadsheetId: ${{ secrets.SPREADSHEET_ID }}
@@ -81,7 +112,13 @@ jobs:
         env:
           GSHEET_CLIENT_EMAIL: ${{ secrets.GSHEET_CLIENT_EMAIL }}
           GSHEET_PRIVATE_KEY: ${{ secrets.GSHEET_PRIVATE_KEY }}.replace(/\\n/g, "\n")
-      - id: 'color'
+      - name: make recruitment.json
+        env:
+          recruitment: ${{ steps.recruitment.outputs.results }}
+        run: |
+          echo "$PWD"
+          echo "$recruitment" > ./_content/recruitment.json
+      - id: "color"
         uses: jroehl/gsheet.action@v1.0.0 # you can specify '@release' to always have the latest changes
         with:
           spreadsheetId: ${{ secrets.SPREADSHEET_ID }}
@@ -92,33 +129,17 @@ jobs:
         env:
           GSHEET_CLIENT_EMAIL: ${{ secrets.GSHEET_CLIENT_EMAIL }}
           GSHEET_PRIVATE_KEY: ${{ secrets.GSHEET_PRIVATE_KEY }}.replace(/\\n/g, "\n")
-      - name: checkout
-        uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.PAT }}
+      - name: make color.json
+        env:
+          color: ${{ steps.color.outputs.results }}
+        run: |
+          echo "$PWD"
+          echo "$color" > ./_content/color.json
       - name: python setup
         uses: actions/setup-python@v1
         with:
           python-version: ${{ matrix.python-version }}
-      - name: dump result
-        env:
-          #  the output of the action can be found in ${{ steps.update_worksheet.outputs.results }}
-          env: ${{ steps.env.outputs.results }}
-          main: ${{ steps.main.outputs.results }}
-          project: ${{ steps.project.outputs.results }}
-          about: ${{ steps.about.outputs.results }}
-          contact: ${{ steps.contact.outputs.results }}
-          recruitment: ${{ steps.recruitment.outputs.results }}
-          color: ${{ steps.color.outputs.results }}
-        run: |
-          echo "$env" > ./_content/env.json
-          echo "$main" > ./_content/main.json
-          echo "$project" > ./_content/project.json
-          echo "$about" > ./_content/about.json
-          echo "$contact" > ./_content/contact.json
-          echo "$recruitment" > ./_content/recruitment.json
-          echo "$color" > ./_content/color.json
-      - name: python script start
+      - name: transpile projects.json
         run: |
           python .script/make_projects.py
       - name: commit with push
@@ -127,4 +148,3 @@ jobs:
           git config --local user.name "GitHub Action"
           git add *
           git diff-index --quiet HEAD || (git commit -a -m'[bot] update files' --allow-empty && git push)
-

@@ -1,0 +1,19 @@
+{
+  "idx": 36,
+  "app_name": "미세몬",
+  "thumbnail": "",
+  "th": "10",
+  "year": "",
+  "team_name": "team pruduce 105",
+  "members": [
+    "오이담",
+    "유호균",
+    "최현철",
+    "홍수민"
+  ],
+  "description": "미세먼지, 초미세먼지의 정도에 따라\n행동수칙을 알려주는 친절한 서비스 미세몬!\n\n\n미세몬은 사용자의 현재 위치를 기준으로\n실시간 미세먼지, 초미세먼지 상태를 알려줍니다.\n\n\n또한, 각별한 주의가 요구되는 어린이를 위해\n미세먼지, 초미세먼지 정도에 따라\n권장 행동 수칙을\n제공하여 상황에 맞는 적절한 대처를 할 수 있습니다.\n\n\n미세먼지 대처는 미세몬과 함께하세요 ~ !",
+  "ppt": "",
+  "android_link": "https://play.google.com/store/apps/details?id=com.miss_k",
+  "ios_link": "",
+  "web_link": ""
+}

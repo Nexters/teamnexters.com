@@ -1,0 +1,21 @@
+{
+  "idx": 39,
+  "app_name": "MEMOHERE",
+  "thumbnail": "",
+  "th": "11",
+  "year": "",
+  "team_name": "Gilchi",
+  "members": [
+    "신중평",
+    "주한빈",
+    "최지원",
+    "김소연",
+    "인정민",
+    "남수민"
+  ],
+  "description": "더 간단하고 똑똑하게, 당신이 메모 내용을 절대 잊어버리지 않도록 도와줍니다.\n구매해야 할 것, 해야 할 일 등 알아서 챙겨줍니다.\n\n\"편의점에서 우유를 사야한다\"는 메모를 작성한다면 당신이 외출했을 때 편의점 근처에서 메모알림을 띄어줍니다.\n\"특정 한 위치에서 해야 할 일\"이 있다면 그 위치 주변에 갔을 때 메모알림을 띄워줍니다.\n\n절대 잊어버릴리 없는 메모앱. MEMOHERE",
+  "ppt": "",
+  "android_link": "https://play.google.com/store/apps/details?id=com.nexters.apeach.memohere&hl=ko",
+  "ios_link": "",
+  "web_link": ""
+}
