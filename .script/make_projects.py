@@ -29,11 +29,11 @@ for idx, row in enumerate(rows[1:]):
         "link":{}
     }
     if android_link:
-        project["link"] = android_link
+        project["link"]["android"] = android_link
     if ios_link:
-        project["ios_link"] = ios_link
+        project["link"]["ios"] = ios_link
     if web_link:
-        project["web_link"] = web_link
+        project["link"]["web"] = web_link
     projects.append(project)
 
 for idx, project in enumerate(projects):
