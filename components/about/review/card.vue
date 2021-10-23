@@ -40,7 +40,6 @@ export default ReviewCard;
     cursor: pointer;
     border-radius: 16px;
     width: 378.67px;
-    height: 163px;
     background: $grey01;
     .contents {
       padding: 32px;
@@ -72,7 +71,6 @@ export default ReviewCard;
     cursor: pointer;
     border-radius: 16px;
     width: calc(50% - 16px);
-    height: 163px;
     background: $grey01;
     .contents {
       padding: 32px;
