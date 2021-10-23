@@ -56,7 +56,7 @@ export default ReviewCard;
         color: $black;
       }
       .author {
-        margin-top: auto;
+        margin-top: 16px;
         font-style: normal;
         font-weight: normal;
         font-size: 18px;
@@ -98,7 +98,7 @@ export default ReviewCard;
         color: $black;
       }
       .author {
-        margin-top: auto;
+        margin-top: 16px;
         font-style: normal;
         font-weight: normal;
         font-size: 18px;
@@ -137,7 +137,7 @@ export default ReviewCard;
         color: $black;
       }
       .author {
-        margin-top: auto;
+        margin-top: 8px;
         font-style: normal;
         font-weight: normal;
         font-size: 14px;
