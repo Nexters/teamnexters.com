@@ -152,8 +152,8 @@ export default defineComponent({
     .headerArea {
       max-width: 1200px;
       margin-bottom: 32px;
-      font-size: 60px;
-      line-height: 90px;
+      font-size: 48px;
+      line-height: 64px;
     }
 
     .contactArea {
@@ -182,8 +182,8 @@ export default defineComponent({
     .headerArea {
       max-width: 1200px;
       margin-bottom: 32px;
-      font-size: 60px;
-      line-height: 90px;
+      font-size: 48px;
+      line-height: 64px;
     }
 
     .contactArea {
@@ -212,8 +212,8 @@ export default defineComponent({
     .headerArea {
       max-width: 1200px;
       margin-bottom: 32px;
-      font-size: 60px;
-      line-height: 90px;
+      font-size: 48px;
+      line-height: 64px;
     }
 
     .contactArea {
