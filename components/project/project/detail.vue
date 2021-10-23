@@ -16,7 +16,7 @@
       <div class="contents">
         <div class="information">
           <h1 class="name">{{ project.app_name }}</h1>
-          <div class="th-year">{{ project.th }} | {{ project.year }}</div>
+          <div class="th-year">{{ project.th }}th | {{ project.year }}</div>
           <div class="team-members">
             TEAM {{ project.team_name }} | {{ members }}
           </div>
