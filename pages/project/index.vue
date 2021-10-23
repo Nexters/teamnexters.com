@@ -44,7 +44,7 @@ export default defineComponent({
   },
   async asyncData({ $content }) {
     const projects = await $content("projects")
-      .sortBy("idx")
+      .sortBy("idx", "desc")
       .limit(6)
       .fetch()
       .catch((err) => {
@@ -73,7 +73,9 @@ export default defineComponent({
       showDetail: "project/showDetail",
     }),
     async onClickMore() {
-      const projects = await this.$content("projects").sortBy("idx").fetch();
+      const projects = await this.$content("projects")
+        .sortBy("idx", "desc")
+        .fetch();
       this.projects = projects;
       this.more = false;
     },
@@ -141,7 +143,7 @@ body.scroll-hidden {
       flex-wrap: wrap;
       gap: 48px;
       .project {
-        flex-basis: 360px;
+        flex-basis: 365px;
         border-radius: 16px;
       }
     }
@@ -198,7 +200,7 @@ body.scroll-hidden {
       }
     }
     .project-cards-container {
-      padding-top: 32px;
+      padding-top: 84px;
       display: flex;
       justify-content: space-between;
       box-sizing: border-box;
@@ -263,7 +265,7 @@ body.scroll-hidden {
       }
     }
     .project-cards-container {
-      padding-top: 32px;
+      padding-top: 84px;
       display: flex;
       justify-content: space-between;
       box-sizing: border-box;
@@ -303,7 +305,7 @@ body.scroll-hidden {
       width: 100%;
       .title {
         display: flex;
-        padding-left: 16px;
+        padding-left: 24px;
         h2 {
           font-style: normal;
           font-weight: bold;
@@ -318,8 +320,8 @@ body.scroll-hidden {
         .total {
           font-style: normal;
           font-weight: normal;
-          font-size: 24px;
-          line-height: 36px;
+          font-size: 16px;
+          line-height: 24px;
           color: $black;
           padding-left: 8px;
         }
@@ -385,13 +387,14 @@ body.scroll-hidden {
           font-style: normal;
           font-weight: normal;
           font-size: 16px;
-          line-height: 36px;
+          line-height: 24px;
           color: $black;
           padding-left: 8px;
         }
       }
     }
     .project-cards-container {
+      padding-top: 16px;
       display: flex;
       justify-content: space-between;
       box-sizing: border-box;
