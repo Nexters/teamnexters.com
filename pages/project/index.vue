@@ -173,9 +173,8 @@ body.scroll-hidden {
 
   @include d-c2 {
     .contents {
-      padding: 64px 64px 0 64px;
-      width: 777px;
-      margin: 0 auto 0 auto;
+      padding: 64px 0 0 0;
+      margin: 0 64px 0 64px;
       .title {
         display: flex;
         flex-direction: column;
@@ -202,13 +201,13 @@ body.scroll-hidden {
     .project-cards-container {
       padding-top: 84px;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       box-sizing: border-box;
       flex-direction: row;
       flex-wrap: wrap;
       gap: 48px;
       .project {
-        flex-basis: 362px;
+        flex-basis: calc(50% - 26px);
         border-radius: 16px;
       }
     }
