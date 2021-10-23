@@ -267,6 +267,8 @@ export default defineComponent({
     display: flex;
     flex-direction: column;
     background-color: white;
+    overflow-y: auto;
+
     @include desktop {
       .thumbnail {
         width: 100%;
