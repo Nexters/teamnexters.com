@@ -64,7 +64,6 @@ export default defineComponent({
   flex-direction: row;
   font-weight: 700;
   background-color: $grey01;
-  border-radius: 16px;
   justify-content: space-between;
   box-sizing: border-box;
 
@@ -85,6 +84,7 @@ export default defineComponent({
     font-size: 24px;
     line-height: 36px;
     padding: 32px;
+    border-radius: 16px;
 
     .iconText {
       margin-left: 16px;
@@ -106,6 +106,7 @@ export default defineComponent({
     font-size: 24px;
     line-height: 36px;
     padding: 32px;
+    border-radius: 16px;
 
     .text {
       font-size: 18px;
@@ -123,6 +124,7 @@ export default defineComponent({
     font-size: 24px;
     line-height: 36px;
     padding: 32px;
+    border-radius: 16px;
 
     .iconText {
       margin-left: 16px;
@@ -140,6 +142,7 @@ export default defineComponent({
     font-size: 16px;
     line-height: 24px;
     padding: 24px;
+    border-radius: 8px;
 
     .iconText {
       margin-left: 8px;
@@ -157,6 +160,7 @@ export default defineComponent({
     font-size: 16px;
     line-height: 24px;
     padding: 24px;
+    border-radius: 8px;
 
     .iconText {
       margin-left: 8px;

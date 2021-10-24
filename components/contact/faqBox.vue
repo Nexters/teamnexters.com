@@ -72,6 +72,10 @@ export default defineComponent({
     font-weight: 400;
     white-space: pre-wrap;
   }
+
+  .icon {
+    align-self: center;
+  }
 }
 
 @include d-c3 {
@@ -87,7 +91,13 @@ export default defineComponent({
   .answerArea {
     font-size: 18px;
     line-height: 27px;
-    margin-top: 16px;
+    margin-top: 24px;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 24px;
   }
 }
 
@@ -104,7 +114,13 @@ export default defineComponent({
   .answerArea {
     font-size: 18px;
     line-height: 27px;
-    margin-top: 16px;
+    margin-top: 24px;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 24px;
   }
 }
 
@@ -121,7 +137,13 @@ export default defineComponent({
   .answerArea {
     font-size: 18px;
     line-height: 27px;
-    margin-top: 16px;
+    margin-top: 24px;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 24px;
   }
 }
 
@@ -138,7 +160,13 @@ export default defineComponent({
   .answerArea {
     font-size: 14px;
     line-height: 21px;
-    margin-top: 8px;
+    margin-top: 16px;
+  }
+
+  .icon {
+    width: 16px;
+    height: 16px;
+    margin-left: 16px;
   }
 }
 
@@ -155,7 +183,13 @@ export default defineComponent({
   .answerArea {
     font-size: 14px;
     line-height: 21px;
-    margin-top: 8px;
+    margin-top: 16px;
+  }
+
+  .icon {
+    width: 16px;
+    height: 16px;
+    margin-left: 16px;
   }
 }
 </style>
