@@ -161,11 +161,16 @@ a {
 
   align-items: center;
 
+  .slogan {
+    margin: auto;
+    width: 100%;
+  }
+
   @include mobile {
     .slogan {
-      width: 327px;
-      height: 208px;
-      padding: 148.5px 24px 148.5px 24px;
+      max-width: 713px;
+      padding: 0 24px;
+
       .title {
         font-family: "Montserrat", sans-serif;
         white-space: pre-wrap;
@@ -214,10 +219,8 @@ a {
   }
   @include tablet {
     .slogan {
-      width: 713px;
-      height: 438px;
-      margin: auto;
-      padding: 64px;
+      max-width: 1200px;
+      padding: 0 64px;
       .title {
         font-family: "Montserrat", sans-serif;
         white-space: pre-wrap;
@@ -263,10 +266,8 @@ a {
   }
   @include desktop {
     .slogan {
-      width: 1200px;
-      height: 438px;
-      margin: auto;
-      padding: 64px;
+      max-width: 1200px;
+      padding: 0 64px;
       .title {
         font-family: "Montserrat", sans-serif;
         white-space: pre-wrap;
