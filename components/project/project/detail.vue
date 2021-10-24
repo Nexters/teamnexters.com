@@ -4,7 +4,7 @@
       <div class="toolbar">
         <img
           class="leading"
-          src="~/assets/img/ic_back.png"
+          src="~/assets/img/ic_back.svg"
           @click="dismiss()"
         />
         <img

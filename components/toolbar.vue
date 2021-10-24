@@ -1,6 +1,6 @@
 <template>
   <div class="container" @click="$router.go(-1)">
-    <img class="leading" src="~/assets/img/ic_back.png" />
+    <img class="leading" src="~/assets/img/ic_back.svg" />
   </div>
 </template>
 
