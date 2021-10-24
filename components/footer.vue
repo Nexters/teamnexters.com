@@ -93,10 +93,23 @@ export default defineComponent({
 }
 
 footer {
-  margin-top: auto;
+  @include mobile {
+    padding: 0 24px;
+  }
+
+  @include desktop {
+    padding: 0 64px;
+  }
+
+  @include tablet {
+    padding: 0 64px;
+  }
 }
 
 .footer {
+  margin: auto;
+  width: 100%;
+
   .leftArea {
     align-self: flex-start;
   }
@@ -147,9 +160,10 @@ footer {
   }
   @include mobile {
     display: flex;
-    margin-left: auto;
     flex-direction: column;
-    padding: 0 0 24px 24px;
+    max-width: 713px;
+    margin-bottom: 24px;
+
     .sns {
       display: flex;
       margin-right: auto;
@@ -189,10 +203,9 @@ footer {
   @include tablet {
     display: flex;
     align-items: center;
-    margin: auto;
     justify-content: center;
-    padding: 0 64px 32px 64px;
-    width: 713px;
+    max-width: 1200px;
+    margin-bottom: 32px;
 
     .sns {
       display: flex;
@@ -231,8 +244,9 @@ footer {
   @include desktop {
     display: flex;
     align-items: center;
-    width: 1200px;
-    margin: auto auto 32px auto;
+    max-width: 1200px;
+    margin-bottom: 32px;
+
     .sns {
       display: flex;
       margin-bottom: 24px;
