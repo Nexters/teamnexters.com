@@ -36,7 +36,7 @@ jobs:
           spreadsheetId: ${{ secrets.SPREADSHEET_ID }}
           commands: | # list of commands, specified as a valid JSON string
             [
-              { "command": "getData", "args": { "worksheetTitle": "main", "minCol": 1 } }
+              { "command": "getData", "args": { "worksheetTitle": "_main", "minCol": 1 } }
             ]
         env:
           GSHEET_CLIENT_EMAIL: ${{ secrets.GSHEET_CLIENT_EMAIL }}
