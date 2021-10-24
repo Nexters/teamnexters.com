@@ -51,7 +51,13 @@ export default ProjectCard;
   font-family: Spoqa Han Sans Neo;
 }
 .project-card-component-container {
+  display: flex;
+  flex-direction: column;
   border: solid 1px $grey02;
+
+  .links {
+    margin: auto 0 0;
+  }
 }
 
 .name {
