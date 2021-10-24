@@ -68,6 +68,7 @@ export default defineComponent({
 @include tablet {
   .scheduleArea {
     .scheduleTitle {
+      margin-left: 64px;
       font-size: 32px;
       line-height: 48px;
     }
@@ -85,6 +86,10 @@ export default defineComponent({
 
         &:last-child {
           margin-right: 64px;
+        }
+
+        &:first-child {
+          margin-left: 64px;
         }
       }
     }

@@ -255,7 +255,7 @@ export default defineComponent({
   }
 
   .sub {
-    padding-left: 64px;
+    padding-left: 0;
     max-width: 1200px;
     margin-top: 120px;
   }
