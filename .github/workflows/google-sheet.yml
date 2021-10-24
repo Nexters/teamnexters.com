@@ -142,6 +142,8 @@ jobs:
       - name: transpile projects.json
         run: |
           python .script/make_projects.py
+          python .script/make_main.py
+          python .script/make_about.py
       - name: commit with push
         run: |
           git config --local user.email "action@github.com"

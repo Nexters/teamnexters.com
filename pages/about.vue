@@ -79,6 +79,25 @@ export default defineComponent({
     name: "about",
   },
   async asyncData({ $content }) {
+    const {
+      slogan,
+      info_title,
+      info_desc,
+      activity_title,
+      activity_desc,
+      review_title,
+      review_desc,
+    } = await $content("about/text")
+      .only([
+        "slogan",
+        "info_title",
+        "info_desc",
+        "activity_title",
+        "activity_desc",
+        "review_title",
+        "review_desc",
+      ])
+      .fetch();
     const informations = await $content("about/informations")
       .only(["title", "value", "description"])
       .fetch();
@@ -102,19 +121,20 @@ export default defineComponent({
         console.log(err);
       });
     return {
+      slogan: slogan,
       info: {
-        title: "10년째\n멈추지 않는 열정",
-        desc: "",
+        title: info_title,
+        desc: info_desc,
         items: informations,
       },
       act: {
-        title: "함께하는\n다양한 활동",
-        desc: "정규 활동은 방학 시즌 매주  토요일에 진행되며,\n비활동 기간에는 프로젝트·공모전·스터디를 자율적으로 진행합니다.",
+        title: activity_title,
+        desc: activity_desc,
         items: activities,
       },
       review: {
-        title: "회원들의\n생생한 활동 후기",
-        desc: "",
+        title: review_title,
+        desc: review_desc,
         items: reviews,
         more: true,
       },
@@ -122,8 +142,7 @@ export default defineComponent({
   },
   data() {
     return {
-      slogan:
-        "NEXTERS는 IT업계를 주도하는\n개발자와 디자이너를 위한 모임입니다.\n\n자유롭게 협업하고 소통하며,\n자기역량 강화, 새로운 서비스 경험을 통해\nIT 인재가 되는 것을 목표로 합니다.\n\n수도권 중심으로 대학생과 직장인이 활동하며,\n대학생은 실무에 준하는 경험을,\n직장인은 새로운 도전을 경험할 수 있습니다.",
+      slogan: "",
       info: {
         title: "10년째\n멈추지 않는 열정",
         items: [],
