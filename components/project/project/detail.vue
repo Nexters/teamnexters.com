@@ -80,6 +80,15 @@ export default defineComponent({
 .invisible {
   display: none;
 }
+
+.contents {
+  .thumbnail {
+    > img {
+      border: 1px solid #dddddd;
+    }
+  }
+}
+
 .toolbar {
   height: 56px;
   display: flex;
@@ -207,8 +216,9 @@ export default defineComponent({
       display: flex;
       width: 172px;
       cursor: pointer;
+      padding: 16px 0;
+
       p {
-        padding-right: 8px;
         font-style: normal;
         font-weight: bold;
         font-size: 24px;
@@ -218,16 +228,17 @@ export default defineComponent({
         color: #000000;
       }
       img {
-        width: 20px;
-        height: 20px;
-        margin: auto;
+        width: 24px;
+        height: 24px;
+        margin-left: 8px;
+        align-self: center;
       }
     }
     a {
       text-decoration: none;
     }
     .links {
-      margin: 24px;
+      margin: 0 24px 24px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -338,8 +349,9 @@ export default defineComponent({
       display: flex;
       width: 130px;
       cursor: pointer;
+      padding: 8px 0;
+
       p {
-        padding-right: 8px;
         font-style: normal;
         font-weight: bold;
         font-size: 16px;
@@ -351,14 +363,15 @@ export default defineComponent({
       img {
         width: 16px;
         height: 16px;
-        margin: auto;
+        align-self: center;
+        margin-left: 8px;
       }
     }
     a {
       text-decoration: none;
     }
     .links {
-      margin: auto 24px 24px 24px;
+      margin: 0 24px 24px 24px;
 
       display: flex;
       flex-direction: row;
@@ -411,6 +424,7 @@ export default defineComponent({
       display: flex;
       flex-direction: column;
       gap: 16px;
+      overflow-y: auto;
     }
     .information {
       display: flex;
@@ -468,8 +482,9 @@ export default defineComponent({
       display: flex;
       width: 130px;
       cursor: pointer;
+      padding: 16px 0;
+
       p {
-        padding-right: 8px;
         font-style: normal;
         font-weight: bold;
         font-size: 16px;
@@ -479,16 +494,17 @@ export default defineComponent({
         color: #000000;
       }
       img {
-        width: 16px;
-        height: 16px;
-        margin: auto;
+        width: 24px;
+        height: 24px;
+        margin-left: 8px;
+        align-self: center;
       }
     }
     a {
       text-decoration: none;
     }
     .links {
-      margin: auto 24px 24px 24px;
+      margin: 0 24px 24px 24px;
 
       display: flex;
       flex-direction: row;

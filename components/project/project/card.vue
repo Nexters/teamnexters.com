@@ -263,7 +263,7 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 24px;
+    padding: 16px;
     gap: 8px;
     .link-item {
       a {
@@ -277,7 +277,7 @@ a {
       padding: 12px 0 12px 0;
       width: 100%;
       text-align: center;
-      border-radius: 8px;
+      border-radius: 4px;
       border: 1px solid $grey02;
       cursor: pointer;
     }
@@ -317,7 +317,7 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 24px;
+    padding: 16px;
     gap: 8px;
     .link-item {
       a {
@@ -331,7 +331,7 @@ a {
       padding: 12px 0 12px 0;
       width: 100%;
       text-align: center;
-      border-radius: 8px;
+      border-radius: 4px;
       border: 1px solid $grey02;
       cursor: pointer;
     }
