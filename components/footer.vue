@@ -11,18 +11,20 @@
         </div>
         <div class="sponsor">
           <p @click="handleSponsorClick">
-            sponsored
+            Sponsored by
             <img class="arrow-right" :src="arrowIcon" />
           </p>
-          <div v-if="isSponsorVisible" class="sponsorBox">
-            <article class="sponsorList">
-              <section class="sponsorItem">
-                <span>Naver Cloud Platform</span>
-              </section>
-              <section class="sponsorItem">
-                <span>Naver D2 </span>
-              </section>
-            </article>
+          <div class="sponsorBoxParagraph">
+            <div v-if="isSponsorVisible" class="sponsorBox">
+              <article class="sponsorList">
+                <section class="sponsorItem">
+                  <span>Naver Cloud Platform</span>
+                </section>
+                <section class="sponsorItem">
+                  <span>Naver D2 </span>
+                </section>
+              </article>
+            </div>
           </div>
         </div>
       </div>
@@ -109,12 +111,14 @@ footer {
 .footer {
   margin: auto;
   width: 100%;
+  letter-spacing: -0.02em;
 
   .leftArea {
     align-self: flex-start;
+    z-index: 1;
   }
   .sponsor {
-    position: relative;
+    display: flex;
     > p {
       display: flex;
       align-items: center;
@@ -133,13 +137,20 @@ footer {
       width: 16px;
       height: 16px;
     }
+
+    .sponsorBoxParagraph {
+      position: relative;
+      margin-left: 8px;
+    }
+
     .sponsorBox {
       position: absolute;
       bottom: 0;
-      padding: 16px;
+      padding: 15px;
       border: 1px solid $grey02;
       border-radius: 8px;
       background-color: $white;
+      box-sizing: border-box;
 
       .sponsorList {
         .sponsorItem {
@@ -160,7 +171,6 @@ footer {
   }
   @include mobile {
     display: flex;
-    flex-direction: column;
     max-width: 713px;
     margin-bottom: 24px;
 
@@ -180,19 +190,19 @@ footer {
     }
     .sponsor {
       > p {
-        font-size: 14px;
+        font-size: 12px;
         line-height: 21px;
       }
     }
     .copyrights {
-      margin-right: auto;
+      margin-left: auto;
       padding-top: 16px;
 
       font-size: 14px;
       line-height: 21px;
     }
     .sponsorBox {
-      right: -120px;
+      width: 148px;
 
       .sponsorItem {
         font-size: 12px;
@@ -222,18 +232,18 @@ footer {
     }
     .sponsor {
       > p {
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 18px;
+        line-height: 27px;
       }
     }
     .copyrights {
       margin-left: auto;
 
-      font-size: 16px;
-      line-height: 24px;
+      font-size: 18px;
+      line-height: 27px;
     }
     .sponsorBox {
-      right: -75px;
+      width: 168px;
 
       .sponsorItem {
         font-size: 14px;
@@ -262,18 +272,18 @@ footer {
     }
     .sponsor {
       > p {
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 18px;
+        line-height: 27px;
       }
     }
     .copyrights {
       margin-left: auto;
 
-      font-size: 16px;
-      line-height: 24px;
+      font-size: 18px;
+      line-height: 27px;
     }
     .sponsorBox {
-      right: -75px;
+      width: 168px;
 
       .sponsorItem {
         font-size: 14px;
