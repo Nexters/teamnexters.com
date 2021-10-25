@@ -80,7 +80,7 @@ export default defineComponent({
     );
     this.banner.isVisible = this.isBannerDateVisible(bannerType);
     this.banner.bannerPeriod = this.banner.isVisible
-      ? `${result.banner[2]} ~ ${result.banner[3]}`
+      ? this.getDateWithDay(result.banner[2], result.banner[3])
       : "";
     this.bannerBoxes = result.bannerButtons;
     this.notice.isVisible = result.banner[4] === "TRUE";
@@ -164,6 +164,26 @@ export default defineComponent({
     },
     isBannerDateVisible(type) {
       return type !== "DEFAULT";
+    },
+    getDateWithDay(startDate, endDate) {
+      const days = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+      const sd = new Date(startDate);
+      const ed = endDate ? new Date(endDate) : "";
+      const year = sd.getFullYear();
+      const sdMonth = sd.getMonth() + 1;
+      const sdDate = sd.getDate();
+      const sdDay = days[sd.getDay()];
+      const start = `${year}. ${sdMonth}. ${sdDate}(${sdDay})`;
+      let end = "";
+
+      if (!isNaN(Date.parse(ed))) {
+        const edMonth = ed.getMonth() + 1;
+        const edDate = ed.getDate();
+        const edDay = days[ed.getDay()];
+        end = `${edMonth}. ${edDate}(${edDay})`;
+      }
+
+      return `${start} ~ ${end}`;
     },
   },
 });
