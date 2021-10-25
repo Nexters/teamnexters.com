@@ -8,6 +8,7 @@
         :sub-title="banner.bannerSubtitle"
         :period="banner.bannerPeriod"
         :box-list="bannerBoxes"
+        :remaining-period="banner.remainingPeriod"
       />
       <main class="main">
         <NoticeBox
@@ -56,6 +57,7 @@ export default defineComponent({
         bannerImage: "",
         bannerPeriod: "",
         isVisible: false,
+        remainingPeriod: -1,
       },
       bannerBoxes: [],
       notice: {
@@ -82,6 +84,10 @@ export default defineComponent({
     this.banner.bannerPeriod = this.banner.isVisible
       ? this.getDateWithDay(result.banner[2], result.banner[3])
       : "";
+    this.banner.remainingPeriod =
+      bannerType === "PROGRESS"
+        ? this.getRemainingPeriod(result.banner[3])
+        : -1;
     this.bannerBoxes = result.bannerButtons;
     this.notice.isVisible = result.banner[4] === "TRUE";
     this.notice.boxTitle = result.banner[5];
@@ -168,7 +174,7 @@ export default defineComponent({
     getDateWithDay(startDate, endDate) {
       const days = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
       const sd = new Date(startDate);
-      const ed = endDate ? new Date(endDate) : "";
+      const ed = new Date(endDate);
       const year = sd.getFullYear();
       const sdMonth = sd.getMonth() + 1;
       const sdDate = sd.getDate();
@@ -184,6 +190,16 @@ export default defineComponent({
       }
 
       return `${start} ~ ${end}`;
+    },
+    getRemainingPeriod(endDate) {
+      const ed = new Date(endDate);
+
+      if (isNaN(Date.parse(ed))) {
+        return -1;
+      }
+
+      const now = new Date();
+      return Math.ceil((ed.getTime() - now.getTime()) / (1000 * 3600 * 24));
     },
   },
 });

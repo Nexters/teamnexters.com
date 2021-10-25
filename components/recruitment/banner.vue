@@ -6,7 +6,14 @@
     <div class="bannerMetaWrap">
       <h1 class="bannerTitle">{{ headerTitle }}</h1>
       <h2 class="bannerSubTitle">{{ subTitle }}</h2>
-      <p class="bannerPeriod">{{ period }}</p>
+      <p class="bannerPeriod">
+        <span>{{ period }}</span>
+        <Badge
+          v-if="remainingPeriod >= 0"
+          class="badge"
+          :text="`마감 D-${remainingPeriod}`"
+        />
+      </p>
       <article class="boxArea">
         <LinkButton
           v-for="box in boxList"
@@ -46,6 +53,10 @@ export default defineComponent({
       type: Array,
       require: false,
     },
+    remainingPeriod: {
+      type: Number,
+      require: false,
+    },
   },
 });
 </script>
@@ -80,6 +91,7 @@ export default defineComponent({
   }
 
   .bannerPeriod {
+    display: flex;
     font-weight: 700;
     color: $black;
   }
@@ -117,6 +129,10 @@ export default defineComponent({
       font-size: 24px;
       line-height: 36px;
       margin-top: 16px;
+
+      .badge {
+        margin-left: 16px;
+      }
     }
 
     .boxArea {
@@ -155,6 +171,10 @@ export default defineComponent({
       font-size: 24px;
       line-height: 36px;
       margin-top: 16px;
+
+      .badge {
+        margin-left: 16px;
+      }
     }
 
     .boxArea {
@@ -193,6 +213,10 @@ export default defineComponent({
       font-size: 16px;
       line-height: 24px;
       margin-top: 8px;
+
+      .badge {
+        margin-left: 8px;
+      }
     }
 
     .boxArea {
