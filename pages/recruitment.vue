@@ -70,17 +70,21 @@ export default defineComponent({
   },
   async fetch() {
     const result = await this.FetchAll();
+    const bannerType = result.banner[6];
     this.banner.bannerImage = result.banner[0];
     this.banner.bannerTitle = `NEXTERS ${result.banner[1]}th\nRecruitment`;
-    this.banner.bannerSubtitle = result.banner[4];
-    this.banner.bannerPeriod =
-      result.banner[5] === "TRUE"
-        ? `${result.banner[2]} ~ ${result.banner[3]}`
-        : "";
-    this.banner.isVisible = result.banner[5] === "TRUE";
+    this.banner.bannerSubtitle = this.makeBannerTitle(
+      bannerType,
+      result.banner[2],
+      result.banner[1]
+    );
+    this.banner.isVisible = this.isBannerDateVisible(bannerType);
+    this.banner.bannerPeriod = this.banner.isVisible
+      ? `${result.banner[2]} ~ ${result.banner[3]}`
+      : "";
     this.bannerBoxes = result.bannerButtons;
-    this.notice.isVisible = result.banner[6] === "TRUE";
-    this.notice.boxTitle = result.banner[7];
+    this.notice.isVisible = result.banner[4] === "TRUE";
+    this.notice.boxTitle = result.banner[5];
     this.notice.contents = result.notice;
     this.qualifications = result.qualifications;
     this.schedules = result.schedules;
@@ -143,6 +147,23 @@ export default defineComponent({
       };
 
       return result;
+    },
+    makeBannerTitle(type, startDate, th) {
+      switch (type) {
+        case "DEFAULT": {
+          return `현재 모집기간이 아닙니다.\n다음 기수 모집은 ${startDate}에 시작됩니다.`;
+        }
+        case "NOTICE": {
+          return `곧 넥스터즈 ${th}기 모집이 시작됩니다.`;
+        }
+        case "PROGRESS": {
+          return `넥스터즈 ${th}기 모집 중입니다.`;
+        }
+      }
+      return "";
+    },
+    isBannerDateVisible(type) {
+      return type !== "DEFAULT";
     },
   },
 });
