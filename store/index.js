@@ -15,7 +15,6 @@ export const mutations = {
     } else {
       document.documentElement.style.getPropertyValue("--scroll-y");
       const { body } = document;
-      body.style.height = "100vh";
       body.style.overflowY = "hidden";
     }
     state.isMenuOpen = !state.isMenuOpen;

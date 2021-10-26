@@ -35,7 +35,7 @@
 
 <script>
 import { defineComponent } from "@nuxtjs/composition-api";
-import { mapActions, mapGetters } from "vuex";
+import { mapGetters } from "vuex";
 
 export default defineComponent({
   name: "Project",
@@ -65,13 +65,18 @@ export default defineComponent({
   computed: {
     ...mapGetters({
       project: "project/project",
-      showDetail: "project/showDetail",
+      showDetailFromStore: "project/showDetail",
     }),
+    showDetail: {
+      get() {
+        return this.showDetailFromStore;
+      },
+      set(value) {
+        return value;
+      },
+    },
   },
   methods: {
-    ...mapActions({
-      showDetail: "project/showDetail",
-    }),
     async onClickMore() {
       const projects = await this.$content("projects")
         .sortBy("idx", "desc")

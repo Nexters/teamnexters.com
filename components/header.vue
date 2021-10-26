@@ -10,14 +10,17 @@
         <img class="text-logo" :src="txt_logo" alt="NEXTERS_TEXT_LOGO" />
       </nuxt-link>
       <div class="menu" @click="toggleMenu">
-        <img v-if="isMenuOpen" :src="ic_close" alt="ic_close" />
-        <img v-else :src="ic_menu" alt="ic_menu" />
+        <img :src="ic_menu" alt="ic_menu" />
       </div>
     </div>
     <div
       class="menu-items"
       :class="{ 'menu-close': !isMenuOpen, overlay: isMenuOpen }"
     >
+      <div class="menu" @click="toggleMenu">
+        <img v-if="isMenuOpen" :src="ic_close" alt="ic_close" />
+        <img v-else :src="ic_menu" alt="ic_menu" />
+      </div>
       <nuxt-link
         v-for="header in headers"
         :key="header.name"
@@ -122,14 +125,23 @@ nav {
     .menu-items {
       width: 100%;
       position: fixed;
-      top: 73px;
+      top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      padding-top: 32px;
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      a {
+        margin-bottom: 32px;
+      }
+      .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 73px;
+        align-self: flex-end;
+        padding-right: 16px;
+      }
     }
 
     .nav-header {
