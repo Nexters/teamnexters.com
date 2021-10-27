@@ -42,6 +42,11 @@ export default defineComponent({
   color: white;
   text-decoration: none;
   &:hover {
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  &:active {
+    transition: 0.3s;
     cursor: pointer;
   }
 }

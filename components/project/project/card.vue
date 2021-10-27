@@ -76,6 +76,23 @@ a {
   object-fit: cover;
 }
 
+.link-item {
+  &:hover {
+    transition: 0.3s;
+    background: $grey01;
+  }
+  &:active {
+    transition: 0.3s;
+    background: $grey02;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    background: $grey01;
+    color: $grey02;
+  }
+}
+
 @include d-c3 {
   .thumbnail {
     width: 100%;
