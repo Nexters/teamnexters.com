@@ -74,6 +74,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
+@import "~/assets/css/setting.scss";
+
 * {
   font-family: Spoqa Han Sans Neo;
 }
@@ -86,6 +88,22 @@ export default defineComponent({
     > img {
       border: 1px solid #dddddd;
     }
+  }
+}
+.link-item {
+  &:hover {
+    transition: 0.3s;
+    background: $grey01;
+  }
+  &:active {
+    transition: 0.3s;
+    background: $grey02;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    background: $grey01;
+    color: $grey02;
   }
 }
 

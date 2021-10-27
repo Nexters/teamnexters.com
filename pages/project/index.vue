@@ -18,7 +18,7 @@
             :project="_project"
           />
         </div>
-        <div class="more">
+        <div class="more" :style="`${more || 'margin-bottom: 60px;'}`">
           <div
             class="lead-more"
             :style="`display: ${more ? 'flex' : 'none'}`"
@@ -171,9 +171,9 @@ body.scroll-hidden {
       }
     }
     .more {
-      height: 120px;
+      margin: 64px 0 120px 0;
       .lead-more {
-        margin: 24px auto 64px auto;
+        margin: 0 auto 0 auto;
         cursor: pointer;
         display: flex;
         justify-content: center;
@@ -235,9 +235,11 @@ body.scroll-hidden {
       }
     }
     .more {
-      height: 120px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 64px 0 120px 0;
       .lead-more {
-        margin: 24px auto 64px auto;
         cursor: pointer;
         display: flex;
         justify-content: center;
@@ -299,9 +301,11 @@ body.scroll-hidden {
       }
     }
     .more {
-      height: 120px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 64px 0 120px 0;
       .lead-more {
-        margin: 24px auto 64px auto;
         cursor: pointer;
         display: flex;
         justify-content: center;
@@ -363,9 +367,11 @@ body.scroll-hidden {
       }
     }
     .more {
-      height: 64px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 24px 0 60px 0;
       .lead-more {
-        margin: 24px auto 64px auto;
         cursor: pointer;
         display: flex;
         justify-content: center;
@@ -426,9 +432,11 @@ body.scroll-hidden {
       }
     }
     .more {
-      height: 64px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 24px 0 60px 0;
       .lead-more {
-        margin: 24px auto 64px auto;
         cursor: pointer;
         display: flex;
         justify-content: center;

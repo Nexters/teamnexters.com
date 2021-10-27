@@ -53,10 +53,13 @@
                 :href="item.href"
               />
             </div>
-            <div class="more">
+            <div
+              class="more"
+              :style="`${review.more || 'margin-bottom: 60px;'}`"
+            >
               <div
                 class="lead-more"
-                :style="`display: ${review.more ? 'flex' : 'none'}`"
+                :style="`display: ${review.more ? 'flex' : 'none'};`"
                 @click="onClickMore"
               >
                 <p>Lead more</p>
@@ -193,14 +196,12 @@ export default defineComponent({
 }
 
 .slogan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
-  h1 {
-    &::before {
-      display: block;
-      content: "";
-      height: 73px;
-    }
-  }
+
+  padding-top: 73px;
 }
 
 .about-container {
@@ -217,8 +218,8 @@ export default defineComponent({
     .slogan {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
-      padding-top: 64px;
       width: 100%;
       height: 809px;
       background: $grey01;
@@ -230,12 +231,9 @@ export default defineComponent({
         font-weight: normal;
         font-size: 24px;
         line-height: 36px;
-        /* or 150% */
 
         text-align: center;
         letter-spacing: -0.02em;
-
-        /* text/sub */
 
         color: $grey03;
       }
@@ -302,14 +300,13 @@ export default defineComponent({
     .review-row {
       display: flex;
       justify-content: center;
-      margin-bottom: 120px;
     }
     .reviews {
       display: flex;
       flex-direction: column;
       width: 1200px;
-      grid-gap: 32px;
       .cards {
+        margin-top: 48px;
         display: flex;
         flex-direction: row;
         box-sizing: border-box;
@@ -320,7 +317,7 @@ export default defineComponent({
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 120px;
+        margin: 48px 0 120px 0;
         .lead-more {
           display: flex;
           justify-content: space-between;
@@ -350,7 +347,6 @@ export default defineComponent({
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 64px;
       width: 100%;
       height: 809px;
       background: $grey01;
@@ -361,12 +357,9 @@ export default defineComponent({
         font-weight: normal;
         font-size: 24px;
         line-height: 36px;
-        /* or 150% */
 
         text-align: center;
         letter-spacing: -0.02em;
-
-        /* text/sub */
 
         color: $grey03;
       }
@@ -484,7 +477,6 @@ export default defineComponent({
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 24px;
       width: 100%;
       height: 484px;
       background: $grey01;

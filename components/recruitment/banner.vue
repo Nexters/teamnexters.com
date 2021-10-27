@@ -109,7 +109,7 @@ export default defineComponent({
     padding: 64px;
 
     .bannerMetaWrap {
-      max-width: 1200px;
+      width: 1200px;
       margin: auto;
     }
 
@@ -151,7 +151,7 @@ export default defineComponent({
     padding: 64px;
 
     .bannerMetaWrap {
-      max-width: 1200px;
+      width: 100%;
       margin: auto;
     }
 
@@ -193,6 +193,7 @@ export default defineComponent({
     padding: 24px;
 
     .bannerMetaWrap {
+      width: 713px;
       max-width: 713px;
       margin: auto;
     }
