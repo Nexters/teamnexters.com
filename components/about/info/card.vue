@@ -31,7 +31,7 @@ export default InfoCard;
 @include desktop {
   .info-container {
     border-radius: 16px;
-    width: 100%;
+    width: 378.67px;
     background: $grey01;
     .contents {
       padding: 32px;
@@ -66,7 +66,7 @@ export default InfoCard;
   .info-container {
     flex: 0 0 auto;
     border-radius: 16px;
-    width: 368px;
+    width: 378.67px;
     background: $grey01;
     .contents {
       padding: 32px;
