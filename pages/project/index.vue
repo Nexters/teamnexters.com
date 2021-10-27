@@ -146,7 +146,7 @@ body.scroll-hidden {
       box-sizing: border-box;
       flex-direction: row;
       flex-wrap: wrap;
-      gap: 48px;
+      grid-gap: 48px;
       .project {
         flex-basis: 365px;
         border-radius: 16px;
@@ -210,7 +210,7 @@ body.scroll-hidden {
       box-sizing: border-box;
       flex-direction: row;
       flex-wrap: wrap;
-      gap: 48px;
+      grid-gap: 48px;
       .project {
         flex-basis: calc(50% - 26px);
         border-radius: 16px;
@@ -274,7 +274,7 @@ body.scroll-hidden {
       justify-content: space-between;
       box-sizing: border-box;
       flex-direction: column;
-      gap: 48px;
+      grid-gap: 48px;
       .project {
         flex-grow: 1;
         border-radius: 16px;
@@ -338,7 +338,7 @@ body.scroll-hidden {
       box-sizing: border-box;
       flex-direction: row;
       flex-wrap: wrap;
-      gap: 24px;
+      grid-gap: 24px;
       .project {
         flex-basis: calc(50% - 14px);
         border-radius: 8px;
@@ -401,7 +401,7 @@ body.scroll-hidden {
       justify-content: space-between;
       box-sizing: border-box;
       flex-direction: column;
-      gap: 24px;
+      grid-gap: 24px;
       .project {
         flex-grow: 1;
         border-radius: 8px;

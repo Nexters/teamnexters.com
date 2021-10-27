@@ -160,12 +160,12 @@ export default defineComponent({
       padding: 24px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      grid-gap: 16px;
     }
     .information {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      grid-gap: 8px;
     }
     .name {
       font-style: normal;
@@ -291,12 +291,12 @@ export default defineComponent({
       padding: 24px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      grid-gap: 16px;
     }
     .information {
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      grid-gap: 4px;
     }
     .name {
       font-style: normal;
@@ -423,13 +423,13 @@ export default defineComponent({
       padding: 24px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      grid-gap: 16px;
       overflow-y: auto;
     }
     .information {
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      grid-gap: 4px;
     }
     .name {
       font-style: normal;

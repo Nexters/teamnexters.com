@@ -98,7 +98,7 @@ a {
     flex-direction: row;
     justify-content: space-between;
     padding: 24px;
-    gap: 8px;
+    grid-gap: 8px;
     .link-item {
       a {
         font-weight: bold;
@@ -155,7 +155,7 @@ a {
       flex-direction: row;
       justify-content: space-between;
       padding: 24px;
-      gap: 8px;
+      grid-gap: 8px;
       .link-item {
         a {
           font-weight: bold;
@@ -210,7 +210,7 @@ a {
     flex-direction: row;
     justify-content: space-between;
     padding: 24px;
-    gap: 8px;
+    grid-gap: 8px;
     .link-item {
       a {
         font-weight: bold;
@@ -264,7 +264,7 @@ a {
     flex-direction: row;
     justify-content: space-between;
     padding: 16px;
-    gap: 8px;
+    grid-gap: 8px;
     .link-item {
       a {
         font-weight: bold;
@@ -318,7 +318,7 @@ a {
     flex-direction: row;
     justify-content: space-between;
     padding: 16px;
-    gap: 8px;
+    grid-gap: 8px;
     .link-item {
       a {
         font-weight: bold;
