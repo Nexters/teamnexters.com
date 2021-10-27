@@ -35,7 +35,7 @@
 
 <script>
 import { defineComponent } from "@nuxtjs/composition-api";
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default defineComponent({
   name: "Project",
@@ -66,23 +66,41 @@ export default defineComponent({
     ...mapGetters({
       project: "project/project",
       showDetailFromStore: "project/showDetail",
+      projectLimitFromStore: "project/projectLimit",
     }),
     showDetail: {
       get() {
         return this.showDetailFromStore;
       },
       set(value) {
-        return value;
+        return this.setShowDetail(value);
+      },
+    },
+    projectLimit: {
+      get() {
+        return this.projectLimitFromStore;
+      },
+      set(limit) {
+        return this.setProjectLimit(limit);
       },
     },
   },
   methods: {
+    ...mapActions({
+      setShowDetail: "project/showDetail",
+      setProjectLimit: "project/projectLimit",
+    }),
     async onClickMore() {
+      if (this.projectLimit <= this.total) {
+        this.projectLimit += 6;
+      } else {
+        this.more = false;
+      }
       const projects = await this.$content("projects")
         .sortBy("idx", "desc")
+        .limit(this.projectLimit)
         .fetch();
       this.projects = projects;
-      this.more = false;
     },
   },
 });
