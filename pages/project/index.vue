@@ -35,7 +35,7 @@
 
 <script>
 import { defineComponent } from "@nuxtjs/composition-api";
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default defineComponent({
   name: "Project",
@@ -66,23 +66,41 @@ export default defineComponent({
     ...mapGetters({
       project: "project/project",
       showDetailFromStore: "project/showDetail",
+      projectLimitFromStore: "project/projectLimit",
     }),
     showDetail: {
       get() {
         return this.showDetailFromStore;
       },
       set(value) {
-        return value;
+        return this.setShowDetail(value);
+      },
+    },
+    projectLimit: {
+      get() {
+        return this.projectLimitFromStore;
+      },
+      set(limit) {
+        return this.setProjectLimit(limit);
       },
     },
   },
   methods: {
+    ...mapActions({
+      setShowDetail: "project/showDetail",
+      setProjectLimit: "project/projectLimit",
+    }),
     async onClickMore() {
+      if (this.projectLimit <= this.total) {
+        this.projectLimit += 6;
+      } else {
+        this.more = false;
+      }
       const projects = await this.$content("projects")
         .sortBy("idx", "desc")
+        .limit(this.projectLimit)
         .fetch();
       this.projects = projects;
-      this.more = false;
     },
   },
 });
@@ -146,7 +164,7 @@ body.scroll-hidden {
       box-sizing: border-box;
       flex-direction: row;
       flex-wrap: wrap;
-      gap: 48px;
+      grid-gap: 48px;
       .project {
         flex-basis: 365px;
         border-radius: 16px;
@@ -210,7 +228,7 @@ body.scroll-hidden {
       box-sizing: border-box;
       flex-direction: row;
       flex-wrap: wrap;
-      gap: 48px;
+      grid-gap: 48px;
       .project {
         flex-basis: calc(50% - 26px);
         border-radius: 16px;
@@ -274,7 +292,7 @@ body.scroll-hidden {
       justify-content: space-between;
       box-sizing: border-box;
       flex-direction: column;
-      gap: 48px;
+      grid-gap: 48px;
       .project {
         flex-grow: 1;
         border-radius: 16px;
@@ -338,7 +356,7 @@ body.scroll-hidden {
       box-sizing: border-box;
       flex-direction: row;
       flex-wrap: wrap;
-      gap: 24px;
+      grid-gap: 24px;
       .project {
         flex-basis: calc(50% - 14px);
         border-radius: 8px;
@@ -401,7 +419,7 @@ body.scroll-hidden {
       justify-content: space-between;
       box-sizing: border-box;
       flex-direction: column;
-      gap: 24px;
+      grid-gap: 24px;
       .project {
         flex-grow: 1;
         border-radius: 8px;

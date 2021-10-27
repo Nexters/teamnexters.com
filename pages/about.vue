@@ -210,7 +210,7 @@ export default defineComponent({
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 64px;
+      grid-gap: 64px;
       width: 100%;
       margin: 0 auto 0 auto;
     }
@@ -265,11 +265,11 @@ export default defineComponent({
         width: 1200px;
         display: flex;
         flex-direction: column;
-        gap: 32px;
+        grid-gap: 32px;
         .cards {
           display: flex;
           justify-content: center;
-          gap: 32px;
+          grid-gap: 32px;
         }
       }
     }
@@ -281,7 +281,7 @@ export default defineComponent({
       display: flex;
       flex-direction: column;
       width: 1200px;
-      gap: 32px;
+      grid-gap: 32px;
       .desc {
         font-style: normal;
         font-weight: normal;
@@ -296,7 +296,7 @@ export default defineComponent({
         flex-direction: row;
         box-sizing: border-box;
         flex-wrap: wrap;
-        gap: 32px;
+        grid-gap: 32px;
       }
     }
     .review-row {
@@ -308,13 +308,13 @@ export default defineComponent({
       display: flex;
       flex-direction: column;
       width: 1200px;
-      gap: 32px;
+      grid-gap: 32px;
       .cards {
         display: flex;
         flex-direction: row;
         box-sizing: border-box;
         flex-wrap: wrap;
-        gap: 32px;
+        grid-gap: 32px;
       }
       .more {
         display: flex;
@@ -402,7 +402,7 @@ export default defineComponent({
           flex-direction: column;
           .cards {
             min-width: 1200px;
-            gap: 32px;
+            grid-gap: 32px;
             display: inline-flex;
             flex: 0 0 auto;
             padding: 0 64px 0 64px;
@@ -416,7 +416,7 @@ export default defineComponent({
     .activities {
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      grid-gap: 32px;
       .desc {
         font-style: normal;
         font-weight: normal;
@@ -431,7 +431,7 @@ export default defineComponent({
         flex-direction: row;
         box-sizing: border-box;
         flex-wrap: wrap;
-        gap: 32px;
+        grid-gap: 32px;
       }
     }
     .review-row {
@@ -442,13 +442,13 @@ export default defineComponent({
     .reviews {
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      grid-gap: 32px;
       .cards {
         display: flex;
         flex-direction: row;
         box-sizing: border-box;
         flex-wrap: wrap;
-        gap: 32px;
+        grid-gap: 32px;
       }
       .more {
         display: flex;
@@ -532,7 +532,7 @@ export default defineComponent({
           flex-direction: column;
           .cards {
             min-width: 752px;
-            gap: 16px;
+            grid-gap: 16px;
             display: inline-flex;
             flex: 0 0 auto;
             padding: 0 24px 0 24px;
@@ -545,7 +545,7 @@ export default defineComponent({
       display: flex;
       flex-direction: column;
       width: 100%;
-      gap: 16px;
+      grid-gap: 16px;
       .desc {
         font-style: normal;
         font-weight: normal;
@@ -558,19 +558,19 @@ export default defineComponent({
       .cards {
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        grid-gap: 16px;
       }
     }
     .reviews {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      grid-gap: 16px;
       .cards {
         display: flex;
         flex-direction: row;
         box-sizing: border-box;
         flex-wrap: wrap;
-        gap: 16px;
+        grid-gap: 16px;
       }
       .more {
         display: flex;

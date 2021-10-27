@@ -1,11 +1,13 @@
 export const state = () => ({
   showDetail: false,
   project: {},
+  projectLimit: 6,
 });
 
 export const getters = {
   showDetail: (state) => state.showDetail,
   project: (state) => state.project,
+  projectLimit: (state) => state.projectLimit,
 };
 
 export const mutations = {
@@ -23,9 +25,13 @@ export const mutations = {
     const { body } = document;
     body.style.overflowY = "";
   },
+  projectLimit(state, limit) {
+    state.projectLimit = limit;
+  },
   init(state) {
     state.showDetail = false;
     state.project = {};
+    state.projectLimit = 6;
   },
 };
 
@@ -35,6 +41,9 @@ export const actions = {
   },
   showDetail({ commit }, project) {
     commit("showDetail", project);
+  },
+  projectLimit({ commit }, limit) {
+    commit("projectLimit", limit);
   },
   init({ commit }) {
     commit("init");

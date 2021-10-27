@@ -1,8 +1,8 @@
 <template>
   <div class="info-container">
     <div class="contents">
-      <p class="title">{{ title }}</p>
-      <p class="value">{{ value }}</p>
+      <h4 class="title">{{ title }}</h4>
+      <h2 class="value">{{ value }}</h2>
       <p class="description">{{ description }}</p>
     </div>
   </div>
@@ -31,8 +31,7 @@ export default InfoCard;
 @include desktop {
   .info-container {
     border-radius: 16px;
-    width: 368px;
-    height: 233px;
+    width: 100%;
     background: $grey01;
     .contents {
       padding: 32px;
@@ -46,8 +45,8 @@ export default InfoCard;
       .value {
         font-style: normal;
         font-weight: bold;
-        font-size: 60px;
-        line-height: 90px;
+        font-size: 48px;
+        line-height: 64px;
         margin-bottom: 8px;
         letter-spacing: -0.02em;
       }
@@ -68,7 +67,6 @@ export default InfoCard;
     flex: 0 0 auto;
     border-radius: 16px;
     width: 368px;
-    height: 233px;
     background: $grey01;
     .contents {
       padding: 32px;
@@ -82,8 +80,8 @@ export default InfoCard;
       .value {
         font-style: normal;
         font-weight: bold;
-        font-size: 60px;
-        line-height: 90px;
+        font-size: 48px;
+        line-height: 64px;
         margin-bottom: 8px;
         letter-spacing: -0.02em;
       }
@@ -104,7 +102,6 @@ export default InfoCard;
     flex: 0 0 auto;
     border-radius: 8px;
     width: 240px;
-    height: 149px;
     background: $grey01;
     .contents {
       padding: 24px;

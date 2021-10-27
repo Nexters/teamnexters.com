@@ -10,8 +10,10 @@
         v-for="(link, platform) in project.link"
         :key="platform"
         class="link-item"
+        @click="onClickLink(link)"
+        @click.stop=""
       >
-        <a :href="link" @click.stop="">
+        <a :href="link">
           {{ platform }}
         </a>
       </div>
@@ -32,11 +34,14 @@ const ProjectCard = defineComponent({
   },
   computed: {
     thumbnail() {
-      return this.project.thumbnail || require("~/assets/img/no_image.png");
+      return this.project.thumbnail || require("~/assets/img/no-image.svg");
     },
   },
   methods: {
     ...mapActions({ showDetail: "project/showDetail" }),
+    onClickLink(href) {
+      window.location.href = href;
+    },
   },
 });
 
@@ -65,6 +70,10 @@ export default ProjectCard;
 }
 a {
   text-decoration: none;
+}
+
+.thumbnail {
+  object-fit: cover;
 }
 
 @include d-c3 {
@@ -98,7 +107,7 @@ a {
     flex-direction: row;
     justify-content: space-between;
     padding: 24px;
-    gap: 8px;
+    grid-gap: 8px;
     .link-item {
       a {
         font-weight: bold;
@@ -155,7 +164,7 @@ a {
       flex-direction: row;
       justify-content: space-between;
       padding: 24px;
-      gap: 8px;
+      grid-gap: 8px;
       .link-item {
         a {
           font-weight: bold;
@@ -210,7 +219,7 @@ a {
     flex-direction: row;
     justify-content: space-between;
     padding: 24px;
-    gap: 8px;
+    grid-gap: 8px;
     .link-item {
       a {
         font-weight: bold;
@@ -264,7 +273,7 @@ a {
     flex-direction: row;
     justify-content: space-between;
     padding: 16px;
-    gap: 8px;
+    grid-gap: 8px;
     .link-item {
       a {
         font-weight: bold;
@@ -318,7 +327,7 @@ a {
     flex-direction: row;
     justify-content: space-between;
     padding: 16px;
-    gap: 8px;
+    grid-gap: 8px;
     .link-item {
       a {
         font-weight: bold;

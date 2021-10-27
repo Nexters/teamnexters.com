@@ -217,14 +217,14 @@ nav {
 
 @include desktop {
   a.nuxt-link-active {
-    text-decoration: underline;
+    text-decoration: underline solid $black 2px;
     text-underline-position: under;
   }
 }
 
 @include tablet {
   a.nuxt-link-active {
-    text-decoration: underline;
+    text-decoration: underline solid $black 2px;
     text-underline-position: under;
   }
 }
