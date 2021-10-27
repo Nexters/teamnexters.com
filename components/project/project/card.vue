@@ -34,7 +34,7 @@ const ProjectCard = defineComponent({
   },
   computed: {
     thumbnail() {
-      return this.project.thumbnail || require("~/assets/img/no_image.png");
+      return this.project.thumbnail || require("~/assets/img/no-image.svg");
     },
   },
   methods: {
@@ -70,6 +70,10 @@ export default ProjectCard;
 }
 a {
   text-decoration: none;
+}
+
+.thumbnail {
+  object-fit: cover;
 }
 
 @include d-c3 {

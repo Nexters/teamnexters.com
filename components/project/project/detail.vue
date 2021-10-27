@@ -61,7 +61,7 @@ export default defineComponent({
       return this.project.members?.join(" ") || "";
     },
     thumbnail() {
-      return this.project.thumbnail || require("~/assets/img/no_image.png");
+      return this.project.thumbnail || require("~/assets/img/no-image.svg");
     },
   },
   methods: {
@@ -119,10 +119,11 @@ export default defineComponent({
   }
   @include tablet {
     .leading {
-      display: block;
+      display: none;
     }
     .trailing {
-      display: none;
+      margin-left: auto;
+      display: block;
     }
   }
   @include desktop {
@@ -406,36 +407,36 @@ export default defineComponent({
     left: 0;
     right: 0;
     bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
+    overflow-y: auto;
   }
+
   .project-detail-container {
-    height: 100%;
+    border-radius: 16px;
+    position: relative;
+    width: 528px;
     display: flex;
     flex-direction: column;
     background-color: white;
-    @include desktop {
-      .thumbnail {
-        width: 100%;
-        max-height: 445px;
-      }
-    }
+    margin: 30px auto;
+
     .contents {
       padding: 24px;
       display: flex;
       flex-direction: column;
       grid-gap: 16px;
-      overflow-y: auto;
     }
     .information {
       display: flex;
       flex-direction: column;
-      grid-gap: 4px;
+      grid-gap: 8px;
     }
     .name {
       font-style: normal;
       font-weight: bold;
-      font-size: 24px;
-      line-height: 36px;
+      font-size: 32px;
+      line-height: 48px;
       letter-spacing: -0.02em;
 
       color: #000000;
@@ -443,8 +444,8 @@ export default defineComponent({
     .th-year {
       font-style: normal;
       font-weight: normal;
-      font-size: 12px;
-      line-height: 18px;
+      font-size: 14px;
+      line-height: 21px;
       letter-spacing: -0.02em;
 
       color: #777777;
@@ -452,19 +453,17 @@ export default defineComponent({
     .team-members {
       font-style: normal;
       font-weight: normal;
-      font-size: 14px;
-      line-height: 21px;
+      font-size: 18px;
+      line-height: 27px;
       letter-spacing: -0.02em;
 
       color: #000000;
     }
     .thumbnail {
-      width: 100%;
-
       img {
-        width: 100%;
-        max-height: 445px;
-        border-radius: 8px;
+        width: 480px;
+        height: 270px;
+        border-radius: 16px;
       }
     }
     .description {
@@ -472,23 +471,23 @@ export default defineComponent({
 
       font-style: normal;
       font-weight: normal;
-      font-size: 14px;
-      line-height: 21px;
+      font-size: 18px;
+      line-height: 27px;
       letter-spacing: -0.02em;
 
       color: #000000;
     }
     .ppt {
       display: flex;
-      width: 130px;
+      width: 172px;
       cursor: pointer;
       padding: 16px 0;
 
       p {
         font-style: normal;
         font-weight: bold;
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 24px;
+        line-height: 36px;
         letter-spacing: -0.02em;
 
         color: #000000;
@@ -504,8 +503,7 @@ export default defineComponent({
       text-decoration: none;
     }
     .links {
-      margin: 0 24px 24px 24px;
-
+      margin: 0 24px 24px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
