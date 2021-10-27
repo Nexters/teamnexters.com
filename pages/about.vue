@@ -263,11 +263,9 @@ export default defineComponent({
         width: 1200px;
         display: flex;
         flex-direction: column;
-        grid-gap: 32px;
         .cards {
           display: flex;
-          justify-content: center;
-          grid-gap: 32px;
+          justify-content: space-between;
         }
       }
     }
@@ -395,7 +393,8 @@ export default defineComponent({
           flex-direction: column;
           .cards {
             min-width: 1200px;
-            grid-gap: 32px;
+            // grid-gap: 32px;
+            justify-content: space-between;
             display: inline-flex;
             flex: 0 0 auto;
             padding: 0 64px 0 64px;
@@ -524,7 +523,7 @@ export default defineComponent({
           flex-direction: column;
           .cards {
             min-width: 752px;
-            grid-gap: 16px;
+            justify-content: space-between;
             display: inline-flex;
             flex: 0 0 auto;
             padding: 0 24px 0 24px;
@@ -537,8 +536,8 @@ export default defineComponent({
       display: flex;
       flex-direction: column;
       width: 100%;
-      grid-gap: 16px;
       .desc {
+        margin-top: 16px;
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
@@ -548,21 +547,35 @@ export default defineComponent({
         color: $text-default;
       }
       .cards {
+        margin-top: 16px;
         display: flex;
+        justify-content: space-between;
         flex-direction: column;
-        grid-gap: 16px;
+        // grid-gap: 16px;
+        > div {
+          margin-bottom: 16px;
+        }
+        > div:last-child {
+          margin-bottom: 0;
+        }
       }
     }
     .reviews {
       display: flex;
       flex-direction: column;
-      grid-gap: 16px;
       .cards {
+        margin-top: 16px;
         display: flex;
         flex-direction: row;
         box-sizing: border-box;
         flex-wrap: wrap;
-        grid-gap: 16px;
+        justify-content: space-between;
+        > div {
+          margin-bottom: 16px;
+        }
+        > div:last-child {
+          margin-bottom: 0;
+        }
       }
       .more {
         display: flex;

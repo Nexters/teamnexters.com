@@ -164,14 +164,14 @@ body.scroll-hidden {
       box-sizing: border-box;
       flex-direction: row;
       flex-wrap: wrap;
-      grid-gap: 48px;
       .project {
+        margin-bottom: 48px;
         flex-basis: 365px;
         border-radius: 16px;
       }
     }
     .more {
-      margin: 64px 0 120px 0;
+      margin: 16px 0 120px 0;
       .lead-more {
         margin: 0 auto 0 auto;
         cursor: pointer;
@@ -224,12 +224,12 @@ body.scroll-hidden {
     .project-cards-container {
       padding-top: 84px;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       box-sizing: border-box;
       flex-direction: row;
       flex-wrap: wrap;
-      grid-gap: 48px;
       .project {
+        margin-bottom: 48px;
         flex-basis: calc(50% - 26px);
         border-radius: 16px;
       }
@@ -238,7 +238,7 @@ body.scroll-hidden {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 64px 0 120px 0;
+      margin: 16px 0 120px 0;
       .lead-more {
         cursor: pointer;
         display: flex;
@@ -294,8 +294,8 @@ body.scroll-hidden {
       justify-content: space-between;
       box-sizing: border-box;
       flex-direction: column;
-      grid-gap: 48px;
       .project {
+        margin-bottom: 48px;
         flex-grow: 1;
         border-radius: 16px;
       }
@@ -304,7 +304,7 @@ body.scroll-hidden {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 64px 0 120px 0;
+      margin: 16px 0 120px 0;
       .lead-more {
         cursor: pointer;
         display: flex;
@@ -356,12 +356,12 @@ body.scroll-hidden {
     .project-cards-container {
       padding: 16px 24px 0 24px;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       box-sizing: border-box;
       flex-direction: row;
       flex-wrap: wrap;
-      grid-gap: 24px;
       .project {
+        margin-bottom: 24px;
         flex-basis: calc(50% - 14px);
         border-radius: 8px;
       }
@@ -370,7 +370,7 @@ body.scroll-hidden {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 24px 0 60px 0;
+      margin: 0 0 60px 0;
       .lead-more {
         cursor: pointer;
         display: flex;
@@ -425,8 +425,8 @@ body.scroll-hidden {
       justify-content: space-between;
       box-sizing: border-box;
       flex-direction: column;
-      grid-gap: 24px;
       .project {
+        margin-bottom: 24px;
         flex-grow: 1;
         border-radius: 8px;
       }
@@ -435,7 +435,7 @@ body.scroll-hidden {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 24px 0 60px 0;
+      margin: 0 0 60px 0;
       .lead-more {
         cursor: pointer;
         display: flex;
