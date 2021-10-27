@@ -53,10 +53,13 @@
                 :href="item.href"
               />
             </div>
-            <div class="more">
+            <div
+              class="more"
+              :style="`${review.more || 'margin-bottom: 60px;'}`"
+            >
               <div
                 class="lead-more"
-                :style="`display: ${review.more ? 'flex' : 'none'}`"
+                :style="`display: ${review.more ? 'flex' : 'none'};`"
                 @click="onClickMore"
               >
                 <p>Lead more</p>
@@ -296,14 +299,13 @@ export default defineComponent({
     .review-row {
       display: flex;
       justify-content: center;
-      margin-bottom: 120px;
     }
     .reviews {
       display: flex;
       flex-direction: column;
       width: 1200px;
-      grid-gap: 32px;
       .cards {
+        margin-top: 48px;
         display: flex;
         flex-direction: row;
         box-sizing: border-box;
@@ -314,7 +316,7 @@ export default defineComponent({
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 120px;
+        margin: 48px 0 120px 0;
         .lead-more {
           display: flex;
           justify-content: space-between;
