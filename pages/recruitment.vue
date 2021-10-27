@@ -214,11 +214,10 @@ export default defineComponent({
 }
 
 .banner {
-  &::before {
-    content: "";
-    display: block;
-    height: 73px;
-  }
+  padding-top: 73px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .recruitment-enter-active,

@@ -200,6 +200,8 @@ export default defineComponent({
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+
+  padding-top: 73px;
 }
 
 .about-container {
@@ -218,7 +220,6 @@ export default defineComponent({
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin: auto;
       width: 100%;
       height: 809px;
       background: $grey01;
