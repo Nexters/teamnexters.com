@@ -536,8 +536,8 @@ export default defineComponent({
       display: flex;
       flex-direction: column;
       width: 100%;
-      grid-gap: 16px;
       .desc {
+        margin-top: 16px;
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
@@ -547,6 +547,7 @@ export default defineComponent({
         color: $text-default;
       }
       .cards {
+        margin-top: 16px;
         display: flex;
         justify-content: space-between;
         flex-direction: column;
@@ -562,14 +563,13 @@ export default defineComponent({
     .reviews {
       display: flex;
       flex-direction: column;
-      grid-gap: 16px;
       .cards {
+        margin-top: 16px;
         display: flex;
         flex-direction: row;
         box-sizing: border-box;
         flex-wrap: wrap;
         justify-content: space-between;
-        // grid-gap: 16px;
         > div {
           margin-bottom: 16px;
         }
