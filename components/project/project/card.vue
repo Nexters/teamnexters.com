@@ -10,8 +10,10 @@
         v-for="(link, platform) in project.link"
         :key="platform"
         class="link-item"
+        @click="onClickLink(link)"
+        @click.stop=""
       >
-        <a :href="link" @click.stop="">
+        <a :href="link">
           {{ platform }}
         </a>
       </div>
@@ -37,6 +39,9 @@ const ProjectCard = defineComponent({
   },
   methods: {
     ...mapActions({ showDetail: "project/showDetail" }),
+    onClickLink(href) {
+      window.location.href = href;
+    },
   },
 });
 
