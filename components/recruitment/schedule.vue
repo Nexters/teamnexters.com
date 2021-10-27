@@ -78,6 +78,9 @@ export default defineComponent({
       overflow-x: auto;
       white-space: nowrap;
       margin-top: 16px;
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
       .schedule {
         width: 200px;
