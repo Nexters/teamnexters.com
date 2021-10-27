@@ -193,14 +193,10 @@ export default defineComponent({
 }
 
 .slogan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
-  h1 {
-    &::before {
-      display: block;
-      content: "";
-      height: 73px;
-    }
-  }
 }
 
 .about-container {
@@ -217,8 +213,9 @@ export default defineComponent({
     .slogan {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
-      padding-top: 64px;
+      margin: auto;
       width: 100%;
       height: 809px;
       background: $grey01;
@@ -230,12 +227,9 @@ export default defineComponent({
         font-weight: normal;
         font-size: 24px;
         line-height: 36px;
-        /* or 150% */
 
         text-align: center;
         letter-spacing: -0.02em;
-
-        /* text/sub */
 
         color: $grey03;
       }
@@ -350,7 +344,6 @@ export default defineComponent({
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 64px;
       width: 100%;
       height: 809px;
       background: $grey01;
@@ -361,12 +354,9 @@ export default defineComponent({
         font-weight: normal;
         font-size: 24px;
         line-height: 36px;
-        /* or 150% */
 
         text-align: center;
         letter-spacing: -0.02em;
-
-        /* text/sub */
 
         color: $grey03;
       }
@@ -484,7 +474,6 @@ export default defineComponent({
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 24px;
       width: 100%;
       height: 484px;
       background: $grey01;
