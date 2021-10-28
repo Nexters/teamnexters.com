@@ -179,12 +179,19 @@ export default defineComponent({
       padding: 24px;
       display: flex;
       flex-direction: column;
-      grid-gap: 16px;
+      > div {
+        margin-bottom: 16px;
+      }
+      > div:last-child {
+        margin: 0;
+      }
     }
     .information {
       display: flex;
       flex-direction: column;
-      grid-gap: 8px;
+      > div {
+        margin-top: 8px;
+      }
     }
     .name {
       font-style: normal;
@@ -310,12 +317,19 @@ export default defineComponent({
       padding: 24px;
       display: flex;
       flex-direction: column;
-      grid-gap: 16px;
+      > div {
+        margin-bottom: 16px;
+      }
+      > div:last-child {
+        margin: 0;
+      }
     }
     .information {
       display: flex;
       flex-direction: column;
-      grid-gap: 4px;
+      > div {
+        margin-top: 4px;
+      }
     }
     .name {
       font-style: normal;
@@ -443,12 +457,19 @@ export default defineComponent({
       padding: 24px;
       display: flex;
       flex-direction: column;
-      grid-gap: 16px;
+      > div {
+        margin-bottom: 16px;
+      }
+      > div:last-child {
+        margin: 0;
+      }
     }
     .information {
       display: flex;
       flex-direction: column;
-      grid-gap: 8px;
+      > div {
+        margin-top: 8px;
+      }
     }
     .name {
       font-style: normal;

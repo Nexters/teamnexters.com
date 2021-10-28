@@ -53,15 +53,8 @@
                 :href="item.href"
               />
             </div>
-            <div
-              class="more"
-              :style="`${review.more || 'margin-bottom: 60px;'}`"
-            >
-              <div
-                class="lead-more"
-                :style="`display: ${review.more ? 'flex' : 'none'};`"
-                @click="onClickMore"
-              >
+            <div class="more">
+              <div v-show="isRemain" class="lead-more" @click="onClickMore">
                 <p>Lead more</p>
                 <img src="~/assets/img/ic_down.svg" alt="" />
               </div>
@@ -75,7 +68,7 @@
 
 <script>
 import { defineComponent } from "@nuxtjs/composition-api";
-
+import { mapGetters, mapActions } from "vuex";
 export default defineComponent({
   name: "AboutPage",
   transition: {
@@ -107,6 +100,7 @@ export default defineComponent({
     const activities = await $content("about/activities")
       .only(["description", "title", "thumbnail"])
       .fetch();
+    const { length: total } = await $content("about/reviews").fetch();
     const reviews = await $content("about/reviews")
       .only([
         "id",
@@ -138,6 +132,7 @@ export default defineComponent({
       review: {
         title: review_title,
         desc: review_desc,
+        total: total,
         items: reviews,
         more: true,
       },
@@ -147,27 +142,54 @@ export default defineComponent({
     return {
       slogan: "",
       info: {
-        title: "10년째\n멈추지 않는 열정",
+        title: "",
         items: [],
       },
       act: {
-        title: "함께하는\n다양한 활동",
-        description:
-          "정규 활동은 방학 시즌 매주 토요일에 진행되며,\n비활동 기간에는 프로젝트 · 공모전 · 스터디를 자율적으로 진행합니다.",
+        title: "",
+        description: "",
         items: [],
       },
       review: {
-        title: "회원들의\n생생한 활동 후기",
+        title: "",
+        total: 0,
         items: [],
         more: true,
       },
     };
   },
+  computed: {
+    ...mapGetters({
+      reviews: "about/reviews",
+      reviewLimitFromStore: "about/reviewLimit",
+    }),
+    reviewLimit: {
+      get() {
+        return this.reviewLimitFromStore;
+      },
+      set(limit) {
+        return this.setReviewLimit(limit);
+      },
+    },
+    isRemain: {
+      get() {
+        return this.reviewLimit < this.review.total;
+      },
+    },
+  },
   methods: {
+    ...mapActions({
+      setReviewLimit: "about/reviewLimit",
+    }),
     async onClickMore() {
+      if (this.isRemain) {
+        this.reviewLimit += 6;
+      } else {
+        this.review.more = false;
+      }
       const reviews = await this.$content("about/reviews")
         .sortBy("id")
-        .fetch()
+        .fetch(this.reviewLimit)
         .catch((err) => {
           console.log(err);
         });
@@ -303,6 +325,7 @@ export default defineComponent({
       display: flex;
       flex-direction: column;
       width: 1200px;
+      margin-bottom: 120px;
       .cards {
         margin-top: 48px;
         display: flex;
@@ -312,10 +335,10 @@ export default defineComponent({
         grid-gap: 32px;
       }
       .more {
+        margin-top: 48px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 48px 0 120px 0;
         .lead-more {
           display: flex;
           justify-content: space-between;
@@ -434,8 +457,9 @@ export default defineComponent({
     .reviews {
       display: flex;
       flex-direction: column;
-      grid-gap: 32px;
+      margin-bottom: 120px;
       .cards {
+        margin-top: 32px;
         display: flex;
         flex-direction: row;
         box-sizing: border-box;
@@ -443,10 +467,10 @@ export default defineComponent({
         grid-gap: 32px;
       }
       .more {
+        margin-top: 48px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 120px;
         .lead-more {
           display: flex;
           justify-content: space-between;
@@ -563,6 +587,7 @@ export default defineComponent({
     .reviews {
       display: flex;
       flex-direction: column;
+      margin-bottom: 64px;
       .cards {
         margin-top: 16px;
         display: flex;
@@ -578,10 +603,10 @@ export default defineComponent({
         }
       }
       .more {
+        margin-top: 24px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 72px;
         .lead-more {
           display: flex;
           justify-content: space-between;

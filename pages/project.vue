@@ -11,21 +11,19 @@
           </div>
         </div>
         <div class="project-cards-container">
-          <ProjectCard
-            v-for="_project in projects"
-            :key="_project.idx"
-            class="project"
-            :project="_project"
-          />
-        </div>
-        <div class="more" :style="`${more || 'margin-bottom: 60px;'}`">
-          <div
-            class="lead-more"
-            :style="`display: ${more ? 'flex' : 'none'}`"
-            @click="onClickMore"
-          >
-            <p>Lead more</p>
-            <img src="~/assets/img/ic_down.svg" alt="" />
+          <div class="project-cards">
+            <ProjectCard
+              v-for="_project in projects"
+              :key="_project.idx"
+              class="project"
+              :project="_project"
+            />
+          </div>
+          <div class="more">
+            <div v-show="isRemain" class="lead-more" @click="onClickMore">
+              <p>Lead more</p>
+              <img src="~/assets/img/ic_down.svg" alt="" />
+            </div>
           </div>
         </div>
       </div>
@@ -84,6 +82,11 @@ export default defineComponent({
         return this.setProjectLimit(limit);
       },
     },
+    isRemain: {
+      get() {
+        return this.projectLimit < this.total;
+      },
+    },
   },
   methods: {
     ...mapActions({
@@ -91,7 +94,7 @@ export default defineComponent({
       setProjectLimit: "project/projectLimit",
     }),
     async onClickMore() {
-      if (this.projectLimit <= this.total) {
+      if (this.isRemain) {
         this.projectLimit += 6;
       } else {
         this.more = false;
@@ -158,37 +161,41 @@ body.scroll-hidden {
       }
     }
     .project-cards-container {
-      padding-top: 32px;
       display: flex;
-      justify-content: space-between;
-      box-sizing: border-box;
-      flex-direction: row;
-      flex-wrap: wrap;
-      .project {
-        margin-bottom: 48px;
-        flex-basis: 365px;
-        border-radius: 16px;
-      }
-    }
-    .more {
-      margin: 16px 0 120px 0;
-      .lead-more {
-        margin: 0 auto 0 auto;
-        cursor: pointer;
+      flex-direction: column;
+      margin-bottom: 120px;
+      .project-cards {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 155px;
-        height: 68px;
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 36px;
-        letter-spacing: -0.02em;
-        color: $black;
-        img {
-          margin-left: 9.33px;
-          width: 20px;
-          height: 11px;
+        justify-content: space-between;
+        box-sizing: border-box;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .project {
+          margin-top: 48px;
+          flex-basis: 365px;
+          border-radius: 16px;
+        }
+      }
+      .more {
+        margin-top: 48px;
+        .lead-more {
+          margin: 0 auto 0 auto;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 155px;
+          height: 68px;
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 36px;
+          letter-spacing: -0.02em;
+          color: $black;
+          img {
+            margin-left: 9.33px;
+            width: 20px;
+            height: 11px;
+          }
         }
       }
     }
@@ -222,39 +229,44 @@ body.scroll-hidden {
       }
     }
     .project-cards-container {
-      padding-top: 84px;
       display: flex;
-      justify-content: space-between;
-      box-sizing: border-box;
-      flex-direction: row;
-      flex-wrap: wrap;
-      .project {
-        margin-bottom: 48px;
-        flex-basis: calc(50% - 26px);
-        border-radius: 16px;
+      flex-direction: column;
+      margin-bottom: 120px;
+      .project-cards {
+        padding-top: 84px;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .project {
+          margin-top: 48px;
+          flex-basis: calc(50% - 26px);
+          border-radius: 16px;
+        }
       }
-    }
-    .more {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 16px 0 120px 0;
-      .lead-more {
-        cursor: pointer;
+      .more {
+        margin-top: 48px;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 155px;
-        height: 68px;
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 36px;
-        letter-spacing: -0.02em;
-        color: $black;
-        img {
-          margin-left: 9.33px;
-          width: 20px;
-          height: 11px;
+        .lead-more {
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 155px;
+          height: 68px;
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 36px;
+          letter-spacing: -0.02em;
+          color: $black;
+          img {
+            margin-left: 9.33px;
+            width: 20px;
+            height: 11px;
+          }
         }
       }
     }
@@ -262,7 +274,7 @@ body.scroll-hidden {
 
   @include d-c1 {
     .contents {
-      padding: 24px 64px 0 64px;
+      padding-top: 64px;
       width: 777px;
       margin: 0 auto 0 auto;
       .title {
@@ -289,38 +301,42 @@ body.scroll-hidden {
       }
     }
     .project-cards-container {
-      padding-top: 84px;
       display: flex;
-      justify-content: space-between;
-      box-sizing: border-box;
       flex-direction: column;
-      .project {
-        margin-bottom: 48px;
-        flex-grow: 1;
-        border-radius: 16px;
+      margin-bottom: 120px;
+      .project-cards {
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        flex-direction: column;
+        .project {
+          margin-top: 48px;
+          flex-grow: 1;
+          border-radius: 16px;
+        }
       }
-    }
-    .more {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 16px 0 120px 0;
-      .lead-more {
-        cursor: pointer;
+      .more {
+        margin-top: 48px;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 155px;
-        height: 68px;
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 36px;
-        letter-spacing: -0.02em;
-        color: $black;
-        img {
-          margin-left: 9.33px;
-          width: 20px;
-          height: 11px;
+        .lead-more {
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 155px;
+          height: 68px;
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 36px;
+          letter-spacing: -0.02em;
+          color: $black;
+          img {
+            margin-left: 9.33px;
+            width: 20px;
+            height: 11px;
+          }
         }
       }
     }
@@ -354,39 +370,44 @@ body.scroll-hidden {
       }
     }
     .project-cards-container {
-      padding: 16px 24px 0 24px;
       display: flex;
-      justify-content: space-between;
-      box-sizing: border-box;
-      flex-direction: row;
-      flex-wrap: wrap;
-      .project {
-        margin-bottom: 24px;
-        flex-basis: calc(50% - 14px);
-        border-radius: 8px;
+      flex-direction: column;
+      margin-bottom: 24px;
+      .project-cards {
+        padding: 16px 24px 0 24px;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .project {
+          margin-bottom: 24px;
+          flex-basis: calc(50% - 14px);
+          border-radius: 8px;
+        }
       }
-    }
-    .more {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0 0 60px 0;
-      .lead-more {
-        cursor: pointer;
+      .more {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 106px;
-        height: 40px;
-        font-weight: bold;
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: -0.02em;
-        color: $black;
-        img {
-          margin-left: 9.33px;
-          width: 13.33px;
-          height: 7.33px;
+        margin: 0 0 60px 0;
+        .lead-more {
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 106px;
+          height: 40px;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: -0.02em;
+          color: $black;
+          img {
+            margin-left: 9.33px;
+            width: 13.33px;
+            height: 7.33px;
+          }
         }
       }
     }
@@ -420,38 +441,43 @@ body.scroll-hidden {
       }
     }
     .project-cards-container {
-      padding-top: 16px;
       display: flex;
-      justify-content: space-between;
-      box-sizing: border-box;
       flex-direction: column;
-      .project {
+      margin-bottom: 24px;
+      .project-cards {
         margin-bottom: 24px;
-        flex-grow: 1;
-        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        flex-direction: column;
+        .project {
+          margin-top: 24px;
+          flex-grow: 1;
+          border-radius: 8px;
+        }
       }
-    }
-    .more {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0 0 60px 0;
-      .lead-more {
-        cursor: pointer;
+      .more {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 106px;
-        height: 40px;
-        font-weight: bold;
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: -0.02em;
-        color: $black;
-        img {
-          margin-left: 9.33px;
-          width: 13.33px;
-          height: 7.33px;
+        margin-bottom: 64px;
+        .lead-more {
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 106px;
+          height: 40px;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: -0.02em;
+          color: $black;
+          img {
+            margin-left: 9.33px;
+            width: 13.33px;
+            height: 7.33px;
+          }
         }
       }
     }
