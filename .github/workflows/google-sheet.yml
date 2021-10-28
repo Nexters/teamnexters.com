@@ -75,10 +75,9 @@ jobs:
           GSHEET_PRIVATE_KEY: ${{ secrets.GSHEET_PRIVATE_KEY }}.replace(/\\n/g, "\n")
       - name: make about.json
         env:
-          about: ${{ steps.about.outputs.results }}
+          about:
         run: |
-          echo "$PWD"
-          echo "$about" > ./_content/about.json
+          echo ${{ toJson(steps.about.outputs.results) }} > ./_content/about.json
       - id: "contact"
         uses: jroehl/gsheet.action@v1.0.0 # you can specify '@release' to always have the latest changes
         with:
