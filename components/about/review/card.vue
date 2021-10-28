@@ -13,8 +13,6 @@ const ReviewCard = defineComponent({
   name: "ReviewCard",
   props: {
     th: { type: String, required: true },
-    thBackgroundColor: { type: String, required: true },
-    thTextColor: { type: String, required: true },
     title: { type: String, required: true },
     author: { type: String, required: true },
     href: { type: String, required: true },

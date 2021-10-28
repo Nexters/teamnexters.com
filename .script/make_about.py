@@ -18,6 +18,18 @@ if __name__ == "__main__":
         "review_title": review_title,
         "review_desc": review_desc
     }
-
     with open(f"./content/about/text.json", mode="w", encoding="utf-8") as f:
         f.write(json.dumps(about, ensure_ascii=False, indent=2))
+
+    _reviews = _about["results"][1]["result"]["rawData"]
+    for idx, review in enumerate(_reviews[1:]):
+        author, th, title, href = review
+        _review = {
+            "id": idx,
+            "author": author,
+            "th":th,
+            "title":title,
+            "href":href
+        }
+        with open(f"./content/about/reviews/{id}.json", mode="w", encoding="utf-8") as f:
+            f.write(json.dumps(_review, ensure_ascii=False, indent=2))

@@ -96,7 +96,6 @@ a {
 @include d-c3 {
   .thumbnail {
     width: 100%;
-    height: 207px;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
   }
@@ -152,7 +151,6 @@ a {
     flex-basis: 364.5px;
     .thumbnail {
       width: 100%;
-      height: 205px;
       border-top-left-radius: 16px;
       border-top-right-radius: 16px;
     }
@@ -206,7 +204,6 @@ a {
 @include d-c1 {
   .thumbnail {
     width: 100%;
-    height: 401px;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
   }
@@ -258,7 +255,6 @@ a {
 @include m-c2 {
   .thumbnail {
     width: 100%;
-    height: 216px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
   }
@@ -310,7 +306,6 @@ a {
 @include m-c1 {
   .thumbnail {
     width: 100%;
-    height: 216px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
   }

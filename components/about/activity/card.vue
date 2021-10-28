@@ -1,5 +1,12 @@
 <template>
-  <div class="activity-container" :style="`background: ${thumbnail}`">
+  <div
+    class="activity-container"
+    :style="{
+      'background-image': 'url(' + _thumbnail + ') ',
+      'background-size': 'cover',
+      'background-position': 'center',
+    }"
+  >
     <div class="contents">
       <p class="description">{{ description }}</p>
       <p class="title">{{ title }}</p>
@@ -15,6 +22,11 @@ const ActivityCard = defineComponent({
     description: { type: String, required: true },
     title: { type: String, required: true },
     thumbnail: { type: String, required: true },
+  },
+  setup(props) {
+    return {
+      _thumbnail: require(`~/assets/img/${props.thumbnail}`),
+    };
   },
 });
 export default ActivityCard;
@@ -33,7 +45,6 @@ export default ActivityCard;
     border-radius: 16px;
     width: calc(50% - 16px);
     height: 324px;
-    background: rgba(0, 0, 0, 0.5);
     .contents {
       padding: 32px;
       display: flex;
@@ -47,7 +58,7 @@ export default ActivityCard;
         line-height: 48px;
         letter-spacing: -0.02em;
 
-        color: $white;
+        color: $black;
       }
       .title {
         margin-top: auto;
@@ -57,7 +68,7 @@ export default ActivityCard;
         line-height: 27px;
         letter-spacing: -0.02em;
 
-        color: $white;
+        color: $black;
       }
     }
   }
@@ -67,7 +78,6 @@ export default ActivityCard;
     border-radius: 16px;
     width: calc(50% - 16px);
     height: 324px;
-    background: rgba(0, 0, 0, 0.5);
     .contents {
       padding: 32px;
       display: flex;
@@ -81,7 +91,7 @@ export default ActivityCard;
         line-height: 48px;
         letter-spacing: -0.02em;
 
-        color: $white;
+        color: $black;
       }
       .title {
         margin-top: auto;
@@ -90,7 +100,7 @@ export default ActivityCard;
         font-size: 18px;
         line-height: 27px;
         letter-spacing: -0.02em;
-        color: $white;
+        color: $black;
       }
     }
   }
@@ -100,7 +110,6 @@ export default ActivityCard;
     border-radius: 8px;
     width: 100%;
     height: 184px;
-    background: rgba(0, 0, 0, 0.5);
     .contents {
       padding: 24px;
       display: flex;
@@ -114,7 +123,7 @@ export default ActivityCard;
         line-height: 36px;
         letter-spacing: -0.02em;
 
-        color: $white;
+        color: $black;
       }
       .title {
         margin-top: auto;
@@ -123,7 +132,7 @@ export default ActivityCard;
         font-size: 14px;
         line-height: 21px;
         letter-spacing: -0.02em;
-        color: $white;
+        color: $black;
       }
     }
   }
