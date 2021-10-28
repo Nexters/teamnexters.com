@@ -2,7 +2,7 @@
   <div class="review-container" @click="onClick">
     <div class="contents">
       <p class="title">{{ title }}</p>
-      <p class="author">{{ th }} | {{ author }}</p>
+      <p class="author">{{ th }}기 | {{ author }}</p>
     </div>
   </div>
 </template>
