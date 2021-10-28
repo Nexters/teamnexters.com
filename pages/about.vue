@@ -222,7 +222,6 @@ export default defineComponent({
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      grid-gap: 64px;
       width: 100%;
       margin: 0 auto 0 auto;
     }
@@ -283,6 +282,7 @@ export default defineComponent({
     .activity-row {
       display: flex;
       justify-content: center;
+      margin-bottom: 120px;
     }
     .activities {
       display: flex;
