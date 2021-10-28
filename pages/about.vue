@@ -162,7 +162,6 @@ export default defineComponent({
     },
     isRemain: {
       get() {
-        console.log("hi");
         return this.reviewLimit < this.review.total;
       },
     },
@@ -175,11 +174,14 @@ export default defineComponent({
       if (this.isRemain) {
         this.reviewLimit += 6;
       } else {
+        this.reviewLimit = this.review.total;
         this.review.more = false;
       }
       const reviews = await this.$content("about/reviews")
+        .only(["id", "th", "title", "author", "href"])
         .sortBy("id", "desc")
-        .fetch(this.reviewLimit)
+        .limit(this.reviewLimit)
+        .fetch()
         .catch((err) => {
           console.log(err);
         });
