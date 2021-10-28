@@ -31,5 +31,5 @@ if __name__ == "__main__":
             "title":title,
             "href":href
         }
-        with open(f"./content/about/reviews/{id}.json", mode="w", encoding="utf-8") as f:
+        with open(f"./content/about/reviews/{idx}.json", mode="w", encoding="utf-8") as f:
             f.write(json.dumps(_review, ensure_ascii=False, indent=2))
