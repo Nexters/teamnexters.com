@@ -22,8 +22,6 @@ jobs:
           GSHEET_PRIVATE_KEY: ${{ secrets.GSHEET_PRIVATE_KEY }}.replace(/\\n/g, "\n")
       - name: checkout
         uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.PAT }}
       - name: make env.json
         env:
           _env: ${{ steps.env.outputs.results }}
