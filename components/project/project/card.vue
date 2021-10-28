@@ -124,8 +124,8 @@ a {
     flex-direction: row;
     justify-content: space-between;
     padding: 24px;
-    grid-gap: 8px;
     .link-item {
+      margin-right: 8px;
       a {
         font-weight: bold;
         font-size: 18px;
@@ -142,9 +142,7 @@ a {
       cursor: pointer;
     }
     .link-item:last-child {
-      a {
-        margin: 0;
-      }
+      margin: 0;
     }
   }
 }
@@ -181,8 +179,8 @@ a {
       flex-direction: row;
       justify-content: space-between;
       padding: 24px;
-      grid-gap: 8px;
       .link-item {
+        margin-right: 8px;
         a {
           font-weight: bold;
           font-size: 18px;
@@ -199,9 +197,7 @@ a {
         cursor: pointer;
       }
       .link-item:last-child {
-        a {
-          margin: 0;
-        }
+        margin: 0;
       }
     }
   }
@@ -236,8 +232,8 @@ a {
     flex-direction: row;
     justify-content: space-between;
     padding: 24px;
-    grid-gap: 8px;
     .link-item {
+      margin-right: 8px;
       a {
         font-weight: bold;
         font-size: 18px;
@@ -254,9 +250,7 @@ a {
       cursor: pointer;
     }
     .link-item:last-child {
-      a {
-        margin: 0;
-      }
+      margin: 0;
     }
   }
 }
@@ -290,8 +284,8 @@ a {
     flex-direction: row;
     justify-content: space-between;
     padding: 16px;
-    grid-gap: 8px;
     .link-item {
+      margin-right: 8px;
       a {
         font-weight: bold;
         font-size: 14px;
@@ -308,9 +302,7 @@ a {
       cursor: pointer;
     }
     .link-item:last-child {
-      a {
-        margin: 0;
-      }
+      margin: 0;
     }
   }
 }
@@ -344,8 +336,8 @@ a {
     flex-direction: row;
     justify-content: space-between;
     padding: 16px;
-    grid-gap: 8px;
     .link-item {
+      margin-right: 8px;
       a {
         font-weight: bold;
         font-size: 14px;
@@ -362,9 +354,7 @@ a {
       cursor: pointer;
     }
     .link-item:last-child {
-      a {
-        margin: 0;
-      }
+      margin: 0;
     }
   }
 }
