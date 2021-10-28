@@ -22,15 +22,13 @@ if __name__ == "__main__":
         f.write(json.dumps(about, ensure_ascii=False, indent=2))
 
     _reviews = _about["results"][1]["result"]["rawData"]
-    reviews = []
-    for review in _reviews:
-        name, th, title, href = review
-        reviews.append({
-            "name": name,
+    for id, review in enumerate(_reviews):
+        author, th, title, href = review
+        _review = {
+            "author": author,
             "th":th,
             "title":title,
             "href":href
-        })
-    
-    with open(f"/.content/about/reviews.json", mode="w", encoding="utf-8") as f:
-        f.write(json.dumps(reviews, ensure_ascii=False, indent=2))
+        }
+        with open(f"/.content/about/reviews/{id}.json", mode="w", encoding="utf-8") as f:
+            f.write(json.dumps(_review, ensure_ascii=False, indent=2))
