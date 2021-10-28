@@ -22,9 +22,10 @@ if __name__ == "__main__":
         f.write(json.dumps(about, ensure_ascii=False, indent=2))
 
     _reviews = _about["results"][1]["result"]["rawData"]
-    for id, review in enumerate(_reviews[1:]):
+    for idx, review in enumerate(_reviews[1:]):
         author, th, title, href = review
         _review = {
+            "id": idx,
             "author": author,
             "th":th,
             "title":title,

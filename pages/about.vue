@@ -46,8 +46,6 @@
                 v-for="item in review.items"
                 :key="item.id"
                 :th="item.th"
-                :th-background-color="item.thBackgroundColor"
-                :th-text-color="item.thTextColor"
                 :title="item.title"
                 :author="item.author"
                 :href="item.href"
@@ -102,15 +100,7 @@ export default defineComponent({
       .fetch();
     const { length: total } = await $content("about/reviews").fetch();
     const reviews = await $content("about/reviews")
-      .only([
-        "id",
-        "th",
-        "thBackgroundColor",
-        "thTextColor",
-        "title",
-        "author",
-        "href",
-      ])
+      .only(["id", "th", "title", "author", "href"])
       .sortBy("id")
       .limit(6)
       .fetch()
@@ -194,7 +184,6 @@ export default defineComponent({
           console.log(err);
         });
       this.review.items = reviews;
-      this.review.more = false;
     },
   },
   fetchOnServer: false,
