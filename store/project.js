@@ -1,10 +1,12 @@
 export const state = () => ({
   showDetail: false,
+  project: {},
   projectLimit: 6,
 });
 
 export const getters = {
   showDetail: (state) => state.showDetail,
+  project: (state) => state.project,
   projectLimit: (state) => state.projectLimit,
 };
 
@@ -28,6 +30,7 @@ export const mutations = {
   },
   init(state) {
     state.showDetail = false;
+    state.project = {};
     state.projectLimit = 6;
   },
 };
