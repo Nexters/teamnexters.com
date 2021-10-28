@@ -101,7 +101,7 @@ export default defineComponent({
     const { length: total } = await $content("about/reviews").fetch();
     const reviews = await $content("about/reviews")
       .only(["id", "th", "title", "author", "href"])
-      .sortBy("id")
+      .sortBy("id", "desc")
       .limit(6)
       .fetch()
       .catch((err) => {
@@ -150,7 +150,6 @@ export default defineComponent({
   },
   computed: {
     ...mapGetters({
-      reviews: "about/reviews",
       reviewLimitFromStore: "about/reviewLimit",
     }),
     reviewLimit: {
@@ -163,6 +162,7 @@ export default defineComponent({
     },
     isRemain: {
       get() {
+        console.log("hi");
         return this.reviewLimit < this.review.total;
       },
     },
@@ -178,7 +178,7 @@ export default defineComponent({
         this.review.more = false;
       }
       const reviews = await this.$content("about/reviews")
-        .sortBy("id")
+        .sortBy("id", "desc")
         .fetch(this.reviewLimit)
         .catch((err) => {
           console.log(err);

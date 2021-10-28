@@ -1,11 +1,9 @@
 export const state = () => ({
-  reviews: [],
   reviewLimit: 6,
 });
 
 export const getters = {
   showDetail: (state) => state.showDetail,
-  reviews: (state) => state.reviews,
   reviewLimit: (state) => state.reviewLimit,
 };
 
@@ -14,7 +12,6 @@ export const mutations = {
     state.reviewLimit = limit;
   },
   init(state) {
-    state.reviews = [];
     state.reviewLimit = 6;
   },
 };
