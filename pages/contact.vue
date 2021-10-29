@@ -81,10 +81,9 @@ export default defineComponent({
       return rawData;
     },
     handleClick: (action) => () => {
-      console.log("ac", action);
       switch (action) {
         case "kakao": {
-          console.log("kakao");
+          window.location.href = "https://pf.kakao.com/_xdxmnnj";
           break;
         }
         case "facebook": {
