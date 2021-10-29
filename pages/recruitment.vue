@@ -77,7 +77,6 @@ export default defineComponent({
     this.banner.bannerTitle = `NEXTERS ${result.banner[1]}th\nRecruitment`;
     this.banner.bannerSubtitle = this.makeBannerTitle(
       bannerType,
-      result.banner[2],
       result.banner[1]
     );
     this.banner.isVisible = this.isBannerDateVisible(bannerType);
@@ -154,10 +153,10 @@ export default defineComponent({
 
       return result;
     },
-    makeBannerTitle(type, startDate, th) {
+    makeBannerTitle(type, th) {
       switch (type) {
         case "DEFAULT": {
-          return `현재 모집기간이 아닙니다.\n다음 기수 모집은 ${startDate}에 시작됩니다.`;
+          return `현재 모집기간이 아닙니다.\n모집이 시작되면 메일을 보내드립니다.`;
         }
         case "NOTICE": {
           return `곧 넥스터즈 ${th}기 모집이 시작됩니다.`;
