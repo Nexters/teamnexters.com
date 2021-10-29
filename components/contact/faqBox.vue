@@ -54,7 +54,6 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   background-color: $grey01;
-  box-sizing: border-box;
   border-radius: 16px;
 
   .questionArea {
@@ -81,6 +80,7 @@ export default defineComponent({
 @include d-c3 {
   .faqBox {
     padding: 32px;
+    box-sizing: border-box;
   }
 
   .questionArea {
@@ -104,6 +104,7 @@ export default defineComponent({
 @include d-c2 {
   .faqBox {
     padding: 32px;
+    box-sizing: border-box;
   }
 
   .questionArea {
@@ -127,6 +128,7 @@ export default defineComponent({
 @include d-c1 {
   .faqBox {
     padding: 32px;
+    box-sizing: border-box;
   }
 
   .questionArea {
@@ -150,6 +152,7 @@ export default defineComponent({
 @include m-c2 {
   .faqBox {
     padding: 24px;
+    border-radius: 8px;
   }
 
   .questionArea {
@@ -173,6 +176,7 @@ export default defineComponent({
 @include m-c1 {
   .faqBox {
     padding: 24px;
+    border-radius: 8px;
   }
 
   .questionArea {
