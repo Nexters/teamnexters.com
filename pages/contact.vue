@@ -98,7 +98,7 @@ export default defineComponent({
           textarea.select();
           document.execCommand("copy");
           document.body.removeChild(textarea);
-          alert("URL이 복사되었습니다.");
+          alert("'teamnexters@gmail.com' 메일 주소를 복사했습니다. ");
           break;
         }
       }
