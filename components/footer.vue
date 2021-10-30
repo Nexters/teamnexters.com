@@ -66,7 +66,7 @@ export default defineComponent({
           : require("~/assets/img/github_black.svg"),
         instagram: props.isWhite
           ? require("~/assets/img/instagram.png")
-          : require("~/assets/img/instagram_black.png"),
+          : require("~/assets/img/instagram_black.svg"),
       },
       arrowIcon: props.isWhite
         ? require("~/assets/img/arrow_right.svg")

@@ -20,8 +20,10 @@ jobs:
         env:
           GSHEET_CLIENT_EMAIL: ${{ secrets.GSHEET_CLIENT_EMAIL }}
           GSHEET_PRIVATE_KEY: ${{ secrets.GSHEET_PRIVATE_KEY }}.replace(/\\n/g, "\n")
-      - name: checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
       - name: make env.json
         env:
           _env: ${{ steps.env.outputs.results }}
@@ -127,11 +129,8 @@ jobs:
           GSHEET_CLIENT_EMAIL: ${{ secrets.GSHEET_CLIENT_EMAIL }}
           GSHEET_PRIVATE_KEY: ${{ secrets.GSHEET_PRIVATE_KEY }}.replace(/\\n/g, "\n")
       - name: make color.json
-        env:
-          color: ${{ steps.color.outputs.results }}
         run: |
-          echo "$PWD"
-          echo "$color" > ./_content/color.json
+          echo ${{ toJson(steps.color.outputs.results) }} > ./content/color.json
       - name: python setup
         uses: actions/setup-python@v1
         with:
@@ -141,6 +140,7 @@ jobs:
           python .script/make_projects.py
           python .script/make_main.py
           python .script/make_about.py
+          python .script/make_color.py
       - name: commit with push
         run: |
           git config --local user.email "action@github.com"

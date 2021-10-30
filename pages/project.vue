@@ -19,8 +19,8 @@
               :project="_project"
             />
           </div>
-          <div class="more">
-            <div v-show="isRemain" class="lead-more" @click="onClickMore">
+          <div v-show="isRemain" class="more">
+            <div class="lead-more" @click="onClickMore">
               <p>Lead more</p>
               <img src="~/assets/img/ic_down.svg" alt="" />
             </div>
