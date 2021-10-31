@@ -57,7 +57,7 @@ export default defineComponent({
       margin-top: 16px;
 
       .schedule {
-        width: 200px;
+        min-width: 200px;
         display: inline-block;
         margin-right: 16px;
       }

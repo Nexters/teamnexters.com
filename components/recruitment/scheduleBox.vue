@@ -47,7 +47,7 @@ export default defineComponent({
 
 @include desktop {
   .scheduleBox {
-    width: 200px;
+    min-width: 200px;
     flex-direction: column;
     padding: 24px;
     border-radius: 16px;
@@ -66,7 +66,7 @@ export default defineComponent({
 
 @include tablet {
   .scheduleBox {
-    width: 200px;
+    min-width: 200px;
     flex-direction: column;
     padding: 24px;
     border-radius: 16px;
@@ -85,7 +85,7 @@ export default defineComponent({
 
 @include mobile {
   .scheduleBox {
-    width: 100%;
+    min-width: 100%;
     justify-content: space-between;
     padding: 16px;
     border-radius: 8px;

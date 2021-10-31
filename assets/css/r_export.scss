@@ -1,0 +1,10 @@
+@import "recruitment-bg.scss";
+
+:export {
+  recruitment_default_mobile: $recruitment-default-mobile;
+  recruitment_default_desktop: $recruitment-default-desktop;
+  recruitment_notice_mobile: $recruitment-notice-mobile;
+  recruitment_notice_desktop: $recruitment-notice-desktop;
+  recruitment_wip_mobile: $recruitment-wip-mobile;
+  recruitment_wip_desktop: $recruitment-wip-desktop;
+}

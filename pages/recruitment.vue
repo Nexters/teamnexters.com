@@ -3,7 +3,7 @@
     <div>
       <Banner
         class="banner"
-        :type="banner.bannerType"
+        :type="bannerType"
         :background-image-url="`https://drive.google.com/uc?export=view&id=${banner.bannerImage}`"
         :header-title="banner.bannerTitle"
         :sub-title="banner.bannerSubtitle"
@@ -48,6 +48,7 @@ import { defineComponent } from "@vue/composition-api";
 
 export default defineComponent({
   name: "Recruitment",
+  layout: "recruitment",
   transition: {
     name: "recruitment",
   },
@@ -71,12 +72,26 @@ export default defineComponent({
       qualifications: [],
       schedules: [],
       caution: [],
+      recruitment_notice: "",
+      recruitment_start: "",
+      recruitment_deadline: "",
     };
   },
   async fetch() {
+    const main = await this.$content("main")
+      .only(["recruitment_notice", "recruitment_start", "recruitment_deadline"])
+      .fetch();
+    const { recruitment_notice, recruitment_start, recruitment_deadline } =
+      main;
     const result = await this.FetchAll();
     const bannerType = result.banner[6];
-    this.banner.bannerType = bannerType;
+    const _remainingPeriod = this.getRemainingPeriod(result.banner[3]);
+    let _type = null;
+    console.log("pe", _remainingPeriod);
+    if (_remainingPeriod <= 0) {
+      _type = "PROGRESS";
+    }
+    this.banner.bannerType = _type !== null ? _type : bannerType;
     this.banner.bannerImage = result.banner[0];
     this.banner.bannerTitle = this.makeBannerTitle(
       bannerType,
@@ -101,8 +116,43 @@ export default defineComponent({
     this.qualifications = result.qualifications;
     this.schedules = result.schedules;
     this.caution = result.cautions;
+    this.recruitment_notice = recruitment_notice;
+    this.recruitment_start = recruitment_start;
+    this.recruitment_deadline = recruitment_deadline;
   },
   fetchOnServer: false,
+  computed: {
+    notice_day() {
+      const result = new Date(this.recruitment_notice) - new Date();
+      return Math.floor(result / 86_400_000);
+    },
+    s_day() {
+      const result = new Date(this.recruitment_start) - new Date();
+      return Math.floor(result / 86_400_000);
+    },
+    d_day() {
+      const result = new Date(this.recruitment_deadline) - new Date();
+      return this.s_day < 0 ? Math.floor(result / 86_400_000) : 0;
+    },
+    before_recruitment() {
+      console.log(this.notice_day, this.s_day);
+      return this.notice_day < 0 && this.s_day >= 0;
+    },
+    is_recruiting() {
+      return this.s_day < 0 && this.d_day >= 0;
+    },
+    bannerType() {
+      if (this.is_recruiting) {
+        return "PROGRESS";
+      }
+
+      if (this.before_recruitment) {
+        return "NOTICE";
+      }
+
+      return "DEFAULT";
+    },
+  },
   methods: {
     debug(e) {
       console.log(e);
@@ -218,6 +268,16 @@ export default defineComponent({
 
       const now = new Date();
       return Math.ceil((ed.getTime() - now.getTime()) / (1000 * 3600 * 24));
+    },
+    getRemainingStartPeriod(startDate) {
+      const sd = new Date(startDate);
+
+      if (isNaN(Date.parse(sd))) {
+        return -1;
+      }
+
+      const now = new Date();
+      return Math.ceil((sd.getTime() - now.getTime()) / (1000 * 3600 * 24));
     },
   },
 });

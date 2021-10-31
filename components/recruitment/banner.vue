@@ -1,7 +1,8 @@
 <template>
   <div
     class="banner"
-    :style="{ 'background-image': 'url(' + backgroundImageUrl + ')' }"
+    :class="type"
+    :style="{ 'background-image': getBackgroundImage }"
   >
     <div class="bannerMetaWrap">
       <h1 class="bannerTitle">{{ headerTitle }}</h1>
@@ -26,6 +27,7 @@
 
 <script>
 import { defineComponent } from "@vue/composition-api";
+import background from "~/assets/css/r_export.scss";
 
 export default defineComponent({
   name: "Banner",
@@ -57,6 +59,24 @@ export default defineComponent({
     remainingPeriod: {
       type: Number,
       require: false,
+    },
+  },
+  data() {
+    return {
+      ...background,
+    };
+  },
+  computed: {
+    getBackgroundImage() {
+      console.log("type", this.type);
+      let img = this.recruitment_default_desktop;
+      if (this.type === "NOTICE") {
+        img = this.recruitment_notice_desktop;
+      } else if (this.type === "PROGRESS") {
+        img = this.recruitment_wip_desktop;
+      }
+      console.log("img", img);
+      return img;
     },
   },
 });
@@ -96,6 +116,34 @@ export default defineComponent({
     display: flex;
     font-weight: 700;
     color: $text-default;
+  }
+
+  &.PROGRESS {
+    .bannerTitle {
+      color: $text-inverse;
+    }
+
+    .bannerSubTitle {
+      color: $text-inverse;
+    }
+
+    .bannerPeriod {
+      color: $text-inverse;
+    }
+  }
+
+  &.NOTICE {
+    .bannerTitle {
+      color: $text-inverse;
+    }
+
+    .bannerSubTitle {
+      color: $text-inverse;
+    }
+
+    .bannerPeriod {
+      color: $text-inverse;
+    }
   }
 
   .boxArea {
