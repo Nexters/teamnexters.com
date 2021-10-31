@@ -1,0 +1,10 @@
+@import "main-bg.scss";
+
+:export {
+  main_default_mobile: $main-default-mobile;
+  main_default_desktop: $main-default-desktop;
+  main_notice_mobile: $main-notice-mobile;
+  main_notice_desktop: $main-notice-desktop;
+  main_wip_mobile: $main-wip-mobile;
+  main_wip_desktop: $main-wip-desktop;
+}

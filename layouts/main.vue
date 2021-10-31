@@ -18,7 +18,8 @@ import { useStore, computed } from "@nuxtjs/composition-api";
 import { Component, Vue } from "nuxt-property-decorator";
 import Header from "~/components/header.vue";
 import Footer from "~/components/footer.vue";
-import background from "~/assets/css/main-bg.scss";
+import background from "~/assets/css/export.scss";
+
 @Component({
   name: "MainLayout",
   components: { Header, Footer },
@@ -28,10 +29,10 @@ import background from "~/assets/css/main-bg.scss";
       headers: [],
       items: [],
       copyrights: "",
-      ...background,
       recruitment_notice: "",
       recruitment_start: "",
       recruitment_deadline: "",
+      ...background,
     };
   },
   setup() {
@@ -64,7 +65,6 @@ import background from "~/assets/css/main-bg.scss";
   },
   computed: {
     notice_day() {
-      console.log(this.recruitment_notice);
       const result = new Date(this.recruitment_notice) - new Date();
       return Math.floor(result / 86_400_000);
     },
@@ -77,7 +77,6 @@ import background from "~/assets/css/main-bg.scss";
       return this.s_day < 0 ? Math.floor(result / 86_400_000) : 0;
     },
     before_recruitment() {
-      console.log(this.notice_day, this.s_day);
       return this.notice_day < 0 && this.s_day >= 0;
     },
     is_recruiting() {
