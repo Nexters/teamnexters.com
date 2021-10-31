@@ -156,13 +156,13 @@ export default defineComponent({
 }
 a {
   text-decoration: none;
-  color: white;
+  color: $text-inverse;
 }
 
 .main-container {
   width: 100%;
   height: 100vh;
-  color: $white;
+  color: $text-inverse;
   display: flex;
   margin: auto;
   padding-top: 73px;

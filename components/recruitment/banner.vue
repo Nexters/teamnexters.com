@@ -6,21 +6,18 @@
     <div class="bannerMetaWrap">
       <h1 class="bannerTitle">{{ headerTitle }}</h1>
       <h2 class="bannerSubTitle">{{ subTitle }}</h2>
-      <p class="bannerPeriod">
+      <p v-if="remainingPeriod >= 0" class="bannerPeriod">
         <span>{{ period }}</span>
-        <Badge
-          v-if="remainingPeriod >= 0"
-          class="badge"
-          :text="`마감 D-${remainingPeriod}`"
-        />
+        <Badge class="badge" :text="`마감 D-${remainingPeriod}`" />
       </p>
       <article class="boxArea">
         <LinkButton
           v-for="box in boxList"
           :key="box.id"
+          :type="type"
           class="box"
           :button-name="box.name"
-          :href="`https://${box.link}`"
+          :href="`${box.link}`"
         />
       </article>
     </div>
@@ -33,6 +30,10 @@ import { defineComponent } from "@vue/composition-api";
 export default defineComponent({
   name: "Banner",
   props: {
+    type: {
+      type: String,
+      require: true,
+    },
     backgroundImageUrl: {
       type: String,
       require: true,
@@ -78,22 +79,22 @@ export default defineComponent({
   letter-spacing: -0.02em;
 
   .bannerTitle {
-    color: $black;
-    font-weight: 900;
+    color: $text-default;
+    font-weight: 800;
     white-space: pre-wrap;
     font-family: "Montserrat", sans-serif;
   }
 
   .bannerSubTitle {
     font-weight: 400;
-    color: $black;
+    color: $text-default;
     white-space: pre-wrap;
   }
 
   .bannerPeriod {
     display: flex;
     font-weight: 700;
-    color: $black;
+    color: $text-default;
   }
 
   .boxArea {
@@ -105,7 +106,7 @@ export default defineComponent({
 
 @include desktop {
   .banner {
-    height: 624px;
+    height: 610px;
     padding: 64px;
 
     .bannerMetaWrap {
@@ -115,7 +116,7 @@ export default defineComponent({
 
     .bannerTitle {
       font-size: 60px;
-      line-height: 72px;
+      line-height: 73px;
       font-family: "Montserrat", sans-serif;
     }
 
@@ -147,7 +148,7 @@ export default defineComponent({
 
 @include tablet {
   .banner {
-    height: 624px;
+    height: 610px;
     padding: 64px;
 
     .bannerMetaWrap {
@@ -157,7 +158,7 @@ export default defineComponent({
 
     .bannerTitle {
       font-size: 60px;
-      line-height: 72px;
+      line-height: 73px;
       font-family: "Montserrat", sans-serif;
     }
 
@@ -189,7 +190,7 @@ export default defineComponent({
 
 @include mobile {
   .banner {
-    height: 376px;
+    height: 354px;
     padding: 24px;
 
     .bannerMetaWrap {

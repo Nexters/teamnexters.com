@@ -22,8 +22,8 @@ export default defineComponent({
 @import "~/assets/css/setting.scss";
 
 .badge-container {
-  background-color: $accent;
-  color: $white;
+  background-color: $background-accent;
+  color: $background-default;
   @include desktop {
     width: 76px;
     height: 29px;

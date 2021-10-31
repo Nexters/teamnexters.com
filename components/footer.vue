@@ -147,16 +147,16 @@ footer {
       position: absolute;
       bottom: 0;
       padding: 15px;
-      border: 1px solid $grey02;
+      border: 1px solid $border-default;
       border-radius: 8px;
-      background-color: $white;
+      background-color: $background-default;
       box-sizing: border-box;
 
       .sponsorList {
         .sponsorItem {
           font-weight: 400;
           letter-spacing: -0.02em;
-          color: $grey03;
+          color: $text-sub;
         }
       }
     }

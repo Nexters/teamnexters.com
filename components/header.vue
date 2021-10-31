@@ -104,15 +104,15 @@ nav {
     font-style: normal;
     font-weight: bold;
     letter-spacing: -0.02em;
-    color: $black;
+    color: $text-default;
     text-decoration: none;
   }
   @include mobile {
     flex-direction: column;
     .overlay {
-      background-color: white;
+      background-color: $background-default;
       .white-font {
-        color: black;
+        color: $text-default;
       }
       .header-item {
         padding-left: 24px;
@@ -211,20 +211,20 @@ nav {
   }
 
   .white-font {
-    color: $white;
+    color: $text-inverse;
   }
 }
 
 @include desktop {
   a.nuxt-link-active {
-    text-decoration: underline solid $black 2px;
+    text-decoration: underline solid $text-default 2px;
     text-underline-position: under;
   }
 }
 
 @include tablet {
   a.nuxt-link-active {
-    text-decoration: underline solid $black 2px;
+    text-decoration: underline solid $text-default 2px;
     text-underline-position: under;
   }
 }
@@ -232,7 +232,7 @@ nav {
 @include mobile {
   a.nuxt-link-active {
     text-decoration: none;
-    color: $grey03 !important;
+    color: $text-sub !important;
   }
 }
 </style>

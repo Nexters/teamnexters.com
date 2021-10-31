@@ -194,7 +194,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
-@import "~/assets/css/color.scss";
+@import "~/assets/css/setting.scss";
 @import "~/assets/css/about-top-image.scss";
 
 * {
@@ -248,7 +248,7 @@ export default defineComponent({
         text-align: center;
         letter-spacing: -0.02em;
 
-        color: $grey03;
+        color: $text-sub;
       }
     }
     .title {
@@ -259,7 +259,7 @@ export default defineComponent({
       letter-spacing: -0.02em;
       white-space: pre-wrap;
 
-      color: $black;
+      color: $text-default;
     }
     .info-table {
       display: flex;
@@ -374,7 +374,7 @@ export default defineComponent({
         text-align: center;
         letter-spacing: -0.02em;
 
-        color: $grey03;
+        color: $text-sub;
       }
     }
     .title {
@@ -385,7 +385,7 @@ export default defineComponent({
       letter-spacing: -0.02em;
       white-space: pre-wrap;
 
-      color: $black;
+      color: $text-default;
     }
     .info-table {
       .info-row {
@@ -505,7 +505,7 @@ export default defineComponent({
         text-align: center;
         letter-spacing: -0.02em;
 
-        color: $grey03;
+        color: $text-sub;
       }
     }
     .title {
@@ -516,7 +516,7 @@ export default defineComponent({
       letter-spacing: -0.02em;
       white-space: pre-wrap;
 
-      color: $black;
+      color: $text-default;
     }
     .info-table {
       .info-row {

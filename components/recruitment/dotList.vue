@@ -49,7 +49,7 @@ export default defineComponent({
       vertical-align: top;
       height: 4px;
       width: 4px;
-      background-color: $black;
+      background-color: $text-default;
       border-radius: 2px;
       margin-right: 5px;
       flex: none;

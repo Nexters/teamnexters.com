@@ -155,7 +155,7 @@ body.scroll-hidden {
           font-weight: normal;
           font-size: 24px;
           line-height: 36px;
-          color: $black;
+          color: $text-default;
           padding-left: 16px;
         }
       }
@@ -190,7 +190,7 @@ body.scroll-hidden {
           font-size: 24px;
           line-height: 36px;
           letter-spacing: -0.02em;
-          color: $black;
+          color: $text-default;
           img {
             margin-left: 9.33px;
             width: 20px;
@@ -223,7 +223,7 @@ body.scroll-hidden {
           font-weight: normal;
           font-size: 24px;
           line-height: 36px;
-          color: $black;
+          color: $text-default;
           padding-left: 16px;
         }
       }
@@ -261,7 +261,7 @@ body.scroll-hidden {
           font-size: 24px;
           line-height: 36px;
           letter-spacing: -0.02em;
-          color: $black;
+          color: $text-default;
           img {
             margin-left: 9.33px;
             width: 20px;
@@ -295,7 +295,7 @@ body.scroll-hidden {
           font-weight: normal;
           font-size: 24px;
           line-height: 36px;
-          color: $black;
+          color: $text-default;
           padding-left: 16px;
         }
       }
@@ -331,7 +331,7 @@ body.scroll-hidden {
           font-size: 24px;
           line-height: 36px;
           letter-spacing: -0.02em;
-          color: $black;
+          color: $text-default;
           img {
             margin-left: 9.33px;
             width: 20px;
@@ -364,7 +364,7 @@ body.scroll-hidden {
           font-weight: normal;
           font-size: 16px;
           line-height: 24px;
-          color: $black;
+          color: $text-default;
           padding-left: 8px;
         }
       }
@@ -402,7 +402,7 @@ body.scroll-hidden {
           font-size: 16px;
           line-height: 24px;
           letter-spacing: -0.02em;
-          color: $black;
+          color: $text-default;
           img {
             margin-left: 9.33px;
             width: 13.33px;
@@ -435,7 +435,7 @@ body.scroll-hidden {
           font-weight: normal;
           font-size: 16px;
           line-height: 24px;
-          color: $black;
+          color: $text-default;
           padding-left: 8px;
         }
       }
@@ -472,7 +472,7 @@ body.scroll-hidden {
           font-size: 16px;
           line-height: 24px;
           letter-spacing: -0.02em;
-          color: $black;
+          color: $text-default;
           img {
             margin-left: 9.33px;
             width: 13.33px;

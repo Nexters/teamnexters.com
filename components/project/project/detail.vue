@@ -86,24 +86,24 @@ export default defineComponent({
 .contents {
   .thumbnail {
     > img {
-      border: 1px solid #dddddd;
+      border: 1px solid $border-default;
     }
   }
 }
 .link-item {
   &:hover {
     transition: 0.3s;
-    background: $grey01;
+    background: $background-hover;
   }
   &:active {
     transition: 0.3s;
-    background: $grey02;
+    background: $background-active;
   }
   &:disabled {
     cursor: not-allowed;
     pointer-events: none;
-    background: $grey01;
-    color: $grey02;
+    background: $background-sub;
+    color: $text-disable;
   }
 }
 
@@ -172,7 +172,7 @@ export default defineComponent({
     width: 528px;
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: $background-default;
     margin: 30px auto;
 
     .contents {
@@ -200,7 +200,7 @@ export default defineComponent({
       line-height: 48px;
       letter-spacing: -0.02em;
 
-      color: #000000;
+      color: $text-default;
     }
     .th-year {
       font-style: normal;
@@ -209,7 +209,7 @@ export default defineComponent({
       line-height: 21px;
       letter-spacing: -0.02em;
 
-      color: #777777;
+      color: $text-sub;
     }
     .team-members {
       font-style: normal;
@@ -218,7 +218,7 @@ export default defineComponent({
       line-height: 27px;
       letter-spacing: -0.02em;
 
-      color: #000000;
+      color: $text-default;
     }
     .thumbnail {
       img {
@@ -236,7 +236,7 @@ export default defineComponent({
       line-height: 27px;
       letter-spacing: -0.02em;
 
-      color: #000000;
+      color: $text-default;
     }
     .ppt {
       display: flex;
@@ -251,7 +251,7 @@ export default defineComponent({
         line-height: 36px;
         letter-spacing: -0.02em;
 
-        color: #000000;
+        color: $text-default;
       }
       img {
         width: 24px;
@@ -276,12 +276,12 @@ export default defineComponent({
       text-align: center;
       letter-spacing: -0.02em;
 
-      color: #000000;
+      color: $text-default;
       width: 100%;
       height: 45px;
       line-height: 45px;
       text-align: center;
-      border: 1px solid #dddddd;
+      border: 1px solid $border-default;
       border-radius: 8px;
       margin-right: 8px;
       cursor: pointer;
@@ -304,7 +304,7 @@ export default defineComponent({
     height: 100%;
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: $background-default;
     overflow-y: auto;
 
     @include desktop {
@@ -338,7 +338,7 @@ export default defineComponent({
       line-height: 36px;
       letter-spacing: -0.02em;
 
-      color: #000000;
+      color: $text-default;
     }
     .th-year {
       font-style: normal;
@@ -347,7 +347,7 @@ export default defineComponent({
       line-height: 18px;
       letter-spacing: -0.02em;
 
-      color: #777777;
+      color: $text-sub;
     }
     .team-members {
       font-style: normal;
@@ -356,7 +356,7 @@ export default defineComponent({
       line-height: 21px;
       letter-spacing: -0.02em;
 
-      color: #000000;
+      color: $text-default;
     }
     .thumbnail {
       width: 100%;
@@ -376,7 +376,7 @@ export default defineComponent({
       line-height: 21px;
       letter-spacing: -0.02em;
 
-      color: #000000;
+      color: $text-default;
     }
     .ppt {
       display: flex;
@@ -391,7 +391,7 @@ export default defineComponent({
         line-height: 24px;
         letter-spacing: -0.02em;
 
-        color: #000000;
+        color: $text-default;
       }
       img {
         width: 16px;
@@ -417,12 +417,12 @@ export default defineComponent({
       text-align: center;
       letter-spacing: -0.02em;
 
-      color: #000000;
+      color: $text-default;
       width: 100%;
       height: 45px;
       line-height: 45px;
       text-align: center;
-      border: 1px solid #dddddd;
+      border: 1px solid $border-default;
       border-radius: 4px;
       margin-right: 8px;
       cursor: pointer;
@@ -450,7 +450,7 @@ export default defineComponent({
     width: 528px;
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: $background-default;
     margin: 30px auto;
 
     .contents {
@@ -478,7 +478,7 @@ export default defineComponent({
       line-height: 48px;
       letter-spacing: -0.02em;
 
-      color: #000000;
+      color: $text-default;
     }
     .th-year {
       font-style: normal;
@@ -487,7 +487,7 @@ export default defineComponent({
       line-height: 21px;
       letter-spacing: -0.02em;
 
-      color: #777777;
+      color: $text-sub;
     }
     .team-members {
       font-style: normal;
@@ -496,7 +496,7 @@ export default defineComponent({
       line-height: 27px;
       letter-spacing: -0.02em;
 
-      color: #000000;
+      color: $text-default;
     }
     .thumbnail {
       img {
@@ -514,7 +514,7 @@ export default defineComponent({
       line-height: 27px;
       letter-spacing: -0.02em;
 
-      color: #000000;
+      color: $text-default;
     }
     .ppt {
       display: flex;
@@ -529,7 +529,7 @@ export default defineComponent({
         line-height: 36px;
         letter-spacing: -0.02em;
 
-        color: #000000;
+        color: $text-default;
       }
       img {
         width: 24px;
@@ -554,12 +554,12 @@ export default defineComponent({
       text-align: center;
       letter-spacing: -0.02em;
 
-      color: #000000;
+      color: $text-default;
       width: 100%;
       height: 45px;
       line-height: 45px;
       text-align: center;
-      border: 1px solid #dddddd;
+      border: 1px solid $border-default;
       border-radius: 8px;
       margin-right: 8px;
       cursor: pointer;

@@ -65,6 +65,6 @@ export default MainLayout;
   height: 100vh;
 }
 footer {
-  color: $white;
+  color: $text-inverse;
 }
 </style>

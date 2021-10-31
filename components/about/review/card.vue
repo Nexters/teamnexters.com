@@ -28,7 +28,7 @@ export default ReviewCard;
 
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
-@import "~/assets/css/color.scss";
+@import "~/assets/css/setting.scss";
 
 * {
   font-family: Spoqa Han Sans Neo;
@@ -38,7 +38,7 @@ export default ReviewCard;
     cursor: pointer;
     border-radius: 16px;
     width: 378.67px;
-    background: $grey01;
+    background: $background-sub;
     .contents {
       padding: 32px;
       display: flex;
@@ -50,7 +50,7 @@ export default ReviewCard;
         line-height: 36px;
         letter-spacing: -0.02em;
 
-        color: $black;
+        color: $text-default;
       }
       .author {
         margin-top: 16px;
@@ -69,7 +69,7 @@ export default ReviewCard;
     cursor: pointer;
     border-radius: 16px;
     width: calc(50% - 16px);
-    background: $grey01;
+    background: $background-sub;
     .contents {
       padding: 32px;
       height: calc(100% - 48px);
@@ -91,7 +91,7 @@ export default ReviewCard;
         line-height: 36px;
         letter-spacing: -0.02em;
 
-        color: $black;
+        color: $text-default;
       }
       .author {
         margin-top: 16px;
@@ -110,7 +110,7 @@ export default ReviewCard;
     cursor: pointer;
     border-radius: 8px;
     width: 100%;
-    background: $grey01;
+    background: $background-sub;
     .contents {
       padding: 24px;
       display: flex;
@@ -130,7 +130,7 @@ export default ReviewCard;
         line-height: 24px;
         letter-spacing: -0.02em;
 
-        color: $black;
+        color: $text-default;
       }
       .author {
         margin-top: 8px;

@@ -32,7 +32,7 @@ export default InfoCard;
   .info-container {
     border-radius: 16px;
     width: 378.67px;
-    background: $grey01;
+    background: $background-sub;
     .contents {
       padding: 32px;
       .title {
@@ -57,7 +57,7 @@ export default InfoCard;
         line-height: 27px;
         letter-spacing: -0.02em;
 
-        color: $grey03;
+        color: $text-sub;
       }
     }
   }
@@ -67,7 +67,7 @@ export default InfoCard;
     flex: 0 0 auto;
     border-radius: 16px;
     width: 378.67px;
-    background: $grey01;
+    background: $background-sub;
     .contents {
       padding: 32px;
       .title {
@@ -92,7 +92,7 @@ export default InfoCard;
         line-height: 27px;
         letter-spacing: -0.02em;
 
-        color: $grey03;
+        color: $text-sub;
       }
     }
   }
@@ -102,7 +102,7 @@ export default InfoCard;
     flex: 0 0 auto;
     border-radius: 8px;
     width: 240px;
-    background: $grey01;
+    background: $background-sub;
     .contents {
       padding: 24px;
       .title {
@@ -127,7 +127,7 @@ export default InfoCard;
         line-height: 21px;
         letter-spacing: -0.02em;
 
-        color: $grey03;
+        color: $text-sub;
       }
     }
   }

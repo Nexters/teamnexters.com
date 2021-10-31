@@ -36,8 +36,8 @@ export default defineComponent({
 }
 
 .noticeBox {
-  background-color: $grey01;
-  border: 1px solid $grey02;
+  background-color: $background-sub;
+  border: 1px solid $border-default;
 
   .contentTitle {
     font-weight: 700;
@@ -53,7 +53,7 @@ export default defineComponent({
     height: 4px;
     border-radius: 2px;
     margin-right: 5px;
-    background-color: #000000;
+    background-color: $text-default;
     vertical-align: top;
     margin-top: 10px;
   }

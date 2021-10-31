@@ -58,7 +58,7 @@ export default ProjectCard;
 .project-card-component-container {
   display: flex;
   flex-direction: column;
-  border: solid 1px $grey02;
+  border: solid 1px $border-default;
 
   .links {
     margin: auto 0 0;
@@ -79,17 +79,17 @@ a {
 .link-item {
   &:hover {
     transition: 0.3s;
-    background: $grey01;
+    background: $background-sub;
   }
   &:active {
     transition: 0.3s;
-    background: $grey02;
+    background: $background-active;
   }
   &:disabled {
     cursor: not-allowed;
     pointer-events: none;
-    background: $grey01;
-    color: $grey02;
+    background: $background-sub;
+    color: $text-disable;
   }
 }
 
@@ -107,7 +107,7 @@ a {
     font-size: 24px;
     line-height: 36px;
     letter-spacing: -0.02em;
-    color: $black;
+    color: $text-default;
   }
   .time {
     margin: 8px 0 0 24px;
@@ -115,7 +115,7 @@ a {
     font-weight: normal;
     font-size: 18px;
     line-height: 27px;
-    color: $grey03;
+    color: $text-sub;
   }
 
   .links {
@@ -131,13 +131,13 @@ a {
         line-height: 27px;
         text-align: center;
         letter-spacing: -0.02em;
-        color: $black;
+        color: $text-default;
       }
       padding: 16px 24px;
       width: 100%;
       text-align: center;
       border-radius: 8px;
-      border: 1px solid $grey02;
+      border: 1px solid $border-default;
       cursor: pointer;
     }
     .link-item:last-child {
@@ -162,7 +162,7 @@ a {
       font-size: 24px;
       line-height: 36px;
       letter-spacing: -0.02em;
-      color: $black;
+      color: $text-default;
     }
     .time {
       margin: 8px 0 0 24px;
@@ -170,7 +170,7 @@ a {
       font-weight: normal;
       font-size: 18px;
       line-height: 27px;
-      color: $grey03;
+      color: $text-sub;
     }
     .links {
       display: flex;
@@ -185,13 +185,13 @@ a {
           line-height: 27px;
           text-align: center;
           letter-spacing: -0.02em;
-          color: $black;
+          color: $text-default;
         }
         padding: 16px 24px;
         width: 100%;
         text-align: center;
         border-radius: 8px;
-        border: 1px solid $grey02;
+        border: 1px solid $border-default;
         cursor: pointer;
       }
       .link-item:last-child {
@@ -214,7 +214,7 @@ a {
     font-size: 24px;
     line-height: 36px;
     letter-spacing: -0.02em;
-    color: $black;
+    color: $text-default;
   }
   .time {
     margin: 8px 0 0 24px;
@@ -222,7 +222,7 @@ a {
     font-weight: normal;
     font-size: 18px;
     line-height: 27px;
-    color: $grey03;
+    color: $text-sub;
   }
   .links {
     display: flex;
@@ -237,13 +237,13 @@ a {
         line-height: 27px;
         text-align: center;
         letter-spacing: -0.02em;
-        color: $black;
+        color: $text-default;
       }
       padding: 16px 24px;
       width: 100%;
       text-align: center;
       border-radius: 8px;
-      border: 1px solid $grey02;
+      border: 1px solid $border-default;
       cursor: pointer;
     }
     .link-item:last-child {
@@ -265,7 +265,7 @@ a {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.02em;
-    color: $black;
+    color: $text-default;
   }
   .time {
     margin: 8px 0 0 16px;
@@ -273,7 +273,7 @@ a {
     font-weight: normal;
     font-size: 14px;
     line-height: 21px;
-    color: $grey03;
+    color: $text-sub;
   }
   .links {
     display: flex;
@@ -288,13 +288,13 @@ a {
         line-height: 21px;
         text-align: center;
         letter-spacing: -0.02em;
-        color: $black;
+        color: $text-default;
       }
       padding: 12px 0 12px 0;
       width: 100%;
       text-align: center;
       border-radius: 4px;
-      border: 1px solid $grey02;
+      border: 1px solid $border-default;
       cursor: pointer;
     }
     .link-item:last-child {
@@ -316,7 +316,7 @@ a {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.02em;
-    color: $black;
+    color: $text-default;
   }
   .time {
     margin: 8px 0 0 16px;
@@ -324,7 +324,7 @@ a {
     font-weight: normal;
     font-size: 14px;
     line-height: 21px;
-    color: $grey03;
+    color: $text-sub;
   }
   .links {
     display: flex;
@@ -339,13 +339,13 @@ a {
         line-height: 21px;
         text-align: center;
         letter-spacing: -0.02em;
-        color: $black;
+        color: $text-default;
       }
       padding: 12px 0 12px 0;
       width: 100%;
       text-align: center;
       border-radius: 4px;
-      border: 1px solid $grey02;
+      border: 1px solid $border-default;
       cursor: pointer;
     }
     .link-item:last-child {

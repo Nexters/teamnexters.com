@@ -1,5 +1,11 @@
 <template>
-  <div class="linkButton" @click="onClick">{{ buttonName }}</div>
+  <div
+    class="linkButton"
+    :class="type === 'DEFAULT' && 'dark'"
+    @click="onClick"
+  >
+    {{ buttonName }}
+  </div>
 </template>
 
 <script>
@@ -8,6 +14,10 @@ import { defineComponent } from "@vue/composition-api";
 export default defineComponent({
   name: "LinkButton",
   props: {
+    type: {
+      type: String,
+      require: false,
+    },
     buttonName: {
       type: String,
       require: true,
@@ -38,9 +48,14 @@ export default defineComponent({
   text-align: center;
   box-sizing: border-box;
   border-radius: 8px;
-  background-color: $primary;
+  background-color: $background-primary;
   color: white;
   text-decoration: none;
+
+  &.dark {
+    background-color: $background-inverse;
+  }
+
   &:hover {
     transition: 0.3s;
     cursor: pointer;
@@ -53,7 +68,7 @@ export default defineComponent({
 
 @include desktop {
   .linkButton {
-    padding: 24px;
+    padding: 24px 40px;
     font-size: 24px;
     line-height: 36px;
   }
@@ -61,7 +76,7 @@ export default defineComponent({
 
 @include tablet {
   .linkButton {
-    padding: 24px;
+    padding: 24px 40px;
     font-size: 24px;
     line-height: 36px;
   }
@@ -69,7 +84,7 @@ export default defineComponent({
 
 @include mobile {
   .linkButton {
-    padding: 16px;
+    padding: 16px 24px;
     font-size: 16px;
     line-height: 24px;
   }

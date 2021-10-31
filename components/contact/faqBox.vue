@@ -53,7 +53,7 @@ export default defineComponent({
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: $grey01;
+  background-color: $background-sub;
   border-radius: 16px;
 
   .questionArea {

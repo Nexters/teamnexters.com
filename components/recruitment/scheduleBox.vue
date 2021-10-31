@@ -34,7 +34,7 @@ export default defineComponent({
 .scheduleBox {
   display: flex;
   justify-content: center;
-  background: $grey01;
+  background: $background-sub;
 
   .scheduleTitle {
     font-weight: bold;

@@ -3,6 +3,7 @@
     <div>
       <Banner
         class="banner"
+        :type="banner.bannerType"
         :background-image-url="`https://drive.google.com/uc?export=view&id=${banner.bannerImage}`"
         :header-title="banner.bannerTitle"
         :sub-title="banner.bannerSubtitle"
@@ -32,6 +33,7 @@
         <h2 class="footerTitle">궁금한 점이 있으신가요?</h2>
         <h3 class="footerSubTitle">자주 묻는 질문을 확인해보세요.</h3>
         <LinkButton
+          :type="banner.bannerType"
           class="faqBox"
           :button-name="`FAQ 바로가기`"
           :href="`/contact#faq`"
@@ -52,6 +54,7 @@ export default defineComponent({
   data() {
     return {
       banner: {
+        bannerType: "DEFAULT",
         bannerTitle: "",
         bannerSubtitle: "",
         bannerImage: "",
@@ -73,9 +76,13 @@ export default defineComponent({
   async fetch() {
     const result = await this.FetchAll();
     const bannerType = result.banner[6];
+    this.banner.bannerType = bannerType;
     this.banner.bannerImage = result.banner[0];
-    this.banner.bannerTitle = `NEXTERS ${result.banner[1]}th\nRecruitment`;
-    this.banner.bannerSubtitle = this.makeBannerTitle(
+    this.banner.bannerTitle = this.makeBannerTitle(
+      bannerType,
+      result.banner[1]
+    );
+    this.banner.bannerSubtitle = this.makeBannerSubTitle(
       bannerType,
       result.banner[1]
     );
@@ -156,6 +163,18 @@ export default defineComponent({
     makeBannerTitle(type, th) {
       switch (type) {
         case "DEFAULT": {
+          return `NEXTERS\nRecruitment`;
+        }
+        case "NOTICE":
+        case "PROGRESS": {
+          return `NEXTERS ${th}th\nRecruitment`;
+        }
+      }
+      return "";
+    },
+    makeBannerSubTitle(type, th) {
+      switch (type) {
+        case "DEFAULT": {
           return `현재 모집기간이 아닙니다.\n모집이 시작되면 메일을 보내드립니다.`;
         }
         case "NOTICE": {
@@ -213,10 +232,11 @@ export default defineComponent({
 }
 
 .banner {
-  padding-top: 73px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 84px;
+  padding-bottom: 48px;
 }
 
 .recruitment-enter-active,
@@ -242,7 +262,7 @@ export default defineComponent({
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: $grey01;
+  background-color: $background-sub;
 
   .footerTitle {
     font-weight: 700;

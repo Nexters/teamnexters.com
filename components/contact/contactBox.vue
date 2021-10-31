@@ -63,7 +63,7 @@ export default defineComponent({
   display: flex;
   flex-direction: row;
   font-weight: 700;
-  background-color: $grey01;
+  background-color: $background-sub;
   justify-content: space-between;
   box-sizing: border-box;
 
@@ -72,7 +72,7 @@ export default defineComponent({
   }
 
   .text {
-    color: $grey03;
+    color: $text-sub;
     letter-spacing: -0.02em;
     font-weight: 400;
     align-self: center;

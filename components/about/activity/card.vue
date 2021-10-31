@@ -34,11 +34,11 @@ export default ActivityCard;
 
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
+@import "~/assets/css/setting.scss";
+
 * {
   font-family: Spoqa Han Sans Neo;
 }
-
-@import "~/assets/css/setting.scss";
 
 @include desktop {
   .activity-container {
@@ -58,7 +58,7 @@ export default ActivityCard;
         line-height: 48px;
         letter-spacing: -0.02em;
 
-        color: $black;
+        color: $text-default;
       }
       .title {
         margin-top: auto;
@@ -68,7 +68,7 @@ export default ActivityCard;
         line-height: 27px;
         letter-spacing: -0.02em;
 
-        color: $black;
+        color: $text-default;
       }
     }
   }
@@ -91,7 +91,7 @@ export default ActivityCard;
         line-height: 48px;
         letter-spacing: -0.02em;
 
-        color: $black;
+        color: $text-default;
       }
       .title {
         margin-top: auto;
@@ -100,7 +100,7 @@ export default ActivityCard;
         font-size: 18px;
         line-height: 27px;
         letter-spacing: -0.02em;
-        color: $black;
+        color: $text-default;
       }
     }
   }
@@ -123,7 +123,7 @@ export default ActivityCard;
         line-height: 36px;
         letter-spacing: -0.02em;
 
-        color: $black;
+        color: $text-default;
       }
       .title {
         margin-top: auto;
@@ -132,7 +132,7 @@ export default ActivityCard;
         font-size: 14px;
         line-height: 21px;
         letter-spacing: -0.02em;
-        color: $black;
+        color: $text-default;
       }
     }
   }
