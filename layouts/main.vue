@@ -1,5 +1,12 @@
 <template>
-  <div class="background">
+  <div
+    class="background"
+    :style="{
+      'background-image': background_image,
+      'background-size': 'cover',
+      'background-position': 'center',
+    }"
+  >
     <Header :headers="headers" :is-white="true"></Header>
     <nuxt />
     <Footer :items="items" :copyrights="copyrights" :is-white="true"></Footer>
@@ -11,13 +18,21 @@ import { useStore, computed } from "@nuxtjs/composition-api";
 import { Component, Vue } from "nuxt-property-decorator";
 import Header from "~/components/header.vue";
 import Footer from "~/components/footer.vue";
-
+import background from "~/assets/css/main-bg.scss";
 @Component({
   name: "MainLayout",
   components: { Header, Footer },
   fetchOnServer: false,
   data() {
-    return { headers: [], items: [], copyrights: "" };
+    return {
+      headers: [],
+      items: [],
+      copyrights: "",
+      ...background,
+      recruitment_notice: "",
+      recruitment_start: "",
+      recruitment_deadline: "",
+    };
   },
   setup() {
     const store = useStore();
@@ -32,9 +47,51 @@ import Footer from "~/components/footer.vue";
     const { items, copyrights } = await this.$content("footers")
       .only(["items", "copyrights"])
       .fetch();
+    const { recruitment_notice, recruitment_start, recruitment_deadline } =
+      await this.$content("main")
+        .only([
+          "recruitment_notice",
+          "recruitment_start",
+          "recruitment_deadline",
+        ])
+        .fetch();
     this.headers = headers;
     this.items = items;
     this.copyrights = copyrights;
+    this.recruitment_notice = recruitment_notice;
+    this.recruitment_start = recruitment_start;
+    this.recruitment_deadline = recruitment_deadline;
+  },
+  computed: {
+    notice_day() {
+      console.log(this.recruitment_notice);
+      const result = new Date(this.recruitment_notice) - new Date();
+      return Math.floor(result / 86_400_000);
+    },
+    s_day() {
+      const result = new Date(this.recruitment_start) - new Date();
+      return Math.floor(result / 86_400_000);
+    },
+    d_day() {
+      const result = new Date(this.recruitment_deadline) - new Date();
+      return this.s_day < 0 ? Math.floor(result / 86_400_000) : 0;
+    },
+    before_recruitment() {
+      console.log(this.notice_day, this.s_day);
+      return this.notice_day < 0 && this.s_day >= 0;
+    },
+    is_recruiting() {
+      return this.s_day < 0 && this.d_day >= 0;
+    },
+    background_image() {
+      let img = this.main_default_desktop;
+      if (this.before_recruitment) {
+        img = this.main_notice_desktop;
+      } else if (this.is_recruiting) {
+        img = this.main_wip_desktop;
+      }
+      return img;
+    },
   },
 })
 class MainLayout extends Vue {
@@ -50,15 +107,15 @@ export default MainLayout;
 .background {
   display: flex;
   flex-direction: column;
-  @include desktop {
-    background-image: $main-default-desktop;
-  }
-  @include tablet {
-    background-image: $main-default-desktop;
-  }
-  @include mobile {
-    background-image: $main-default-mobile;
-  }
+  // @include desktop {
+  //   background-image: $main-default-desktop;
+  // }
+  // @include tablet {
+  //   background-image: $main-default-desktop;
+  // }
+  // @include mobile {
+  //   background-image: $main-default-mobile;
+  // }
   background-size: cover;
   background-position: center;
   width: 100%;
