@@ -236,6 +236,8 @@ export default defineComponent({
       width: 100%;
       height: 809px;
       background-image: $about-desktop;
+      background-position: center;
+      background-size: cover;
       margin-bottom: 120px;
       h1 {
         width: 1200px;
@@ -363,6 +365,8 @@ export default defineComponent({
       width: 100%;
       height: 809px;
       background: $about-desktop;
+      background-position: center;
+      background-size: cover;
       margin-bottom: 120px;
       .slogan-text {
         white-space: pre-wrap;
@@ -495,6 +499,8 @@ export default defineComponent({
       width: 100%;
       height: 484px;
       background: $about-mobile;
+      background-position: center;
+      background-size: cover;
       margin-bottom: 64px;
       .slogan-text {
         white-space: pre-wrap;
