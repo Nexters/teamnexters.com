@@ -115,7 +115,6 @@ export default defineComponent({
       return this.d_day > 0 ? `마감 D-${this.d_day}` : "";
     },
     notice_day() {
-      console.log(this.recruitment_notice);
       const result = new Date(this.recruitment_notice) - new Date();
       return Math.floor(result / 86_400_000);
     },
@@ -128,7 +127,6 @@ export default defineComponent({
       return this.s_day < 0 ? Math.floor(result / 86_400_000) : 0;
     },
     before_recruitment() {
-      console.log(this.notice_day, this.s_day);
       return this.notice_day < 0 && this.s_day >= 0;
     },
     is_recruiting() {

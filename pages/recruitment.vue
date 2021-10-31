@@ -136,7 +136,6 @@ export default defineComponent({
       return this.s_day < 0 ? Math.floor(result / 86_400_000) : 0;
     },
     before_recruitment() {
-      console.log(this.notice_day, this.s_day);
       return this.notice_day < 0 && this.s_day >= 0;
     },
     is_recruiting() {
@@ -154,7 +153,6 @@ export default defineComponent({
       return "DEFAULT";
     },
     periodTime() {
-      console.log("time", this.getRemainingPeriod(this.d_day));
       if (this.bannerType === "PROGRESS") {
         return this.getRemainingPeriod(this.d_day);
       }
@@ -269,8 +267,6 @@ export default defineComponent({
     },
     getRemainingPeriod(endDate) {
       const ed = new Date(endDate);
-
-      console.log("ed", ed);
 
       if (isNaN(Date.parse(ed))) {
         return -1;

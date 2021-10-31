@@ -66,19 +66,14 @@ export default defineComponent({
       ...background,
     };
   },
-  fetch(ctx) {
-    console.log(this.remainingPeriod);
-  },
   computed: {
     getBackgroundImage() {
-      console.log("type", this.type);
       let img = this.recruitment_default_desktop;
       if (this.type === "NOTICE") {
         img = this.recruitment_notice_desktop;
       } else if (this.type === "PROGRESS") {
         img = this.recruitment_wip_desktop;
       }
-      console.log("img", img);
       return img;
     },
   },
