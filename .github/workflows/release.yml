@@ -93,7 +93,7 @@ jobs:
           echo ${{ toJson(steps.main-about.outputs.results) }} > ./_content/data.json
           echo ${{ toJson(steps.contact.outputs.results) }} > ./content/contact.json
           echo ${{ toJson(steps.color.outputs.results) }} > ./_content/color.json
-          python .script/make_color.py
+          python .script/make_content.py
       - name: make color
         run: |
           python .script/make_color.py
