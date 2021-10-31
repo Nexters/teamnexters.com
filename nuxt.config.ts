@@ -68,8 +68,9 @@ const config: NuxtConfig = {
   ],
   loading: "~/components/loading-bar.vue",
   router: {
-    middleware: ["store"],
+    middleware: ["store", "trailingSlashRedirect"],
     // linkActiveClass: "nuxt-link-active",
+    trailingSlash: false,
   },
   pageTransition: {
     name: "my-page",
