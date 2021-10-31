@@ -89,8 +89,9 @@ jobs:
             ]
       - name: make contents
         run: |
-          echo ${{ toJson(steps.project.outputs.results) }} > ./_content/project.json
           echo ${{ toJson(steps.main-about.outputs.results) }} > ./_content/data.json
+          echo ${{ toJson(steps.project.outputs.results) }} > ./_content/project.json
+          echo ${{ toJson(steps.recruitment.outputs.results) }} > ./content/recruitment.json
           echo ${{ toJson(steps.contact.outputs.results) }} > ./content/contact.json
           echo ${{ toJson(steps.color.outputs.results) }} > ./_content/color.json
           python .script/make_content.py
