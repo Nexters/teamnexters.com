@@ -2,15 +2,22 @@
 import json
 from typing import Dict, Any
 
+def make_image_scss(path: str, data: Dict[str, Any]) -> None:
+    with open(path, mode="w", encoding="utf-8") as f:
+        for row in data[1:]:
+            name, value = row
+            if value:
+                f.write(f'${name}: url("https://drive.google.com/uc?export=view&id={value}");\n')
 
-def make_main(data: Dict[str, Any]) -> None:
-    slogan, default_desc, default_a, default_href, th, recruitment_start, recruitment_deadline, recruitment_notice_desc, recruitment_notice_a, recruitment_in_progress_desc, recruitment_in_progress_a, recruitment_href = data[1]
+def make_main(data: Dict[str, Any], background: Dict[str, Any]) -> None:
+    slogan, default_desc, default_a, default_href, th, recruitment_notice, recruitment_start, recruitment_deadline, recruitment_notice_desc, recruitment_notice_a, recruitment_in_progress_desc, recruitment_in_progress_a, recruitment_href = data[1]
     main = {
         "slogan": slogan,
         "default_desc": default_desc,
         "default_a": default_a,
         "default_href": default_href,
         "th": th,
+        "recruitment_notice": recruitment_notice,
         "recruitment_start": recruitment_start,
         "recruitment_deadline": recruitment_deadline,
         "recruitment_notice_desc": recruitment_notice_desc,
@@ -22,8 +29,11 @@ def make_main(data: Dict[str, Any]) -> None:
     with open(f"./content/main.json", mode="w", encoding="utf-8") as f:
         f.write(json.dumps(main, ensure_ascii=False, indent=2))
 
+    make_image_scss("./assets/css/main-bg.scss", background)
+
 def make_about(
     data: Dict[str, Any],
+    top_image: Dict[str, Any],
     informations: Dict[str, Any],
     reviews: Dict[str, Any]
 ) -> None:
@@ -60,7 +70,7 @@ def make_about(
         }
         with open(f"./content/about/informations/{idx}.json", mode="w", encoding="utf-8") as f:
             f.write(json.dumps(_information, ensure_ascii=False, indent=2))
-
+    make_image_scss("./assets/css/about-top-image.scss", top_image)
 
 def make_project(data: Dict[str, Any]) -> None:
     projects = []
@@ -100,8 +110,18 @@ if __name__ == "__main__":
     with open("./_content/data.json", mode="r") as f:
         google_results = f.read()
     data = json.loads(google_results)
-    main, about, informations, reviews, projects = data["results"]
-    make_main(main["result"]["rawData"])
-    make_about(about["result"]["rawData"], informations["result"]["rawData"], reviews["result"]["rawData"])
-    make_project(projects["result"]["rawData"])
+    main, main_background, about, about_top_image, informations, reviews = data["results"]
+    make_main(main["result"]["rawData"], main_background["result"]["rawData"])
+    make_about(
+        about["result"]["rawData"],
+        about_top_image["result"]["rawData"],
+        informations["result"]["rawData"],
+        reviews["result"]["rawData"]
+    )
+    
+    with open("./_content/project.json", mode="r") as f:
+        google_results = f.read()
+    data = json.loads(google_results)
+    projects = data["results"][0]["result"]["rawData"]
+    make_project(projects)
 

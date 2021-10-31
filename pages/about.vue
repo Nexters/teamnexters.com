@@ -195,6 +195,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
 @import "~/assets/css/color.scss";
+@import "~/assets/css/about-top-image.scss";
 
 * {
   font-family: Spoqa Han Sans Neo;
@@ -234,7 +235,7 @@ export default defineComponent({
       align-items: center;
       width: 100%;
       height: 809px;
-      background: $grey01;
+      background-image: $about-desktop;
       margin-bottom: 120px;
       h1 {
         width: 1200px;
@@ -361,7 +362,7 @@ export default defineComponent({
       align-items: center;
       width: 100%;
       height: 809px;
-      background: $grey01;
+      background: $about-desktop;
       margin-bottom: 120px;
       .slogan-text {
         white-space: pre-wrap;
@@ -493,7 +494,7 @@ export default defineComponent({
       align-items: center;
       width: 100%;
       height: 484px;
-      background: $grey01;
+      background: $about-mobile;
       margin-bottom: 64px;
       .slogan-text {
         white-space: pre-wrap;

@@ -10,5 +10,5 @@ if __name__ == "__main__":
     with open("./assets/css/setting.scss", mode="w") as f:
         for row in rows[1:]:
             name, value = row
-            f.write(f"${name}: {value};\n")
-        
+            if value:
+                f.write(f"${name}: {value};\n")

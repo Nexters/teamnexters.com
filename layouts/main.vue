@@ -43,14 +43,24 @@ class MainLayout extends Vue {
 export default MainLayout;
 </script>
 <style lang="scss" scoped>
+@import "~/assets/css/_device.scss";
 @import "~/assets/css/setting.scss";
+@import "~/assets/css/main-bg.scss";
 
 .background {
   display: flex;
   flex-direction: column;
-  background-image: url("~/assets/img/main_bg.png");
+  @include desktop {
+    background-image: $main-default-desktop;
+  }
+  @include tablet {
+    background-image: $main-default-desktop;
+  }
+  @include mobile {
+    background-image: $main-default-mobile;
+  }
   background-size: cover;
-  background-position: 100%;
+  background-position: center;
   width: 100%;
   height: 100vh;
 }

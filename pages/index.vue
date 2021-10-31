@@ -38,6 +38,7 @@ export default defineComponent({
         "default_a",
         "default_href",
         "th",
+        "recruitment_notice",
         "recruitment_start",
         "recruitment_deadline",
         "recruitment_notice_a",
@@ -53,6 +54,7 @@ export default defineComponent({
       default_a,
       default_href,
       th,
+      recruitment_notice,
       recruitment_start,
       recruitment_deadline,
       recruitment_notice_a,
@@ -67,6 +69,7 @@ export default defineComponent({
       default_a: default_a,
       default_href: default_href,
       th: th,
+      recruitment_notice: recruitment_notice,
       recruitment_start: recruitment_start,
       recruitment_deadline: recruitment_deadline,
       recruitment_notice_a: recruitment_notice_a,
@@ -106,11 +109,15 @@ export default defineComponent({
       } else if (this.is_recruiting) {
         desc = `현재 넥스터즈 ${this.th}기 ${this.recruitment_in_progress_desc}`;
       }
-      console.log(desc);
       return desc;
     },
     badge_text() {
       return this.d_day > 0 ? `마감 D-${this.d_day}` : "";
+    },
+    notice_day() {
+      console.log(this.recruitment_notice);
+      const result = new Date(this.recruitment_notice) - new Date();
+      return Math.floor(result / 86_400_000);
     },
     s_day() {
       const result = new Date(this.recruitment_start) - new Date();
@@ -121,7 +128,8 @@ export default defineComponent({
       return this.s_day < 0 ? Math.floor(result / 86_400_000) : 0;
     },
     before_recruitment() {
-      return this.s_day > 0;
+      console.log(this.notice_day);
+      return this.notice_day < 0 && this.s_day > 0;
     },
     is_recruiting() {
       return this.s_day < 0 && this.d_day > 0;
