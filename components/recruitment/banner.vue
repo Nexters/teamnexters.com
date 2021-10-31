@@ -66,6 +66,9 @@ export default defineComponent({
       ...background,
     };
   },
+  fetch(ctx) {
+    console.log(this.remainingPeriod);
+  },
   computed: {
     getBackgroundImage() {
       console.log("type", this.type);

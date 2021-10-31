@@ -5,11 +5,11 @@
         class="banner"
         :type="bannerType"
         :background-image-url="`https://drive.google.com/uc?export=view&id=${banner.bannerImage}`"
-        :header-title="banner.bannerTitle"
-        :sub-title="banner.bannerSubtitle"
+        :header-title="makeBannerTitle(bannerType, banner.th)"
+        :sub-title="makeBannerSubTitle(bannerType, banner.th)"
         :period="banner.bannerPeriod"
         :box-list="bannerBoxes"
-        :remaining-period="banner.remainingPeriod"
+        :remaining-period="d_day"
       />
       <main class="main">
         <NoticeBox
@@ -62,6 +62,7 @@ export default defineComponent({
         bannerPeriod: "",
         isVisible: false,
         remainingPeriod: -1,
+        th: "",
       },
       bannerBoxes: [],
       notice: {
@@ -87,12 +88,12 @@ export default defineComponent({
     const bannerType = result.banner[6];
     const _remainingPeriod = this.getRemainingPeriod(result.banner[3]);
     let _type = null;
-    console.log("pe", _remainingPeriod);
     if (_remainingPeriod <= 0) {
       _type = "PROGRESS";
     }
     this.banner.bannerType = _type !== null ? _type : bannerType;
     this.banner.bannerImage = result.banner[0];
+    this.banner.th = result.banner[1];
     this.banner.bannerTitle = this.makeBannerTitle(
       bannerType,
       result.banner[1]
@@ -151,6 +152,13 @@ export default defineComponent({
       }
 
       return "DEFAULT";
+    },
+    periodTime() {
+      console.log("time", this.getRemainingPeriod(this.d_day));
+      if (this.bannerType === "PROGRESS") {
+        return this.getRemainingPeriod(this.d_day);
+      }
+      return 0;
     },
   },
   methods: {
@@ -261,6 +269,8 @@ export default defineComponent({
     },
     getRemainingPeriod(endDate) {
       const ed = new Date(endDate);
+
+      console.log("ed", ed);
 
       if (isNaN(Date.parse(ed))) {
         return -1;
