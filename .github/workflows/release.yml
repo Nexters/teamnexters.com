@@ -75,7 +75,8 @@ jobs:
               { "command": "getData", "args": { "worksheetTitle": "R-qualification", "minCol": 1 }},
               { "command": "getData", "args": { "worksheetTitle": "R-schedule", "minCol": 1 }},
               { "command": "getData", "args": { "worksheetTitle": "R-caution", "minCol": 1 }},
-              { "command": "getData", "args": { "worksheetTitle": "R-notice", "minCol": 1 }}
+              { "command": "getData", "args": { "worksheetTitle": "R-notice", "minCol": 1 }},
+              { "command": "getData", "args": { "worksheetTitle": "R-background", "minCol": 1 }}
             ]
       - id: contact
         name: Load Google Sheet - Contact
