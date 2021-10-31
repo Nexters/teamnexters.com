@@ -55,6 +55,7 @@ export default defineComponent({
   flex-direction: column;
   background-color: $background-sub;
   border-radius: 16px;
+  box-sizing: border-box;
 
   .questionArea {
     width: 100%;
