@@ -21,7 +21,7 @@
           </div>
           <div v-show="isRemain" class="more">
             <div class="lead-more" @click="onClickMore">
-              <p>Lead more</p>
+              <p>Load more</p>
               <img src="~/assets/img/ic_down.svg" alt="" />
             </div>
           </div>
