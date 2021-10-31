@@ -75,6 +75,7 @@ export default defineComponent({
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   box-sizing: border-box;
   letter-spacing: -0.02em;
 
