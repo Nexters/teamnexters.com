@@ -83,6 +83,7 @@ import background from "~/assets/css/export.scss";
       return this.s_day < 0 && this.d_day >= 0;
     },
     background_image() {
+      console.log(this.notice_day, this.s_day, this.d_day);
       console.log(this);
       let img = this.main_default_desktop;
       if (this.before_recruitment) {
