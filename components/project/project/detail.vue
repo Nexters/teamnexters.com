@@ -61,7 +61,7 @@ export default defineComponent({
       return this.project.members?.join(" ") || "";
     },
     thumbnail() {
-      return this.project.thumbnail || require("~/assets/img/no-image.svg");
+      return this.project.thumbnail || "/no-image.svg";
     },
   },
   methods: {

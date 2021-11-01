@@ -106,15 +106,6 @@ export default MainLayout;
 .background {
   display: flex;
   flex-direction: column;
-  // @include desktop {
-  //   background-image: $main-default-desktop;
-  // }
-  // @include tablet {
-  //   background-image: $main-default-desktop;
-  // }
-  // @include mobile {
-  //   background-image: $main-default-mobile;
-  // }
   background-size: cover;
   background-position: center;
   width: 100%;

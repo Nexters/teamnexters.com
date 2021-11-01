@@ -28,7 +28,34 @@ const config: NuxtConfig = {
       },
     ],
   },
-  modules: ["@nuxt/content", "@nuxtjs/composition-api/module"],
+  modules: [
+    "@nuxt/content",
+    "@nuxtjs/composition-api/module",
+    [
+      "nuxt-lazy-load",
+      {
+        // These are the default values
+        images: true,
+        videos: true,
+        audios: true,
+        iframes: true,
+        native: false,
+        directiveOnly: false,
+
+        // Default image must be in the static folder
+        defaultImage: "/no-image.svg",
+
+        // To remove class set value to false
+        loadingClass: "isLoading",
+        loadedClass: "isLoaded",
+        appendClass: "lazyLoad",
+
+        observerConfig: {
+          // See IntersectionObserver documentation
+        },
+      },
+    ],
+  ],
   components: [
     "~/components",
     { path: "~/components/about", extensions: ["vue"] },
