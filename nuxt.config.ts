@@ -5,7 +5,7 @@ const config: NuxtConfig = {
   target: "static",
   ssr: false,
   head: {
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon_N20_03.png" }],
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon_N20_02.png" }],
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
