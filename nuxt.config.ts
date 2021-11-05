@@ -35,12 +35,12 @@ const config: NuxtConfig = {
       "nuxt-lazy-load",
       {
         // These are the default values
-        images: true,
-        videos: true,
-        audios: true,
-        iframes: true,
-        native: false,
-        directiveOnly: false,
+        // images: true,
+        // videos: true,
+        // audios: true,
+        // iframes: true,
+        // native: false,
+        directiveOnly: true,
 
         // Default image must be in the static folder
         defaultImage: "/no-image.svg",

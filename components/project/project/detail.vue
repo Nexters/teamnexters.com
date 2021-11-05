@@ -21,7 +21,7 @@
             TEAM {{ project.team_name }} | {{ members }}
           </div>
         </div>
-        <div class="thumbnail"><img :src="thumbnail" /></div>
+        <div class="thumbnail"><img :data-src="thumbnail" v-lazy-load /></div>
         <div class="description">{{ project.description }}</div>
         <div v-if="project.ppt" class="ppt">
           <p>최종 발표 자료</p>
