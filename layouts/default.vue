@@ -1,7 +1,7 @@
 <template>
   <div class="background">
     <Header :headers="headers" :is-white="false"></Header>
-    <main style="margin: auto">
+    <main>
       <nuxt v-if="!isMenuOpen || $mq !== 'mobile'" />
     </main>
     <Footer :items="items" :copyrights="copyrights"></Footer>

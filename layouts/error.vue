@@ -24,6 +24,13 @@ export default {
 @import "~/assets/css/setting.scss";
 @import "~/assets/css/main-bg.scss";
 
+.error-background {
+  height: 91vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .error-area {
   display: flex;
   flex-direction: column;

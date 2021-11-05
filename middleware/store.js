@@ -1,4 +1,4 @@
 export default function ({ store }) {
   store.commit("init");
-  store.commit("project/init");
+  // store.commit("project/init");
 }
