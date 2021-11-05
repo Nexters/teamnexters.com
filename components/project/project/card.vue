@@ -1,7 +1,7 @@
 <template>
   <div class="project-card-component-container" @click="showDetail(project)">
     <nuxt-link :to="`project#${project.idx}`">
-      <img class="thumbnail" :src="thumbnail" />
+      <img class="thumbnail" :data-src="thumbnail" v-lazy-load />
       <p class="name">{{ project.app_name }}</p>
       <p class="time">{{ project.th }}th | {{ project.year }}</p>
     </nuxt-link>

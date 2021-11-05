@@ -148,11 +148,12 @@ nav {
       height: 100%;
       width: 100%;
       display: flex;
+      align-content: center;
       .logo {
         display: flex;
         align-items: center;
         height: 73px;
-        margin: auto auto auto 16px;
+        margin-left: 16px;
       }
       .menu {
         width: 24px;
