@@ -1,6 +1,13 @@
 <template>
-  <div class="project-card-component-container" @click="showDetail(project)">
-    <nuxt-link :to="`project#${project.idx}`">
+  <div
+    :id="project.idx"
+    class="project-card-component-container"
+    @click="showDetail(project)"
+  >
+    <nuxt-link
+      :to="{ path: '/project', hash: `#${project.idx}` }"
+      @click.native="scrollToId(project.idx)"
+    >
       <img class="thumbnail" :data-src="thumbnail" v-lazy-load />
       <p class="name">{{ project.app_name }}</p>
       <p class="time">{{ project.th }}th | {{ project.year }}</p>
@@ -41,6 +48,9 @@ const ProjectCard = defineComponent({
     ...mapActions({ showDetail: "project/showDetail" }),
     onClickLink(href) {
       window.location.href = href;
+    },
+    scrollToId(id) {
+      document.getElementById(id).scrollIntoView();
     },
   },
 });
