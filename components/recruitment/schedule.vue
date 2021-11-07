@@ -6,7 +6,7 @@
         v-for="schedule in schedules"
         :key="schedule.id"
         class="schedule"
-        :schedule-title="schedule.title"
+        :schedule-title="schedule.schedule"
         :schedule-date="schedule.date"
       />
     </article>
@@ -83,7 +83,7 @@ export default defineComponent({
       }
 
       .schedule {
-        width: 200px;
+        min-width: 200px;
         display: inline-block;
         margin-right: 16px;
 

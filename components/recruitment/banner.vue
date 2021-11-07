@@ -2,14 +2,18 @@
   <div
     class="banner"
     :class="type"
-    :style="{ 'background-image': getBackgroundImage }"
+    :style="{ 'background-image': backgroundImageUrl }"
   >
     <div class="bannerMetaWrap">
       <h1 class="bannerTitle">{{ headerTitle }}</h1>
       <h2 class="bannerSubTitle">{{ subTitle }}</h2>
-      <p v-if="remainingPeriod >= 0" class="bannerPeriod">
+      <p v-if="isVisibleDate" class="bannerPeriod">
         <span>{{ period }}</span>
-        <Badge class="badge" :text="`마감 D-${remainingPeriod}`" />
+        <Badge
+          v-if="remainingPeriod >= 0"
+          class="badge"
+          :text="`마감 D-${remainingPeriod}`"
+        />
       </p>
       <article class="boxArea">
         <LinkButton
@@ -27,7 +31,6 @@
 
 <script>
 import { defineComponent } from "@vue/composition-api";
-import background from "~/assets/css/r_export.scss";
 
 export default defineComponent({
   name: "Banner",
@@ -61,20 +64,9 @@ export default defineComponent({
       require: false,
     },
   },
-  data() {
-    return {
-      ...background,
-    };
-  },
   computed: {
-    getBackgroundImage() {
-      let img = this.recruitment_default_desktop;
-      if (this.type === "NOTICE") {
-        img = this.recruitment_notice_desktop;
-      } else if (this.type === "PROGRESS") {
-        img = this.recruitment_wip_desktop;
-      }
-      return img;
+    isVisibleDate() {
+      return this.type !== "DEFAULT";
     },
   },
 });
@@ -114,6 +106,7 @@ export default defineComponent({
     display: flex;
     font-weight: 700;
     color: $text-default;
+    align-items: center;
   }
 
   &.PROGRESS {

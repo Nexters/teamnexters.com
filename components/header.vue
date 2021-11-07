@@ -220,6 +220,10 @@ nav {
   a.nuxt-link-active {
     text-decoration: underline solid $text-default 2px;
     text-underline-position: under;
+
+    &.white-font {
+      text-decoration: underline solid $text-inverse 2px;
+    }
   }
 }
 
@@ -227,6 +231,10 @@ nav {
   a.nuxt-link-active {
     text-decoration: underline solid $text-default 2px;
     text-underline-position: under;
+
+    &.white-font {
+      text-decoration: underline solid $text-inverse 2px;
+    }
   }
 }
 

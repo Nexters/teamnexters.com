@@ -4,12 +4,12 @@
       <Banner
         class="banner"
         :type="bannerType"
-        :background-image-url="`https://drive.google.com/uc?export=view&id=${banner.bannerImage}`"
-        :header-title="makeBannerTitle(bannerType, banner.th)"
-        :sub-title="makeBannerSubTitle(bannerType, banner.th)"
+        :background-image-url="getBackgroundImage"
+        :header-title="banner.bannerTitle"
+        :sub-title="banner.bannerSubtitle"
         :period="banner.bannerPeriod"
         :box-list="bannerBoxes"
-        :remaining-period="d_day"
+        :remaining-period="banner.remainingPeriod"
       />
       <main class="main">
         <NoticeBox
@@ -20,20 +20,20 @@
         <DotList
           class="area"
           :dot-list-title="`지원 자격`"
-          :items="qualifications"
+          :items="getQualifications"
         />
       </main>
       <main class="sub">
         <Schedule class="area schedule" :schedules="schedules" />
       </main>
       <main class="main third">
-        <DotList :dot-list-title="`유의사항`" :items="caution" />
+        <DotList :dot-list-title="`유의사항`" :items="getCautions" />
       </main>
       <div class="footer">
         <h2 class="footerTitle">궁금한 점이 있으신가요?</h2>
         <h3 class="footerSubTitle">자주 묻는 질문을 확인해보세요.</h3>
         <LinkButton
-          :type="banner.bannerType"
+          :type="bannerType"
           class="faqBox"
           :button-name="`FAQ 바로가기`"
           :href="`/contact#faq`"
@@ -45,6 +45,7 @@
 
 <script>
 import { defineComponent } from "@vue/composition-api";
+import background from "~/assets/css/r_export.scss";
 
 export default defineComponent({
   name: "Recruitment",
@@ -58,7 +59,6 @@ export default defineComponent({
         bannerType: "DEFAULT",
         bannerTitle: "",
         bannerSubtitle: "",
-        bannerImage: "",
         bannerPeriod: "",
         isVisible: false,
         remainingPeriod: -1,
@@ -72,150 +72,93 @@ export default defineComponent({
       },
       qualifications: [],
       schedules: [],
-      caution: [],
+      cautions: [],
       recruitment_notice: "",
       recruitment_start: "",
       recruitment_deadline: "",
+      ...background,
     };
   },
   async fetch() {
-    const main = await this.$content("main")
-      .only(["recruitment_notice", "recruitment_start", "recruitment_deadline"])
-      .fetch();
+    const recruitment = await this.$content("recruitment/recruitment").fetch();
     const { recruitment_notice, recruitment_start, recruitment_deadline } =
-      main;
-    const result = await this.FetchAll();
-    const bannerType = result.banner[6];
-    const _remainingPeriod = this.getRemainingPeriod(result.banner[3]);
-    let _type = null;
-    if (_remainingPeriod <= 0) {
-      _type = "PROGRESS";
-    }
-    this.banner.bannerType = _type !== null ? _type : bannerType;
-    this.banner.bannerImage = result.banner[0];
-    this.banner.th = result.banner[1];
-    this.banner.bannerTitle = this.makeBannerTitle(
-      bannerType,
-      result.banner[1]
+      await this.$content("main")
+        .only([
+          "recruitment_notice",
+          "recruitment_start",
+          "recruitment_deadline",
+        ])
+        .fetch();
+    const {
+      th,
+      is_visible_notice,
+      notice_title,
+      boxes,
+      qualifications,
+      schedules,
+      cautions,
+      notices,
+    } = recruitment;
+
+    const bannerType = this.getType(
+      recruitment_start,
+      recruitment_deadline,
+      recruitment_notice
     );
-    this.banner.bannerSubtitle = this.makeBannerSubTitle(
-      bannerType,
-      result.banner[1]
-    );
+
+    this.banner.bannerType = bannerType;
+    this.banner.th = th;
+    this.banner.bannerTitle = this.makeBannerTitle(bannerType, th);
+    this.banner.bannerSubtitle = this.makeBannerSubTitle(bannerType, th);
     this.banner.isVisible = this.isBannerDateVisible(bannerType);
     this.banner.bannerPeriod = this.banner.isVisible
-      ? this.getDateWithDay(result.banner[2], result.banner[3])
+      ? this.getDateWithDay(recruitment_start, recruitment_deadline)
       : "";
     this.banner.remainingPeriod =
       bannerType === "PROGRESS"
-        ? this.getRemainingPeriod(result.banner[3])
+        ? this.getRemainingPeriod(recruitment_deadline)
         : -1;
-    this.bannerBoxes = result.bannerButtons;
-    this.notice.isVisible = result.banner[4] === "TRUE";
-    this.notice.boxTitle = result.banner[5];
-    this.notice.contents = result.notice;
-    this.qualifications = result.qualifications;
-    this.schedules = result.schedules;
-    this.caution = result.cautions;
+    this.bannerBoxes = boxes.filter((box) => box.type === bannerType);
+    this.notice.isVisible = is_visible_notice;
+    this.notice.boxTitle = notice_title;
+    this.notice.contents = notices.filter((notice) => notice.is_visible_notice);
+    this.qualifications = qualifications.filter(
+      (qualification) => qualification.is_visible_qualification
+    );
+    this.schedules = schedules;
+    this.cautions = cautions.filter((caution) => caution.is_visible_caution);
     this.recruitment_notice = recruitment_notice;
     this.recruitment_start = recruitment_start;
     this.recruitment_deadline = recruitment_deadline;
   },
   fetchOnServer: false,
   computed: {
-    notice_day() {
-      const result = new Date(this.recruitment_notice) - new Date();
-      return Math.floor(result / 86400000);
-    },
-    s_day() {
-      const result = new Date(this.recruitment_start) - new Date();
-      return Math.floor(result / 86400000);
-    },
-    d_day() {
-      const result = new Date(this.recruitment_deadline) - new Date();
-      return this.s_day < 0 ? Math.floor(result / 86400000) : 0;
-    },
-    before_recruitment() {
-      return this.notice_day < 0 && this.s_day >= 0;
-    },
-    is_recruiting() {
-      return this.s_day < 0 && this.d_day >= 0;
-    },
     bannerType() {
-      if (this.is_recruiting) {
-        return "PROGRESS";
-      }
-
-      if (this.before_recruitment) {
-        return "NOTICE";
-      }
-
-      return "DEFAULT";
+      return this.banner.bannerType;
     },
-    periodTime() {
-      if (this.bannerType === "PROGRESS") {
-        return this.getRemainingPeriod(this.d_day);
+    getBackgroundImage() {
+      let img = this.recruitment_default_desktop;
+      if (this.bannerType === "NOTICE") {
+        img = this.recruitment_notice_desktop;
+      } else if (this.bannerType === "PROGRESS") {
+        img = this.recruitment_wip_desktop;
       }
-      return 0;
+      return img;
+    },
+    getQualifications() {
+      return this.qualifications.map((it) => ({
+        id: it.id,
+        text: it.qualification,
+      }));
+    },
+    getCautions() {
+      return this.cautions.map((it) => ({
+        id: it.id,
+        text: it.caution,
+      }));
     },
   },
   methods: {
-    debug(e) {
-      console.log(e);
-    },
-    FetchAll: async function () {
-      const { results } = await this.$content("recruitment").fetch();
-
-      const { rawData: banner } = results[0].result;
-      const { rawData: buttons } = results[1].result;
-      const { rawData: qualifications } = results[2].result;
-      const { rawData: schedules } = results[3].result;
-      const { rawData: cautions } = results[4].result;
-      const { rawData: notices } = results[5].result;
-
-      const [_, ...recruitmentBanner] = banner;
-      const [__, ...recruitmentButtons] = buttons;
-      const [___, ...recruitmentQualifications] = qualifications;
-      const [____, ...recruitmentSchedules] = schedules;
-      const [_____, ...recruitmentCautions] = cautions;
-      const [______, ...recruitmentNotices] = notices;
-
-      const result = {
-        banner: recruitmentBanner[0],
-        bannerButtons: recruitmentButtons
-          .filter((it) => it[2] === "TRUE")
-          .map((it, idx) => ({
-            id: idx,
-            name: it[0],
-            link: it[1],
-          })),
-        qualifications: recruitmentQualifications
-          .filter((it) => it[1] === "TRUE")
-          .map((it, idx) => ({
-            id: idx,
-            text: it[0],
-          })),
-        schedules: recruitmentSchedules.map((it, idx) => ({
-          id: idx,
-          title: it[0],
-          date: it[1],
-        })),
-        cautions: recruitmentCautions
-          .filter((it) => it[1] === "TRUE")
-          .map((it, idx) => ({
-            id: idx,
-            text: it[0],
-          })),
-        notice: recruitmentNotices
-          .filter((it) => it[1] === "TRUE")
-          .map((it, idx) => ({
-            id: idx,
-            text: it[0],
-          })),
-      };
-
-      return result;
-    },
     makeBannerTitle(type, th) {
       switch (type) {
         case "DEFAULT": {
@@ -275,15 +218,32 @@ export default defineComponent({
       const now = new Date();
       return Math.ceil((ed.getTime() - now.getTime()) / (1000 * 3600 * 24));
     },
-    getRemainingStartPeriod(startDate) {
-      const sd = new Date(startDate);
-
-      if (isNaN(Date.parse(sd))) {
-        return -1;
+    getType(startDate, endDate, noticeDate) {
+      if (
+        isNaN(Date.parse(startDate)) ||
+        isNaN(Date.parse(endDate)) ||
+        isNaN(Date.parse(noticeDate))
+      ) {
+        return "DEFAULT";
       }
 
       const now = new Date();
-      return Math.ceil((sd.getTime() - now.getTime()) / (1000 * 3600 * 24));
+      const start = new Date(startDate);
+      const end = new Date(endDate);
+      const notice = new Date(noticeDate);
+
+      if (
+        now.getTime() >= notice.getTime() &&
+        now.getTime() < start.getTime()
+      ) {
+        return "NOTICE";
+      }
+
+      if (now.getTime() >= start.getTime() && now.getTime() < end.getTime()) {
+        return "PROGRESS";
+      }
+
+      return "DEFAULT";
     },
   },
 });
@@ -309,6 +269,7 @@ export default defineComponent({
 .recruitment-leave-active {
   transition: opacity 1.5s;
 }
+
 .recruitment-enter,
 .recruitment-leave-active {
   opacity: 0;

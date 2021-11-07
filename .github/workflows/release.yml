@@ -91,10 +91,11 @@ jobs:
         run: |
           echo ${{ toJson(steps.main-about.outputs.results) }} > ./_content/data.json
           echo ${{ toJson(steps.project.outputs.results) }} > ./_content/project.json
-          echo ${{ toJson(steps.recruitment.outputs.results) }} > ./content/recruitment.json
+          echo ${{ toJson(steps.recruitment.outputs.results) }} > ./_content/recruitment.json
           echo ${{ toJson(steps.contact.outputs.results) }} > ./content/contact.json
           echo ${{ toJson(steps.color.outputs.results) }} > ./_content/color.json
           python .script/make_content.py
+          python .script/make_recruitment.py
       - name: make color
         run: |
           python .script/make_color.py

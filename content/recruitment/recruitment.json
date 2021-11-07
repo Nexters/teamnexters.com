@@ -1,0 +1,115 @@
+{
+  "bg": "1VNDIfCw-okLxi6V5Ftrq03Blgg-p8VeD",
+  "th": "20",
+  "recruitment_start": "2021-11-01",
+  "recruitment_end": "2021-11-14",
+  "is_visible_notice": true,
+  "notice_title": "코로나 관련 사항을 꼭 참고해주세요!",
+  "type": "PROGRESS",
+  "boxes": [
+    {
+      "id": 0,
+      "name": "모집 알림 신청하기",
+      "link": "https://forms.gle/BR4qjhpD8NP4VzAu7",
+      "type": "DEFAULT",
+      "is_visible_box": false
+    },
+    {
+      "id": 1,
+      "name": "신입회원 지원하기",
+      "link": "https://docs.google.com/forms/d/e/1FAIpQLSe-igrHtXwKkOt-fsDISpwzn0VlNZvWbd-bXN5D0yInlCZNew/viewform",
+      "type": "PROGRESS",
+      "is_visible_box": true
+    },
+    {
+      "id": 2,
+      "name": "모집 알림 신청하기",
+      "link": "https://forms.gle/BR4qjhpD8NP4VzAu7",
+      "type": "NOTICE",
+      "is_visible_box": false
+    }
+  ],
+  "qualifications": [
+    {
+      "id": 0,
+      "qualification": "학생 / 직장인 소속에 상관없이, 개발자 / 디자이너로 팀 프로젝트 수행이 가능한 분",
+      "is_visible_qualification": true
+    },
+    {
+      "id": 1,
+      "qualification": "실무에 가까운 협업과 창작하는 즐거움을 경험하고 싶으신 분",
+      "is_visible_qualification": true
+    },
+    {
+      "id": 2,
+      "qualification": "다양한 사람들과 폭넓고 깊이 있는 네트워킹을 원하시는 분",
+      "is_visible_qualification": true
+    },
+    {
+      "id": 3,
+      "qualification": "매주 토요일 오후 2시 ~6시에 진행되는 정규 활동에 성실하게 참여할 수 있으신 분 \n(정규 활동은 방학기간 동안 진행되며, 2회의 정규 활동을 이수하시면 수료로 인정됩니다.)",
+      "is_visible_qualification": true
+    }
+  ],
+  "schedules": [
+    {
+      "id": 0,
+      "schedule": "서류접수",
+      "date": "2021. 11. 1 ~ 2021. 11. 14"
+    },
+    {
+      "id": 1,
+      "schedule": "서류 합격 발표",
+      "date": "2021. 11. 29"
+    },
+    {
+      "id": 2,
+      "schedule": "면접",
+      "date": "2021. 12. 4"
+    },
+    {
+      "id": 3,
+      "schedule": "최종 합격 발표",
+      "date": "2021. 12. 12"
+    },
+    {
+      "id": 4,
+      "schedule": "정규 활동",
+      "date": "2022. 1. 8 ~ 2022. 2. 26"
+    }
+  ],
+  "cautions": [
+    {
+      "id": 0,
+      "caution": "개발자 지원시, GitHub 계정을 필수로 제출해주셔야 합니다.",
+      "is_visible_caution": true
+    },
+    {
+      "id": 1,
+      "caution": "디자이너 지원시, 포트폴리오를 필수로 제출해주셔야 합니다.",
+      "is_visible_caution": true
+    },
+    {
+      "id": 2,
+      "caution": "지원서는 임시 저장이 불가합니다. 모든 문항을 채워주시고 제출해 주세요.",
+      "is_visible_caution": true
+    },
+    {
+      "id": 3,
+      "caution": "기재하신 개인정보는 NEXTERS 신입 회원 모집과 결과 전달을 위해 사용되며, 지원서 제출 시 개인정보 수집 및 이용에 동의한 것으로 간주합니다. 다른 목적으로는 이용되지 않으며, 모집 기간 완료 즉시 폐기됩니다.",
+      "is_visible_caution": true
+    }
+  ],
+  "notices": [
+    {
+      "id": 0,
+      "notice": "모집 및 활동은 코로나 19 전개 상황에 따라 중단 및 연기 될 수 있습니다.",
+      "is_visible_notice": true
+    },
+    {
+      "id": 1,
+      "notice": "사회적 거리두기, 방역수칙에 의거하여 활동합니다.",
+      "is_visible_notice": true
+    }
+  ]
+}

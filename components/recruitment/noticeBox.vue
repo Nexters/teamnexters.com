@@ -4,7 +4,7 @@
       <img class="noticeIcon" src="~/assets/img/ic_caution.svg" />{{ boxTitle }}
     </h2>
     <p v-for="content in contents" :key="content.id" class="content">
-      <span class="dot" />{{ content.text }}
+      <span class="dot" />{{ content.notice }}
     </p>
   </div>
 </template>
