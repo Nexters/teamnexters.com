@@ -31,7 +31,6 @@ export const mutations = {
   init(state) {
     state.showDetail = false;
     state.project = {};
-    state.projectLimit = 6;
   },
 };
 
