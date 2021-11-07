@@ -8,10 +8,7 @@
           <Badge v-if="badge_text" :text="badge_text" />
         </div>
         <div class="quick-link">
-          <nuxt-link :to="link_href">
-            <p>{{ link_text }}</p>
-            <img src="~/assets/img/ic_forward.svg" />
-          </nuxt-link>
+          <ArrowButton :href="link_href" :text="link_text" :size="link_size" />
         </div>
       </div>
     </transition>
@@ -80,6 +77,9 @@ export default defineComponent({
     };
   },
   computed: {
+    link_size() {
+      return this.$mq === "mobile" ? 16 : 24;
+    },
     link_text() {
       let result = this.default_a;
       if (this.before_recruitment) {
