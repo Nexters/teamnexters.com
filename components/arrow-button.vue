@@ -9,10 +9,7 @@
     >
       {{ text }}
     </p>
-    <img
-      :style="{ color: `${color}`, width: `${size}px`, height: `${size}px` }"
-      src="~/assets/img/ic_forward.svg"
-    />
+    <img :style="{ width: `${size}px`, height: `${size}px` }" :src="arrow" />
   </nuxt-link>
 </template>
 
@@ -21,10 +18,10 @@ import { defineComponent } from "@nuxtjs/composition-api";
 export default defineComponent({
   name: "ArrowButton",
   props: {
-    color: {
-      type: String,
+    isWhite: {
+      type: Boolean,
       required: false,
-      default: "white",
+      default: true,
     },
     href: {
       type: String,
@@ -38,6 +35,16 @@ export default defineComponent({
       type: Number,
       required: false,
       default: 16,
+    },
+  },
+  computed: {
+    color() {
+      return this.isWhite ? "white" : "black";
+    },
+    arrow() {
+      return this.isWhite
+        ? require("~/assets/img/ic_forward.svg")
+        : require("~/assets/img/ic_forward_black.svg");
     },
   },
 });

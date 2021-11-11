@@ -73,6 +73,9 @@ const config: NuxtConfig = {
   },
   buildModules: ["@nuxt/typescript-build", "@nuxtjs/svg"],
   plugins: ["~/plugins/vue-mq"],
+  svg: {
+    vueSvgLoader: { svgo: true },
+  },
   css: [
     "~/assets/css/reset.css",
     "~/assets/css/webfont.css",

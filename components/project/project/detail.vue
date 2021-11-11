@@ -23,10 +23,13 @@
         </div>
         <div class="thumbnail"><img :data-src="thumbnail" v-lazy-load /></div>
         <div class="description">{{ project.description }}</div>
-        <div v-if="project.ppt" class="ppt">
-          <p>최종 발표 자료</p>
-          <img src="~/assets/img/ic_forward_black.svg" alt="arrow" />
-        </div>
+        <ArrowButton
+          v-show="project.ppt"
+          :href="project.ppt || ''"
+          text="최종 발표 자료"
+          :size="ppt_link_size"
+          :isWhite="false"
+        />
       </div>
       <div class="links">
         <a
@@ -57,6 +60,9 @@ export default defineComponent({
     ...mapGetters({
       showDetail: "project/showDetail",
     }),
+    ppt_link_size() {
+      return this.$mq === "mobile" ? 16 : 24;
+    },
     members() {
       return this.project.members?.join(" ") || "";
     },
