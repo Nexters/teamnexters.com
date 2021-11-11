@@ -37,7 +37,6 @@
 import { defineComponent, useStore, computed } from "@nuxtjs/composition-api";
 export default defineComponent({
   name: "Header",
-
   props: {
     headers: {
       type: Array,
@@ -49,6 +48,11 @@ export default defineComponent({
       default: false,
     },
   },
+  data() {
+    return {
+      menuClose: true,
+    };
+  },
   setup(props) {
     const store = useStore();
     return {
@@ -56,24 +60,29 @@ export default defineComponent({
         store.dispatch("toggleMenu");
       },
       isMenuOpen: computed(() => store.state.isMenuOpen),
-      img_logo: props.isWhite
-        ? require("~/assets/img/nexters_img_logo.svg")
-        : require("~/assets/img/nexters_img_logo_black.svg"),
-      txt_logo: props.isWhite
-        ? require("~/assets/img/nexters_txt_logo.svg")
-        : require("~/assets/img/nexters_txt_logo_black.svg"),
-      ic_menu: props.isWhite
-        ? require("~/assets/img/ic_menu.svg")
-        : require("~/assets/img/ic_menu_black.svg"),
-      ic_close: props.isWhite
-        ? require("~/assets/img/ic_close.svg")
-        : require("~/assets/img/ic_close.svg"),
     };
   },
-  data() {
-    return {
-      menuClose: true,
-    };
+  computed: {
+    img_logo() {
+      return this.isWhite
+        ? require("~/assets/img/nexters_img_logo.svg")
+        : require("~/assets/img/nexters_img_logo_black.svg");
+    },
+    txt_logo() {
+      return this.isWhite
+        ? require("~/assets/img/nexters_txt_logo.svg")
+        : require("~/assets/img/nexters_txt_logo_black.svg");
+    },
+    ic_menu() {
+      return this.isWhite
+        ? require("~/assets/img/ic_menu.svg")
+        : require("~/assets/img/ic_menu_black.svg");
+    },
+    ic_close() {
+      return this.isWhite
+        ? require("~/assets/img/ic_close.svg")
+        : require("~/assets/img/ic_close.svg");
+    },
   },
 });
 </script>

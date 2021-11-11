@@ -16,7 +16,14 @@ import { Component, Vue } from "nuxt-property-decorator";
   name: "RecruitmentLayout",
   fetchOnServer: false,
   data() {
-    return { headers: [], items: [], copyrights: "" };
+    return {
+      headers: [],
+      items: [],
+      copyrights: "",
+      recruitment_notice: "",
+      recruitment_start: "",
+      recruitment_deadline: "",
+    };
   },
   setup() {
     const store = useStore();
