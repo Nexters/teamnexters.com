@@ -346,6 +346,7 @@ body.scroll-hidden {
     .contents {
       width: 100%;
       .title {
+        margin-top: 24px;
         display: flex;
         padding-left: 24px;
         h2 {
@@ -418,6 +419,7 @@ body.scroll-hidden {
       padding: 0 24px 0 24px;
       margin: 0 auto 0 auto;
       .title {
+        margin-top: 24px;
         display: flex;
         flex-direction: column;
         h2 {
