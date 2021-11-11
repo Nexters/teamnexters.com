@@ -66,15 +66,15 @@ import background from "~/assets/css/export.scss";
   computed: {
     notice_day() {
       const result = new Date(this.recruitment_notice) - new Date();
-      return Math.floor(result / 86400000);
+      return Math.ceil(result / 86400000);
     },
     s_day() {
       const result = new Date(this.recruitment_start) - new Date();
-      return Math.floor(result / 86400000);
+      return Math.ceil(result / 86400000);
     },
     d_day() {
       const result = new Date(this.recruitment_deadline) - new Date();
-      return this.s_day < 0 ? Math.floor(result / 86400000) : 0;
+      return this.s_day < 0 ? Math.ceil(result / 86400000) : 0;
     },
     before_recruitment() {
       return this.notice_day < 0 && this.s_day >= 0;

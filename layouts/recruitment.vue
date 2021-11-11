@@ -1,6 +1,6 @@
 <template>
   <div class="background">
-    <Header :headers="headers" :is-white="true"></Header>
+    <Header :headers="headers" :is-white="is_recruiting"></Header>
     <main>
       <nuxt v-if="!isMenuOpen || $mq !== 'mobile'" />
     </main>
@@ -31,9 +31,33 @@ import { Component, Vue } from "nuxt-property-decorator";
     const { items, copyrights } = await this.$content("footers")
       .only(["items", "copyrights"])
       .fetch();
+    const { recruitment_notice, recruitment_start, recruitment_deadline } =
+      await this.$content("main")
+        .only([
+          "recruitment_notice",
+          "recruitment_start",
+          "recruitment_deadline",
+        ])
+        .fetch();
     this.headers = headers;
     this.items = items;
     this.copyrights = copyrights;
+    this.recruitment_notice = recruitment_notice;
+    this.recruitment_start = recruitment_start;
+    this.recruitment_deadline = recruitment_deadline;
+  },
+  computed: {
+    s_day() {
+      const result = new Date(this.recruitment_start) - new Date();
+      return Math.ceil(result / 86400000);
+    },
+    d_day() {
+      const result = new Date(this.recruitment_deadline) - new Date();
+      return this.s_day < 0 ? Math.ceil(result / 86400000) : 0;
+    },
+    is_recruiting() {
+      return this.s_day < 0 && this.d_day >= 0;
+    },
   },
 })
 class RecruitmentLayout extends Vue {

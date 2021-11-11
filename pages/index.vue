@@ -5,7 +5,7 @@
         <p class="title">{{ slogan }}</p>
         <div class="description">
           <p>{{ description }}</p>
-          <Badge v-if="badge_text" :text="badge_text" />
+          <Badge v-show="is_recruiting" :text="badge_text" />
         </div>
         <div class="quick-link">
           <ArrowButton :href="link_href" :text="link_text" :size="link_size" />
@@ -112,19 +112,19 @@ export default defineComponent({
       return desc;
     },
     badge_text() {
-      return this.d_day > 0 ? `마감 D-${this.d_day}` : "";
+      return this.d_day >= 0 ? `마감 D-${this.d_day}` : "";
     },
     notice_day() {
       const result = new Date(this.recruitment_notice) - new Date();
-      return Math.floor(result / 86400000);
+      return Math.ceil(result / 86400000);
     },
     s_day() {
       const result = new Date(this.recruitment_start) - new Date();
-      return Math.floor(result / 86400000);
+      return Math.ceil(result / 86400000);
     },
     d_day() {
       const result = new Date(this.recruitment_deadline) - new Date();
-      return this.s_day < 0 ? Math.floor(result / 86400000) : 0;
+      return this.s_day < 0 ? Math.ceil(result / 86400000) : 0;
     },
     before_recruitment() {
       return this.notice_day < 0 && this.s_day >= 0;
