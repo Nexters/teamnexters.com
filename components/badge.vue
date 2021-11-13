@@ -45,7 +45,7 @@ export default defineComponent({
     }
   }
   @include mobile {
-    width: 55px;
+    width: 59px;
     height: 24px;
     padding: 0 4px 0 4px;
     p {

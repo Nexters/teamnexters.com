@@ -9,11 +9,7 @@
       <h2 class="bannerSubTitle">{{ subTitle }}</h2>
       <p v-if="isVisibleDate" class="bannerPeriod">
         <span>{{ period }}</span>
-        <Badge
-          v-if="remainingPeriod >= 0"
-          class="badge"
-          :text="`마감 D-${remainingPeriod}`"
-        />
+        <Badge v-if="remainingPeriod >= 0" class="badge" :text="badgeText" />
       </p>
       <article class="boxArea">
         <LinkButton
@@ -67,6 +63,11 @@ export default defineComponent({
   computed: {
     isVisibleDate() {
       return this.type !== "DEFAULT";
+    },
+    badgeText() {
+      return this.remainingPeriod > 0
+        ? `마감 D-${this.remainingPeriod}`
+        : "마감 D-day";
     },
   },
 });

@@ -5,11 +5,11 @@
         class="banner"
         :type="bannerType"
         :background-image-url="getBackgroundImage"
-        :header-title="banner.bannerTitle"
-        :sub-title="banner.bannerSubtitle"
-        :period="banner.bannerPeriod"
+        :header-title="bannerTitle"
+        :sub-title="bannerSubtitle"
+        :period="bannerPeriod"
         :box-list="bannerBoxes"
-        :remaining-period="banner.remainingPeriod"
+        :remaining-period="remainingPeriod"
       />
       <main class="main">
         <NoticeBox
@@ -63,8 +63,8 @@ export default defineComponent({
         isVisible: false,
         remainingPeriod: -1,
         th: "",
+        bannerBoxes: [],
       },
-      bannerBoxes: [],
       notice: {
         isVisible: false,
         boxTitle: "",
@@ -80,15 +80,6 @@ export default defineComponent({
     };
   },
   async fetch() {
-    const recruitment = await this.$content("recruitment/recruitment").fetch();
-    const { recruitment_notice, recruitment_start, recruitment_deadline } =
-      await this.$content("main")
-        .only([
-          "recruitment_notice",
-          "recruitment_start",
-          "recruitment_deadline",
-        ])
-        .fetch();
     const {
       th,
       is_visible_notice,
@@ -98,13 +89,33 @@ export default defineComponent({
       schedules,
       cautions,
       notices,
-    } = recruitment;
+    } = await this.$content("recruitment/recruitment")
+      .only([
+        "th",
+        "is_visible_notice",
+        "notice_title",
+        "boxes",
+        "qualifications",
+        "schedules",
+        "cautions",
+        "notices",
+      ])
+      .fetch();
+    const { recruitment_notice, recruitment_start, recruitment_deadline } =
+      await this.$content("main")
+        .only([
+          "recruitment_notice",
+          "recruitment_start",
+          "recruitment_deadline",
+        ])
+        .fetch();
 
     const bannerType = this.getType(
       recruitment_start,
       recruitment_deadline,
       recruitment_notice
     );
+    console.log(bannerType);
 
     this.banner.bannerType = bannerType;
     this.banner.th = th;
@@ -118,7 +129,7 @@ export default defineComponent({
       bannerType === "PROGRESS"
         ? this.getRemainingPeriod(recruitment_deadline)
         : -1;
-    this.bannerBoxes = boxes.filter((box) => box.type === bannerType);
+    this.banner.bannerBoxes = boxes;
     this.notice.isVisible = is_visible_notice;
     this.notice.boxTitle = notice_title;
     this.notice.contents = notices.filter((notice) => notice.is_visible_notice);
@@ -134,7 +145,32 @@ export default defineComponent({
   fetchOnServer: false,
   computed: {
     bannerType() {
-      return this.banner.bannerType;
+      let type = "DEFAULT";
+      if (this.before_recruitment) {
+        type = "NOTICE";
+      } else if (this.is_recruiting) {
+        type = "PROGRESS";
+      }
+      return type;
+    },
+    bannerTitle() {
+      return this.makeBannerTitle(this.bannerType, this.banner.th);
+    },
+    bannerSubtitle() {
+      return this.makeBannerSubTitle(this.bannerType, this.banner.th);
+    },
+    bannerPeriod() {
+      return this.is_recruiting
+        ? this.getDateWithDay(this.recruitment_start, this.recruitment_deadline)
+        : "";
+    },
+    remainingPeriod() {
+      return this.getRemainingPeriod(this.recruitment_deadline);
+    },
+    bannerBoxes() {
+      return this.banner.bannerBoxes.filter(
+        (box) => box.type === this.bannerType
+      );
     },
     getBackgroundImage() {
       let img = this.recruitment_default_desktop;
@@ -156,6 +192,24 @@ export default defineComponent({
         id: it.id,
         text: it.caution,
       }));
+    },
+    s_day() {
+      const result = new Date(this.recruitment_start) - new Date();
+      return Math.ceil(result / 86400000);
+    },
+    d_day() {
+      const result = new Date(this.recruitment_deadline) - new Date();
+      return this.s_day < 0 ? Math.ceil(result / 86400000) : 0;
+    },
+    notice_day() {
+      const result = new Date(this.recruitment_notice) - new Date();
+      return Math.ceil(result / 86400000);
+    },
+    before_recruitment() {
+      return this.notice_day < 0 && this.s_day >= 0;
+    },
+    is_recruiting() {
+      return this.s_day < 0 && this.d_day >= 0;
     },
   },
   methods: {
@@ -227,19 +281,15 @@ export default defineComponent({
         return "DEFAULT";
       }
 
-      const now = new Date();
-      const start = new Date(startDate);
-      const end = new Date(endDate);
-      const notice = new Date(noticeDate);
+      const now = new Date().getTime();
+      const start = new Date(startDate).getTime();
+      const end = new Date(endDate).getTime();
+      const notice = new Date(noticeDate).getTime();
 
-      if (
-        now.getTime() >= notice.getTime() &&
-        now.getTime() < start.getTime()
-      ) {
+      if (now >= notice && now < start) {
         return "NOTICE";
       }
-
-      if (now.getTime() >= start.getTime() && now.getTime() < end.getTime()) {
+      if (this.is_recruiting) {
         return "PROGRESS";
       }
 

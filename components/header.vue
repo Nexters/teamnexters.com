@@ -48,18 +48,18 @@ export default defineComponent({
       default: false,
     },
   },
-  data() {
-    return {
-      menuClose: true,
-    };
-  },
-  setup(props) {
+  setup() {
     const store = useStore();
     return {
       toggleMenu: () => {
         store.dispatch("toggleMenu");
       },
       isMenuOpen: computed(() => store.state.isMenuOpen),
+    };
+  },
+  data() {
+    return {
+      menuClose: true,
     };
   },
   computed: {

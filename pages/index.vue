@@ -112,7 +112,7 @@ export default defineComponent({
       return desc;
     },
     badge_text() {
-      return this.d_day >= 0 ? `마감 D-${this.d_day}` : "";
+      return this.d_day > 0 ? `마감 D-${this.d_day}` : "마감 D-day";
     },
     notice_day() {
       const result = new Date(this.recruitment_notice) - new Date();
