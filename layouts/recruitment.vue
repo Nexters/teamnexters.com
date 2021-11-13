@@ -49,9 +49,12 @@ import { Component, Vue } from "nuxt-property-decorator";
     this.headers = headers;
     this.items = items;
     this.copyrights = copyrights;
-    this.recruitment_notice = recruitment_notice;
-    this.recruitment_start = recruitment_start;
-    this.recruitment_deadline = recruitment_deadline;
+    const yymmdd = (date) => {
+      return new Date(new Date(date).setHours(0, 0, 0, 0));
+    };
+    this.recruitment_notice = yymmdd(recruitment_notice);
+    this.recruitment_start = yymmdd(recruitment_start);
+    this.recruitment_deadline = yymmdd(recruitment_deadline);
   },
   computed: {
     s_day() {

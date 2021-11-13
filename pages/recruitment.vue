@@ -138,9 +138,13 @@ export default defineComponent({
     );
     this.schedules = schedules;
     this.cautions = cautions.filter((caution) => caution.is_visible_caution);
-    this.recruitment_notice = recruitment_notice;
-    this.recruitment_start = recruitment_start;
-    this.recruitment_deadline = recruitment_deadline;
+
+    const yymmdd = (date) => {
+      return new Date(new Date(date).setHours(0, 0, 0, 0));
+    };
+    this.recruitment_notice = yymmdd(recruitment_notice);
+    this.recruitment_start = yymmdd(recruitment_start);
+    this.recruitment_deadline = yymmdd(recruitment_deadline);
   },
   fetchOnServer: false,
   computed: {

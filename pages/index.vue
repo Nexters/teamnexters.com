@@ -45,6 +45,10 @@ export default defineComponent({
         "recruitment_href",
       ])
       .fetch();
+
+    const yymmdd = (date) => {
+      return new Date(new Date(date).setHours(0, 0, 0, 0));
+    };
     const {
       slogan,
       default_desc,
@@ -66,9 +70,9 @@ export default defineComponent({
       default_a: default_a,
       default_href: default_href,
       th: th,
-      recruitment_notice: recruitment_notice,
-      recruitment_start: recruitment_start,
-      recruitment_deadline: recruitment_deadline,
+      recruitment_notice: yymmdd(recruitment_notice),
+      recruitment_start: yymmdd(recruitment_start),
+      recruitment_deadline: yymmdd(recruitment_deadline),
       recruitment_notice_a: recruitment_notice_a,
       recruitment_notice_desc: recruitment_notice_desc,
       recruitment_in_progress_a: recruitment_in_progress_a,

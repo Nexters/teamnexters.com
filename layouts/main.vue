@@ -59,9 +59,13 @@ import background from "~/assets/css/export.scss";
     this.headers = headers;
     this.items = items;
     this.copyrights = copyrights;
-    this.recruitment_notice = recruitment_notice;
-    this.recruitment_start = recruitment_start;
-    this.recruitment_deadline = recruitment_deadline;
+
+    const yymmdd = (date) => {
+      return new Date(new Date(date).setHours(0, 0, 0, 0));
+    };
+    this.recruitment_notice = yymmdd(recruitment_notice);
+    this.recruitment_start = yymmdd(recruitment_start);
+    this.recruitment_deadline = yymmdd(recruitment_deadline);
   },
   computed: {
     notice_day() {
@@ -73,7 +77,7 @@ import background from "~/assets/css/export.scss";
       return Math.ceil(result / 86400000);
     },
     d_day() {
-      const result = new Date(this.recruitment_deadline) - new Date();
+      const result = this.recruitment_deadline - new Date();
       return this.s_day < 0 ? Math.ceil(result / 86400000) : 0;
     },
     before_recruitment() {
