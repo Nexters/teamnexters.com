@@ -72,9 +72,7 @@ export default defineComponent({
       this.isSponsorVisible = !this.isSponsorVisible;
     },
     icon(item) {
-      const src = this.isWhite ? item.white : item.black;
-      console.log(src);
-      return src;
+      return this.isWhite ? item.white : item.black;
     },
   },
 });
