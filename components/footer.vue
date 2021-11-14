@@ -3,7 +3,7 @@
     <div class="footer">
       <div class="leftArea">
         <div class="sns">
-          <ul v-for="item in items" :key="item.idx">
+          <ul v-for="item in items" v-show="item.visible" :key="item.idx">
             <a :href="item.href">
               <img :src="icon(item)" :alt="item.name" />
             </a>

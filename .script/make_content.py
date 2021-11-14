@@ -51,7 +51,7 @@ def make_about(
         f.write(json.dumps(about, ensure_ascii=False, indent=2))
 
     for idx, review in enumerate(reviews[1:]):
-        author, th, title, href, _ = review
+        author, th, title, href = review
         _review = {
             "id": idx,
             "author": author,
@@ -109,10 +109,11 @@ def make_project(data: Dict[str, Any]) -> None:
 def make_footer(data: Dict[str, Any]) -> None:
     sns_items = []
     for idx, row in enumerate(data[1:]):
-        name, href, _black, _white = row
+        name, href, _black, _white, _visible = row
         black = f"https://drive.google.com/uc?export=view&id={_black}"
         white = f"https://drive.google.com/uc?export=view&id={_white}"
-        sns_items.append({"idx":idx, "name": name, "href": href, "black": black, "white": white})
+        visible = bool(_visible)
+        sns_items.append({"idx":idx, "name": name, "href": href, "black": black, "white": white, "visible": visible})
 
     for idx, sns in enumerate(sns_items):
         with open(f"./content/footers/sns/{idx}.json", mode="w", encoding="utf-8") as f:

@@ -54,7 +54,7 @@ import background from "~/assets/css/export.scss";
         ])
         .fetch();
     const items = await this.$content("footers/sns")
-      .only(["idx", "name", "href", "black", "white"])
+      .only(["idx", "name", "href", "black", "white", "visible"])
       .fetch();
     const { copyrights } = await this.$content("footers/copyrights")
       .only(["copyrights"])

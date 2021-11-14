@@ -32,7 +32,7 @@ import Footer from "~/components/footer.vue";
       .only(["headers"])
       .fetch();
     const items = await this.$content("footers/sns")
-      .only(["idx", "name", "href", "black", "white"])
+      .only(["idx", "name", "href", "black", "white", "visible"])
       .fetch();
     const { copyrights } = await this.$content("footers/copyrights")
       .only(["copyrights"])
