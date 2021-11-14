@@ -52,17 +52,40 @@ export default defineComponent({
   color: white;
   text-decoration: none;
 
-  &.dark {
-    background-color: $background-inverse;
-  }
-
   &:hover {
     transition: 0.3s;
     cursor: pointer;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      $background-primary;
   }
+
   &:active {
     transition: 0.3s;
     cursor: pointer;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      $background-primary;
+  }
+
+  &.dark {
+    background-color: $background-inverse;
+
+    &:hover {
+      background: linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0.2),
+          rgba(255, 255, 255, 0.2)
+        ),
+        $background-inverse;
+    }
+
+    &:active {
+      background: linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0.4),
+          rgba(255, 255, 255, 0.4)
+        ),
+        $background-inverse;
+    }
   }
 }
 
