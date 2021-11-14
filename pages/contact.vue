@@ -236,7 +236,7 @@ export default defineComponent({
 
 @include m-c2 {
   .contactBody {
-    padding: 32px;
+    padding: 24px;
 
     .headerArea {
       max-width: 713px;
@@ -266,7 +266,7 @@ export default defineComponent({
 
 @include m-c1 {
   .contactBody {
-    padding: 32px;
+    padding: 24px;
 
     .headerArea {
       max-width: 713px;
