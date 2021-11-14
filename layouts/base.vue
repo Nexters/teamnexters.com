@@ -34,7 +34,7 @@ import Footer from "~/components/footer.vue";
     const items = await this.$content("footers/sns")
       .only(["idx", "name", "href", "black", "white"])
       .fetch();
-    const copyrights = this.$content("footers/copyrights")
+    const { copyrights } = await this.$content("footers/copyrights")
       .only(["copyrights"])
       .fetch();
 
