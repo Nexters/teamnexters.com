@@ -137,5 +137,5 @@ if __name__ == "__main__":
     data = json.loads(google_results)
     projects = data["results"][0]["result"]["rawData"]
     make_project(projects)
-    make_footer(footer)
+    make_footer(footer["result"]["rawData"])
 

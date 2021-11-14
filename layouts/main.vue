@@ -45,9 +45,6 @@ import background from "~/assets/css/export.scss";
     const { headers } = await this.$content("headers")
       .only(["headers"])
       .fetch();
-    const { items, copyrights } = await this.$content("footers")
-      .only(["items", "copyrights"])
-      .fetch();
     const { recruitment_notice, recruitment_start, recruitment_deadline } =
       await this.$content("main")
         .only([
@@ -56,6 +53,13 @@ import background from "~/assets/css/export.scss";
           "recruitment_deadline",
         ])
         .fetch();
+    const items = await this.$content("footers/sns")
+      .only(["idx", "name", "href", "black", "white"])
+      .fetch();
+    const copyrights = this.$content("footers/copyrights")
+      .only(["copyrights"])
+      .fetch();
+
     this.headers = headers;
     this.items = items;
     this.copyrights = copyrights;

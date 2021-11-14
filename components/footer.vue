@@ -3,9 +3,9 @@
     <div class="footer">
       <div class="leftArea">
         <div class="sns">
-          <ul v-for="item in items" :key="item.name">
+          <ul v-for="item in items" :key="item.idx">
             <a :href="item.href">
-              <img :src="sns_icon[item.name]" :alt="item.name" />
+              <img :src="icon(item)" :alt="item.name" />
             </a>
           </ul>
         </div>
@@ -35,7 +35,7 @@
   </footer>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from "@nuxtjs/composition-api";
 
 export default defineComponent({
@@ -57,17 +57,6 @@ export default defineComponent({
   },
   setup(props) {
     return {
-      sns_icon: {
-        facebook: props.isWhite
-          ? require("~/assets/img/facebook.svg")
-          : require("~/assets/img/facebook_black.svg"),
-        github: props.isWhite
-          ? require("~/assets/img/github.svg")
-          : require("~/assets/img/github_black.svg"),
-        instagram: props.isWhite
-          ? require("~/assets/img/instagram.png")
-          : require("~/assets/img/instagram_black.svg"),
-      },
       arrowIcon: props.isWhite
         ? require("~/assets/img/arrow_right.svg")
         : require("~/assets/img/arrow_right_black.svg"),
@@ -81,6 +70,11 @@ export default defineComponent({
   methods: {
     handleSponsorClick() {
       this.isSponsorVisible = !this.isSponsorVisible;
+    },
+    icon(item) {
+      const src = this.isWhite ? item.white : item.black;
+      console.log(src);
+      return src;
     },
   },
 });
