@@ -115,7 +115,6 @@ export default defineComponent({
       recruitment_deadline,
       recruitment_notice
     );
-    console.log(bannerType);
 
     this.banner.bannerType = bannerType;
     this.banner.th = th;

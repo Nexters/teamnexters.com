@@ -148,7 +148,8 @@ export default defineComponent({
 @include desktop {
   .banner {
     height: 610px;
-    padding: 64px;
+    padding-left: 64px;
+    padding-right: 64px;
 
     .bannerMetaWrap {
       width: 1200px;
@@ -190,7 +191,8 @@ export default defineComponent({
 @include tablet {
   .banner {
     height: 610px;
-    padding: 64px;
+    padding-left: 64px;
+    padding-right: 64px;
 
     .bannerMetaWrap {
       width: 100%;
@@ -232,7 +234,8 @@ export default defineComponent({
 @include mobile {
   .banner {
     height: 354px;
-    padding: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
 
     .bannerMetaWrap {
       width: 713px;
