@@ -106,11 +106,24 @@ def make_project(data: Dict[str, Any]) -> None:
         with open(f"./content/projects/{idx}.json", mode="w", encoding="utf-8") as f:
             f.write(json.dumps(project, ensure_ascii=False, indent=2))
 
+def make_footer(data: Dict[str, Any]) -> None:
+    sns_items = []
+    for idx, row in enumerate(data[1:]):
+        name, href, _black, _white = row
+        black = f"https://drive.google.com/uc?export=view&id={_black}"
+        white = f"https://drive.google.com/uc?export=view&id={_white}"
+        sns_items.append({"idx":idx, "name": name, "href": href, "black": black, "white": white})
+
+    for idx, sns in enumerate(sns_items):
+        with open(f"./content/footers/sns/{idx}.json", mode="w", encoding="utf-8") as f:
+            f.write(json.dumps(sns, ensure_ascii=False, indent=2))
+
+
 if __name__ == "__main__":
     with open("./_content/data.json", mode="r") as f:
         google_results = f.read()
     data = json.loads(google_results)
-    main, main_background, about, about_top_image, informations, reviews = data["results"]
+    main, main_background, about, about_top_image, informations, reviews, footer = data["results"]
     make_main(main["result"]["rawData"], main_background["result"]["rawData"])
     make_about(
         about["result"]["rawData"],
@@ -124,4 +137,5 @@ if __name__ == "__main__":
     data = json.loads(google_results)
     projects = data["results"][0]["result"]["rawData"]
     make_project(projects)
+    make_footer(footer)
 
