@@ -4,7 +4,11 @@
     <main>
       <nuxt v-if="!isMenuOpen || $mq !== 'mobile'" />
     </main>
-    <Footer :items="items" :copyrights="copyrights"></Footer>
+    <Footer
+      :items="items"
+      :copyrights="copyrights"
+      :sponsors="sponsors"
+    ></Footer>
   </div>
 </template>
 
@@ -16,7 +20,7 @@ import { Component, Vue } from "nuxt-property-decorator";
   name: "DefaultLayout",
   fetchOnServer: false,
   data() {
-    return { headers: [], items: [], copyrights: "" };
+    return { headers: [], items: [], copyrights: "", sponsors: [] };
   },
   setup() {
     const store = useStore();
@@ -34,10 +38,13 @@ import { Component, Vue } from "nuxt-property-decorator";
     const { copyrights } = await this.$content("footers/copyrights")
       .only(["copyrights"])
       .fetch();
-
+    const sponsors = await this.$content("footers/sponsor")
+      .only(["idx", "name", "href", "isVisible"])
+      .fetch();
     this.headers = headers;
     this.items = items;
     this.copyrights = copyrights;
+    this.sponsors = sponsors.filter((sponsor) => sponsor.isVisible);
   },
 })
 class DefaultLayout extends Vue {

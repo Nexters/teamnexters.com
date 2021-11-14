@@ -4,7 +4,11 @@
     <main>
       <nuxt v-if="!isMenuOpen || $mq !== 'mobile'" />
     </main>
-    <Footer :items="items" :copyrights="copyrights"></Footer>
+    <Footer
+      :items="items"
+      :copyrights="copyrights"
+      :sponsors="sponsors"
+    ></Footer>
   </div>
 </template>
 
@@ -20,6 +24,7 @@ import { Component, Vue } from "nuxt-property-decorator";
       headers: [],
       items: [],
       copyrights: "",
+      sponsors: [],
       recruitment_notice: "",
       recruitment_start: "",
       recruitment_deadline: "",
@@ -49,9 +54,15 @@ import { Component, Vue } from "nuxt-property-decorator";
     const { copyrights } = await this.$content("footers/copyrights")
       .only(["copyrights"])
       .fetch();
+    const sponsors = await this.$content("footers/sponsor")
+      .only(["idx", "name", "href", "isVisible"])
+      .fetch();
+
     this.headers = headers;
     this.items = items;
     this.copyrights = copyrights;
+    this.sponsors = sponsors.filter((sponsor) => sponsor.isVisible);
+
     const yymmdd = (date) => {
       return new Date(new Date(date).setHours(0, 0, 0, 0));
     };

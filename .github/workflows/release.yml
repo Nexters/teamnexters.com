@@ -53,7 +53,8 @@ jobs:
               { "command": "getData", "args": { "worksheetTitle": "A-image", "minCol": 1 } },
               { "command": "getData", "args": { "worksheetTitle": "A-information", "minCol": 1 } },
               { "command": "getData", "args": { "worksheetTitle": "A-review", "minCol": 1 } },
-              { "command": "getData", "args": { "worksheetTitle": "Footer", "minCol": 1 } }
+              { "command": "getData", "args": { "worksheetTitle": "Footer", "minCol": 1 } },
+              { "command": "getData", "args": { "worksheetTitle": "Sponsor", "minCol": 1 } }
             ]
       - id: project
         name: Load Google Sheet - Project

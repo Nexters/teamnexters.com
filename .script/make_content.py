@@ -106,7 +106,7 @@ def make_project(data: Dict[str, Any]) -> None:
         with open(f"./content/projects/{idx}.json", mode="w", encoding="utf-8") as f:
             f.write(json.dumps(project, ensure_ascii=False, indent=2))
 
-def make_footer(data: Dict[str, Any]) -> None:
+def make_footer(data: Dict[str, Any], sponsor: Dict[str, Any]) -> None:
     sns_items = []
     for idx, row in enumerate(data[1:]):
         name, href, _black, _white, _visible = row
@@ -119,12 +119,21 @@ def make_footer(data: Dict[str, Any]) -> None:
         with open(f"./content/footers/sns/{idx}.json", mode="w", encoding="utf-8") as f:
             f.write(json.dumps(sns, ensure_ascii=False, indent=2))
 
+    sponsors = []
+    for idx, row in enumerate(sponsor[1:]):
+        name, href, isVisible = row
+        sponsors.append({"idx": idx, "name": name, "href": href, "isVisible": isVisible == "TRUE"})
+
+    for idx, sponsor in enumerate(sponsors):
+        with open(f"./content/footers/sponsor/{idx}.json", mode="w", encoding="utf-8") as f:
+            f.write(json.dumps(sponsor, ensure_ascii=False, indent=2))
+
 
 if __name__ == "__main__":
     with open("./_content/data.json", mode="r") as f:
         google_results = f.read()
     data = json.loads(google_results)
-    main, main_background, about, about_top_image, informations, reviews, footer = data["results"]
+    main, main_background, about, about_top_image, informations, reviews, footer, sponsor = data["results"]
     make_main(main["result"]["rawData"], main_background["result"]["rawData"])
     make_about(
         about["result"]["rawData"],
@@ -138,5 +147,5 @@ if __name__ == "__main__":
     data = json.loads(google_results)
     projects = data["results"][0]["result"]["rawData"]
     make_project(projects)
-    make_footer(footer["result"]["rawData"])
+    make_footer(footer["result"]["rawData"], sponsor["result"]["rawData"])
 

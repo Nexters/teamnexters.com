@@ -17,11 +17,14 @@
           <div class="sponsorBoxParagraph">
             <div v-if="isSponsorVisible" class="sponsorBox">
               <article class="sponsorList">
-                <section class="sponsorItem">
-                  <span>Naver Cloud Platform</span>
-                </section>
-                <section class="sponsorItem">
-                  <span>Naver D2 </span>
+                <section
+                  v-for="sponsor in sponsors"
+                  :key="sponsor.idx"
+                  class="sponsorItem"
+                >
+                  <a :href="sponsor.href">
+                    <span>{{ sponsor.name }}</span>
+                  </a>
                 </section>
               </article>
             </div>
@@ -48,6 +51,10 @@ export default defineComponent({
     copyrights: {
       type: String,
       required: true,
+    },
+    sponsors: {
+      type: Array,
+      require: true,
     },
     isWhite: {
       type: Boolean,
@@ -145,6 +152,14 @@ footer {
       box-sizing: border-box;
 
       .sponsorList {
+        a {
+          text-decoration: none;
+          color: $text-sub;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
         .sponsorItem {
           font-weight: 400;
           letter-spacing: -0.02em;

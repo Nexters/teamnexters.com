@@ -4,7 +4,11 @@
     <main>
       <nuxt v-if="$mq !== 'mobile' || !isMenuOpen" />
     </main>
-    <Footer :items="items" :copyrights="copyrights"></Footer>
+    <Footer
+      :items="items"
+      :copyrights="copyrights"
+      :sponsors="sponsors"
+    ></Footer>
   </div>
 </template>
 
@@ -19,7 +23,7 @@ import Footer from "~/components/footer.vue";
   components: { Header, Footer },
   fetchOnServer: false,
   data() {
-    return { headers: [], items: [], copyrights: "" };
+    return { headers: [], items: [], copyrights: "", sponsors: [] };
   },
   setup() {
     const store = useStore();
@@ -37,10 +41,13 @@ import Footer from "~/components/footer.vue";
     const { copyrights } = await this.$content("footers/copyrights")
       .only(["copyrights"])
       .fetch();
-
+    const sponsors = await this.$content("footers/sponsor")
+      .only(["idx", "name", "href", "isVisible"])
+      .fetch();
     this.headers = headers;
     this.items = items;
     this.copyrights = copyrights;
+    this.sponsors = sponsors.filter((sponsor) => sponsor.isVisible);
   },
 })
 class BaseLayout extends Vue {}

@@ -9,7 +9,12 @@
   >
     <Header :headers="headers" :is-white="true"></Header>
     <nuxt />
-    <Footer :items="items" :copyrights="copyrights" :is-white="true"></Footer>
+    <Footer
+      :items="items"
+      :copyrights="copyrights"
+      :sponsors="sponsors"
+      :is-white="true"
+    ></Footer>
   </div>
 </template>
 
@@ -29,6 +34,7 @@ import background from "~/assets/css/export.scss";
       headers: [],
       items: [],
       copyrights: "",
+      sponsors: [],
       recruitment_notice: "",
       recruitment_start: "",
       recruitment_deadline: "",
@@ -59,10 +65,14 @@ import background from "~/assets/css/export.scss";
     const { copyrights } = await this.$content("footers/copyrights")
       .only(["copyrights"])
       .fetch();
+    const sponsors = await this.$content("footers/sponsor")
+      .only(["idx", "name", "href", "isVisible"])
+      .fetch();
 
     this.headers = headers;
     this.items = items;
     this.copyrights = copyrights;
+    this.sponsors = sponsors.filter((sponsor) => sponsor.isVisible);
 
     const yymmdd = (date) => {
       return new Date(new Date(date).setHours(0, 0, 0, 0));
