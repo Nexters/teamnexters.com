@@ -1,38 +1,40 @@
 <template>
   <footer>
     <div class="footer">
-      <div class="leftArea">
-        <div class="sns">
-          <ul v-for="item in items" v-show="item.visible" :key="item.idx">
-            <a :href="item.href">
-              <img :src="icon(item)" :alt="item.name" />
-            </a>
-          </ul>
-        </div>
-        <div class="sponsor">
-          <p @click="handleSponsorClick">
-            Sponsored by
-            <img class="arrow-right" :src="arrowIcon" />
-          </p>
-          <div class="sponsorBoxParagraph">
-            <div v-if="isSponsorVisible" class="sponsorBox">
-              <article class="sponsorList">
-                <section
-                  v-for="sponsor in sponsors"
-                  :key="sponsor.idx"
-                  class="sponsorItem"
-                >
-                  <a :href="sponsor.href">
-                    <span>{{ sponsor.name }}</span>
-                  </a>
-                </section>
-              </article>
+      <div class="sns">
+        <ul v-for="item in items" v-show="item.visible" :key="item.idx">
+          <a :href="item.href">
+            <img :src="icon(item)" :alt="item.name" />
+          </a>
+        </ul>
+      </div>
+      <div class="footer-container">
+        <div class="leftArea">
+          <div class="sponsor">
+            <p @click="handleSponsorClick">
+              Sponsored by
+              <img class="arrow-right" :src="arrowIcon" />
+            </p>
+            <div class="sponsorBoxParagraph">
+              <div v-if="isSponsorVisible" class="sponsorBox">
+                <article class="sponsorList">
+                  <section
+                    v-for="sponsor in sponsors"
+                    :key="sponsor.idx"
+                    class="sponsorItem"
+                  >
+                    <a :href="sponsor.href">
+                      <span>{{ sponsor.name }}</span>
+                    </a>
+                  </section>
+                </article>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="copyrights">
-        {{ copyrights }}
+        <div class="copyrights">
+          {{ copyrights }}
+        </div>
       </div>
     </div>
   </footer>
@@ -111,6 +113,14 @@ footer {
   margin: auto;
   width: 100%;
   letter-spacing: -0.02em;
+  display: flex;
+  flex-direction: column;
+  .footer-container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
   .leftArea {
     align-self: flex-start;
@@ -202,8 +212,8 @@ footer {
       }
     }
     .copyrights {
+      align-self: flex-end;
       margin-left: auto;
-      padding-top: 16px;
 
       font-size: 14px;
       line-height: 21px;
@@ -226,6 +236,7 @@ footer {
 
     .sns {
       display: flex;
+      margin-right: auto;
       margin-bottom: 24px;
       img {
         height: 32px;
@@ -244,6 +255,7 @@ footer {
       }
     }
     .copyrights {
+      align-self: flex-end;
       margin-left: auto;
 
       font-size: 18px;
@@ -266,6 +278,7 @@ footer {
 
     .sns {
       display: flex;
+      margin-right: auto;
       margin-bottom: 24px;
       img {
         height: 32px;
@@ -284,6 +297,7 @@ footer {
       }
     }
     .copyrights {
+      align-self: flex-end;
       margin-left: auto;
 
       font-size: 18px;
