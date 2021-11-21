@@ -181,7 +181,7 @@ def make_recruitment(
     r_background: GoogleSheetResult,
 ) -> None:
 
-    bg, th, recruitment_start, recruitment_end, is_visible_notice, notice_title, type = recruitment[
+    bg, th, recruitment_start, recruitment_end, is_visible_notice, notice_title = recruitment[
         1
     ]
 
@@ -193,7 +193,6 @@ def make_recruitment(
         "recruitment_end": recruitment_end,
         "is_visible_notice": is_visible_notice == "TRUE",
         "notice_title": notice_title,
-        "type": type,
     }
 
     # banner box
@@ -271,13 +270,36 @@ def make_color(data: GoogleSheetResult) -> None:
                 f.write(f"${name}: {value};\n")
 
 
-def make_contacts(data: GoogleSheetResult) -> None:
+def make_contacts(contact_us: GoogleSheetResult, faq: GoogleSheetResult) -> None:
+
+    contact = {}
+
+    _contacts = []
+    for idx, c in enumerate(contact_us[1:]):
+        title, text, contact_type, is_visible = c
+        _contact = {
+            "id": idx,
+            "title": title,
+            "text": text,
+            "type": contact_type,
+            "isVisible": is_visible == "TRUE"
+        }
+        _contacts.append(_contact)
+
+    _faqs = []
+    for idx, f in enumerate(faq[1:]):
+        question, answer = f
+        _faq = {
+            "id": idx,
+            "question": question,
+            "answer": answer
+        }
+        _faqs.append(_faq)
+
+    contact["contact"] = _contacts
+    contact["faq"] = _faqs
+
     with open("./content/contacts.json", mode="w", encoding="utf-8") as f:
-        f.write(
-            json.dumps(
-                {"results": {"result": {"rawData": data}}},
-                ensure_ascii=False,
-                indent=2,
-            )
-        )
+        f.write(json.dumps(contact, ensure_ascii=False, indent=2))
+
 

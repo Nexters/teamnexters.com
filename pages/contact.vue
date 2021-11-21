@@ -6,9 +6,11 @@
       </div>
       <article class="contactArea" @keydown="debug">
         <ContactBox
+          v-for="contact in contacts"
+          :key="contact.id"
           class="contactBox"
-          :contact-type="`kakao`"
-          :on-click="handleClick('kakao')"
+          :contact-type="`${contact.type}`"
+          :on-click="handleClick(`${contact.type}`)"
         />
         <ContactBox
           class="contactBox"
@@ -27,7 +29,7 @@
       <article class="faqArea">
         <FaqBox
           v-for="faq in faqs"
-          :key="faq.idx"
+          :key="faq.id"
           class="faqBox"
           :question="faq.question"
           :answer="faq.answer"
@@ -50,15 +52,15 @@ export default defineComponent({
   data() {
     return {
       faqs: [],
+      contacts: [],
     };
   },
   async fetch() {
-    const [_, ...rawdata] = await this.FetchAll();
-    this.faqs = rawdata.map((faq, index) => ({
-      idx: index,
-      question: faq[0],
-      answer: faq[1],
-    }));
+    const { contact, faqs } = await this.$content("contact")
+      .only(["contact", "faq"])
+      .fetch();
+    this.contacts = contact.filter((c) => c.isVisible);
+    this.faqs = faqs;
   },
   mounted() {
     const faq = this.$route.hash || null;
@@ -73,12 +75,6 @@ export default defineComponent({
   methods: {
     debug(e) {
       console.log(e);
-    },
-    FetchAll: async function () {
-      const { results } = await this.$content("contact").fetch();
-      const { rawData } = results[0].result;
-
-      return rawData;
     },
     handleClick: (action) => () => {
       switch (action) {
@@ -109,6 +105,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "~/assets/css/_device.scss";
+
 * {
   font-family: Spoqa Han Sans Neo;
 }
@@ -117,6 +114,7 @@ export default defineComponent({
 .contact-leave-active {
   transition: opacity 1.5s;
 }
+
 .contact-enter,
 .contact-leave-active {
   opacity: 0;

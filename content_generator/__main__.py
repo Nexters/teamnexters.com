@@ -105,7 +105,9 @@ if __name__ == "__main__":
         )
         pbar.update(1)
 
-        _contact = spread_sheet.worksheet("Contact").get_all_values()
+        _contact = spread_sheet.worksheet("Contact-Us").get_all_values()
         pbar.update(1)
-        make_contacts(_contact)
+        _faq = spread_sheet.worksheet("FAQ").get_all_values()
+        pbar.update(1)
+        make_contacts(_contact, _faq)
         pbar.update(1)
