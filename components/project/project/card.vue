@@ -106,8 +106,8 @@ a {
 @include d-c3 {
   .thumbnail {
     width: 100%;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
   }
 
   .name {
@@ -161,8 +161,8 @@ a {
     flex-basis: 364.5px;
     .thumbnail {
       width: 100%;
-      border-top-left-radius: 16px;
-      border-top-right-radius: 16px;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
     }
 
     .name {
@@ -214,8 +214,8 @@ a {
 @include d-c1 {
   .thumbnail {
     width: 100%;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
   }
   .name {
     margin: 24px 0 0 24px;
@@ -265,8 +265,8 @@ a {
 @include m-c2 {
   .thumbnail {
     width: 100%;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
   }
   .name {
     margin: 16px 0 0 16px;
@@ -316,8 +316,8 @@ a {
 @include m-c1 {
   .thumbnail {
     width: 100%;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
   }
   .name {
     margin: 16px 0 0 16px;
