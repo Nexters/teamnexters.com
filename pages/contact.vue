@@ -12,16 +12,6 @@
           :contact-type="`${contact.type}`"
           :on-click="handleClick(`${contact.type}`)"
         />
-        <ContactBox
-          class="contactBox"
-          :contact-type="`gmail`"
-          :on-click="handleClick('gmail')"
-        />
-        <ContactBox
-          class="contactBox"
-          :contact-type="`facebook`"
-          :on-click="handleClick('facebook')"
-        />
       </article>
       <div id="faq" class="headerArea">
         <h2 class="header">FAQ</h2>
