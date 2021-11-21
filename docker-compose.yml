@@ -1,6 +1,17 @@
 version: "3.7"
 
 services:
+  content-updater:
+    image: python:3.6-alpine
+    tty: true
+    working_dir: /app
+    entrypoint: ["sh", "content_generator/entrypoint.sh"]
+    env_file:
+      - .env
+    volumes:
+      - ./content_generator:/app/content_generator
+      - ./content:/app/content
+      - ./assets:/app/assets
   app:
     image: ghcr.io/nexters/nextershp:latest
     build:
@@ -13,3 +24,5 @@ services:
     volumes:
       - ./content:/var/www/app/content
     restart: always
+    depends_on:
+      - content-updater

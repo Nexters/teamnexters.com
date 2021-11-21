@@ -271,10 +271,8 @@ def make_color(data: GoogleSheetResult) -> None:
 
 
 def make_contacts(contact_us: GoogleSheetResult, faq: GoogleSheetResult) -> None:
-
-    contact = {}
-
     _contacts = []
+
     for idx, c in enumerate(contact_us[1:]):
         title, text, contact_type, is_visible = c
         _contact = {
@@ -296,10 +294,12 @@ def make_contacts(contact_us: GoogleSheetResult, faq: GoogleSheetResult) -> None
         }
         _faqs.append(_faq)
 
-    contact["contact"] = _contacts
-    contact["faq"] = _faqs
+    for idx, _contact in enumerate(_contacts):
+        with open(f"./content/contacts/{idx}.json", mode="w", encoding="utf-8") as f:
+            f.write(json.dumps(_contact, ensure_ascii=False, indent=2))
 
-    with open("./content/contacts.json", mode="w", encoding="utf-8") as f:
-        f.write(json.dumps(contact, ensure_ascii=False, indent=2))
+    for idx, _faq in enumerate(_faqs):
+        with open(f"./content/contacts/faq/{idx}.json", mode="w", encoding="utf-8") as f:
+            f.write(json.dumps(_faq, ensure_ascii=False, indent=2))
 
 

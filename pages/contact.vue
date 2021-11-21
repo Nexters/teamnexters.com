@@ -46,11 +46,14 @@ export default defineComponent({
     };
   },
   async fetch() {
-    const { contact, faqs } = await this.$content("contact")
-      .only(["contact", "faq"])
+    this.faqs = await this.$content("contacts/faq")
+      .only(["question", "answer"])
       .fetch();
-    this.contacts = contact.filter((c) => c.isVisible);
-    this.faqs = faqs;
+
+    this.contacts = await this.$content("contacts")
+      .only(["title", "text", "type", "isVisible"])
+      .where({ isVisible: true })
+      .fetch();
   },
   mounted() {
     const faq = this.$route.hash || null;

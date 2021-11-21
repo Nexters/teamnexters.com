@@ -2,6 +2,8 @@
 
 구글 시트로부터 데이터를 읽어서 content를 생성
 
+> 300 per user per 60 seconds 주의
+
 ## Required
 
 - python3.6과 requirements.txt 항목들 설치
