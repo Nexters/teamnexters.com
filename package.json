@@ -8,6 +8,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "node .script/generate",
+    "generate:vercel": "node .script/content && node .script/generate",
     "post-update": "yarn upgrade --latest"
   },
   "repository": {
