@@ -7,4 +7,9 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - 8080:3000
+    env_file:
+      - .env
+    volumes:
+      - ./content:/var/www/app/content
+    restart: always

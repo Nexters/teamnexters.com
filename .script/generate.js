@@ -15,12 +15,13 @@ function getBinFile(cmd) {
   return path.join("node_modules", ".bin", cmd);
 }
 // Execute the command...
+console.log("run content_generator");
 PythonShell.run(
   "./content_generator",
-  { pythonOptions: ["-m"], env: process.env },
+  { pythonOptions: ["-u", "-m"], env: process.env },
   function (err) {
     if (err) throw err;
-    console.log("content generate finished");
+    console.log("content_generator complete");
     execSync(`${getBinFile("nuxt")} generate`, { stdio: [0, 1, 2] });
   }
 );
