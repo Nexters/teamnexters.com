@@ -7,7 +7,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
+    "generate": "node .script/generate",
     "post-update": "yarn upgrade --latest"
   },
   "repository": {
@@ -27,6 +27,8 @@
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/svg": "^0.3.0",
     "babel-eslint": "^10.1.0",
+    "cross-var": "1.1.0",
+    "dotenv-cli": "3.0.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-loader": "^4.0.2",
@@ -47,6 +49,7 @@
     "nuxt": "^2.15.8",
     "nuxt-lazy-load": "^1.2.9",
     "nuxt-property-decorator": "^2.9.1",
+    "python-shell": "^3.0.1",
     "vue-mq": "^1.0.1"
   },
   "commitlint": {

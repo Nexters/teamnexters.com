@@ -7,3 +7,14 @@ current_changelog:
 	@/bin/sh -c "echo \"${GREEN}[description] ${NC}\""
 	@npx standard-version --dry-run --silent | grep -v Done | grep -v "\-\-\-" | grep -v standard-version
 .PHONY: current_changelog
+
+ref:
+	@/bin/sh -c "echo \"${GREEN}pipenv install${NC}\""
+	@export PIPENV_VENV_IN_PROJECT=${PWD} && pipenv install --dev
+	@pipenv graph
+.PHONY: ref
+
+requirements:
+	@/bin/sh -c "echo \"${GREEN}[requirements.txt를 추출합니다]${NC}\""
+	@pipenv lock -r > requirements.txt
+.PHONY: requirements
