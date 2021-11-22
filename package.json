@@ -1,6 +1,6 @@
 {
   "name": "teamnexters.com",
-  "version": "21.0.0",
+  "version": "21.0.1",
   "description": "",
   "main": "nuxt.config.js",
   "scripts": {
