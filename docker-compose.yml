@@ -3,7 +3,6 @@ version: "3.7"
 services:
   content-updater:
     image: python:3.6-alpine
-    tty: true
     working_dir: /app
     entrypoint: ["sh", "content_generator/entrypoint.sh"]
     env_file:
@@ -19,8 +18,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - 8080:3000
-    env_file:
-      - .env
     volumes:
       - ./content:/var/www/app/content
     restart: always
