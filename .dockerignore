@@ -21,9 +21,3 @@ yarn-error.log
 *.njsproj
 *.sln
 *.sw?
-*.bak*
-
-config.json
-content
-.env
-*.pyc

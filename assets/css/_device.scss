@@ -1,0 +1,61 @@
+// Breakpoints
+$breakpoint-mobile: 840px;
+$breakpoint-tablet: 1200px;
+
+// for global
+
+@mixin mobile {
+  @media (min-width: 0px) and (max-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$breakpoint-mobile + 1px}) and (max-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-tablet + 1px}) {
+    @content;
+  }
+}
+
+// m: mobile  d: desktop  c: column
+$breakpoint-m-c1: 692px;
+$breakpoint-m-c2: 840px;
+$breakpoint-d-c1: 904px;
+$breakpoint-d-c2: 1317px;
+// d3는 그 이후
+
+// for projects
+
+@mixin m-c1 {
+  @media (min-width: 0px) and (max-width: #{$breakpoint-m-c1}) {
+    @content;
+  }
+}
+
+@mixin m-c2 {
+  @media (min-width: #{$breakpoint-m-c1 + 1px}) and (max-width: #{$breakpoint-m-c2}) {
+    @content;
+  }
+}
+
+@mixin d-c1 {
+  @media (min-width: #{$breakpoint-m-c2 + 1px}) and (max-width: #{$breakpoint-d-c1}) {
+    @content;
+  }
+}
+
+@mixin d-c2 {
+  @media (min-width: #{$breakpoint-d-c1}) and (max-width: #{$breakpoint-d-c2}) {
+    @content;
+  }
+}
+@mixin d-c3 {
+  @media (min-width: #{$breakpoint-d-c2 + 1px}) {
+    @content;
+  }
+}

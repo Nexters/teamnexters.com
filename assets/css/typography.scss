@@ -1,0 +1,77 @@
+$regular-weight: 400;
+$medium-weight: 500;
+$bold-weight: 700;
+
+* {
+  font-family: Spoqa Han Sans Neo;
+}
+
+h1.m {
+  font-weight: $bold-weight;
+  font-size: 40px;
+  line-height: 60px;
+  letter-spacing: -0.02em;
+}
+
+h1.d {
+  font-weight: $bold-weight;
+  font-size: 100px;
+  line-height: 150px;
+  letter-spacing: -0.02em;
+}
+
+h2.m {
+  font-weight: $bold-weight;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+}
+
+h2.d {
+  font-weight: $bold-weight;
+  font-size: 48px;
+  line-height: 64px;
+  letter-spacing: -0.02em;
+}
+
+h3.m {
+  font-weight: $bold-weight;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: -0.02em;
+}
+
+h3.d {
+  font-weight: $bold-weight;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+}
+
+p.m {
+  font-weight: $bold-weight;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: -0.02em;
+}
+
+p.d {
+  font-weight: $bold-weight;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+}
+
+caption.m {
+  font-weight: $bold-weight;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: -0.02em;
+}
+
+caption.d {
+  font-weight: $bold-weight;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: -0.02em;
+}
