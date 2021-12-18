@@ -1,15 +1,8 @@
 <template>
   <footer>
     <div class="footer">
-      <div class="sns">
-        <ul v-for="item in items" v-show="item.visible" :key="item.idx">
-          <a :href="item.href">
-            <img :src="icon(item)" :alt="item.name" />
-          </a>
-        </ul>
-      </div>
       <div class="footer-container">
-        <div class="leftArea">
+        <div class="topArea">
           <div class="sponsor">
             <p @click="handleSponsorClick">
               Sponsored by
@@ -31,9 +24,16 @@
               </div>
             </div>
           </div>
+          <div class="sns">
+            <ul v-for="item in items" v-show="item.visible" :key="item.idx">
+              <a :href="item.href">
+                <img :src="icon(item)" :alt="item.name" />
+              </a>
+            </ul>
+          </div>
         </div>
-        <div class="copyrights">
-          {{ copyrights }}
+        <div class="sponsorGuideText">
+          본 페이지는 Naver D2 서버 지원으로 운영되고 있습니다. @NEXTERS 2021
         </div>
       </div>
     </div>
@@ -118,16 +118,27 @@ footer {
   .footer-container {
     display: flex;
     width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+
+    .sponsorGuideText {
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      opacity: 0.6;
+      font-size: 14px;          
+    }
   }
 
-  .leftArea {
-    align-self: flex-start;
+  .topArea {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     z-index: 1;
   }
+
   .sponsor {
     display: flex;
+    margin-bottom: 24px;
+
     > p {
       display: flex;
       align-items: center;
@@ -160,6 +171,7 @@ footer {
       border-radius: 8px;
       background-color: $background-default;
       box-sizing: border-box;
+      z-index: 10;
 
       .sponsorList {
         a {
@@ -197,7 +209,6 @@ footer {
 
     .sns {
       display: flex;
-      margin-right: auto;
       margin-bottom: 16px;
       img {
         height: 24px;
@@ -210,6 +221,7 @@ footer {
       }
     }
     .sponsor {
+      margin-bottom: 16px;
       > p {
         font-size: 14px;
         line-height: 21px;
@@ -240,7 +252,6 @@ footer {
 
     .sns {
       display: flex;
-      margin-right: auto;
       margin-bottom: 24px;
       img {
         height: 32px;
@@ -253,6 +264,7 @@ footer {
       }
     }
     .sponsor {
+      margin-bottom: 24px;
       > p {
         font-size: 18px;
         line-height: 27px;
@@ -282,7 +294,6 @@ footer {
 
     .sns {
       display: flex;
-      margin-right: auto;
       margin-bottom: 24px;
       img {
         height: 32px;
