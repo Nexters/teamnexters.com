@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [21.0.2](https://github.com/mcauto/teamnexters.com/compare/v21.0.1...v21.0.2) (2021-12-18)
+
+
+### Bug Fixes
+
+* **footer:** add a sponsor guide text with position modify ([#2](https://github.com/mcauto/teamnexters.com/issues/2)) ([6be86cd](https://github.com/mcauto/teamnexters.com/commit/6be86cdaa4b210c123751e6e3881699fd1491c4c))
+
 ### [21.0.1](https://github.com/mcauto/teamnexters.com/compare/v21.0.0...v21.0.1) (2021-11-22)
 
 ## 21.0.0 (2021-11-22)
