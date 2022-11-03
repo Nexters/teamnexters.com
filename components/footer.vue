@@ -33,7 +33,7 @@
           </div>
         </div>
         <div class="sponsorGuideText">
-          본 페이지는 Naver D2 서버 지원으로 운영되고 있습니다. @NEXTERS 2021
+          본 페이지는 Naver Cloud Platform 서버 지원으로 운영되고 있습니다. @NEXTERS 2021
         </div>
       </div>
     </div>
