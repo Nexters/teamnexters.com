@@ -142,7 +142,7 @@ def make_footer(data: GoogleSheetResult, sponsor: GoogleSheetResult) -> None:
                 "href": href,
                 "black": black,
                 "white": white,
-                "visible": visible == "TRUE",
+                "visible": _visible == "TRUE",
             }
         )
 
