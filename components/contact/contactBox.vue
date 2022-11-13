@@ -44,6 +44,12 @@ export default defineComponent({
           text: "@Nexterspage",
           link: "",
         },
+        instagram: {
+          icon: require("~/assets/img/instagram.svg"),
+          iconText: "Instagram",
+          text: "https://www.instagram.com/team_nexters/",
+          link: "",
+        },
       },
     };
   },
