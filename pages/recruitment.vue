@@ -75,7 +75,7 @@ export default defineComponent({
       cautions: [],
       recruitment_notice: "",
       recruitment_start: "",
-      recruitment_deadline: "",
+      recruitment_end: "",
       ...background,
     };
   },
@@ -89,6 +89,8 @@ export default defineComponent({
       schedules,
       cautions,
       notices,
+      recruitment_start,
+      recruitment_end,
     } = await this.$content("recruitment/recruitment")
       .only([
         "th",
@@ -99,20 +101,17 @@ export default defineComponent({
         "schedules",
         "cautions",
         "notices",
+        "recruitment_start",
+        "recruitment_end",
       ])
       .fetch();
-    const { recruitment_notice, recruitment_start, recruitment_deadline } =
-      await this.$content("main")
-        .only([
-          "recruitment_notice",
-          "recruitment_start",
-          "recruitment_deadline",
-        ])
-        .fetch();
+    const { recruitment_notice } = await this.$content("main")
+      .only(["recruitment_notice"])
+      .fetch();
 
     const bannerType = this.getType(
       recruitment_start,
-      recruitment_deadline,
+      recruitment_end,
       recruitment_notice
     );
 
@@ -122,12 +121,10 @@ export default defineComponent({
     this.banner.bannerSubtitle = this.makeBannerSubTitle(bannerType, th);
     this.banner.isVisible = this.isBannerDateVisible(bannerType);
     this.banner.bannerPeriod = this.banner.isVisible
-      ? this.getDateWithDay(recruitment_start, recruitment_deadline)
+      ? this.getDateWithDay(recruitment_start, recruitment_end)
       : "";
     this.banner.remainingPeriod =
-      bannerType === "PROGRESS"
-        ? this.getRemainingPeriod(recruitment_deadline)
-        : -1;
+      bannerType === "PROGRESS" ? this.getRemainingPeriod(recruitment_end) : -1;
     this.banner.bannerBoxes = boxes;
     this.notice.isVisible = is_visible_notice;
     this.notice.boxTitle = notice_title;
@@ -143,7 +140,7 @@ export default defineComponent({
     };
     this.recruitment_notice = yymmdd(recruitment_notice);
     this.recruitment_start = yymmdd(recruitment_start);
-    this.recruitment_deadline = yymmdd(recruitment_deadline);
+    this.recruitment_end = yymmdd(recruitment_end);
   },
   fetchOnServer: false,
   computed: {
@@ -164,11 +161,11 @@ export default defineComponent({
     },
     bannerPeriod() {
       return this.is_recruiting
-        ? this.getDateWithDay(this.recruitment_start, this.recruitment_deadline)
+        ? this.getDateWithDay(this.recruitment_start, this.recruitment_end)
         : "";
     },
     remainingPeriod() {
-      return this.getRemainingPeriod(this.recruitment_deadline);
+      return this.getRemainingPeriod(this.recruitment_end);
     },
     bannerBoxes() {
       return this.banner.bannerBoxes.filter(
@@ -201,7 +198,7 @@ export default defineComponent({
       return Math.ceil(result / 86400000);
     },
     d_day() {
-      const result = new Date(this.recruitment_deadline) - new Date();
+      const result = new Date(this.recruitment_end) - new Date();
       return this.s_day < 0 ? Math.ceil(result / 86400000) : 0;
     },
     notice_day() {

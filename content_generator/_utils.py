@@ -16,7 +16,7 @@ def make_image_scss(path: str, data: GoogleSheetResult) -> None:
 
 def make_main(data: GoogleSheetResult, background: GoogleSheetResult) -> None:
     work_dir = "./content"
-    slogan, default_desc, default_a, default_href, th, recruitment_notice, recruitment_start, recruitment_deadline, recruitment_notice_desc, recruitment_notice_a, recruitment_in_progress_desc, recruitment_in_progress_a, recruitment_href = data[
+    slogan, default_desc, default_a, default_href, th, recruitment_notice, recruitment_start, recruitment_end, recruitment_notice_desc, recruitment_notice_a, recruitment_in_progress_desc, recruitment_in_progress_a, recruitment_href = data[
         1
     ]
     main = {
@@ -27,7 +27,7 @@ def make_main(data: GoogleSheetResult, background: GoogleSheetResult) -> None:
         "th": th,
         "recruitment_notice": recruitment_notice,
         "recruitment_start": recruitment_start,
-        "recruitment_deadline": recruitment_deadline,
+        "recruitment_end": recruitment_end,
         "recruitment_notice_desc": recruitment_notice_desc,
         "recruitment_notice_a": recruitment_notice_a,
         "recruitment_in_progress_desc": recruitment_in_progress_desc,
