@@ -209,10 +209,10 @@ export default defineComponent({
       return Math.ceil(result / 86400000);
     },
     before_recruitment() {
-      return this.notice_day < 0 && this.s_day >= 0;
+      return this.notice_day < 0 && this.s_day > 0;
     },
     is_recruiting() {
-      return this.s_day < 0 && this.d_day >= 0;
+      return this.s_day <= 0 && this.d_day >= 0;
     },
   },
   methods: {
