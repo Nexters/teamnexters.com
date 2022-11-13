@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [21.1.0](https://github.com/mcauto/teamnexters.com/compare/v21.0.2...v21.1.0) (2022-11-13)
+
+
+### Features
+
+* **contact:** Add instagram contact ([#7](https://github.com/mcauto/teamnexters.com/issues/7)) ([844d773](https://github.com/mcauto/teamnexters.com/commit/844d773bd40be52d02c451ef61054ccae5780032))
+* **main:** Add page title ([#4](https://github.com/mcauto/teamnexters.com/issues/4)) ([eb52971](https://github.com/mcauto/teamnexters.com/commit/eb52971922e4651880909e54b3fc9c5b63a0bd71))
+* **main:** Modify page title ([#4](https://github.com/mcauto/teamnexters.com/issues/4)) ([c3649a7](https://github.com/mcauto/teamnexters.com/commit/c3649a70399c5b1e0eb81176c2c425a343fb3a21))
+
+
+### Bug Fixes
+
+* **footer:** 푸터 sns 노출상태 변경되지 않는 이슈 ([#5](https://github.com/mcauto/teamnexters.com/issues/5)) ([01e186e](https://github.com/mcauto/teamnexters.com/commit/01e186e8f1150bc1685e2ae7d3053f00cde55d4b))
+* **footer:** 푸터 sns 노출상태 변경되지 않는 이슈 ([#5](https://github.com/mcauto/teamnexters.com/issues/5)) ([259a01d](https://github.com/mcauto/teamnexters.com/commit/259a01d730c8a605c20d4fbe543c162e927f6dd9))
+* **footer:** 후원사 텍스트 변경 ([a4691b4](https://github.com/mcauto/teamnexters.com/commit/a4691b4dde29a8bab75d953c8e832abf09d9da23))
+
 ### [21.0.2](https://github.com/mcauto/teamnexters.com/compare/v21.0.1...v21.0.2) (2021-12-18)
 
 
