@@ -4,7 +4,7 @@ import VueMq from "vue-mq";
 const pageTitle = {
   watch: {
     vuePageTitle() {
-      document.title = `teamnexters`;
+      document.title = `Nexters`;
     },
   },
 };
