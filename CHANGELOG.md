@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [21.1.1](https://github.com/mcauto/teamnexters.com/compare/v21.1.0...v21.1.1) (2022-12-31)
+
+
+### Bug Fixes
+
+* **recruitment:** Resolve recruitment button exposure issue ([#10](https://github.com/mcauto/teamnexters.com/issues/10)) ([edf6e39](https://github.com/mcauto/teamnexters.com/commit/edf6e39c957ee06e64bbc8ee221c13e5b681ef36))
+
 ## [21.1.0](https://github.com/mcauto/teamnexters.com/compare/v21.0.2...v21.1.0) (2022-11-13)
 
 
