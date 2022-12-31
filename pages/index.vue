@@ -37,7 +37,7 @@ export default defineComponent({
         "th",
         "recruitment_notice",
         "recruitment_start",
-        "recruitment_deadline",
+        "recruitment_end",
         "recruitment_notice_a",
         "recruitment_notice_desc",
         "recruitment_in_progress_a",
@@ -57,7 +57,7 @@ export default defineComponent({
       th,
       recruitment_notice,
       recruitment_start,
-      recruitment_deadline,
+      recruitment_end,
       recruitment_notice_a,
       recruitment_notice_desc,
       recruitment_in_progress_a,
@@ -72,7 +72,7 @@ export default defineComponent({
       th: th,
       recruitment_notice: yymmdd(recruitment_notice),
       recruitment_start: yymmdd(recruitment_start),
-      recruitment_deadline: yymmdd(recruitment_deadline),
+      recruitment_end: yymmdd(recruitment_end),
       recruitment_notice_a: recruitment_notice_a,
       recruitment_notice_desc: recruitment_notice_desc,
       recruitment_in_progress_a: recruitment_in_progress_a,
@@ -127,7 +127,7 @@ export default defineComponent({
       return Math.ceil(result / 86400000);
     },
     d_day() {
-      const result = new Date(this.recruitment_deadline) - new Date();
+      const result = new Date(this.recruitment_end) - new Date();
       return this.s_day < 0 ? Math.ceil(result / 86400000) : 0;
     },
     before_recruitment() {

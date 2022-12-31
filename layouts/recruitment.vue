@@ -27,7 +27,7 @@ import { Component, Vue } from "nuxt-property-decorator";
       sponsors: [],
       recruitment_notice: "",
       recruitment_start: "",
-      recruitment_deadline: "",
+      recruitment_end: "",
     };
   },
   setup() {
@@ -40,13 +40,9 @@ import { Component, Vue } from "nuxt-property-decorator";
     const { headers } = await this.$content("headers")
       .only(["headers"])
       .fetch();
-    const { recruitment_notice, recruitment_start, recruitment_deadline } =
+    const { recruitment_notice, recruitment_start, recruitment_end } =
       await this.$content("main")
-        .only([
-          "recruitment_notice",
-          "recruitment_start",
-          "recruitment_deadline",
-        ])
+        .only(["recruitment_notice", "recruitment_start", "recruitment_end"])
         .fetch();
     const items = await this.$content("footers/sns")
       .only(["idx", "name", "href", "black", "white", "visible"])
@@ -68,7 +64,7 @@ import { Component, Vue } from "nuxt-property-decorator";
     };
     this.recruitment_notice = yymmdd(recruitment_notice);
     this.recruitment_start = yymmdd(recruitment_start);
-    this.recruitment_deadline = yymmdd(recruitment_deadline);
+    this.recruitment_end = yymmdd(recruitment_end);
   },
   computed: {
     s_day() {
@@ -76,7 +72,7 @@ import { Component, Vue } from "nuxt-property-decorator";
       return Math.ceil(result / 86400000);
     },
     d_day() {
-      const result = new Date(this.recruitment_deadline) - new Date();
+      const result = new Date(this.recruitment_end) - new Date();
       return this.s_day < 0 ? Math.ceil(result / 86400000) : 0;
     },
     is_recruiting() {
