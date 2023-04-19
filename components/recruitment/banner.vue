@@ -62,7 +62,7 @@ export default defineComponent({
   },
   computed: {
     isVisibleDate() {
-      return this.type !== "DEFAULT";
+      return this.type === "PROGRESS";
     },
     badgeText() {
       return this.remainingPeriod > 0

@@ -79,22 +79,22 @@ import background from "~/assets/css/export.scss";
   },
   computed: {
     notice_day() {
-      const result = new Date(this.recruitment_notice) - new Date();
+      const result = new Date(this.recruitment_notice) - new Date().setHours(0, 0, 0, 0);
       return Math.ceil(result / 86400000);
     },
     s_day() {
-      const result = new Date(this.recruitment_start) - new Date();
+      const result = new Date(this.recruitment_start) - new Date().setHours(0, 0, 0, 0);
       return Math.ceil(result / 86400000);
     },
     d_day() {
-      const result = this.recruitment_end - new Date();
-      return this.s_day < 0 ? Math.ceil(result / 86400000) : 0;
+      const result = this.recruitment_end - new Date().setHours(0, 0, 0, 0);
+      return this.s_day <= 0 ? Math.ceil(result / 86400000) : 0;
     },
     before_recruitment() {
-      return this.notice_day < 0 && this.s_day >= 0;
+      return this.notice_day <= 0 && this.s_day > 0;
     },
     is_recruiting() {
-      return this.s_day < 0 && this.d_day >= 0;
+      return this.s_day <= 0 && this.d_day >= 0;
     },
     background_image() {
       let img = this.main_default_desktop;
