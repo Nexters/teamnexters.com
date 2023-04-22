@@ -34,7 +34,6 @@ def make_main(data: GoogleSheetResult, background: GoogleSheetResult) -> None:
         "recruitment_in_progress_a": recruitment_in_progress_a,
         "recruitment_href": recruitment_href,
     }
-    print(work_dir)
     with open(f"{work_dir}/main.json", mode="w", encoding="utf-8") as f:
         f.write(json.dumps(main, ensure_ascii=False, indent=2))
 
