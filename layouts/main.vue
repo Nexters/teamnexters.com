@@ -103,8 +103,6 @@ import background from "~/assets/css/export.scss";
       } else if (this.is_recruiting) {
         img = this.main_wip_desktop;
       }
-
-      console.log('img: ' + img);
       return img;
     },
   },
