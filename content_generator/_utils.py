@@ -37,7 +37,7 @@ def make_main(data: GoogleSheetResult, background: GoogleSheetResult) -> None:
     with open(f"{work_dir}/main.json", mode="w", encoding="utf-8") as f:
         f.write(json.dumps(main, ensure_ascii=False, indent=2))
 
-    make_image_scss(f"{work_dir}/main-bg.scss", background)
+    make_image_scss(f"./assets/css/main-bg.scss", background)
 
 
 def make_about(
