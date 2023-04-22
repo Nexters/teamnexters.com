@@ -10,7 +10,7 @@
     >
       <img class="thumbnail" :data-src="thumbnail" v-lazy-load />
       <p class="name">{{ project.app_name }}</p>
-      <p class="time">{{ project.th }}th | {{ project.year }}</p>
+      <p class="time">{{ project.th }}{{ project.th % 10 === 1? 'st': project.th % 10 === 2? 'nd': project.th % 10 === 3? 'rd': 'th' }} | {{ project.year }}</p>
     </nuxt-link>
     <div class="links">
       <div
