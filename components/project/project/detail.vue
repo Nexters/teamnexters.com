@@ -16,7 +16,7 @@
       <div class="contents">
         <div class="information">
           <h1 class="name">{{ project.app_name }}</h1>
-          <div class="th-year">{{ project.th }}{{ project.th % 10 === 1? 'st': project.th % 10 === 2? 'nd': project.th % 10 === 3? 'rd': 'th' }} | {{ project.year }}</div>
+          <div class="th-year">{{ project.th }}{{ th_text }} | {{ project.year }}</div>
           <div class="team-members">
             TEAM {{ project.team_name }} | {{ members }}
           </div>
@@ -68,6 +68,18 @@ export default defineComponent({
     },
     thumbnail() {
       return this.project.thumbnail || "/no-image.svg";
+    },
+    th_text() {
+      const last_digit = this.project.th % 10;
+      if (last_digit === 1) {
+        return 'st';
+      } else if (last_digit === 2) {
+        return 'nd';
+      } else if (last_digit === 3) {
+        return 'rd';
+      } else {
+        return 'th';
+      }
     },
   },
   methods: {
