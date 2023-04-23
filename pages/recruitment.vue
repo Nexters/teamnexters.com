@@ -199,7 +199,7 @@ export default defineComponent({
     },
     d_day() {
       const result = new Date(this.recruitment_end) - new Date();
-      return this.s_day < 0 ? Math.ceil(result / 86400000) : 0;
+      return this.s_day <= 0 ? Math.ceil(result / 86400000) : 0;
     },
     notice_day() {
       const result = new Date(this.recruitment_notice) - new Date();
