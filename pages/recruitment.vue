@@ -220,7 +220,7 @@ export default defineComponent({
         }
         case "NOTICE":
         case "PROGRESS": {
-          return `NEXTERS ${th}th\nRecruitment`;
+          return `NEXTERS ${th}${ th % 10 === 1? 'st': th % 10 === 2? 'nd': th % 10 === 3? 'rd': 'th' }\nRecruitment`;
         }
       }
       return "";
