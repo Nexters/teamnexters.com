@@ -1,6 +1,6 @@
 <template>
   <div class="background">
-    <Header :headers="headers" :is-white="is_recruiting"></Header>
+    <Header :headers="headers" :is-white="is_white"></Header>
     <main>
       <nuxt v-if="!isMenuOpen || $mq !== 'mobile'" />
     </main>
@@ -73,11 +73,21 @@ import { Component, Vue } from "nuxt-property-decorator";
     },
     d_day() {
       const result = new Date(this.recruitment_end) - new Date();
-      return this.s_day < 0 ? Math.ceil(result / 86400000) : 0;
+      return this.s_day <= 0 ? Math.ceil(result / 86400000) : 0;
+    },
+    notice_day() {
+      const result = new Date(this.recruitment_notice) - new Date();
+      return Math.ceil(result / 86400000);
+    },
+    before_recruitment() {
+      return this.notice_day <= 0 && this.s_day > 0;
     },
     is_recruiting() {
-      return this.s_day < 0 && this.d_day >= 0;
+      return this.s_day <= 0 && this.d_day >= 0;
     },
+    is_white() {
+      return this.before_recruitment || this.is_recruiting;
+    }
   },
 })
 class RecruitmentLayout extends Vue {
