@@ -10,7 +10,7 @@
     >
       <img class="thumbnail" :data-src="thumbnail" v-lazy-load />
       <p class="name">{{ project.app_name }}</p>
-      <p class="time">{{ project.th }}th | {{ project.year }}</p>
+      <p class="time">{{ project.th }}{{ th_text }} | {{ project.year }}</p>
     </nuxt-link>
     <div class="links">
       <div
@@ -42,6 +42,18 @@ const ProjectCard = defineComponent({
   computed: {
     thumbnail() {
       return this.project.thumbnail || "/no-image.svg";
+    },
+    th_text() {
+      const last_digit = this.project.th % 10;
+      if (last_digit === 1) {
+        return 'st';
+      } else if (last_digit === 2) {
+        return 'nd';
+      } else if (last_digit === 3) {
+        return 'rd';
+      } else {
+        return 'th';
+      }
     },
   },
   methods: {

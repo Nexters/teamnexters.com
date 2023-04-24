@@ -211,6 +211,18 @@ export default defineComponent({
     is_recruiting() {
       return this.s_day <= 0 && this.d_day >= 0;
     },
+    th_text() {
+      const last_digit = this.banner.th % 10;
+      if (last_digit === 1) {
+        return 'st';
+      } else if (last_digit === 2) {
+        return 'nd';
+      } else if (last_digit === 3) {
+        return 'rd';
+      } else {
+        return 'th';
+      }
+    },
   },
   methods: {
     makeBannerTitle(type, th) {
@@ -220,7 +232,7 @@ export default defineComponent({
         }
         case "NOTICE":
         case "PROGRESS": {
-          return `NEXTERS ${th}th\nRecruitment`;
+          return `NEXTERS ${th}${this.th_text}\nRecruitment`;
         }
       }
       return "";
