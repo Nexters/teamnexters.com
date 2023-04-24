@@ -211,7 +211,7 @@ export default defineComponent({
     is_recruiting() {
       return this.s_day <= 0 && this.d_day >= 0;
     },
-    getTh() {
+    th_text() {
       const last_digit = this.banner.th % 10;
       if (last_digit === 1) {
         return 'st';
@@ -232,7 +232,7 @@ export default defineComponent({
         }
         case "NOTICE":
         case "PROGRESS": {
-          return `NEXTERS ${th}${ this.getTh }\nRecruitment`;
+          return `NEXTERS ${th}${this.th_text}\nRecruitment`;
         }
       }
       return "";
