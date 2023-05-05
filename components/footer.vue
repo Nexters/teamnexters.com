@@ -34,7 +34,7 @@
         </div>
         <div class="sba-promotion" v-show="isShowSbaBanner">
           <a href="https://sesacthon-apply.goorm.io" target="_blank">
-            <img src="https://drive.google.com/uc?export=view&id=1Gtxu9vrt_tUDQCC_XXvDQhYXAmP4izCu" class="sba-img" size="100%" @click="linkToSeSacThon"/>
+            <img src="https://drive.google.com/uc?export=view&id=1Gtxu9vrt_tUDQCC_XXvDQhYXAmP4izCu" class="sba-img" size="100%"/>
           </a>
         </div>
         <div class="sponsorGuideText">
