@@ -32,6 +32,9 @@
             </ul>
           </div>
         </div>
+        <div class="sba-promotion" v-show="isShowSbaBanner">
+          <img src="https://drive.google.com/uc?export=view&id=1Gtxu9vrt_tUDQCC_XXvDQhYXAmP4izCu" class="sba-img" size="100%" @click="linkToSeSacThon"/>
+        </div>
         <div class="sponsorGuideText">
           본 페이지는 Naver Cloud Platform 서버 지원으로 운영되고 있습니다. @NEXTERS 2021
         </div>
@@ -74,6 +77,7 @@ export default defineComponent({
   data() {
     return {
       isSponsorVisible: false,
+      isShowSbaBanner: this.$route.path !== '/',
     };
   },
   methods: {
@@ -83,6 +87,9 @@ export default defineComponent({
     icon(item) {
       return this.isWhite ? item.white : item.black;
     },
+    linkToSeSacThon() {
+      window.location.href = "https://sesacthon-apply.goorm.io";
+    }
   },
 });
 </script>
@@ -324,6 +331,32 @@ footer {
       .sponsorItem {
         font-size: 14px;
         line-height: 21px;
+      }
+    }
+  }
+
+  .sba-promotion {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    grid-gap: 2.666666666666667vw;
+    padding-bottom: 2.666666666666667vw;
+
+    .sba-img {
+      width: 378px;
+      height: 164px;
+      cursor: pointer;
+
+      @include tablet {
+        width: 35.26119402985075vw;
+        height: 15.29850746268657vw;
+      }
+
+      @include mobile {
+        width: 42.30769230769231vw;
+        height: 18.35641025641026vw;
       }
     }
   }
