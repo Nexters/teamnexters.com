@@ -37,6 +37,7 @@
           :key="platform"
           class="link-item"
           :href="link"
+          target="_blank"
         >
           {{ platform }}
         </a>

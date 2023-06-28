@@ -20,7 +20,7 @@
         @click="onClickLink(link)"
         @click.stop=""
       >
-        <a :href="link">
+        <a :href="link" target="_blank">
           {{ platform }}
         </a>
       </div>
@@ -59,7 +59,7 @@ const ProjectCard = defineComponent({
   methods: {
     ...mapActions({ showDetail: "project/showDetail" }),
     onClickLink(href) {
-      window.location.href = href;
+      window.open(href);
     },
     scrollToId(id) {
       document.getElementById(id).scrollIntoView();

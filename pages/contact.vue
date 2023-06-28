@@ -72,11 +72,11 @@ export default defineComponent({
     handleClick: (action) => () => {
       switch (action) {
         case "kakao": {
-          window.location.href = "https://pf.kakao.com/_xdxmnnj";
+          window.open("https://pf.kakao.com/_xdxmnnj");
           break;
         }
         case "facebook": {
-          window.location.href = "https://www.facebook.com/Nexterspage";
+          window.open("https://www.facebook.com/Nexterspage");
           break;
         }
         case "gmail": {

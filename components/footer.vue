@@ -16,7 +16,7 @@
                     :key="sponsor.idx"
                     class="sponsorItem"
                   >
-                    <a :href="sponsor.href">
+                    <a :href="sponsor.href" target="_blank">
                       <span>{{ sponsor.name }}</span>
                     </a>
                   </section>
@@ -26,7 +26,7 @@
           </div>
           <div class="sns">
             <ul v-for="item in items" v-show="item.visible" :key="item.idx">
-              <a :href="item.href">
+              <a :href="item.href" target="_blank">
                 <img :src="icon(item)" :alt="item.name" />
               </a>
             </ul>

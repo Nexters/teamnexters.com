@@ -37,6 +37,7 @@
           class="faqBox"
           :button-name="`FAQ 바로가기`"
           :href="`/contact#faq`"
+          :is-new-page=false
         />
       </div>
     </div>
