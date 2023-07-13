@@ -19,7 +19,7 @@ const ReviewCard = defineComponent({
   },
   methods: {
     onClick: function () {
-      window.location.href = this.href;
+      window.open(this.href);
     },
   },
 });
