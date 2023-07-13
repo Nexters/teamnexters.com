@@ -28,7 +28,7 @@ export default defineComponent({
     },
     isNewPage: {
       type: Boolean,
-      require: false,
+      require: true,
     }
   },
   methods: {
