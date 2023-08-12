@@ -26,14 +26,14 @@ export default defineComponent({
       type: String,
       require: false,
     },
-    isNewPage: {
+    openInNewWindow: {
       type: Boolean,
       require: true,
     }
   },
   methods: {
     onClick: function () {
-      if (this.isNewPage) {
+      if (this.openInNewWindow) {
         window.open(this.href);
       } else {
         location.href = this.href;

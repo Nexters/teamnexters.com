@@ -19,7 +19,7 @@
           class="box"
           :button-name="box.name"
           :href="`${box.link}`"
-          :is-new-page=true
+          open-in-new-window
         />
       </article>
     </div>
