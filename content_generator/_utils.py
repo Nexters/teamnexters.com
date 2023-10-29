@@ -1,5 +1,6 @@
 import json
 from os import remove, listdir
+import re
 from typing import List
 
 GoogleSheetResult = List[List[str]]
@@ -295,8 +296,10 @@ def make_contacts(contact_us: GoogleSheetResult, faq: GoogleSheetResult) -> None
         }
         _faqs.append(_faq)
         
+    content_file_pattern = re.compile("[0-9]+\.json")
+    
     for filename in listdir("./content/contacts"):
-        if filename.endswith(".json"):
+        if content_file_pattern.match(filename):
             remove(f"./content/contacts/{filename}")
 
     for idx, _contact in enumerate(_contacts):
@@ -304,7 +307,7 @@ def make_contacts(contact_us: GoogleSheetResult, faq: GoogleSheetResult) -> None
             f.write(json.dumps(_contact, ensure_ascii=False, indent=2))
             
     for filename in listdir("./content/contacts/faq"):
-        if filename.endswith(".json"):
+        if content_file_pattern.match(filename):
             remove(f"./content/contacts/faq/{filename}")
 
     for idx, _faq in enumerate(_faqs):
