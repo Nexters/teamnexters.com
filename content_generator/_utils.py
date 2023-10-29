@@ -1,4 +1,5 @@
 import json
+from os import remove, listdir
 from typing import List
 
 GoogleSheetResult = List[List[str]]
@@ -293,10 +294,18 @@ def make_contacts(contact_us: GoogleSheetResult, faq: GoogleSheetResult) -> None
             "answer": answer
         }
         _faqs.append(_faq)
+        
+    for filename in listdir("./content/contacts"):
+        if filename.endswith(".json"):
+            remove(f"./content/contacts/{filename}")
 
     for idx, _contact in enumerate(_contacts):
         with open(f"./content/contacts/{idx}.json", mode="w", encoding="utf-8") as f:
             f.write(json.dumps(_contact, ensure_ascii=False, indent=2))
+            
+    for filename in listdir("./content/contacts/faq"):
+        if filename.endswith(".json"):
+            remove(f"./content/contacts/faq/{filename}")
 
     for idx, _faq in enumerate(_faqs):
         with open(f"./content/contacts/faq/{idx}.json", mode="w", encoding="utf-8") as f:
