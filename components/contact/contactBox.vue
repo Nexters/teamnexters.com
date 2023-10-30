@@ -47,7 +47,7 @@ export default defineComponent({
         instagram: {
           icon: require("~/assets/img/instagram.svg"),
           iconText: "Instagram",
-          text: "https://www.instagram.com/team_nexters/",
+          text: "@team_nexters",
           link: "",
         },
       },

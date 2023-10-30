@@ -89,6 +89,10 @@ export default defineComponent({
           alert("'teamnexters@gmail.com' 메일 주소를 복사했습니다. ");
           break;
         }
+        case "instagram": {
+          window.open("https://www.instagram.com/team_nexters");
+          break;
+        }
       }
       return;
     },
